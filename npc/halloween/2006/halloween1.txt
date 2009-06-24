@@ -75,7 +75,6 @@ L_trick_2:
 	mes "[Halloweenist]";
 	mes "Abracadabra!";
 	gmcommand strcharinfo(0)+":@charstreset "+strcharinfo(0);
-	gmcommand strcharinfo(0)+":@charskreset "+strcharinfo(0);
 	close;
 
 L_trick_3:
