@@ -1,0 +1,82 @@
+// An inelegant item NPC for our welcome pack
+
+018-1.gat,24,94,0	script	Guy	160,{
+	mes "[Guy]";
+	if (Guy_Used == 1) goto L_Used;
+	set Guy_Used,1;
+
+	// A sad attempt at fraud prevention. If they have
+	// any of these advanced items, give them nothing.
+	if (countitem(571) >= 1) goto L_Used;	// Setzer
+	if (countitem(636) >= 1) goto L_Used;	// WarlordHelmet
+	if (countitem(658) >= 1) goto L_Used;	// WarlordPlate
+	if (countitem(601) >= 1) goto L_Used;	// SteelShield
+	if (countitem(625) >= 1) goto L_Used;	// ChainMailShirt
+
+	mes "\"Lets see here.. You're level " + BaseLevel + "\"";
+	next;
+
+	mes "[Guy]";
+	mes "\"According to my book you get..\"";
+	next;
+
+	mes "[Guy]";
+	if (BaseLevel >= 80) goto L_80;
+	if (BaseLevel >= 50) goto L_50;
+	if (BaseLevel >= 30) goto L_30;
+	if (BaseLevel >= 20) goto L_20;
+
+	mes "\"Nothing! Sorry but your level is too low.\"";
+	goto L_Warp;
+
+L_Used:
+	set Guy_Used,1;
+	mes "\"I have nothing to give you\"";
+	goto L_Warp;
+
+L_80:
+	getitem 571,1;	// Setzer
+	mes "\"Oh my.. a Setzer! And also...\"";
+	next;
+	mes "[Guy]";
+
+L_50:
+	getitem 636,1;	// WarlordHelmet
+	getitem 658,1;	// WarlordPlate
+	getitem 601,1;	// SteelShield
+	getitem 642,1;	// JeansChaps
+	getitem 528,1;	// Boots
+	getitem 532,1;	// LeatherGloves
+	getitem 623,1;	// Scythe
+	mes "\"The level 50+ goodie pack!\"";
+	goto L_Warp;
+	
+L_30:
+	getitem 638,1;	// InfantryHelmet
+	getitem 625,1;	// ChainMailShirt
+	getitem 602,1;	// Wooden Shield
+	getitem 610,1;	// Jeans
+	getitem 528,1;	// Boots
+	getitem 531,1;	// MinerGloves
+	getitem 623,1;	// Scythe
+	getitem 537,3;	// 3 keys
+	mes "\"The level 30+ goodie pack!\"";
+	goto L_Warp;
+
+L_20:
+	getitem 525,1;	// MinersHat
+	getitem 546,1;	// DesertShirt
+	getitem 586,1;	// CottonShorts
+	getitem 528,1;	// Boots
+	getitem 623,1;	// Scythe
+	mes "\"The newbie express kit!\"";
+	goto L_Warp;
+
+L_Warp:
+	next;
+	mes "[Guy]";
+	mes "\Bye now!\"";
+	warp "009-1.gat", 0, 0;
+	close;
+
+}
