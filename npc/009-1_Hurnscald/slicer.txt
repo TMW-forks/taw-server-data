@@ -1,0 +1,10 @@
+009-1.gat,43,31,0	script	Slicer	199, {
+	mes "[Slicer]";
+	set @TEMP,rand(4);
+	if(@TEMP == 0) mes "\"Where did all my friends go? I miss them terribly.\"";
+	if(@TEMP == 1) mes "\"Am I a ghost...?\"";
+	if(@TEMP == 2) mes "\"What is this place? It looks like home but it's not...\"";
+	if(@TEMP == 3) mes "\"I think I might be dead... am I?\"";
+	close;
+}
+
