@@ -20,7 +20,7 @@ L_Help:
 	mes "\"I don't want to leave the spot unguarded but I need some items to melt through this ice.\"";
 	next;
 	mes "[Carmen Of Laredia]";
-	mes "\"I am going to need two raw logs, two iron potions, two small mushrooms, and two cotton cloths."";
+	mes "\"I am going to need two raw logs, two iron potions, two small mushrooms, and two cotton cloths.\"";
 	next;
 	mes "[Carmen Of Laredia]";
 	mes "\"Are you up to the task?\"";
