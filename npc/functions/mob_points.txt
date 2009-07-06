@@ -42,6 +42,9 @@ function	script	MobPoints	{
 		2; // Squirrel
 
 
+	// Make money too!
+	if (rand(10) > 7) set Zeny, Zeny + @points[@mobID - 1002];
+
 	if (MPQUEST == 1) set Mobpt, Mobpt + @points[@mobID - 1002];
 
 	if ((@mobID == 1003) || (@mobID == 1004) || (@mobID == 1009))
