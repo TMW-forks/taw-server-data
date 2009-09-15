@@ -1,0 +1,102 @@
+﻿// mushhatquest
+011-1.gat,38,36,0	script	Bella	901,{
+	if (QUEST_shroomhat == 1) goto L_first;
+	if (QUEST_shroomhat == 2) goto L_items1;
+	if (QUEST_shroomhat == 3) goto L_items2;
+	if (QUEST_shroomhat == 4) goto L_already;
+	mes "[Bella]";
+	mes "\"Hello there. Do I know you?\"";
+	close;
+
+L_first:
+	mes "[Bella]";
+	mes "Hello there, I am the Mushroom Queen.";
+	next;
+	mes "[Bella]";
+	mes "\"When this forest was new, I seeded it with my spores in the hopes that one day my children could help people\"";
+	next;
+	mes "[Bella]";
+	mes "\"Something went wrong. My spores were infected by Dark Mana, and my children grew up Evil\"";
+	next;
+	mes "[Bella]";
+	mes "\"Now they are too strong for me to fight. I am going to try to brew a potion to purify them but I need some components. Will you help me?\"";
+	next;
+	menu
+		"Of course!", L_items1,
+		"That sounds dangerous", -;
+	close;
+
+L_items1:
+	set QUEST_shroomhat, 2;
+	mes "[Bella]";
+	mes "\"I am going to need 20 Small Mushrooms, 5 Iron Potions, and 5 Hard Spikes to brew my potion. Please get them for me\"";
+
+	if (countitem("smallmushroom") < 20) close;
+	if (countitem("hardspike") < 5) close;
+	if (countitem("ironpotion") < 5) close;
+	next;
+
+	delitem "smallmushroom", 20;
+	delitem "hardspike", 5;
+	delitem "ironpotion", 5;
+	set QUEST_shroomhat, 3;
+	mes "[Bella]";
+	mes "\"Oh... You have them! Thank you! I'll brew the potion soon!!\"";
+	next;
+
+	mes "[Bella]";
+	mes "\"For your help I'd like to make you a special hat, but need a few things to do so. Will you fetch them?\"";
+	next;
+	menu
+		"Sure", L_items2,
+		"No!", -;
+	close;
+
+L_items2:
+	set QUEST_shroomhat, 3;
+	mes "[Bella]";
+	mes "\"Bring me a Fancy Hat and a Head Band for your reward.\"";
+	if (countitem("fancyhat") < 1) close;
+	if (countitem("cottonheadband") < 1) close;
+	next;
+
+	set QUEST_shroomhat, 4;
+	delitem "fancyhat", 1;
+	delitem "cottonheadband", 1;
+	getitem "mushhat", 1;
+	mes "[Bella]";
+	mes "\"Oh, you have them! Here you go!\"";
+	next;
+	mes "[Bella]";
+	mes "\"Let me send you back to town so you can show it off!\"";
+	gmcommand strcharinfo(0)+":@die ";
+	close;
+	
+L_already:
+	mes "[Bella]";
+	mes "\"Thank you for your help. I don't need you anymore. You can die now.\"";
+	gmcommand strcharinfo(0)+":@die ";
+	close;
+}
+
+011-1.gat,96,59,0	script 	Robert	160,{
+	if (QUEST_shroomhat > 1) goto L_finish;
+	mes "[Robert]";
+	mes "\"Strange things are afoot.. Want to know?\"";
+	next;
+	menu
+		"Tell me please.", L_yes,
+		"Nevermind", -;
+	close;
+
+L_yes:
+	set QUEST_shroomhat, 1;
+	mes "[Robert]";
+	mes "\"I hear that the Mushroom Queen is back, and needs help. She's somewhere nearby. Be careful though she can be tricky..\"";
+	close;
+
+L_finish:
+	mes "[Robert]";
+	mes "\"Have you found her?\"";
+	close;
+}

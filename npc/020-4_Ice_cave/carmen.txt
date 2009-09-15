@@ -1,0 +1,98 @@
+// Carmen the treasure hunter.
+
+020-4.gat,63,39,0	script	Carmen	118,{
+	if (QUEST_crown_state == 2) goto L_ThanksAgain;
+	if( meltingWait == 1 ) goto L_CheckLoop;
+	if (QUEST_crown_state == 1) goto L_CheckItems;
+	mes "[Carmen Of Laredia]";
+	mes "\"Finally, after all these years I found it!!!\"";
+	next;
+	menu "Good for you...",-,"Found what!?",L_Reason;
+	close;
+L_Reason:
+	mes "[Carmen Of Laredia]";
+	mes "\"I have been looking in this cave for YEARS to find this treasure chest. I can see it right behind this sheet of ice!\"";
+	next;
+	menu "Need help?",L_Help,"Nice work. I have to run.",-;
+	close;
+L_Help:
+	mes "[Carmen Of Laredia]";
+	mes "\"I don't want to leave the spot unguarded but I need some items to melt through this ice.\"";
+	next;
+	mes "[Carmen Of Laredia]";
+	mes "\"I am going to need two raw logs, two iron potions, two small mushrooms, and two cotton cloths.\"";
+	next;
+	mes "[Carmen Of Laredia]";
+	mes "\"Are you up to the task?\"";
+	next;
+	menu "You can count on me",-,"Maybe later",L_ComeBack;
+	mes "[Carmen Of Laredia]";
+	mes "\"Good. When I get to my chest, I'll share some of the loot with you. I'll be here waiting.\"";
+	set QUEST_crown_state, 1;
+	close;
+L_CheckItems:
+	mes "[Carmen Of Laredia]";
+	mes "\"I am going to need two raw logs, two iron potions, two small mushrooms, and two cotton cloths to melt the ice.\"";
+	next;
+	mes "[Carmen Of Laredia]";
+	mes "\"Do you have the items?\"";
+	next;
+	if ( (countitem(569) < 2) || (countitem(660) < 2) || (countitem(567) < 2) || (countitem(566) < 2) ) goto L_Exchange_NotEnough;
+	menu "I'm not ready to hand them over",L_ComeBack,"Sure, here they are!",L_Exchange;
+	close;
+L_Exchange:
+	mes "[Carmen Of Laredia]";
+	mes "\"Thank you very much. Now I just have to melt these ice sheets. Come back in a while and I'll have this ice melted away.\"";
+	delitem 569, 2;
+	delitem 660, 2;
+	delitem 567, 2;
+	delitem 566, 2;
+	set meltingWait, 1;
+	set @index, getarraysize($meltingDay);
+	set $meltingID[@index], getcharid(0);
+	set $meltingTime[@index], gettime(3);
+	set $meltingDay[@index], gettime(5);
+	getexp 20000, 0;
+	close;
+L_CheckLoop:
+	mes "[Carmen Of Laredia]";
+	mes "\"Oh hello there again..\"";
+	next;
+	set @charID, getcharid(0);
+	set @index, -1;
+	innerLoop:
+	set @index, @index + 1;
+	// if it hasnt reached the index of player and loop hasnt exceed size of array
+	if( ($meltingID[@index] != @charID)  && (@index <= getarraysize($meltingDay)) ) goto innerLoop;
+	if(( gettime(3) > $meltingTime[@index]) || (gettime(5) != $meltingDay[@index])) goto L_DONE;
+	// time is variable depending on how much time is left in the hour. Also only pitfall is if the person checks back within the same day of the next month before the time was set.
+	mes "[Carmen Of Laredia]";
+	mes "\"Sorry, I need more time.\"";
+	close;
+L_DONE:
+	mes "[Carmen Of Laredia]";
+	mes "\"You will be happy to know that I melted the ice, retrieved the chest, and acquired my treasure!!!\"";
+	next;
+	mes "[Carmen Of Laredia]";
+	mes "\"As for your bounty, here you go.\"";
+	getitem 646, 1;
+	set QUEST_crown_state, 2;
+	set $meltingId[@index], 0;
+	set $meltingDay[@index], 0;
+	next;
+	mes "[Carmen Of Laredia]";
+	mes "\"Time to ruffle through my loot some more. Have to keep moving in this cold, you know..\"";
+	close;
+L_Exchange_NotEnough:
+	mes "[Carmen Of Laredia]";
+	mes "\"It doesn't look like you do.\"";
+	close;
+L_ThanksAgain:
+	mes "[Carmen Of Laredia]";
+	mes "\"Thanks again for helping me recover the chest.\"";
+	close;
+L_ComeBack:
+	mes "[Carmen Of Laredia]";
+	mes "\"Well come back when you are, bye.\"";
+	close;
+}

@@ -1,0 +1,132 @@
+021-1.gat,129,55,0	script	Shelly	165,{
+	if (BaseLevel < 10) goto L_TooYoung;
+	if (DanceDone >= 1) goto L_DanceDone;
+
+
+	mes "[Shelly]";
+	mes "\"Can you figure out my dance?\"";
+	next;
+	menu
+		"I'll try...", -,
+		"No, I can't!", L_Helpme;
+	close;
+
+L_Helpme:
+	mes "[Shelly]";
+	mes "\"Well... You're cute. I can give you a hint..\"";
+	next;
+	mes "[Shelly]";
+	mes "\"But only if you get naked for me!\"";
+	emotion 9;
+	next;
+	menu
+		"Ok, if that's what you want...", L_GetNaked,
+		"No way you perv!", -;
+	close;
+
+L_GetNaked:
+	mes "[Shelly]";
+	mes "\"Oh goodie! Let me help you\"";
+	next;
+	nude;
+	mes "[Shelly]";
+	mes "\"There.. Woo you're cuter than I expected...\"";
+	emotion 10;
+	next;
+	mes "[Shelly]";
+	mes "\"Would you go out with me sometime?\"";
+	next;
+	menu
+		"Sure, beautiful!", L_GoOut,
+		"No thanks. Can I have a hint now?", L_Hint;
+	close;
+
+L_GoOut:
+	mes "[Shelly]";
+	mes "\"Oh I'm so sorry, I forgot that my schedule is full for this year... maybe next?\"";
+	next;
+
+L_Hint:
+	mes "[Shelly]";
+	mes "\"Anyway yes, a hint.. here.. Stand in the middle. Uber Ducks Like Rest. That's all you get!\"";
+	close;
+
+L_DanceDone:
+	if (DanceDone == 2) goto L_QuestOver;
+	mes "[Shelly]";
+	mes "\"Wow! You did it! Here, have a hat like mine!\"";
+	getitem 627,1; // Top Hat
+	set DanceDone, 2;
+	close;
+
+L_QuestOver:
+	mes "[Shelly]";
+	mes "\"Hi there again cutie..\"";
+	close;	
+
+L_TooYoung:
+	mes "[Shelly]";
+	mes "\"You're too young to dance! You might hurt yourself!\"";
+	close;	
+}
+
+// This is at the tic-tac-toe board in central Tulimshar
+// The board is layed out:
+// A|B|C
+// D|E|F
+// G|H|I
+
+// Center square - E
+021-1.gat,129,58,0	script	#danceCenter	127,0,0, {
+	if ($dancestep == 0) goto L_IncDStep;
+	if ($dancestep == 2) goto L_IncDStep;
+	if ($dancestep == 4) goto L_IncDStep;
+	if ($dancestep == 6) goto L_IncDStep;
+	if ($dancestep == 8) goto L_DPrize;
+	callfunc "DanceSad";
+	end;
+	
+L_IncDStep:
+	callfunc "DanceHappy";
+	end;
+
+L_DPrize:
+	if (DanceDone != 2) set DanceDone, 1;
+}
+
+// Top middle square - B
+021-1.gat,129,57,0	script	#danceTMid	127,0,0,{
+	if ($dancestep != 1) callfunc "DanceSad";
+	if ($dancestep == 1) callfunc "DanceHappy";
+	mes "tmtrig";
+	close;
+}
+
+// Bottom middle square - H
+021-1.gat,129,59,0	script	#danceBMid	127,0,0,{
+	if ($dancestep != 3) callfunc "DanceSad";
+	if ($dancestep == 3) callfunc "DanceHappy";
+}
+
+// Left middle square - D
+021-1.gat,128,58,0	script	#danceLMid	127,0,0,{
+	if ($dancestep != 5) callfunc "DanceSad";
+	if ($dancestep == 5) callfunc "DanceHappy";
+}
+
+// Right middle square - F
+021-1.gat,130,58,0	script	#danceRMid	127,0,0,{
+	if ($dancestep != 7) callfunc "DanceSad";
+	if ($dancestep == 7) callfunc "DanceHappy";
+}
+
+// Was going to make Shelly smile/frown but it was a no-go..
+function	script	DanceHappy	{
+	set $dancestep, $dancestep + 1;
+	end;
+}
+
+function	script	DanceSad	{
+	set $dancestep, 0;
+	end;
+}
