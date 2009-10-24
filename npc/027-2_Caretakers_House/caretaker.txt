@@ -1,13 +1,13 @@
 // Cemetary Caretaker
-// TODO: add dialog/code for when first letter is delivered
+// TODO: add dialog/code for giving more letters
 //       Airlia supports receiving an infinate number of letters
 
 027-2.gat,24,25,0	script	Caretaker	159,{
 	if (QUEST_Graveyard_Caretaker == 1) goto L_Return_Dialog;
 	if (QUEST_Graveyard_Caretaker == 2) goto L_Has_Letter;
 	if (QUEST_Graveyard_Caretaker == 3) goto L_Delivered_Letter;
-	if (QUEST_Graveyard_Caretaker == 4) goto L_Has_No_New_Letter;
-	if (QUEST_Graveyard_Caretaker == 5) goto L_Has_New_Letter;
+	if (QUEST_Graveyard_Caretaker == 4) goto L_Give_New_Letter;
+	if (QUEST_Graveyard_Caretaker == 5) goto L_Has_Letter;
 
 	mes "[Caretaker]";
 	mes "\"...Another adventurer comes to slay the already dead.\"";
@@ -82,14 +82,50 @@ L_Has_Letter:
 	close;
 
 L_Delivered_Letter:
-	// TODO: Thank player for delivering the initial letter
+	mes "[Caretaker]";
+	mes "\"Have you found my daughter?\"";
+	next;
+
+	menu
+		"Yes.", -;
+
+	mes "[Caretaker]";
+	mes "\"Thank you for delivering my letter.\"";
+	set QUEST_Graveyard_Caretaker, 4;
 	close;
 
-L_Has_No_New_Letter:
-	// TODO: Give player a new letter; add time limit
+L_Give_New_Letter:
+	mes "[Caretaker]";
+	mes "\"I have another letter, if you want to deliver it.\"";
+	next;
+
+	menu
+		"Sure.", L_Give_New_Letter_Real,
+		"I'm too busy right now.", -;
+
 	close;
 
-L_Has_New_Letter:
-	// TODO: The player has to deliver the current letter first
+L_Give_New_Letter_Real:
+	set QUEST_Graveyard_Caretaker, 5;
+	mes "You receive the letter and put it in a special place so it doesn't get lost among your inventory.";
+	next;
+
+	mes "[Caretaker]";
+	mes "\"Thank you.\"";
 	close;
+
+OnTimer3000:
+	monster "027-2.gat", 29, 21, "Caretaker's Wife", 1044, 1, "Caretaker::OnWifeDeath";
+	end;
+
+OnWifeDeath:
+	mapannounce "027-2.gat", "NO! YOU KILLED MY WIFE!", 0;
+	gmcommand strcharinfo(0) + " : @l I killed the caretaker's wife!";
+	gmcommand strcharinfo(0) + " : @ban +5mn " + strcharinfo(0);
+	setnpctimer 0;
+	end;
+
+OnInit:
+	initnpctimer;
+	end;
 }
