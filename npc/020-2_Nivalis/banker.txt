@@ -1,0 +1,13 @@
+//
+
+020-2.gat,71,59,0	script	Prsm	107,{
+	set @npcName$, "Tybalt";
+	callfunc "Banker";
+	close;
+}
+
+020-2.gat,69,59,0	script	Morgan	49,{
+	openstorage;
+	mes "Come again!";
+	close;
+}
