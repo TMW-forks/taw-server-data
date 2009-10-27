@@ -271,7 +271,19 @@
 //769,	GuyFawkesMask,			Guy Fawkes' Mask,		,	,	,	,	,	,	,	,	,	,	,	,	,	,	{},					{}										
 //770,	FairyHat,			Fairy Hat,			,	,	,	,	,	,	,	,	,	,	,	,	,	,	{},					{}										
 771,	Miniskirt,			Miniskirt,			5,	1000,	500,	10,	,	4,	,	-8,	0,	2,	1,	,	1,	0,	{},					{}										
-																																						
+772,	WispPowder,			Wisp Powder,			3,	700,	350,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}										
+773,	SpectrePowder,			Spectre Powder,			3,	700,	350,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}										
+774,	PoltergeistPowder,		Poltergeist Powder,		3,	700,	350,	60,	,	,	,	,	,	,	,	,	,	,	{},					{}										
+775,	Bone,				Bone,				3,	140,	70,	80,	,	,	,	,	,	,	,	,	,	,	{},					{}										
+776,	Skull,				Skull,				3,	900,	450,	110,	,	,	,	,	,	,	,	,	,	,	{},					{}										
+777,	RottenRags,			Rotten Rags,			3,	100,	50,	95,	,	,	,	,	,	,	,	,	,	,	{},					{}										
+778,	DiseasedHeart,			Diseased Heart,			3,	180,	90,	35,	,	,	,	,	,	,	,	,	,	,	{},					{}										
+779,	UndeadEar,			Undead Ear,			3,	30,	15,	15,	,	,	,	,	,	,	,	,	,	,	{},					{}										
+780,	UndeadEye,			Undead Eye,			3,	30,	15,	8,	,	,	,	,	,	,	,	,	,	,	{},					{}										
+//781,	WitchDoctorsMask,		Witch Doctor's Mask,		,	,	,	,	,	,	,	,	,	,	,	,	,	,	{},					{}										
+//782,	ForestArmor,			Forest Armor,			,	,	,	,	,	,	,	,	,	,	,	,	,	,	{},					{}										
+783,	ValentineDress,			Valentine Dress,		5,	100000,	50000,	25,	,	15,	,	3,	0,	2,	512,	,	0,	0,	{},					{}										
+
 1198,	JackOSoul,			Jack O Soul,			3,	100000,	1,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}										
 1199,	Arrow,				Arrow,				10,	3,	1,	1,	25,	0,	0,	,	0,	2,	32768,	,	,	,	{},					{}										
 1200,	Bow,				Bow,				4,	1000,	500,	200,	20,	,	5,	,	0,	2,	34,	1,	4,	11,	{},					{}										
