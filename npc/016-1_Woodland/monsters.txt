@@ -3,7 +3,7 @@
 //
 
 016-1.gat,0,0,0,0	monster	Mouboo		1028,5,0,0,Mob32::OnMouboo
-016-1.gat,0,0,0,0	monster	Scorpion	1003,15,0,0,Mob32::OnScorpion
+016-1.gat,0,0,0,0	monster	Duck		1048,15,0,0,Mob32::OnDuck
 
 016-1.gat,0,0,0,0	monster	Mauve		1029,3,0,0,Mob32::OnMauve
 016-1.gat,0,0,0,0	monster	Cobalt		1030,3,0,0,Mob32::OnCobalt
@@ -19,8 +19,8 @@ OnMouboo:
 	callfunc "MobPoints";
 	break;
 
-OnScorpion:
-	set @mobID, 1003;
+OnDuck:
+	set @mobID, 1048;
 	callfunc "MobPoints";
 	break;
 
