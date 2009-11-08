@@ -1,8 +1,1 @@
 // 004-2 Beach house mobs
-004-2.gat,0,0,0,0	monster	Zombie	1036,5,100000,30000,Mob004-2::On1036
-
-
-004-2.gat,0,0,0	script	Mob004-2	-1,{
-On1036:
-	end;
-}
