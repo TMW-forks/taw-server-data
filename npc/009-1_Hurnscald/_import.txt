@@ -7,5 +7,5 @@ npc: npc/009-1_Hurnscald/nodrop.txt
 npc: npc/009-1_Hurnscald/old_man.txt
 npc: npc/009-1_Hurnscald/old_woman.txt
 npc: npc/009-1_Hurnscald/sabine.txt
-npc: npc/009-1_Hurnscald/soul-menhir.txt
 npc: npc/009-1_Hurnscald/slicer.txt
+npc: npc/009-1_Hurnscald/soul-menhir.txt

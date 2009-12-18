@@ -9,12 +9,12 @@
 025-1.gat,73,61,106,83	monster	Flower	1014,34,20000,5000,Mob025-1::On1014
 025-1.gat,73,61,107,82	monster	Spiky Mushroom	1019,40,90000,500,Mob025-1::On1019
 025-1.gat,101,53,55,65	monster	Squirrel	1038,18,60000,9000,Mob025-1::On1038
-025-1.gat,26,61,15,85	monster	Duck		1048,12,100000,50000,Mob025-1::On1048
+025-1.gat,26,61,15,85	monster	Scorpion	1003,12,100000,50000,Mob025-1::On1003
 
 
 025-1.gat,0,0,0	script	Mob025-1	-1,{
-On1048:
-	set @mobID, 1048;
+On1003:
+	set @mobID, 1003;
 	callfunc "MobPoints";
 	break;
 
