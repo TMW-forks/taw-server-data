@@ -6,9 +6,6 @@
 027-5.gat,27,43,14,12	monster	ladyskelton	1044,5,900000,0,Mob027-5::On1044
 027-5.gat,84,34,13,13	monster	Skeleton	1043,3,900000,0,Mob027-5::On1043
 027-5.gat,85,35,14,13	monster	LadySkel	1044,4,900000,20000,Mob027-5::On1044
-027-5.gat,118,34,13,8	monster	poltergeist	1047,4,120000,40000,Mob027-5::On1047
-027-5.gat,118,35,12,8	monster	fireskull	1023,2,28000,25000,Mob027-5::On1023
-027-5.gat,118,35,12,9	monster	Poisonskull	1024,2,60000,20000,Mob027-5::On1024
 
 
 027-5.gat,0,0,0	script	Mob027-5	-1,{
@@ -29,11 +26,6 @@ On1043:
 
 On1044:
 	set @mobID, 1044;
-	callfunc "MobPoints";
-	break;
-
-On1047:
-	set @mobID, 1047;
 	callfunc "MobPoints";
 	break;
 

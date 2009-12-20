@@ -3,7 +3,6 @@
 027-1.gat,81,91,95,27	monster	Poltergeist	1047,4,900000,60000,Mob027-1::On1047
 027-1.gat,81,91,97,25	monster	Spectre	1042,4,900000,60000,Mob027-1::On1042
 027-1.gat,81,91,99,23	monster	Wisp	1040,4,900000,60000,Mob027-1::On1040
-027-1.gat,54,53,66,46	monster	FireSkull	1023,2,60000,20000,Mob027-1::On1023
 027-1.gat,54,53,66,46	monster	PoisonSkull	1024,1,60000,20000,Mob027-1::On1024
 027-1.gat,54,53,66,46	monster	Skeleton	1043,2,60000,8000,Mob027-1::On1043
 027-1.gat,54,53,66,46	monster	LadySkeleton	1044,2,60000,8000,Mob027-1::On1044
@@ -22,6 +21,7 @@
 027-1.gat,37,65,33,22	monster	Zombie	1036,3,140000,30000,Mob027-1::On1036
 027-1.gat,37,65,33,22	monster	Fallen	1045,3,120000,30000,Mob027-1::On1045
 027-1.gat,28,67,2,1	monster	Jack O	1022,1,265000,200000,Mob027-1::On1022
+027-1.gat,54,55,66,46	monster	FireSkull	1023,2,60000,20000,Mob027-1::On1023
 
 
 027-1.gat,0,0,0	script	Mob027-1	-1,{
