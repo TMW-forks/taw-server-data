@@ -19,6 +19,7 @@
 // subquest 2J: 10 spectre powder
 // subquest 2K: 10 skulls =)
 // Needs: Solution to unlock the Cryptmap (--> Podling)
+// 21.12.2009 Added missing if clauses
 
 
 
@@ -42,7 +43,7 @@
 	set @FETCH_AMOUNT_INITIAL, 50;
 	set @FETCH_LABEL_INITIAL$, "Bone";
 	set @FETCH_REWARD_GOLD_INITIAL, 50000;
-	set @FETCH_REWARD_EXP_INITIAL, 50000;
+	set @FETCH_REWARD_EXP_INITIAL, 500000;
 
 	set @Q_STATUS_HELP_AIRLIA, 1;
 	set @Q_STATUS_INITIAL_FETCH_REWARDED, 2;
@@ -62,28 +63,28 @@
 	set @FETCH_AMOUNT, 10;
 	set @FETCH_LABEL$, "DiseasedHeart";
 	set @FETCH_REWARD_GOLD, 60000;
-	set @FETCH_REWARD_EXP, 400000;
+	set @FETCH_REWARD_EXP, 800000;
 
 	// Subquest 2c: Fetch those undead drops (once)
 	// TODO: Set sane values below
 	set @FETCH_AMOUNT_2C, 20;
 	set @FETCH_LABEL_2C$, "UndeadEar";
 	set @FETCH_REWARD_GOLD_2C, 50000;
-	set @FETCH_REWARD_EXP_2C, 100000;
+	set @FETCH_REWARD_EXP_2C, 300000;
 
 	// Subquest 2d: Fetch those undead drops (once)
 	// TODO: Set sane values below
 	set @FETCH_AMOUNT_2D, 20;
 	set @FETCH_LABEL_2D$, "UndeadEye";
 	set @FETCH_REWARD_GOLD_2D, 50000;
-	set @FETCH_REWARD_EXP_2D, 100000;
+	set @FETCH_REWARD_EXP_2D, 300000;
 
 	// Subquest 2e: Fetch those undead drops (once)
 	// TODO: Set sane values below
 	set @FETCH_AMOUNT_2E, 10;
 	set @FETCH_LABEL_2E$, "RottenRags";
 	set @FETCH_REWARD_GOLD_2E, 50000;
-	set @FETCH_REWARD_EXP_2E, 50000;
+	set @FETCH_REWARD_EXP_2E, 30000;
 
 	// Subquest 2f: Fetch those undead drops (once)
 	// TODO: Set sane values below
@@ -96,8 +97,8 @@
 	// TODO: Set sane values below
 	set @FETCH_AMOUNT_2G, 20;
 	set @FETCH_LABEL_2G$, "CheapPlasticFangs";
-	set @FETCH_REWARD_GOLD_2G, 50000;
-	set @FETCH_REWARD_EXP_2G, 100000;
+	set @FETCH_REWARD_GOLD_2G, 200000;
+	set @FETCH_REWARD_EXP_2G, 300000;
 
 	// Subquest 2h: Fetch those undead drops (once)
 	// TODO: Set sane values below
@@ -124,11 +125,22 @@
 	// TODO: Set sane values below
 	set @FETCH_AMOUNT_2K, 10;
 	set @FETCH_LABEL_2K$, "Skulls";
-	set @FETCH_REWARD_GOLD_2K, 50000;
-	set @FETCH_REWARD_EXP_2K, 100000;
+	set @FETCH_REWARD_GOLD_2K, 150000;
+	set @FETCH_REWARD_EXP_2K, 300000;
 
 	if (QUEST_Airlia == @Q_STATUS_INITIAL_FETCH_REWARDED) goto L_Rewarded;
 	if (QUEST_Airlia == @Q_STATUS_HELP_AIRLIA) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2B_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2C_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2D_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2E_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2F_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2G_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2H_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2I_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2J_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2K_REWARDED) goto L_Fetch;
+
 	if (QUEST_Graveyard_Caretaker > @Q_STATUS_RECIEVED_FIRST_LETTER) goto L_Airlia_intro;
 
 L_Caretaker:
