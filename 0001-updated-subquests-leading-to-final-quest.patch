@@ -1,0 +1,340 @@
+From 4354d5c2130cc884d066047ffc403de900e5b91a Mon Sep 17 00:00:00 2001
+From: Delasia <delasiatmw@gmail.com>
+Date: Thu, 17 Dec 2009 10:51:33 -0500
+Subject: [PATCH] updated subquests leading to final quest
+
+---
+ npc/009-2_Hurnscald/airlia.txt |  284 +++++++++++++++++++++++++++++++++++++++-
+ 1 files changed, 279 insertions(+), 5 deletions(-)
+
+diff --git a/npc/009-2_Hurnscald/airlia.txt b/npc/009-2_Hurnscald/airlia.txt
+index bc1bd1f..fac9217 100644
+--- a/npc/009-2_Hurnscald/airlia.txt
++++ b/npc/009-2_Hurnscald/airlia.txt
+@@ -5,6 +5,22 @@
+ //   * Airlia quest = 2 unlocks options with Fighters of the Undead NPCs (in Cemetery), such as the 'Kill Sir Truk' quest
+ //   * Airlia quest = 2 unlocks other options, perhaps with future Warrior Guild prospects (this is long term) 
+ 
++// New Addons by Hawkmoon (captainhaggy@gmail.com)
++// 13.12.2009-15.12.2009 for server.thealternateworld.org
++// to make Kleopatras gameplay more interesting ;)
++//
++// subquest 2C: 20 undead ears
++// subquest 2D: 20 undead eyes
++// subquest 2E: 10 rotten rags
++// subquest 2F: 1 big piece of white clay
++// subquest 2G: 10 cheap plastic fangs
++// subquest 2H: 10 wisp power
++// subquest 2I: 10 poltergeist powder
++// subquest 2J: 10 spectre powder
++// subquest 2K: 10 skulls =)
++// Needs: Solution to unlock the Cryptmap (--> Podling)
++
++
+ 
+ 009-2.gat,123,71,0	script	Airlia	108,{
+ 	// Subquest 1a: Caretaker's daughter (initial, once)
+@@ -25,19 +41,91 @@
+ 	// TODO: Set sane values below
+ 	set @FETCH_AMOUNT_INITIAL, 50;
+ 	set @FETCH_LABEL_INITIAL$, "Bone";
+-	set @FETCH_REWARD_GOLD_INITIAL, 5000;
++	set @FETCH_REWARD_GOLD_INITIAL, 50000;
+ 	set @FETCH_REWARD_EXP_INITIAL, 50000;
+ 
+ 	set @Q_STATUS_HELP_AIRLIA, 1;
+ 	set @Q_STATUS_INITIAL_FETCH_REWARDED, 2;
+-
+-	// Subquest 2b: Fetch those undead drops (unlimited)
++	set @Q_STATUS_FETCH_2B_REWARDED, 3;
++	set @Q_STATUS_FETCH_2C_REWARDED, 4;
++	set @Q_STATUS_FETCH_2D_REWARDED, 5;
++	set @Q_STATUS_FETCH_2E_REWARDED, 6;
++	set @Q_STATUS_FETCH_2F_REWARDED, 7;
++	set @Q_STATUS_FETCH_2G_REWARDED, 8;
++	set @Q_STATUS_FETCH_2H_REWARDED, 9;
++	set @Q_STATUS_FETCH_2I_REWARDED, 10;
++	set @Q_STATUS_FETCH_2J_REWARDED, 11;
++	set @Q_STATUS_FETCH_2K_REWARDED, 12;
++
++	// Subquest 2b: Fetch those undead drops (once)
+ 	// TODO: Set sane values below
+ 	set @FETCH_AMOUNT, 10;
+ 	set @FETCH_LABEL$, "DiseasedHeart";
+-	set @FETCH_REWARD_GOLD, 6000;
+-	set @FETCH_REWARD_EXP, 40000;
++	set @FETCH_REWARD_GOLD, 60000;
++	set @FETCH_REWARD_EXP, 400000;
++
++	// Subquest 2c: Fetch those undead drops (once)
++	// TODO: Set sane values below
++	set @FETCH_AMOUNT_2C, 20;
++	set @FETCH_LABEL_2C$, "UndeadEar";
++	set @FETCH_REWARD_GOLD_2C, 50000;
++	set @FETCH_REWARD_EXP_2C, 100000;
++
++	// Subquest 2d: Fetch those undead drops (once)
++	// TODO: Set sane values below
++	set @FETCH_AMOUNT_2D, 20;
++	set @FETCH_LABEL_2D$, "UndeadEye";
++	set @FETCH_REWARD_GOLD_2D, 50000;
++	set @FETCH_REWARD_EXP_2D, 100000;
++
++	// Subquest 2e: Fetch those undead drops (once)
++	// TODO: Set sane values below
++	set @FETCH_AMOUNT_2E, 10;
++	set @FETCH_LABEL_2E$, "RottenRags";
++	set @FETCH_REWARD_GOLD_2E, 50000;
++	set @FETCH_REWARD_EXP_2E, 50000;
++
++	// Subquest 2f: Fetch those undead drops (once)
++	// TODO: Set sane values below
++	set @FETCH_AMOUNT_2F, 1;
++	set @FETCH_LABEL_2F$, "BigPieceOfWhiteClay";
++	set @FETCH_REWARD_GOLD_2F, 150000;
++	set @FETCH_REWARD_EXP_2F, 200000;
+ 
++	// Subquest 2g: Fetch those undead drops (once)
++	// TODO: Set sane values below
++	set @FETCH_AMOUNT_2G, 20;
++	set @FETCH_LABEL_2G$, "CheapPlasticFangs";
++	set @FETCH_REWARD_GOLD_2G, 50000;
++	set @FETCH_REWARD_EXP_2G, 100000;
++
++	// Subquest 2h: Fetch those undead drops (once)
++	// TODO: Set sane values below
++	set @FETCH_AMOUNT_2H, 10;
++	set @FETCH_LABEL_2H$, "WispPowder";
++	set @FETCH_REWARD_GOLD_2H, 250000;
++	set @FETCH_REWARD_EXP_2H, 250000;
++
++	// Subquest 2i: Fetch those undead drops (once)
++	// TODO: Set sane values below
++	set @FETCH_AMOUNT_2I, 10;
++	set @FETCH_LABEL_2I$, "PoltergeistPowder";
++	set @FETCH_REWARD_2I, 250000;
++	set @FETCH_REWARD_EXP_2I, 250000;
++
++	// Subquest 2j: Fetch those undead drops (once)
++	// TODO: Set sane values below
++	set @FETCH_AMOUNT_2J, 10;
++	set @FETCH_LABEL_2J$, "SpectrePowder";
++	set @FETCH_REWARD_GOLD_2J, 250000;
++	set @FETCH_REWARD_EXP_2J, 250000;
++
++	// Subquest 2k: Fetch those undead drops (once)
++	// TODO: Set sane values below
++	set @FETCH_AMOUNT_2K, 10;
++	set @FETCH_LABEL_2K$, "Skulls";
++	set @FETCH_REWARD_GOLD_2K, 50000;
++	set @FETCH_REWARD_EXP_2K, 100000;
+ 
+ 	if (QUEST_Airlia == @Q_STATUS_INITIAL_FETCH_REWARDED) goto L_Rewarded;
+ 	if (QUEST_Airlia == @Q_STATUS_HELP_AIRLIA) goto L_Fetch;
+@@ -177,6 +265,55 @@ L_Fetch:
+ 		menu
+ 			"You are welcome.", -,
+ 			"I have collected the " + @FETCH_AMOUNT + " [" + getitemname(@FETCH_LABEL$) + "]s.", L_Fetch_later_rewards;
++
++	if (QUEST_Airlia == @Q_STATUS_FETCH_2B_REWARDED)
++		menu
++			"You are welcome.", -,
++			"I have collected the " + @FETCH_AMOUNT_2C + " [" + getitemname(@FETCH_LABEL_2C$) + "]s.", L_Fetch_2C_reward;
++
++	if (QUEST_Airlia == @Q_STATUS_FETCH_2C_REWARDED)
++		menu
++			"You are welcome.", -,
++			"I have collected the " + @FETCH_AMOUNT_2D + " [" + getitemname(@FETCH_LABEL_2D$) + "]s.", L_Fetch_2D_reward;
++
++	if (QUEST_Airlia == @Q_STATUS_FETCH_2D_REWARDED)
++		menu
++			"You are welcome.", -,
++			"I have collected the " + @FETCH_AMOUNT_2E + " [" + getitemname(@FETCH_LABEL_2E$) + "]s.", L_Fetch_2E_reward;
++
++	if (QUEST_Airlia == @Q_STATUS_FETCH_2E_REWARDED)
++		menu
++			"You are welcome.", -,
++			"I have collected the " + @FETCH_AMOUNT_2F + " [" + getitemname(@FETCH_LABEL_2F$) + "]s.", L_Fetch_2F_reward;
++
++	if (QUEST_Airlia == @Q_STATUS_FETCH_2F_REWARDED)
++		menu
++			"You are welcome.", -,
++			"I have collected the " + @FETCH_AMOUNT_2G + " [" + getitemname(@FETCH_LABEL_2G$) + "]s.", L_Fetch_2G_reward;
++
++	if (QUEST_Airlia == @Q_STATUS_FETCH_2G_REWARDED)
++		menu
++			"You are welcome.", -,
++			"I have collected the " + @FETCH_AMOUNT_2H + " [" + getitemname(@FETCH_LABEL_2H$) + "]s.", L_Fetch_2H_reward;
++
++	if (QUEST_Airlia == @Q_STATUS_FETCH_2H_REWARDED)
++		menu
++			"You are welcome.", -,
++			"I have collected the " + @FETCH_AMOUNT_2I + " [" + getitemname(@FETCH_LABEL_2I$) + "]s.", L_Fetch_2I_reward;
++
++	if (QUEST_Airlia == @Q_STATUS_FETCH_2I_REWARDED)
++		menu
++			"You are welcome.", -,
++			"I have collected the " + @FETCH_AMOUNT_2J + " [" + getitemname(@FETCH_LABEL_2J$) + "]s.", L_Fetch_2J_reward;
++
++	if (QUEST_Airlia == @Q_STATUS_FETCH_2J_REWARDED)
++		menu
++			"You are welcome.", -,
++			"I have collected the " + @FETCH_AMOUNT_2K + " [" + getitemname(@FETCH_LABEL_2K$) + "]s.", L_Fetch_2K_reward;
++
++	if (QUEST_Airlia == @Q_STATUS_FETCH_2K_REWARDED)
++		//SaveFlag or GiveObject - that Char can from now on enter the Cryptmap;
++
+ 	close;
+ 
+ L_Fetch_initial_reward:
+@@ -212,6 +349,142 @@ L_Fetch_later_rewards:
+ 	delitem @FETCH_LABEL$, @FETCH_AMOUNT;
+ 	set zeny, zeny + @FETCH_REWARD_GOLD;
+ 	getexp @FETCH_REWARD_EXP, 0;
++	set QUEST_Airlia, @Q_STATUS_FETCH_2B_REWARDED;
++	close;
++
++L_Fetch_2C_reward:
++	if (countitem(@FETCH_LABEL_2C$) < @FETCH_AMOUNT_2C) goto L_Fetch_not_enough;
++
++	mes "[Airlia]";
++	mes "\"Wonderful work. You are a great warrior.\"";
++	if (@FETCH_REWARD_GOLD_2C > 0)
++		mes "[" + @FETCH_REWARD_GOLD_2C + " GP]";
++	if (@FETCH_REWARD_EXP_2C > 0)
++		mes "[" + @FETCH_REWARD_EXP_2C + " experience points]";
++	delitem @FETCH_LABEL_2C$, @FETCH_AMOUNT_2C;
++	set zeny, zeny + @FETCH_REWARD_GOLD_2C;
++	getexp @FETCH_REWARD_EXP_2C, 0;
++	set QUEST_Airlia, @Q_STATUS_FETCH_2C_REWARDED;
++	close;
++
++L_Fetch_2D_reward:
++	if (countitem(@FETCH_LABEL_2D$) < @FETCH_AMOUNT_2D) goto L_Fetch_not_enough;
++
++	mes "[Airlia]";
++	mes "\"Great job. Go on and do your best.\"";
++	if (@FETCH_REWARD_GOLD_2D > 0)
++		mes "[" + @FETCH_REWARD_GOLD_2D + " GP]";
++	if (@FETCH_REWARD_EXP_2D > 0)
++		mes "[" + @FETCH_REWARD_EXP_2D + " experience points]";
++	delitem @FETCH_LABEL_2D$, @FETCH_AMOUNT_2D;
++	set zeny, zeny + @FETCH_REWARD_GOLD_2D;
++	getexp @FETCH_REWARD_EXP_2D, 0;
++	set QUEST_Airlia, @Q_STATUS_FETCH_2D_REWARDED;
++	close;
++
++L_Fetch_2E_reward:
++	if (countitem(@FETCH_LABEL_2E$) < @FETCH_AMOUNT_2E) goto L_Fetch_not_enough;
++
++	mes "[Airlia]";
++	mes "\"Marvelous. Go on and get them.\"";
++	if (@FETCH_REWARD_GOLD_2E > 0)
++		mes "[" + @FETCH_REWARD_GOLD_2E + " GP]";
++	if (@FETCH_REWARD_EXP_2E > 0)
++		mes "[" + @FETCH_REWARD_EXP_2E + " experience points]";
++	delitem @FETCH_LABEL_2E$, @FETCH_AMOUNT_2E;
++	set zeny, zeny + @FETCH_REWARD_GOLD_2E;
++	getexp @FETCH_REWARD_EXP_2E, 0;
++	set QUEST_Airlia, @Q_STATUS_FETCH_2E_REWARDED;
++	close;
++
++L_Fetch_2F_reward:
++	if (countitem(@FETCH_LABEL_2F$) < @FETCH_AMOUNT_2F) goto L_Fetch_not_enough;
++
++	mes "[Airlia]";
++	mes "\"Marvelous. Go on and get them.\"";
++	if (@FETCH_REWARD_GOLD_2F > 0)
++		mes "[" + @FETCH_REWARD_GOLD_2F + " GP]";
++	if (@FETCH_REWARD_EXP_2F > 0)
++		mes "[" + @FETCH_REWARD_EXP_2F + " experience points]";
++	delitem @FETCH_LABEL_2F$, @FETCH_AMOUNT_2F;
++	set zeny, zeny + @FETCH_REWARD_GOLD_2F;
++	getexp @FETCH_REWARD_EXP_2F, 0;
++	set QUEST_Airlia, @Q_STATUS_FETCH_2F_REWARDED;
++	close;
++
++L_Fetch_2G_reward:
++	if (countitem(@FETCH_LABEL_2G$) < @FETCH_AMOUNT_2G) goto L_Fetch_not_enough;
++
++	mes "[Airlia]";
++	mes "\"Marvelous. Go on and get them.\"";
++	if (@FETCH_REWARD_GOLD_2G > 0)
++		mes "[" + @FETCH_REWARD_GOLD_2G + " GP]";
++	if (@FETCH_REWARD_EXP_2G > 0)
++		mes "[" + @FETCH_REWARD_EXP_2G + " experience points]";
++	delitem @FETCH_LABEL_2G$, @FETCH_AMOUNT_2G;
++	set zeny, zeny + @FETCH_REWARD_GOLD_2G;
++	getexp @FETCH_REWARD_EXP_2G, 0;
++	set QUEST_Airlia, @Q_STATUS_FETCH_2G_REWARDED;
++	close;
++
++L_Fetch_2H_reward:
++	if (countitem(@FETCH_LABEL_2H$) < @FETCH_AMOUNT_2H) goto L_Fetch_not_enough;
++
++	mes "[Airlia]";
++	mes "\"Marvelous. Go on and get them.\"";
++	if (@FETCH_REWARD_GOLD_2H > 0)
++		mes "[" + @FETCH_REWARD_GOLD_2H + " GP]";
++	if (@FETCH_REWARD_EXP_2H > 0)
++		mes "[" + @FETCH_REWARD_EXP_2H + " experience points]";
++	delitem @FETCH_LABEL_2H$, @FETCH_AMOUNT_2H;
++	set zeny, zeny + @FETCH_REWARD_GOLD_2H;
++	getexp @FETCH_REWARD_EXP_2H, 0;
++	set QUEST_Airlia, @Q_STATUS_FETCH_2H_REWARDED;
++	close;
++
++L_Fetch_2I_reward:
++	if (countitem(@FETCH_LABEL_2I$) < @FETCH_AMOUNT_2I) goto L_Fetch_not_enough;
++
++	mes "[Airlia]";
++	mes "\"Marvelous. Go on and get them.\"";
++	if (@FETCH_REWARD_GOLD_2I > 0)
++		mes "[" + @FETCH_REWARD_GOLD_2I + " GP]";
++	if (@FETCH_REWARD_EXP_2I > 0)
++		mes "[" + @FETCH_REWARD_EXP_2I + " experience points]";
++	delitem @FETCH_LABEL_2I$, @FETCH_AMOUNT_2I;
++	set zeny, zeny + @FETCH_REWARD_GOLD_2I;
++	getexp @FETCH_REWARD_EXP_2I, 0;
++	set QUEST_Airlia, @Q_STATUS_FETCH_2I_REWARDED;
++	close;
++
++L_Fetch_2J_reward:
++	if (countitem(@FETCH_LABEL_2J$) < @FETCH_AMOUNT_2J) goto L_Fetch_not_enough;
++
++	mes "[Airlia]";
++	mes "\"Marvelous. Go on and get them.\"";
++	if (@FETCH_REWARD_GOLD_2J > 0)
++		mes "[" + @FETCH_REWARD_GOLD_2J + " GP]";
++	if (@FETCH_REWARD_EXP_2J > 0)
++		mes "[" + @FETCH_REWARD_EXP_2J + " experience points]";
++	delitem @FETCH_LABEL_2J$, @FETCH_AMOUNT_2J;
++	set zeny, zeny + @FETCH_REWARD_GOLD_2J;
++	getexp @FETCH_REWARD_EXP_2J, 0;
++	set QUEST_Airlia, @Q_STATUS_FETCH_2J_REWARDED;
++	close;
++
++L_Fetch_2K_reward:
++	if (countitem(@FETCH_LABEL_2K$) < @FETCH_AMOUNT_2K) goto L_Fetch_not_enough;
++
++	mes "[Airlia]";
++	mes "\"Marvelous. Go on and get them.\"";
++	if (@FETCH_REWARD_GOLD_2K > 0)
++		mes "[" + @FETCH_REWARD_GOLD_2K + " GP]";
++	if (@FETCH_REWARD_EXP_2K > 0)
++		mes "[" + @FETCH_REWARD_EXP_2K + " experience points]";
++	delitem @FETCH_LABEL_2K$, @FETCH_AMOUNT_2K;
++	set zeny, zeny + @FETCH_REWARD_GOLD_2K;
++	getexp @FETCH_REWARD_EXP_2K, 0;
++	set QUEST_Airlia, @Q_STATUS_FETCH_2K_REWARDED;
+ 	close;
+ 
+ L_Fetch_not_enough:
+@@ -235,3 +508,4 @@ L_Rewarded:
+ 
+ 	close;
+ }
++
+-- 
+1.6.3.3
+
