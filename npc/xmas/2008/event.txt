@@ -1,6 +1,7 @@
 //
+// 24.12.2009 Hunted the eternal loop bug on Dasher, Hawkmoon
 
-020-1.gat,78,85,0	script	Santa	105,{
+001-1.gat,48,48,0	script	Santa	105,{
 	mes "[Santa Claus]";
 	mes "\"Ho! Ho! Ho!\"";
 	next;
@@ -136,11 +137,13 @@ L_FoundReinboo:
 	mes "we were playing games, any way I got rather tired of flying and ended up having to land in this area.";
 	mes "So I need to rest up for a while before I can make it back to Santa.\"";
 	next;
-	menu "Okay, I'll Santa that when I see him.";
+	menu "Okay, I'll Santa that when I see him.", -; // The ,- was missing
 	mes "[Dasher]";
 	mes "\"Thank you and Merry Christmas!\"";
 	set QUEST_xmas08_state, QUEST_xmas08_state | (1 << 1);
 	close;
+	mes "Happy Christmas!\""; //added this for security reasons
+	close;	
 	
 L_ChatReinboo:
 	set @TEMP,rand(2);
@@ -164,6 +167,8 @@ L_Chat2:
 	
 	mes "The Reinboo seems to ignore you";
 	close;
+
+// changed coordinates, Hawkmoon
 	
 L_FoundReinboo:
 	mes "[Dancer]";
