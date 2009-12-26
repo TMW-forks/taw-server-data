@@ -20,7 +20,7 @@
 // subquest 2K: 10 skulls =)
 // Needs: Solution to unlock the Cryptmap (--> Podling)
 // 21.12.2009 Added missing if clauses
-
+// 26.12.2009 Exchanged BigWhitePieceOfClay against DarkCrystal
 
 
 009-2.gat,123,71,0	script	Airlia	108,{
@@ -88,8 +88,8 @@
 
 	// Subquest 2f: Fetch those undead drops (once)
 	// TODO: Set sane values below
-	set @FETCH_AMOUNT_2F, 1;
-	set @FETCH_LABEL_2F$, "BigPieceOfWhiteClay";
+	set @FETCH_AMOUNT_2F, 100;
+	set @FETCH_LABEL_2F$, "DarkCrystal";
 	set @FETCH_REWARD_GOLD_2F, 150000;
 	set @FETCH_REWARD_EXP_2F, 200000;
 
