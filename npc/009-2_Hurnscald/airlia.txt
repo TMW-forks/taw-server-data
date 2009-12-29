@@ -12,8 +12,8 @@
 // subquest 2C: 20 undead ears
 // subquest 2D: 20 undead eyes
 // subquest 2E: 10 rotten rags
-// subquest 2F: 1 big piece of white clay
-// subquest 2G: 10 cheap plastic fangs
+// subquest 2F: 1 dark crystalls
+// subquest 2G: 20 Jack O Souls
 // subquest 2H: 10 wisp power
 // subquest 2I: 10 poltergeist powder
 // subquest 2J: 10 spectre powder
@@ -21,6 +21,8 @@
 // Needs: Solution to unlock the Cryptmap (--> Podling)
 // 21.12.2009 Added missing if clauses
 // 26.12.2009 Exchanged BigWhitePieceOfClay against DarkCrystal
+// 28.12.2009 Exchanged CheapPlasticFangs agains JackOSoul
+
 
 
 009-2.gat,123,71,0	script	Airlia	108,{
@@ -96,7 +98,7 @@
 	// Subquest 2g: Fetch those undead drops (once)
 	// TODO: Set sane values below
 	set @FETCH_AMOUNT_2G, 20;
-	set @FETCH_LABEL_2G$, "CheapPlasticFangs";
+	set @FETCH_LABEL_2G$, "JackOSoul";
 	set @FETCH_REWARD_GOLD_2G, 200000;
 	set @FETCH_REWARD_EXP_2G, 300000;
 
