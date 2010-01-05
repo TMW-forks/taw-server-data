@@ -95,7 +95,7 @@
 	// TODO: Set sane values below
 	set @FETCH_AMOUNT_2F, 100;
 	set @FETCH_LABEL_2F$, "DarkCrystal";
-	set @FETCH_REWARD_GOLD_2F, 150000;
+	set @FETCH_REWARD_GOLD_2F, 50000;
 	set @FETCH_REWARD_EXP_2F, 200000;
 
 	// Subquest 2g: Fetch those undead drops (once)
@@ -103,14 +103,14 @@
 	set @FETCH_AMOUNT_2G, 50;
 	set @FETCH_LABEL_2G$, "JackOSoul";
 	set @FETCH_REWARD_GOLD_2G, 500000;
-	set @FETCH_REWARD_EXP_2G, 2000000;
+	set @FETCH_REWARD_EXP_2G, 1000000;
 
 	// Subquest 2h: Fetch those undead drops (once)
 	// TODO: Set sane values below
 	set @FETCH_AMOUNT_2H, 10;
 	set @FETCH_LABEL_2H$, "WispPowder";
 	set @FETCH_REWARD_GOLD_2H, 250000;
-	set @FETCH_REWARD_EXP_2H, 250000;
+	set @FETCH_REWARD_EXP_2H,  250000;
 
 	// Subquest 2i: Fetch those undead drops (once)
 	// TODO: Set sane values below
