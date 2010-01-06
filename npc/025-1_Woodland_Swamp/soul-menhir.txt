@@ -2,8 +2,8 @@
 
 025-1.gat,30,64,0	script	Soul Menhir	144, {
 	set @map$, "025-1.gat";
-	setarray @Xs, 29, 30, 31, 29, 31, 29, 31;
-	setarray @Ys, 29, 29, 29, 30, 30, 31, 31;
+	setarray @Xs, 29, 30, 31, 29, 30, 31, 30;
+	setarray @Ys, 65, 66, 67, 65, 66, 67, 65;
 	set @x, 0;
 	set @y, 0;
 	callfunc "SoulMenhir";
