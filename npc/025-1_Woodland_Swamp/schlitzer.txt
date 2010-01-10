@@ -1,0 +1,58 @@
+// Assassin Quest
+// Hawkmoon and Delasia @ irc.freenode.net
+// 2009
+// This is a fun search and find quest - but still high level, because the hiding areas are not good for low level chars.
+
+
+025-1.gat,52,98,0	script	Schlitzer	126,{
+	if (state & (1 << 5)) goto L_ChatBros;
+	if (state & 1) goto L_FoundBros;
+	
+	mes "This guy can't see you for the bushes";
+	close;
+	
+L_FoundBros:
+	mes "[Schlitzer]";
+	mes "\"Hey, Dont sneak up on a Dude like that!";
+	mes "You could get hurt!\"";
+	next;
+	menu "Mekki sent me...", -;
+	mes "[Schlitzer]";
+	mes "\"Oh, so you've been talking to him, have ya?";
+	mes "";
+	mes "No don't say it, lemme guess.\"";
+	next;
+	mes "[Schlitzer]";
+	mes "\"Mekki has sent you to find the crew....he's got a job to do.";
+	mes "Is that about right?\"";
+	next;
+	menu "Yup, that's it!", -;
+	mes "[Schlitzer]";
+	mes "\"Kk.";
+	mes "";
+	mes "So yeah, just tell him you found me, and I'm on my way back.\"";
+	next;
+	menu "Okay, I will.", -;
+	mes "[Schlitzer]";
+	mes "\"Thanks, and next time, if you sneak up on me, I might not be so forgiving!";
+	mes "Now Git outta here!\"";
+	set state, state | (1 << 5);
+	getexp 10000, 0;
+	set zeny, zeny + 5000;
+	close;
+	
+L_ChatBros:
+	set @TEMP,rand(2);
+	if(@TEMP == 0) goto L_Chat1;
+	if(@TEMP == 1) goto L_Chat2;
+	
+L_Chat1:
+	mes "[Schlitzer]";
+	mes "\"This is a great place to relax as long as no one sneaks up on you.\"";
+	close;
+	
+L_Chat2:
+	mes "[Schlitzer]";
+	mes "\"I gotta get a hold of the others, its been a long time?\"";
+	close;
+}

@@ -1,0 +1,71 @@
+// Assassinen Quest
+// by captainhaggy@gmail.com (Hawkmoon @ irc.freenode.net)
+// 26.12.2009
+// This is a fun search and find quest - but still high level, because the hiding areas are not good for low level chars.
+
+027-5.gat,84,24,0	script	Padre Made	103,{
+	if (ABENTEUER_HawkmoonKiller_state & (1 << 7)) goto L_ChatBros;
+	if (ABENTEUER_HawkmoonKiller_state & 1) goto L_FoundBros;
+	
+	mes "The Padre seems to ignore you";
+	close;
+	
+L_FoundBros:
+	menu "Hi, Mekki sent me to find you.", -;
+	mes "[Padre Made]";
+	mes "\"Mekki? Tell Mekki I won't work for him anymore.\"";
+	next;
+	menu "Why?", -;
+	mes "[Padre Made]";
+	mes "\"I got enough of that fat bum. We have to pull him all around the globe and he gets all the praise.\"";
+	next;
+	mes "[Padre Made]";
+	mes "\"Do you know how heavy that guy is? He also pays bad and we always have to work on holidays.\"";
+	next;
+	menu "But Mekki needs you!", -;
+	mes "[Padre Made]";
+	mes "\"Really? What would he do to persuade me to keep working for him?\"";
+	next;
+	menu "How about a 5% raise?",-;
+	mes "[Padre Made]";
+	mes "\"I think someone with my work experience deserves more than that.\"";
+	next;
+	menu "Then a 10% raise?",-;
+	mes "[Padre Made]";
+	mes "\"Sounds better.";
+	mes "But I think I can find someone else in the killing industry who is willing to pay that.";
+	mes "I've heard the palace guards are hiring...\"";
+	next;
+	menu "How about a health plan?",-;
+	mes "[Padre Made]";
+	mes "\"Including dental care?\"";
+	next;
+	menu "Sure.",-;
+	mes "[Padre Made]";
+	mes "\"And full sickness pay?\"";
+	next;
+	menu "I am pretty sure he will agree to that.",-;
+	mes "[Padre Made]";
+	mes "\"OK, tell Mekki I will come back to work tomorrow.\"";
+	set ABENTEUER_HawkmoonKiller_state, ABENTEUER_HawkmoonKiller_state | (1 << 7);
+	getexp 200000, 0;
+	set zeny, zeny + 200000;
+//deactivated ->	getitem 755, 1; Assassin Shirt
+	close;
+	
+L_ChatBros:
+	set @TEMP,rand(2);
+	if(@TEMP == 0) goto L_Chat1;
+	if(@TEMP == 1) goto L_Chat2;
+	
+L_Chat1:
+	mes "[Padre Made]";
+	mes "\"Mekki had better pull through on this deal.\"";
+	close;
+	
+L_Chat2:
+	mes "[Padre Made]";
+	mes "\"I wonder if I could get more holiday as well.\"";
+	close;
+}
+

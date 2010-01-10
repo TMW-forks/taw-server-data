@@ -1,0 +1,56 @@
+// Assassinen Quest
+// Hawkmoon and Delasia @ irc.freenode.net
+// 2009
+// This is a fun search and find quest - but still high level, because the hiding areas are not good for low level chars.
+
+
+011-1.gat,37,29,0	script	Pranke	125,{
+	if (state & (1 << 3)) goto L_ChatBros;
+	if (state & 1) goto L_FoundBros;
+	
+	mes "This Pranke guy ignores you";
+	close;
+	
+L_FoundBros:
+	mes "[Pranke]";
+	mes "\"Who are you?\"";
+	next;
+	mes "[Pranke]";
+	mes "\"What do you want!!\"";
+	next;
+	menu "Mekki sent me to find you!", -;
+	mes "[Pranke]";
+	mes "\"Oh? Why would he send you!";
+	mes "You one of the new Bros? Wassup?\"";
+	next;
+	menu "What you doin here?", -;
+	mes "[Pranke]";
+	mes "\"Doin a job, on the side....shhhh don't tell Mekki.";
+	mes "But all is kewl,...";
+	mes "Mekki must have a job if he sent a messenger.\"";
+	next;
+	mes "Tell him I gotta clean up some loose ends, then I will be there.";
+	mes "But say nothing about the job....ok?";
+	menu "Okay, I'll tell him. And your secrets safe!", -;
+	mes "[Pranke]";
+	mes "\"Dude, you rock, Thanks!\"";
+	set state, state | (1 << 3);
+	getexp 10000, 0;
+	set zeny, zeny + 10000;
+	close;
+	
+L_ChatBros:
+	set @TEMP,rand(2);
+	if(@TEMP == 0) goto L_Chat1;
+	if(@TEMP == 1) goto L_Chat2;
+	
+L_Chat1:
+	mes "[Pranke]";
+	mes "\"I like da job, I get to travel.\"";
+	close;
+	
+L_Chat2:
+	mes "[Pranke]";
+	mes "\"*sighs* Another quick job done.\"";
+	close;
+}

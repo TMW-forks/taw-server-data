@@ -1,0 +1,43 @@
+// Assassinen Quest
+// by captainhaggy@gmail.com (Hawkmoon @ irc.freenode.net)
+// 26.12.2009
+// This is a fun search and find quest - but still high level, because the hiding areas are not good for low level chars.
+
+018-1.gat,149,42,0	script	Hammerhand	126,{
+	if (ABENTEUER_HawkmoonKiller_state & (1 << 1)) goto L_ChatBros;
+	if (ABENTEUER_HawkmoonKiller_state & 1) goto L_FoundBros;
+	
+	mes "The bros seems to ignore you";
+	close;
+	
+L_FoundBros:
+	mes "[Hammerhand]";
+	mes "\"Hiya, yo come from Mekki Messer.";
+	mes "";
+	mes "You don't look like one of us.\"";
+	next;
+	menu "Mekki asked me to find you.", -;
+	mes "[Hammerhand]";
+	mes "\"Kewl, in that case tell him that I'm right here, mkay?";
+	mes "\"So, here, take your little fingernail cleaner\"";
+	set ABENTEUER_HawkmoonKiller_state, ABENTEUER_HawkmoonKiller_state | (1 << 1);
+	getexp 200000, 0;241
+	set zeny, zeny + 200000;
+	//deactivated ->getitem 572, 1; Scimitar
+	close;
+
+L_ChatBros:
+	set @TEMP,rand(2);
+	if(@TEMP == 0) goto L_Chat1;
+	if(@TEMP == 1) goto L_Chat2;
+	
+L_Chat1:
+	mes "[Hammerhand]";
+	mes "\"Yo wanna know why I'm called Hammerhand?\"";
+	close;
+	
+L_Chat2:
+	mes "[Hammerhand]";
+	mes "\"Soon I gotta go to Mekki.\"";
+	close;
+}

@@ -1,0 +1,59 @@
+// Assassinen Quest
+// by captainhaggy@gmail.com (Hawkmoon @ irc.freenode.net)
+// 26.12.2009
+// This is a fun search and find quest - but still high level, because the hiding areas are not good for low level chars.
+
+
+025-1.gat,52,98,0	script	Schlitzer	126,{
+	if (ABENTEUER_HawkmoonKiller_state & (1 << 5)) goto L_ChatBros;
+	if (ABENTEUER_HawkmoonKiller_state & 1) goto L_FoundBros;
+	
+	mes "The Bros seems to ignore you";
+	close;
+	
+L_FoundBros:
+	mes "[Schlitzer]";
+	mes "\"Erm.. Hi!";
+	mes "Why do you look like Mekki?\"";
+	next;
+	menu "Probably because I'm a bros like you?", -;
+	mes "[Schlitzer]";
+	mes "\"Oh, so you've been talking to him, don't ya?";
+	mes "";
+	mes "No don't say it, lemme guess.\"";
+	next;
+	mes "[Schlitzer]";
+	mes "\"Mekki has sent you to find all of his Bros because he's got a job to do.";
+	mes "Is that about right?\"";
+	next;
+	menu "Yup, that's it!", -;
+	mes "[Schlitzer]";
+	mes "\"Kk.";
+	mes "";
+	mes "So yeah, just tell him that I'm here, I'll make my way back to him later.\"";
+	next;
+	menu "Okay, I will.", -;
+	mes "[Schlitzer]";
+	mes "\"Okay, thanks for contacting me.";
+	mes "Merry Christmas!\"";
+	set ABENTEUER_HawkmoonKiller_state, ABENTEUER_HawkmoonKiller_state | (1 << 5);
+	getexp 200000, 0;
+	set zeny, zeny + 200000;
+//deactivated ->	getitem 578, 1;  Sand Cutter
+close;
+	
+L_ChatBros:
+	set @TEMP,rand(2);
+	if(@TEMP == 0) goto L_Chat1;
+	if(@TEMP == 1) goto L_Chat2;
+	
+L_Chat1:
+	mes "[Schlitzer]";
+	mes "\"I'll tell you what, these grass tastes nice.\"";
+	close;
+	
+L_Chat2:
+	mes "[Schlitzer]";
+	mes "\"I wonder where the others are?\"";
+	close;
+}
