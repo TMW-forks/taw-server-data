@@ -1,0 +1,69 @@
+// Assassin Quest
+// Hawkmoon and Delasia @ irc.freenode.net
+// 2009
+// This is a fun search and find quest - but still high level, because the hiding areas are not good for low level chars.
+
+024-1.gat,33,55,0	script	Claas the Driller	126,{
+	if (state & (1 << 9)) goto L_ChatBros;
+	if (state & 1) goto L_FoundBros;
+	
+	mes "This guy is staring at the rock wall, completely ignoring you!";
+	close;
+
+L_FoundBros:
+	menu "Hello!", -;
+	mes "[Class the Driller]";
+	mes "\"I dont do autographs!\"";
+	next;
+	menu "No, that's not what I was going to say.", -;
+	mes "[Class the Driller]";
+	mes "\"Well then what do you want?";
+	mes "I am very busy you know.\"";
+	next;
+	menu "I'm helping Mekki find the crew.", -;
+	mes "[Class the Driller]";
+	mes "\"Congratulations you found me.";
+	mes "Anything else?\"";
+	next;
+	menu "Umm... Yea, Mekki has a job, should I tell him you're coming or not!", -;
+	mes "[Class the Driller]";
+	mes "\"What do you mean by that?\"";
+	next;
+	menu "Well you seem a bit preoccupied.", -;
+	mes "[Class the Driller]";
+	mes "\"My occupation requires me to be aware of every crack and crevice, I am just examining the options\"";
+	next;
+	mes "[Class the Driller]";
+	mes "\"Gotta stay on top of things.";
+	mes "";
+	mes "If I dont people get hurt...ya know what I mean.\"";
+	next;
+	mes "[Class the Driller]";
+	mes "\"Yeah, I am a comin";
+	mes "Tell Mekki I am mobile.\"";
+	next;
+	menu "Ok, will do.", -;
+	mes "[Class the Driller]";
+	mes "\"And Dude!!!";
+	mes "Tell him to pick up the phone next time.\"";
+	set state, state | (1 << 9);
+	getexp 10000, 0;
+	set zeny, zeny + 5000;
+	close;
+	
+L_ChatBros:
+	set @TEMP,rand(2);
+	if(@TEMP == 0) goto L_Chat1;
+	if(@TEMP == 1) goto L_Chat2;
+	
+L_Chat1:
+	mes "[Class the Driller]";
+	mes "\"You know if you punch a hole on the wrong side of that crack....";
+	mes "Well, lets just say it would be a bad scene\"";
+	close;
+	
+L_Chat2:
+	mes "[Class the Driller]";
+	mes "\"Can I have some space please?.\"";
+	close;
+}

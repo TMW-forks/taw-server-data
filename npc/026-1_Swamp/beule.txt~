@@ -1,0 +1,49 @@
+// Assassinen Quest
+// by captainhaggy@gmail.com (Hawkmoon @ irc.freenode.net)
+// 26.12.2009
+// This is a fun search and find quest - but still high level, because the hiding areas are not good for low level chars.
+
+026-1.gat,29,97,0	script	Beule	126,{
+	if (ABENTEUER_HawkmoonKiller_state & (1 << 6)) goto L_ChatBros;
+	if (ABENTEUER_HawkmoonKiller_state & 1) goto L_FoundBros;
+	
+	mes "The Bros seems to ignore you";
+	close;
+	
+L_FoundBros:
+	menu "Hi, Mekki sent me to find you.", -;
+	mes "[Beule]";
+	mes "\"Hi!";
+	mes "Mekki sent you to find me? Why what's happened?\"";
+	next;
+	menu "All of the Bros have gone missing!", -;
+	mes "[Beule]";
+	mes "\"Oh dear, I thought I was the only one who went off to explore.";
+	mes "";
+	mes "I thought it would be nice to explore the area around here.";
+	next;
+	menu "I'll tell Mekki you're here then, okay?", -;
+	mes "[Beule]";
+	mes "\"Yes, please do.";
+	mes "See ya, bros!\"";
+	set ABENTEUER_HawkmoonKiller_state, ABENTEUER_HawkmoonKiller_state | (1 << 6);
+	getexp 200000, 0;
+	set zeny, zeny + 200000;
+//deactivated	getitem 731, 1; Assassin Pants
+	close;
+	
+L_ChatBros:
+	set @TEMP,rand(2);
+	if(@TEMP == 0) goto L_Chat1;
+	if(@TEMP == 1) goto L_Chat2;
+	
+L_Chat1:
+	mes "[Beule]";
+	mes "\"*listens to Radiohead*\"";
+	close;
+	
+L_Chat2:
+	mes "[Beule]";
+	mes "\"I wonder what Mekki looks like without a beard.\"";
+	close;
+}

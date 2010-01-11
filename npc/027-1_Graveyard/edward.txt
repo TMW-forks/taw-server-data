@@ -1,0 +1,61 @@
+027-1.gat,97,63,0	script	Edward	120,{
+       if (EdwardQuest == 1) goto L_ThanksAgain;
+
+        mes "[Edward]";
+        mes "He...Hello, please stay there...you know that I am a vampire and I don't want to hurt you.";
+        next;
+        menu
+     
+             "Yes, I know.", L_Help,
+             "What, you're a v...v...vampire, ahhhh...", -;
+        close;
+
+L_Help:
+       
+        mes "[Edward]";
+        mes "Ah, you're here to help me, aren't you?";
+        next;
+        menu
+
+             "Help, what do you need exactly?", L_What,
+             "No", -;
+        close;
+
+L_What:
+
+        mes "[Edward]";
+        mes "I need 200 maggot slimes to brew a chemical blood, can you bring me them?"
+        next;
+        menu
+
+            "Here are your 200 maggot slimes!", L_Reward,
+            "What??? 200 maggot slimes, never...", -,
+            "I'll hunt some maggots for you.", -;
+        close;
+
+L_Reward:
+
+        if(countitem(505) <200) goto L_Not_Enough;
+        delitem "maggotslime", 200;
+        getitem 634, 1;
+        mes "[Edward]";
+        mes "Thank you for your help, here's your reward, it will protect you from the sun.";
+        set EdwardQuest, 1
+        close;
+
+L_ThanksAgain:
+
+        mes "[Edward]";
+        mes "Thanks again for your help.";
+        close;
+
+L_Not_Enough:
+
+        mes "[Edward]";
+        mes "I need more maggots to brew the blood";
+        mes "Please bring me more";
+        close;
+}
+            
+
+ 

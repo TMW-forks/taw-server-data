@@ -1,0 +1,23 @@
+009-2.gat,101,46,0	script	Bella	164,{
+        mes "[Bella]";
+        mes "Are you searching for Edward?";
+        next;
+        menu
+            "Yes", L_Yes,
+            "Who's Edward?", L_Who,
+            "No", -;
+        close;
+
+L_Yes:
+        mes "[Bella]";
+        mes "I guess he's at the graveyard, because there is always fog.";
+        close;
+
+L_Who:
+        mes "[Bella]";
+        mes "Oh, you don't know him. He's my boyfriend, he lives at the graveyard and....pssst, he's a vampire!";
+        close;
+
+}
+
+

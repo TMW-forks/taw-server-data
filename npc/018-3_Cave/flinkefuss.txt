@@ -1,0 +1,49 @@
+// Assassin Quest
+// Hawkmoon and Delaisa @ irc.freenode.net
+// 2009
+// This is a fun search and find quest - but still high level, because the hiding areas are not good for low level chars.
+
+
+018-3.gat,63,61,0	script	Flinkefuss	126,{
+	if (state & (1 << 2)) goto L_ChatBros;
+	if (state & 1) goto L_FoundBros;
+	
+	mes "This guy totally ignores your attempts to get his attention";
+	close;
+
+
+	
+L_FoundBros:
+	mes "[Flinkefuss]";
+	mes "\"Whatever you selling, I am not buying!.\"";
+	next;
+	menu "I've been sent by Mekki, he has a job for you.", -;
+	mes "[Flinkefuss]";
+	mes "\"Really!, its about time, I been waiting to hear from him.";
+	mes "\"If you see him before me....I'm on my way, just picking up my gear.\"";
+	next;
+	menu "Sure!", -;
+	mes "[Flinkefuss]";
+	mes "\"Great!";
+	mes "See ya!\"";
+	set state, state | (1 << 2);
+	getexp 10000, 0;
+	set zeny, zeny + 5000;
+	close;
+	
+L_ChatBros:
+	set @TEMP,rand(2);
+	if(@TEMP == 0) goto L_Chat1;
+	if(@TEMP == 1) goto L_Chat2;
+	
+L_Chat1:
+	mes "[Flinkefuss]";
+	mes "\"Lemme see, How long has it been.";
+	mes "Mekki better get something soon, this Dude is running out of patience.\"";
+	close;
+	
+L_Chat2:
+	mes "[Flinkefuss]";
+	mes "\"I miss the action, Im gonna get soft if we dont move soon.\"";
+	close;
+}

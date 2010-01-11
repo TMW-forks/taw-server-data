@@ -1,0 +1,51 @@
+// Assassin Quest
+// Hawkmoon and Delasia @ irc.freenode.net
+// 2009
+// This is a fun search and find quest - but still high level, because the hiding areas are not good for low level chars.
+
+010-2.gat,34,86,0	script	Iron Maiden	108,{
+	if (state & (1 << 4)) goto L_ChatBros;
+	if (state & 1) goto L_FoundBros;
+	
+	mes "The young lady seems to ignore you";
+	close;
+	
+L_FoundBros:
+	mes "[Iron Maiden]";
+	mes "\"Hello there, sweetheart! *blinks*.";
+	mes "What can I do for you?\"";
+	next;
+	menu "Mekki da Boss sent me to find the crew!", -;
+	mes "[Iron Maiden]";
+	mes "\"You have come a long way to find me!";
+	mes "Thats dedication!\"";
+	next;
+	mes "[Iron Maiden]";
+	mes "\"Hrmm, I guess Mekki must have something big planned.";
+	mes "If you see him before I do, tell him I am on my way...gotta clean up here first.\"";
+	next;
+	menu "Sure thing.", -;
+	mes "[Iron Maiden]";
+	mes "\"Thanks! <3";
+	mes "";
+	mes "I owe you one!\"";
+	set state, state | (1 << 4);
+	getexp 5000, 0;
+	set zeny, zeny + 5000;
+	close;
+	
+L_ChatBros:
+	set @TEMP,rand(2);
+	if(@TEMP == 0) goto L_Chat1;
+	if(@TEMP == 1) goto L_Chat2;
+	
+L_Chat1:
+	mes "[Iron Maiden]";
+	mes "\"Well then aren't you the polite person!\"";
+	close;
+	
+L_Chat2:
+	mes "[Iron Maiden]";
+	mes "\"I hope walking here didn't tire you out.\"";
+	close;
+}

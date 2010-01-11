@@ -1,0 +1,79 @@
+// Assassinen Quest
+// Hawkmoon and Delasia @ irc.freenode.net
+// 2009
+// This is a fun search and find quest - but still high level, because the hiding areas are not good for low level chars.
+
+027-1.gat,129,51,0	script	Knallschote	125,{
+	if (state & (1 << 8)) goto L_ChatBros;
+	
+	mes "[Knallschote]";
+	mes "\"HIC!...burp!....HIC!...\"";
+	next;
+	mes "Knallschote staggers and almost falls down, but catches himself in the last moment.";
+	next;
+	mes "[Knallschote]";
+	mes "\"Oh, hmmm, I think that last mug might have been to much.....HIC!\"";
+	
+	if (state & 1) goto L_FoundBros;
+	
+	close;
+	
+L_FoundBros:
+	next;
+	menu "Dude, Your Drunk!",-;
+	mes "[Knallschote]";
+	mes "\"HEHE, ya think, good thing I dont gotta work?\"";
+	next;
+	menu "You better sober up, Mekki sent for you",-;
+	mes "[Knallschote]";
+	mes "\"I... I was searching for M-Mekki aaaaall around.";
+	mes "...went to pub HIC! to warm myself HIC!\"";
+	next;
+	mes "[Knallschote]";
+	mes "\"The nice man gave me warm drink HIC!\"";
+	next;
+	mes "[Knallschote]";
+	mes "\"First mug tasted different... HIC! Second better... HIC! Third really good.... HIC\"";
+	next;
+	mes "[Knallschote]";
+	mes "\"After the fourth mug....W..Wait!...Mekki needs me?\"";
+	next;
+	mes "[Knallschote]";
+	mes "\"Oh, I dont feel so good.....and Mekki is gonna have my head.\"";
+	next;
+	mes "[Knallschote]";
+	mes "\"HIC!\"";
+	next;
+	menu "You need to sober up.",-;
+	mes "[Knallschote]";
+	mes "\"Seems so.\"";
+	next;
+	menu "I will tell Mekki your on your way!?",-;
+	mes "[Knallschote]";
+	mes "\"Th...Thank you.\"";
+	next;
+	mes "[Knallschote]";
+	mes "\"HIC! Don't tell him I'm Dr..Drun....Drunk...OK?!\"";
+	next;
+	mes "[Knallschote]";
+	mes "\"HIC!\"";
+	set state, state | (1 << 8);
+	getexp 10000, 0;
+	set zeny, zeny + 5000;
+	close;
+	
+L_ChatBros:
+	set @TEMP,rand(2);
+	if(@TEMP == 0) goto L_Chat1;
+	if(@TEMP == 1) goto L_Chat2;
+	
+L_Chat1:
+	mes "[Knallschote]";
+	mes "\"Ooooh, my head!\"";
+	close;
+	
+L_Chat2:
+	mes "[Knallschote]";
+	mes "\"Oh I gotta stop drinking. I can do it. I have a hundred times before.\"";
+	close;
+}

@@ -1,0 +1,70 @@
+// Assassinen Quest
+// Hawkmoon and Delasia @ irc.freenode.net
+// 2009
+// This is a fun search and find quest - but still high level, because the hiding areas are not good for low level chars.
+
+027-5.gat,84,24,0	script	The Padre	103,{
+	if (state & (1 << 7)) goto L_ChatBros;
+	if (state & 1) goto L_FoundBros;
+	
+	mes "The Padre seems to be praying";
+	close;
+	
+L_FoundBros:
+	menu "Hi, Mekki has sent for you.", -;
+	mes "[The Padre]";
+	mes "\"Mekki? Tell Mekki I won't work for him anymore.\"";
+	next;
+	menu "Why?", -;
+	mes "[The Padre]";
+	mes "\"I got enough of that fat bum. We have to pull him all around the globe and he gets all the praise.\"";
+	next;
+	mes "[The Padre]";
+	mes "\"Do you know how heavy that guy is? He also pays bad and we always have to work on holidays.\"";
+	next;
+	menu "But Mekki needs you!", -;
+	mes "[The Padre]";
+	mes "\"Yea right, he always says that and then nadda?\"";
+	next;
+	menu "How about an extra percent on your take?",-;
+	mes "[The Padre]";
+	mes "\"Oh, an extra percent, there's incentive....NOT!!.\"";
+	next;
+	menu "This is big, he is calling ALL crew",-;
+	mes "[The Padre]";
+	mes "\"Really, everyone?.";
+	mes "That means even less money, he has gotta be joking.";
+	mes "I could get more money working for the Palace Guard...\"";
+	next;
+	menu "Maybe, but think of the paperwork",-;
+	mes "[The Padre]";
+	mes "\"Yea, but they have Health and Dental benefits!\"";
+	next;
+	menu "Really?.",-;
+	mes "[The Padre]";
+	mes "\"And full sickness pay!\"";
+	next;
+	menu "Will Mekki understand?",-;
+	mes "[The Padre]";
+	mes "\"Oh well he does have a temper...hmmm...Tell him I'm on my way!\"";
+	set state, state | (1 << 7);
+	getexp 10000, 0;
+	set zeny, zeny + 5000;
+	close;
+	
+L_ChatBros:
+	set @TEMP,rand(2);
+	if(@TEMP == 0) goto L_Chat1;
+	if(@TEMP == 1) goto L_Chat2;
+	
+L_Chat1:
+	mes "[The Padre]";
+	mes "\"Mekki always makes the deals, and gets the money.\"";
+	close;
+	
+L_Chat2:
+	mes "[The Padre]";
+	mes "\"I need a steady job, this Assassin Gig sucks.\"";
+	close;
+}
+

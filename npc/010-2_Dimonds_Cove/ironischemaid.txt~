@@ -1,0 +1,52 @@
+// Assassinen Quest
+// by captainhaggy@gmail.com (Hawkmoon @ irc.freenode.net)
+// 26.12.2009
+// This is a fun search and find quest - but still high level, because the hiding areas are not good for low level chars.
+
+010-2.gat,34,86,0	script	Ironische Maid	108,{
+	if (ABENTEUER_HawkmoonKiller_state & (1 << 4)) goto L_ChatBros;
+	if (ABENTEUER_HawkmoonKiller_state & 1) goto L_FoundBros;
+	
+	mes "The Sis seems to ignore you";
+	close;
+	
+L_FoundBros:
+	mes "[Ironische Maid]";
+	mes "\"Hello there, sweetheart! *blinks*.";
+	mes "What can I do for you?\"";
+	next;
+	menu "I'm finding all the Bros and Sis for Mekki!", -;
+	mes "[Ironische Maid]";
+	mes "\"You came all the way here just to find me?";
+	mes "Wow, you must be such a nice person to do that!\"";
+	next;
+	mes "[Ironische Maid]";
+	mes "\"Hrmm, I guess Mekki must be a bit worried though.";
+	mes "Could you tell him where I am and that I'm okay?\"";
+	next;
+	menu "Sure thing.", -;
+	mes "[Ironische Maid]";
+	mes "\"Thank you very much. <3";
+	mes "";
+	mes "I see you, hun!\"";
+	set ABENTEUER_HawkmoonKiller_state, ABENTEUER_HawkmoonKiller_state | (1 << 4);
+	getexp 200000, 0;
+	set zeny, zeny + 200000;
+// deactivated ->﻿	getitem 577, 1; 
+	close;
+	
+L_ChatBros:
+	set @TEMP,rand(2);
+	if(@TEMP == 0) goto L_Chat1;
+	if(@TEMP == 1) goto L_Chat2;
+	
+L_Chat1:
+	mes "[Ironische Maid]";
+	mes "\"What a lovely person you are!\"";
+	close;
+	
+L_Chat2:
+	mes "[Ironische Maid]";
+	mes "\"I hope walking here didn't tire you out.\"";
+	close;
+}

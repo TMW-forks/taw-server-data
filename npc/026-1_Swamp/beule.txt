@@ -1,0 +1,48 @@
+// Assassinen Quest
+// Hawkmoon and Delasia @ irc.freenode.net
+// 2009
+// This is a fun search and find quest - but still high level, because the hiding areas are not good for low level chars.
+
+026-1.gat,29,97,0	script	Beule	126,{
+	if (state & (1 << 6)) goto L_ChatBros;
+	if (state & 1) goto L_FoundBros;
+	
+	mes "Completely ignoring your presence";
+	close;
+	
+L_FoundBros:
+	menu "Hi, Mekki sent me to find you.", -;
+	mes "[Beule]";
+	mes "\"Hey there!";
+	mes "Mekki sent you to find me? Why what's happened?\"";
+	next;
+	menu "Big job waiting, he needs the whole crew!", -;
+	mes "[Beule]";
+	mes "\"Oh? Must be a big one if he needs the whole crew.";
+	mes "";
+	mes "I will have to remember this place, looks like a good place to explore";
+	next;
+	menu "I'll tell Mekki you're on your way?", -;
+	mes "[Beule]";
+	mes "\"Yea, If I dont beat you there first.";
+	mes "See ya, bro, and thanks!\"";
+	set state, state | (1 << 6);
+	getexp 10000, 0;
+	set zeny, zeny + 5000;
+	close;
+	
+L_ChatBros:
+	set @TEMP,rand(2);
+	if(@TEMP == 0) goto L_Chat1;
+	if(@TEMP == 1) goto L_Chat2;
+	
+L_Chat1:
+	mes "[Beule]";
+	mes "\"*watches a nearby Hawk circling*\"";
+	close;
+	
+L_Chat2:
+	mes "[Beule]";
+	mes "\"Wonder how old Mekki is getting....he has been around forever.\"";
+	close;
+}

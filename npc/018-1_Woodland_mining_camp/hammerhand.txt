@@ -1,0 +1,45 @@
+// Assassin Quest
+// by Hawkmoon and Delasia @ irc.freenode.net
+// 2009
+// This is a fun search and find quest - but still high level, because the hiding areas are not good for low level chars.
+
+018-1.gat,149,42,0	script	Hammerhand	126,{
+	if (state & (1 << 1)) goto L_ChatBros;
+	if (state & 1) goto L_FoundBros;
+	
+	mes "The guy is huge...and he is ignoring you!";
+	close;
+	
+L_FoundBros:
+	mes "[Hammerhand]";
+	mes "\"Hey, who are you, what you want with the Hammer.";
+	mes "";
+	next;
+	menu "Mekki asked me to find you.", -;
+	mes "[Hammerhand]";
+	mes "You don't look like one of us.\"";
+	mes "But we has used slouches before to run messages";
+	next;
+	menu "Well, I may be a slouch, but I found you didnt I?", -;
+	mes "[Hammerhand]";	
+	mes "\"Heh, you is ok kid...Tell Mekki I am here, and ready to go!\"";
+	set state, state | (1 << 1);
+	getexp 10000, 0;
+	set zeny, zeny + 5000;
+	close;
+
+L_ChatBros:
+	set @TEMP,rand(2);
+	if(@TEMP == 0) goto L_Chat1;
+	if(@TEMP == 1) goto L_Chat2;
+	
+L_Chat1:
+	mes "[Hammerhand]";
+	mes "\"Wanna see why I'm called Hammerhand?\"";
+	close;
+	
+L_Chat2:
+	mes "[Hammerhand]";
+	mes "\"Mekki has a job, I can feel it.\"";
+	close;
+}
