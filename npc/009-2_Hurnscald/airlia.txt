@@ -22,22 +22,20 @@
 // 21.12.2009 Added missing if clauses
 // 26.12.2009 Exchanged BigWhitePieceOfClay against DarkCrystal
 // 28.12.2009 Exchanged CheapPlasticFangs agains JackOSoul
-// 30.12.2009 Added another quest, brought back CheapPlasticFangs with their real name: FakeFangs (not the typical standard)
-// 30.12.2009 BigWhitePieceOfClay's internal name is: ( ... no joke :( -- so I won't use it.
-// 30.12.2009 Player is now warped into the crypt, if he speaks again to Airlia, after the Quest ist solved!
+
 
 
 009-2.gat,123,71,0	script	Airlia	108,{
 	// Subquest 1a: Caretaker's daughter (initial, once)
-	set @LETTER_REWARD_GOLD_INITIAL, 10000;
-	set @LETTER_REWARD_EXP_INITIAL, 30000;
+	set @LETTER_REWARD_GOLD_INITIAL, 1000;
+	set @LETTER_REWARD_EXP_INITIAL, 2000;
 
 	set @Q_STATUS_RECIEVED_FIRST_LETTER, 2;
 	set @Q_STATUS_DELIVERED_FIRST_LETTER, 3;
 
 	// Subquest 1b: Continued delivery of letters (unlimited)
-	set @LETTER_REWARD_GOLD, 5000;
-	set @LETTER_REWARD_EXP, 20000;
+	set @LETTER_REWARD_GOLD, 42;
+	set @LETTER_REWARD_EXP, 500;
 
 	set @Q_STATUS_HAS_NO_NEW_LETTER, 4;
 	set @Q_STATUS_HAS_NEW_LETTER, 5;
@@ -61,7 +59,6 @@
 	set @Q_STATUS_FETCH_2I_REWARDED, 10;
 	set @Q_STATUS_FETCH_2J_REWARDED, 11;
 	set @Q_STATUS_FETCH_2K_REWARDED, 12;
-	set @Q_STATUS_FETCH_2L_REWARDED, 13;
 
 	// Subquest 2b: Fetch those undead drops (once)
 	// TODO: Set sane values below
@@ -100,10 +97,10 @@
 
 	// Subquest 2g: Fetch those undead drops (once)
 	// TODO: Set sane values below
-	set @FETCH_AMOUNT_2G, 50;
+	set @FETCH_AMOUNT_2G, 20;
 	set @FETCH_LABEL_2G$, "JackOSoul";
-	set @FETCH_REWARD_GOLD_2G, 500000;
-	set @FETCH_REWARD_EXP_2G, 2000000;
+	set @FETCH_REWARD_GOLD_2G, 200000;
+	set @FETCH_REWARD_EXP_2G, 300000;
 
 	// Subquest 2h: Fetch those undead drops (once)
 	// TODO: Set sane values below
@@ -129,21 +126,30 @@
 	// Subquest 2k: Fetch those undead drops (once)
 	// TODO: Set sane values below
 	set @FETCH_AMOUNT_2K, 10;
-	set @FETCH_LABEL_2K$, "Skull";  // wrote "Skulls" instead of "Skull" - damned me
+	set @FETCH_LABEL_2K$, "Skulls";
 	set @FETCH_REWARD_GOLD_2K, 150000;
 	set @FETCH_REWARD_EXP_2K, 300000;
-	
-	// Subquest 2l: Fetch those undead drops (once)
-	// TODO: Set sane values below
-	set @FETCH_AMOUNT_2L, 10;
-	set @FETCH_LABEL_2L$, "FakeFangs";
-	set @FETCH_REWARD_GOLD_2L, 1000000;
-	set @FETCH_REWARD_EXP_2L, 1000000;
-	
 
-	if (QUEST_Airlia >= @Q_STATUS_FETCH_2B_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia >= @Q_STATUS_FETCH_2K_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2J_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2I_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2H_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2G_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2F_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2E_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2D_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2C_REWARDED) goto L_Fetch;
+	if (QUEST_Airlia == @Q_STATUS_FETCH_2B_REWARDED) goto L_Fetch;
 	if (QUEST_Airlia == @Q_STATUS_INITIAL_FETCH_REWARDED) goto L_Rewarded;
 	if (QUEST_Airlia == @Q_STATUS_HELP_AIRLIA) goto L_Fetch;
+
+
+
+
+
+
+
+
 
 
 
@@ -274,15 +280,8 @@ L_Fetch:
 	mes "\"Thank you for helping my father.\"";
 	next;
 
-	if (QUEST_Airlia >= @Q_STATUS_FETCH_2L_REWARDED)
-		// End of the quest was already, if you speak again to her then ....
-		// ... player is warped into the crypt ;)
-		warp "027-5", 39, 35;
-
-	if (QUEST_Airlia == @Q_STATUS_FETCH_2K_REWARDED)
-		menu
-			"You are welcome.", -,
-			"I have collected the " + @FETCH_AMOUNT_2L + " [" + getitemname(@FETCH_LABEL_2L$) + "]s.", L_Fetch_2L_reward;
+	if (QUEST_Airlia >= @Q_STATUS_FETCH_2K_REWARDED)
+		//SaveFlag or GiveObject - that Char can from now on enter the Cryptmap;
 
 	if (QUEST_Airlia == @Q_STATUS_FETCH_2J_REWARDED)
 		menu
@@ -510,23 +509,6 @@ L_Fetch_2K_reward:
 	set zeny, zeny + @FETCH_REWARD_GOLD_2K;
 	getexp @FETCH_REWARD_EXP_2K, 0;
 	set QUEST_Airlia, @Q_STATUS_FETCH_2K_REWARDED;
-	close;
-
-L_Fetch_2L_reward:
-	if (countitem(@FETCH_LABEL_2L$) < @FETCH_AMOUNT_2L) goto L_Fetch_not_enough;
-
-	mes "[Airlia]";
-	mes "\"Ah! These are the last items!\"";
-	if (@FETCH_REWARD_GOLD_2L > 0)
-		mes "[" + @FETCH_REWARD_GOLD_2L + " GP]";
-	if (@FETCH_REWARD_EXP_2L > 0)
-		mes "[" + @FETCH_REWARD_EXP_2L + " experience points]";
-	delitem @FETCH_LABEL_2L$, @FETCH_AMOUNT_2L;
-	set zeny, zeny + @FETCH_REWARD_GOLD_2L;
-	getexp @FETCH_REWARD_EXP_2L, 0;
-	getitem 1228, 1; // Silver Four-Leaf-Amulett
-	mes "\"Your are now part of the FoU! Take the Silver Four-Leaf-Amulett as our Symbol!\"";
-	set QUEST_Airlia, @Q_STATUS_FETCH_2L_REWARDED;
 	close;
 
 L_Fetch_not_enough:
