@@ -1,5 +1,0 @@
-// 016-1 Woodland warps
-
-016-1.gat,56,20	warp	ToWoodland	1,-1,010-1.gat,56,103
-016-1.gat,20,53	warp	toSwamp		-1,1,025-1.gat,129,58
-016-1.gat,84,53	warp	entry_016-2	-1,-1,016-2.gat,13,20
