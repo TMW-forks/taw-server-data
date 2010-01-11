@@ -1,7 +1,7 @@
 // 027-5 Woodland mining camp warps
 
-027-5.gat,79,25	warp	Exit	0,-1,027-5.gat,22,25
+027-5.gat,79,26	warp	Exit	0,-1,027-5.gat,22,25
 027-5.gat,85,49	warp	outsidexit	4,-1,027-1.gat,28,68
-027-5.gat,90,47	warp	Exitup	0,-1,027-5.gat,125,38
-027-5.gat,124,39	warp	Exitdown	-1,-1,027-5.gat,90,46
 027-5.gat,22,24	warp	exitup	0,-1,027-5.gat,79,24
+027-5.gat,124,41	warp	exitdown	1,-1,027-5.gat,90,45
+027-5.gat,90,48	warp	exitup	1,-1,027-5.gat,124,38
