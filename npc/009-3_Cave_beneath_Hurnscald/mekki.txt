@@ -49,11 +49,6 @@ L_Complete:
 	mes "[100 000 gp!]";
 	getexp 100000, 0;
 	set zeny, zeny + 100000;
-	getitem 573,1;
-	getitem 574,1;
-	getitem 576,1;
-	getitem 577,1;
-	getitem 578,1;
 	getitem 731,1;
 	getitem 755,1;
 	getitem 757,1;
