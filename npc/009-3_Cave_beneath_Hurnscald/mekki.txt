@@ -85,7 +85,7 @@ L_Young:
 L_StartYes:
 	set state, state | 1;
 	mes "[Mekki Da Boss]";
-	mes "\"I need you to find da Boys...Tell 'em I need 'em, we have a job!";
+	mes "\"I need you to find da Boys...Tell 'em I need all NINE of 'em, we have a job!";
 	mes "Thanks man, I owe you.\"";
 	next;
 	mes "Mekki gives a HIGH 5.";
