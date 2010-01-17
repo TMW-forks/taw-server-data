@@ -79,7 +79,7 @@ L_Start:
 	close;
 
 L_Young:
-	mes "\"?\"";
+	mes "\"You is too young to be here...come back when you is older?\"";
 	close;
 
 L_StartYes:
