@@ -2,7 +2,9 @@
 
 009-1.gat,85,51,0	script	Old Man	159,{
 	mes "[Old Man]";
-	mes "\"Don't let those monsters get to you.\"";
+	mes "\"HEV HET MY??\"";
+	next;
+	mes "\"Oh I mean.. Er.. Hi there traveller.\"";
 	next;
 	if (Inspector == 1) goto L_NohMask_Ask;
 	if (Inspector == 6) goto L_NohMask_Accuse;
