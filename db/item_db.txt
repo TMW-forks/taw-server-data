@@ -466,4 +466,11 @@
 2176,	BlackMiniskirt,			Black Miniskirt,		5,	1000,	500,	8,	,	4,	,	-8,	0,	2,	1,	,	1,	0,	{},					{}										
 2177,	OrangeMiniskirt,		Orange Miniskirt,		5,	1000,	500,	8,	,	4,	,	-8,	0,	2,	1,	,	1,	0,	{},					{}										
 2178,	PurpleMiniskirt,		Purple Miniskirt,		5,	1000,	500,	8,	,	4,	,	-8,	0,	2,	1,	,	1,	0,	{},					{}										
-2179,	DarkGreenMiniskirt,		Dark Green Miniskirt,		5,	1000,	500,	8,	,	4,	,	-8,	0,	2,	1,	,	1,	0,	{},					{}										
+2179,	DarkGreenMiniskirt,		Dark Green Miniskirt,		5,	1000,	500,	8,	,	4,	,	-8,	0,	2,	1,	,	1,	0,	{},					{}
+
+5001,	MauveSeed,			Mauve Seed,			3,	1000,	50,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}										
+5002,	CobaltSeed,			Cobalt Seed,			3,	1000,	50,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}										
+5003,	GambogeSeed,			Gamboge Seed,			3,	1000,	50,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}										
+5004,	AlizarinSeed,			Alizarin Seed,			3,	1000,	50,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
+5005,	Brokenarmor,			Broken Armor,			3,	3000,	1400,	100,	,	,	,	,	,	,	,	,	,	,	{},					{}												
+	

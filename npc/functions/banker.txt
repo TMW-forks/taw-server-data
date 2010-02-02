@@ -85,6 +85,7 @@ L_Dep_1kk:
 L_Dep_All:
 	if (zeny<1) goto L_NoMoney;
 	set @Amount, zeny;
+	goto L_Dep_Continue;
 	
 L_Dep_Continue:
 	if (zeny < @Amount) goto L_NoMoney;

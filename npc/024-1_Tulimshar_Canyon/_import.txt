@@ -6,3 +6,4 @@ npc: npc/024-1_Tulimshar_Canyon/claasdriller.txt
 npc: npc/024-1_Tulimshar_Canyon/eomie.txt
 npc: npc/024-1_Tulimshar_Canyon/tinris.txt
 npc: npc/024-1_Tulimshar_Canyon/tondar.txt
+npc: npc/024-1_Tulimshar_Canyon/ancients-ring.txt
