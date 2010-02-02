@@ -1,0 +1,4 @@
+map: 028-2.gat
+npc: npc/028-2_Hitomb_Cave/_mobs.txt
+npc: npc/028-2_Hitomb_Cave/_warps.txt
+npc: npc/028-2_Hitomb_Cave/monsters.txt

@@ -1,0 +1,4 @@
+// 028-1 HiTomb warps
+028-1.gat,49,55	warp	PathDown	2,-1,029-1.gat,50,55
+028-1.gat,46,46	warp	ToCave	-1,0,028-2.gat,34,43
+

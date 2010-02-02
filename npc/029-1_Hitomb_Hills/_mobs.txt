@@ -1,0 +1,98 @@
+// 029-1 HiTomb hills mobs
+
+029-1.gat,26,49,11,21	monster	Scorpion	1009,5,0,40000,Mob029-1::On1009
+029-1.gat,39,60,11,7	monster	Snakes	1010,4,0,50000,Mob029-1::On1010
+029-1.gat,60,30,8,5	monster	Red	1004,2,0,10000,Mob029-1::On1004
+029-1.gat,43,4,17,4	monster	Spectre	1042,2,0,50000,Mob029-1::On1042
+029-1.gat,37,13,10,8	monster	BloodyMaggot	1999,1,0,20000,Mob029-1::On1999
+029-1.gat,39,35,4,3	monster	Scorpion	1009,3,0,1999,Mob029-1::On1009
+029-1.gat,26,49,9,19	monster	Snakes	1010,4,0,40000,Mob029-1::On1010
+029-1.gat,70,57,20,18	monster	Snakes	1010,5,0,100000,Mob029-1::On1010
+029-1.gat,85,63,36,11	monster	Scorpions	1009,7,0,90000,Mob029-1::On1009
+029-1.gat,91,40,20,31	monster	Magots	1002,35,0,100000,Mob029-1::On1002
+//029-1.gat,102,49,12,7	monster	Grasshere	1034,1,0,250,Mob029-1::On1034
+029-1.gat,96,28,10,14	monster	GiantMaggot	1006,3,0,30000,Mob029-1::On1006
+029-1.gat,92,10,14,8	monster	Fallens	1045,3,0,60000,Mob029-1::On1045
+029-1.gat,67,9,4,4	monster	Zombie	1036,1,0,19990,Mob029-1::On1036
+029-1.gat,11,18,13,7	monster	GrassSnake	1034,2,0,20000,Mob029-1::On1034
+//029-1.gat,18,15,7,5	monster	Snail	1041,2,0,30000,Mob029-1::On1041
+029-1.gat,41,8,7,6	monster	Poltergeist	1047,2,0,30000,Mob029-1::On1047
+029-1.gat,16,5,11,7	monster	Wisp	1040,1,0,19990,Mob029-1::On1040
+029-1.gat,44,22,7,6	monster	Wisp	1040,2,0,19990,Mob029-1::On1040
+029-1.gat,30,8,26,16	monster	Bat	1017,9,0,2000,Mob029-1::On1017
+029-1.gat,48,5,10,6	monster	Wisp	1040,1,0,60000,Mob029-1::On1040
+029-1.gat,11,40,7,6	monster	BloodyMaggot	1999,3,0,30000,Mob029-1::On1999
+
+029-1.gat,0,0,0	script	Mob029-1	-1,{
+On1002:
+	set @mobID, 1002;
+	callfunc "MobPoints";
+	break;
+
+On1004:
+	set @mobID, 1004;
+	callfunc "MobPoints";
+	break;
+
+On1006:
+	set @mobID, 1006;
+	callfunc "MobPoints";
+	break;
+
+On1009:
+	set @mobID, 1009;
+	callfunc "MobPoints";
+	break;
+
+On1010:
+	set @mobID, 1010;
+	callfunc "MobPoints";
+	break;
+
+On1017:
+	set @mobID, 1017;
+	callfunc "MobPoints";
+	break;
+
+On1034:
+	set @mobID, 1034;
+	callfunc "MobPoints";
+	break;
+
+On1036:
+	set @mobID, 1036;
+	callfunc "MobPoints";
+	break;
+
+On1040:
+	set @mobID, 1040;
+	callfunc "MobPoints";
+	break;
+
+On1041:
+	set @mobID, 1041;
+	callfunc "MobPoints";
+	break;
+
+On1042:
+	set @mobID, 1042;
+	callfunc "MobPoints";
+	break;
+
+On1045:
+	set @mobID, 1045;
+	callfunc "MobPoints";
+	break;
+
+On1047:
+	set @mobID, 1047;
+	callfunc "MobPoints";
+	break;
+
+On1999:
+	set @mobID, 1999;
+	callfunc "MobPoints";
+	break;
+
+	end;
+}

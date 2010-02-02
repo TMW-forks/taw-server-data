@@ -1,0 +1,61 @@
+029-1.gat,34,22,0	script	Nerir	187, {
+if ( ancients_quest == 7 ) goto A_again;
+if ( ancients_quest == 6 ) goto A_again;
+if ( ancients_quest == 5 ) goto A_again;
+if ( ancients_quest == 4 ) goto A_warpme;
+if ( ancients_quest == 3 ) goto A_warpme2;
+	  mes "[Nerir]"; 
+	mes "Sssh, I'm trying to concentrate!";
+close;
+
+A_again:
+	  mes "[Nerir]"; 
+	mes "What now?";
+	menu
+		"Uhm... Could you warp me one more time, please?", -,
+		"Nothing, sorry.", L_end;
+
+
+	  mes "[Nerir]"; 
+	mes "...";
+	next;
+	warp "029-3", 93, 91;	
+	close;
+
+A_warpme2:
+	  mes "[Nerir]"; 
+	mes "What do you want?";
+	menu
+		"Could you warp me in Hitomb Caves?", -;
+
+	  mes "[Nerir]"; 
+	mes "Ok.  Bring me 10 Yellow roses. I like roses.";
+	set ancients_quest, 4;
+	close;
+	
+A_warpme:
+	  mes "[Nerir]"; 
+	mes "Do you have roses?";
+	menu
+		"Yes", -,
+		"No", L_end;
+
+	if ( countitem(665) < 20 ) goto A_noroses;
+	delitem "YellowRose",  20;
+
+	  mes "[Nerir]"; 
+	mes "Ok";
+
+	set ancients_quest, 5;
+	warp "029-3", 93, 91;
+	close;
+
+A_noroses:
+	  mes "[Nerir]"; 
+	mes "Are you insane? Where are the roses?";
+	close;
+
+L_end:
+	close;
+
+}

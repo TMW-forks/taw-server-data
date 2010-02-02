@@ -1,0 +1,7 @@
+// 012-3 Cave mobs
+
+
+
+028-2.gat,0,0,0	script	Mob028-2	-1,{
+	end;
+}

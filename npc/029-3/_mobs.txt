@@ -1,0 +1,20 @@
+// 029-3 mobs
+
+029-3.gat,16,89,1,1	monster	Jack.O	1045,1,0,10000,Mob029-3::On1045
+029-3.gat,71,103,24,12	monster	Bloody Maggots	1999,5,0,20000,Mob029-3::On1999
+
+
+029-3.gat,0,0,0	script	Mob029-3	-1,{
+On1045:
+	if (ancients_quest < 7 && ancients_quest > 1) set ancients_quest, 7;
+	set @mobID, 1045;
+	callfunc "MobPoints";
+	break;
+
+On1999: 
+	set @mobID, 1999;
+	callfunc "MobPoints";
+	break;
+
+	end;
+}

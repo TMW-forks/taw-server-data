@@ -1,0 +1,4 @@
+map: 029-1.gat
+npc: npc/029-1_Hitomb_Hills/_mobs.txt
+npc: npc/029-1_Hitomb_Hills/_warps.txt
+npc: npc/029-1_Hitomb_Hills/nerir.txt

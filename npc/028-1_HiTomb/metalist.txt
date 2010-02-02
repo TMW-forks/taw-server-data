@@ -1,0 +1,6 @@
+028-1.gat,88,42,0	script	Metalman	189, {
+	  mes "[Metalman]";
+	mes "Metaaaal....";
+	close;
+	
+}

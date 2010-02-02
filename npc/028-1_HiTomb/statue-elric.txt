@@ -1,0 +1,55 @@
+//This is the statue of Elric, working as Soul Menhir
+
+028-1.gat,35,49,0	script	The statue of Elric	191, {
+	set @map$, "028-1.gat";
+	setarray @Xs, 35, 36, 36, 36, 34, 37, 34;
+	setarray @Ys, 50, 49, 50, 48, 49, 49, 50;
+	set @x, 0;
+	set @y, 0;
+
+	mes "[The statue of Elric]";
+	  mes "(You se a great statue surounded by mystical aura. You feel mysteriously attracted to it. Something tells you to touch it. What do you do?)";
+	next;
+
+	menu
+		"Touch it", -,
+		"Leave it alone", L_Return;
+
+	if (Menhir_Activated == 1) goto L_Shortversion;
+
+	mes "[The statue of Elric]";
+	mes "(You touch the statue. Somehow it feels warm and cold at the same time.)";
+	next;
+
+	mes "[The statue of Elric]";
+	mes "(Suddenly a strange sensation flows through you. It feels like your soul leaves your body and becomes one with the stone.)";
+	next;
+
+	mes "[The statue of Elric]";
+	mes "(As suddenly as the feeling started it stops. The strange attraction is away from one moment to the next and the statue feels like just an ordinary stone.)";
+	next;
+
+	set Menhir_Activated, 1;
+	goto L_Save;
+
+L_Shortversion:
+	mes "[The statue of Elric]";	
+	mes "(A strange sensation flows through you. It feels like your soul leaves your body and becomes one with the statue. As suddenly as the feeling started it stops.)";
+	next;
+
+L_Save:
+	if (@x == 0 && @y == 0) goto L_FindPoint;
+
+L_Do_Save:
+	savepoint @map$, @x, @y;
+	goto L_Return;
+
+L_FindPoint:
+	set @n, rand(getarraysize(@Xs));
+	set @x, @Xs[@n];
+	set @y, @Ys[@n];
+	goto L_Do_Save;
+
+L_Return:
+	close;
+}
