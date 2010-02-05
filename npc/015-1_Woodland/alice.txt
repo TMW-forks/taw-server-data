@@ -1,7 +1,12 @@
 // A herb collector giving the players some hints about finding and brewing
 // herbs.
 
-015-1.gat,52,53,0	script	Alice	106, {
+015-1.gat,52,53,0	script	Alice	106,{
+	
+	if (Valen2kx == 31) goto L_Peace;
+	if (Valen2kx == 32) goto L_Back;
+	if (Valen2kx == 33) goto L_CollBack;
+
 	mes "[Alice]";
 	mes "\"Greeting, fellow wanderer.";
 	mes "Are you collecting herbs, too?\"";
@@ -79,4 +84,139 @@ L_cat:
 	mes "[Alice]";
 	mes "\"Well, it's up to you.\"";
 	close;
+
+
+L_Peace:
+	mes "[Alice]";
+	mes "\"Greetings, fellow wanderer.";
+	mes "Are you collecting herbs too?\"";
+	menu
+			"Herbs?", L_Herbs2,
+			"Nope, just enjoying the scenery.", L_close,
+			"No, I was sent by Chief Pachua for some Peace Herb.", L_Start;
+
+L_Herbs2:
+	mes "[Alice]";
+	mes "\"Yes, some powerful magic herbs grow around here.";
+	mes "Different mixtures make different things. Healing potions to happy moments.";
+	mes "It depends on what you mix what effect you will get.";
+	mes "Now everyone is running around in the woods to harvest the herbs.\"";
+	close;
+
+L_Close:
+	mes "[Alice]";
+	mes "\"It is very peaceful in the woods.";
+	mes "If you look hard enough, there are quiet lakes and parks. ";
+	mes "Any if you are really still, the animals will come right to you.\"";
+	close;
+
+L_Start:
+	mes "[Alice]";
+	mes "\"Ah yes, I seen the smoke signal.";
+	mes "Did he send the payment with you?.\"";
+	menu
+		"Payment, he said nothing of payment.", L_Payment,
+		"No, And I am not paying.", L_NoPay,
+		"He didnt say anything, but I will see if I can pay.", L_Collect;
+
+L_Payment:
+	mes "[Alice]";
+	mes "\"Oh dear, Chief Pachua knows that I need payment.";
+	mes "I need herbs in order to keep stock for others.\"";
+	menu
+		"Herbs? What kind of herb?.", L_Collect,
+		"Well, I guess he is out of luck then.", L_End;
+
+L_NoPay:
+	mes "[Alice]";
+	mes "\"Ok, well enjoy your day.";
+	mes "Come back if you change your mind.\"";
+	set Valen2kx, 32;
+	close;
+		
+L_Back:
+	mes "[Alice]";
+	mes "\"Hi again. Have you changed your mind?\"";
+	menu
+		"Yes, I will just collect what is needed.", L_Collect,
+		"Nope, just saying hi.", L_NoPay;
+
+L_Collect:
+	mes "[Alice]";
+	mes "\"Good, I am sure that Pachua will give back to you.\"";
+	next;
+	mes "[Alice]";
+	mes "\"I need 20 of each color herb, and 4 mushrooms.";
+	mes "Mauve, Gamboge, Alizarin and Cobalt.";
+	mes "Along with the mushrooms, make a powerful Tobacco.\"";
+	set Valen2kx, 33;
+	menu
+		"Oh thats it? I have that, here you go.", L_Herbcheck,
+		"Ok, I will be back.", L_Close2;
+
+L_Close2:
+	mes "[Alice]";
+	mes "\"Great, I will start packaging this while you are gone.";
+	close;
+
+L_CollBack:
+	mes "[Alice]";
+	mes "\"Welcome Back.";
+	mes "Did you manage to collect everything?";
+	mes "The four herbs, and the mushrooms?\"";
+	menu
+		"Yes, Here you go.", L_Herbcheck,
+		"No, I forgot how much you need of each.", L_Herbforget;
+
+L_Herbforget:
+	mes "[Alice]";
+	mes "\"I need 20 of each color herb.";
+	mes "Mauve, Gamboge, Alizarin and Cobalt.";
+	mes "And 4 small mushrooms.\"";
+	close;
+
+L_Herbcheck:
+	if(countitem(680) <20) goto L_NotYet;
+	if(countitem(681) <20) goto L_NotYet;
+	if(countitem(682) <20) goto L_NotYet;
+	if(countitem(683) <20) goto L_NotYet;
+	if(countitem(566) <4) goto L_NotYet;
+        delitem 680,20;
+	delitem 681,20;
+	delitem 682,20;
+	delitem 683,20;
+	delitem 566,4;
+        mes "[Alice]";
+        mes "\"Perfect, You have collected a very good crop";
+	mes "Almost as good at this one for Pachua.\"";
+	set Valen2kx, 96;
+	getitem 1248, 1;
+	next;
+	mes "[Alice]";
+	mes "\"Take this back to the Indian Chief.";
+	mes "Tell him to enjoy his PowWow.\"";
+	close;
+
+L_End:
+	mes "[Alice]";
+	mes "\"If I understand the message he sent.";
+	mes "It is you that is out of luck.";
+	mes "But it is your choice.\"";
+	set Valen2kx, 32;
+	next;
+	mes "[Alice]";
+	mes "Come back if you change your mind.";
+	close;
+
+L_NotYet:
+	mes "[Alice]";
+	mes "\"I think you have been experimenting with the herb.";
+	mes "Or, perhaps you miscounted.";
+	mes "Come back when you have it all.\"";
+	close;
+		
+
+
 }
+
+

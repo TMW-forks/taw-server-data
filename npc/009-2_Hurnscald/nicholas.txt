@@ -11,7 +11,15 @@
 //#
 //#################################################################################
 
-009-2.gat,185,55,0	script	Nicholas	135,{
+009-2.gat,185,55,0	script	Nicholas	135, {
+	
+	if(Valen2kx == 12) goto L_Cupid;
+	if(Valen2kx == 20) goto L_Oreback;
+	if(Valen2kx == 21) goto L_Sinew;
+	if(Valen2kx == 22) goto L_Furback;
+	if(Valen2kx == 97) goto L_Sinew;
+	if(Valen2kx >= 30) goto L_Sinew;
+	
 
         set @SETZER_XP, 100000;
         set @SHIELD_XP, 20000;
@@ -397,4 +405,192 @@ L_TooMany:
         mes "[Nicholas]";
         mes "\"You don't have room for it. Come back later when you do.\"";
 	close;
+
+L_Cupid:
+	mes "[Nicholas]";
+	mes "\"Hello there.";
+	mes "You look like a person on a mission.\"";
+	menu
+		"Yes, a very urgent one.", L_Arrows,
+		"A Mission? Yeah I guess you could call it that.", L_Arrows;
+
+L_Arrows:
+	mes "[Nicholas]";
+	mes "\"Well I am very busy.";
+	mes "Tell me what it is you need.\"";
+	menu
+		"Herzensbrecher sent me.", L_Need,
+		"Cupid is out of arrows.", L_Busy;
+
+L_Need:
+	mes "[Nicolas]";
+	mes "\"Herzensbrecher is one of the best artizens.";
+	mes "He is also one of the most impatient.";
+	mes "Who does he work for this time.\"";
+	menu
+		"Cupid.", L_Busy;
+
+L_Busy:
+	mes "[Nicolas]";
+	mes "Cupid?";
+	mes "Ah yes the enchanted arrows.";
+	mes "Well at least he is ordering well in advance this time.";
+	next;
+	mes "[Nicolas]";
+	mes "\"He is order well in advance isnt he?\"";
+	menu
+		"Umm, Did I mention this was Urgent?", L_Urgent,
+		"Does immediately mean in advance?", L_Urgent;
+
+L_Urgent:
+	mes "[Nicolas]";
+	mes "\"I have another project right now.";
+	mes "It is just as urgent.";
+	mes "I have to finish it.\"";
+	next;
+	mes "[Nicolas]";
+	mes "\"The only way this will work is if you help me.";
+	mes "If you can collect 5 iron ore for the arrowheads.";
+	mes "And collect what I need to finish the other project as well.";
+	mes "Then I can do it.";
+	menu
+		"Are you kidding? I have my own projects.", L_No,
+		"Well, this is Urgent. What do you need?", L_Start;
+
+L_No:
+	mes "[Nicolas]";
+	mes "\"Well if you dont help me....";
+	mes "Herzensbrecher is out of luck.";
+	mes "Which means YOU will have to explain.\"";
+	next;
+	mes "[Nicolas]";
+	mes "\"Explaining to Herzensbrecher would be bad enough.";
+	mes "But its Cupid I would not want to upset.";
+	mes "Hmm, God of Love upset...\"";
+	menu
+		"Oh, I see your point.", L_Start;
+
+L_Start:
+	mes "[Nicolas]";
+	mes "\"Good Choice.";
+	set Valen2kx, 20;
+	next;
+	mes "[Nicolas]";
+	mes "Ok for a 1000 arrowheads I need 5 iron ore.";
+	mes "Bring them to me and I will make the arrowheads.\"";
+	menu
+		"Ok, here is the ore.", L_Orereturn,
+		"Ok, I will be back.", L_BBack;
+
+L_BBack:
+	close;
+
+L_Oreback:
+	mes "[Nicolas]";
+	mes "\"Did you get the ore?\"";
+	menu
+		"How many did you need again?", L_Forgetore,
+		"Yes, here you go.", L_Orereturn;
+
+L_Orereturn:
+	if(countitem(640) <5) goto L_NotYet;
+        delitem 640, 5;
+        mes "[Nicolas]";
+        mes "\"Great stuff. Looks perfect for the arrow heads.";
+	mes "I just realized I have no sinew in stock.";
+	mes "You will have to got see the Indian in the mountains.";
+	mes "Tell him Nicolas needs sinew.\"";
+	set Valen2kx, 21;
+	close;
+
+L_Sinew:
+	mes "[Nicolas]";
+	mes "\"Did you get the sinew?\"";
+	menu
+		"Sorry I forget where to go.", L_Forgetsinew,
+		"Yes, here you go.", L_SinCheck;
+
+L_SinCheck:
+	if(countitem(1246) <1) goto L_NotYet;
+        delitem 1246, 1;
+        mes "[Nicolas]";
+        mes "\"I will have to watch my stock better.";
+	mes "It is good that he had it for you.\"";
+	next;
+	mes "[Nicolas]";
+	mes "\"I will finish up these arrowheads.";
+	mes "While I am doing so, please I need your help.\"";
+	next;
+	mes "[Nicolas]";        
+	mes "\"I promised my wife 20 furs.";
+	mes "Our first baby is due anytime, and she wants to line the crib.";
+	mes "I have lost alot of time making these arrowheads.\"";
+	set Valen2kx, 22;
+	next;
+	mes "[Nicolas]";
+	mes "\"When you return I will have everything ready.";
+	mes "Herzensbrecher will be pleased.";
+	mes "And so will my wife\"";
+	close;
+
+	
+L_NotYet:
+	mes "[Nicolas]";
+	mes "\"Were you robbed?";
+	mes "You dont have enough.";
+	mes "Come back when you have it all.\"";
+	close;
+
+L_Forgetore:
+	mes "[Nicolas]";
+	mes "\"Well for 1000 arrowheads";
+	mes "We need at least five.";
+	mes "I hear the yellowslimes are generous.\"";
+	close;
+
+L_Forgetsinew:
+	mes "[Nicolas]";        
+	mes "\"Go see the Indian in the mountains.";
+	mes "The tribe there has been making sinew for years.\"";
+	close;	
+
+
+L_Furback:
+	mes "[Nicolas]";
+	mes "\"Did you get the White fur?\"";
+	menu
+		"How many did you need again?", L_Forgetfur,
+		"Yes, here you go.", L_FurCheck;
+
+L_Forgetfur:
+	mes "[Nicolas]";
+	mes "\"I need at least 20 furs";
+	mes "This time of year those fluffies are shedding everywhere.\"";
+	close;
+
+L_FurCheck:
+	if(countitem(611) <20) goto L_NotYet;
+        delitem 611, 20;
+        mes "[Nicolas]";
+        mes "\"Good timing, I am just finishing the last point";
+	mes "These furs look wonderful.";
+	mes "My wife will be so happy.";
+	next;
+	mes "[Nicolas]";
+	mes "\"Take these back to Herzensbrecher.";
+	mes "Tell him these are the best.";
+	mes "And the sinew is very stong.\"";
+	getitem 1245, 1000;
+	getitem 1246, 1;
+	getexp 100000, 0;	
+	close;
+
 }
+
+
+
+
+
+	 
+	
+

@@ -1,4 +1,7 @@
 map: 021-1.gat
+npc: npc/021-1_Tulimshar/Sulken.txt
+npc: npc/021-1_Tulimshar/Sulken.txt~
+npc: npc/021-1_Tulimshar/_import.txt~
 npc: npc/021-1_Tulimshar/_mobs.txt
 npc: npc/021-1_Tulimshar/_warps.txt
 npc: npc/021-1_Tulimshar/bakery.txt
