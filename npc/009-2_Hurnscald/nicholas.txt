@@ -18,9 +18,10 @@
 	if(Valen2kx == 21) goto L_Sinew;
 	if(Valen2kx == 22) goto L_Furback;
 	if(Valen2kx == 97) goto L_Sinew;
+	if(Valen2kx == 98) goto L_Regular;
 	if(Valen2kx >= 30) goto L_Sinew;
 	
-
+L_Regular:
         set @SETZER_XP, 100000;
         set @SHIELD_XP, 20000;
 
@@ -580,6 +581,7 @@ L_FurCheck:
 	mes "\"Take these back to Herzensbrecher.";
 	mes "Tell him these are the best.";
 	mes "And the sinew is very stong.\"";
+	set Valen2kx, 98;
 	getitem 1245, 1000;
 	getitem 1246, 1;
 	getexp 100000, 0;	
