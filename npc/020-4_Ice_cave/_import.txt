@@ -1,5 +1,3 @@
 map: 020-4.gat
 npc: npc/020-4_Ice_cave/_mobs.txt
 npc: npc/020-4_Ice_cave/_warps.txt
-npc: npc/020-4_Ice_cave/carmen.txt
-npc: npc/020-4_Ice_cave/monsters.txt

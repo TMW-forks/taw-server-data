@@ -1,5 +1,3 @@
 map: 025-1.gat
 npc: npc/025-1_Woodland_Swamp/_mobs.txt
 npc: npc/025-1_Woodland_Swamp/_warps.txt
-npc: npc/025-1_Woodland_Swamp/schlitzer.txt
-npc: npc/025-1_Woodland_Swamp/soul-menhir.txt

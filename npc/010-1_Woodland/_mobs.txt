@@ -12,6 +12,7 @@
 010-1.gat,0,0,0,0	monster	SilkWorm	1035,2,60000,30000,Mob010-1::On1035
 010-1.gat,0,0,0,0	monster	Clover	1037,2,0,1000,Mob010-1::On1037
 010-1.gat,0,0,0,0	monster	Squirrel	1038,25,30,20,Mob010-1::On1038
+010-1.gat,30,50,12,20	monster	ducks	2050,10,100000,30000,Mob010-1::On2050
 
 
 010-1.gat,0,0,0	script	Mob010-1	-1,{
@@ -67,6 +68,11 @@ On1037:
 
 On1038:
 	set @mobID, 1038;
+	callfunc "MobPoints";
+	break;
+
+On2050:
+	set @mobID, 2050;
 	callfunc "MobPoints";
 	break;
 
