@@ -24,7 +24,7 @@ L_Help:
 L_What:
 
         mes "[Edward]";
-        mes "I need 200 maggot slimes to brew a chemical blood, can you bring me them?"
+        mes "I need 200 maggot slimes to brew a chemical blood, can you bring me them?";
         next;
         menu
 
