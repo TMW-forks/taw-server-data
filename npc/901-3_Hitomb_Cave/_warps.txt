@@ -1,0 +1,7 @@
+// 901-3 Cave warps
+
+901-3.gat,33,44	warp	ToHitomb	-1,0,901-1.gat,46,47
+901-3.gat,14,33	warp	ToWoodCave	-1,0,012-3.gat,448,62
+901-3.gat,33,26	warp	Cont	-1,0,901-3.gat,33,20
+901-3.gat,33,21	warp	Cont	-1,0,901-3.gat,33,27
+901-3.gat,45,14	warp	Contlvl	-1,0,902-3.gat,73,112

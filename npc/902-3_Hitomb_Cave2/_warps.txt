@@ -1,0 +1,14 @@
+// 902-3 warps
+
+902-3.gat,73,114	warp	ToCave1	-1,0,901-3.gat,45,14
+902-3.gat,85,121	warp	ToBook	-1,0,902-3.gat,12,41
+902-3.gat,12,40	warp	ToPortRoom	-1,0,902-3.gat,85,120
+902-3.gat,102,121	warp	ToJackO	-1,0,902-3.gat,17,83
+902-3.gat,17,82	warp	ToPortRoom	-1,0,902-3.gat,102,120
+902-3.gat,91,105	warp	Tunnel1b	-1,0,902-3.gat,96,105
+902-3.gat,96,105	warp	Tunnel1	-1,0,902-3.gat,91,105
+902-3.gat,114,80	warp	Tunnel1b	-1,0,902-3.gat,110,80
+902-3.gat,110,80	warp	Tunnel1	-1,0,902-3.gat,114,80
+902-3.gat,17,97	warp	Out	-1,0,902-1.gat,26,6
+902-3.gat,87,65	warp	ObjectDown	11,0,902-3.gat,89,72
+902-3.gat,89,71	warp	ObjectUp	11,0,902-3.gat,89,64

@@ -1,0 +1,12 @@
+901-1.gat,88,42,0	script	Metalman	906, {
+	  mes "[Metalman]";
+	mes "Metaaaal....";
+	if(getequipid(3)==545) goto L_good;
+	close;
+
+	L_good:
+	  mes "[Metalman]";
+	mes "Mmmh... a forestbow...";
+	close;
+	
+}

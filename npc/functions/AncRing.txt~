@@ -32,7 +32,7 @@ Learned:
 //HiTomb AR code
 gawlson:
 	mes "You feel a movement in your body...";
-	warp "901-1", 83, 45;
+	warp "028-1", 83, 45;
 	return;
 
 kagerat:

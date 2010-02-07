@@ -7,7 +7,7 @@ close;
 
 Good_pos:
 
-set @ring, "kagerat";
+set @ring, "gawlson";
 
 callfunc "AncRing";
 close;

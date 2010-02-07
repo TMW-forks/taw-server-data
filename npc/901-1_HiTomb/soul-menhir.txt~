@@ -1,0 +1,11 @@
+//This is the statue of Elric, working as Soul Menhir
+
+028-1.gat,35,49,0	script	Soul Menhir	185, {
+	set @map$, "028-1.gat";
+	setarray @Xs, 35, 36, 36, 36, 34, 37, 34;
+	setarray @Ys, 50, 49, 50, 48, 49, 49, 50;
+	set @x, 0;
+	set @y, 0;
+	callfunc "SoulMenhir";
+	close;
+}

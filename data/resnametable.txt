@@ -55,8 +55,8 @@
 027-1.gat#027-1.wlk#
 027-2.gat#027-2.wlk#
 027-5.gat#027-5.wlk#
-028-1.gat#028-1.wlk#
-028-2.gat#028-2.wlk#
-029-1.gat#029-1.wlk#
-029-3.gat#029-3.wlk#
+901-1.gat#901-1.wlk#
+901-3.gat#901-3.wlk#
+902-1.gat#902-1.wlk#
+902-3.gat#902-3.wlk#
 botcheck.gat#botcheck.wlk#

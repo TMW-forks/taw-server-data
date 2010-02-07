@@ -1,0 +1,7 @@
+function	script	mineral	{
+
+if(getitemequiped(3)==5006){
+	
+}
+
+}

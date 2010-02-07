@@ -1,0 +1,4 @@
+map: 902-3.gat
+npc: npc/902-3_Hitomb_Cave2/_mobs.txt
+npc: npc/902-3_Hitomb_Cave2/_warps.txt
+npc: npc/902-3_Hitomb_Cave2/anc_book.txt

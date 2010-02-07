@@ -6,10 +6,6 @@ mes "You're too far away to reach the panel.";
 close;
 
 Good_pos:
-
-set @ring, "lumenum";
-set ring_lumenum, 1;
-
 callfunc "AncRing";
 close;
 

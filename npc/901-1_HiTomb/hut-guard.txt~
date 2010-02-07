@@ -1,0 +1,139 @@
+901-1.gat,61,44,0	script	Hut guard	186, {
+
+	if( house_hitomb == 1 ) goto L_sold;
+	if (hut_quest == 25) goto H_want;
+	if( hut_quest > 0 ) goto H_prog;
+
+	  mes "[Hut guard]";
+	mes "Hi there. These huts could be yours. Are you interessed?";
+
+	menu
+		"Sure!", H_sure,
+		"What are they for?", H_why,
+		"No.", -;
+
+	close;
+
+H_prog:
+	  mes "[Hut guard]";
+	mes "Hi!  Have you found my keys?";
+
+	menu
+		"Is this the right one?", H_try,
+		"Not yet...", L_end;
+
+H_try:
+	if (countitem(537) < 1) goto H_nokeys;
+	delitem "TreasureKey", 1;
+	set @Temp1, rand(20);
+	if (@Temp1 == 0 && hut_quest > 3) goto H_success;
+	if (hut_quest == 25) goto H_success;
+
+	mes "Guard tries to unlock the door but he fails and throws the key away.";
+	next;
+
+	set hut_quest, (hut_quest + 1);
+
+	  mes "[Hut guard]";
+	mes "No, no, no! This is not the right one. Did you found another?";
+
+	menu
+		"What about this one?", H_try,
+		"No, sorry.", L_end;
+
+H_nokeys:
+	  mes "[Hut guard]";
+	mes "It seems you don't have any key!";
+	close;
+
+H_success:
+	mes "Guard tries to unlock the door and he's successful!";
+	next;
+
+	  mes "[Hut guard]";
+	mes "Yeah, that's the right one!";
+	next;
+
+	set hut_quest, 25;
+
+	  mes "[Hut guard]";
+	mes "The hut costs 50 000 GP. But you have helped me, so I'll give you a discount as I promissed.";
+	next;
+
+	  mes "[Hut guard]";
+	mes "Well... uhm... what about 25 000 GP?";
+
+	menu
+		"Yes, here you are!", H_buy,
+		"No, too expensive.", -;
+
+	  mes "[Hut guard]";
+	mes "Come back if you change your mind.";
+	close;	
+
+H_want:
+	  mes "[Hut guard]";
+	mes "So, do you want this hut for 25 000 GP?";
+
+	menu
+		"Yes, here you are!", H_buy,
+		"No, too expensive.", -;
+
+H_buy:
+	if (zeny < 25000) goto H_nocash;
+	set zeny, zeny - 25000;
+	set house_hitomb, 1;
+	mes "[30 000 experience points]";
+	getexp 30000, 0;
+
+	  mes "[Hut guard]";
+	mes "This is the key, the hut left from me is yours now. Stand in front of the doors and talk to it and you'll be allowed to enter. Have fun!";
+	close;
+
+H_nocash:
+		mes "[Hut guard]";
+	mes "Aaaah, you're out of money, aren't you?";
+	close;
+
+L_sold:
+	  mes "[Hut guard]";
+	mes "Hey man, what can I do for you?";
+	menu
+		"Nothing now.", -;
+
+	goto L_end;
+
+H_sure:
+	  mes "[Hut guard]";
+	mes "Okay, uhm... well... there's a little problem, dude. I have lost my keys. Without them I can't sell it to you.";
+
+	menu 
+		"May I help you?", L_Help,
+		"Your problem...", L_end;
+
+L_Help:
+	  mes "[Hut guard]";
+	mes "If you fond my keys, I'd be very grateful to you. Perhaps, I could give you a discount...";	
+
+	menu 
+		"Don't worry, I'll find them!", L_accept,
+		"Have my own worries.", L_end;
+
+L_accept:
+	set hut_quest, 1;
+	goto L_end;
+
+L_end:
+	  mes "[Hut guard]";
+	mes "See you later.";	
+	close;
+
+H_why:
+	  mes "[Hut guard]";
+	mes "Hah, that's clear, isn't it? You can rest here for free anytime you want! Ah, and I almost forgot - you can plant seeds in flowerpots and grow plants there! Are you interessed?";
+	menu
+		"Sure!", H_sure,
+		"No.", -;
+	close;
+}
+

@@ -1,0 +1,23 @@
+
+901-1.gat,47,47,0	script	Hitomb Guardian	904, {
+	  mes "[Hitomb Guardian]";
+	mes "These caves hide strong Evil inside. It's better to avoid them...";
+	close;
+	
+}
+
+
+901-1.gat,75,43,0	script	Guard	904, {
+	  mes "[Guard]";
+	mes "...";
+	close;
+	
+}
+
+901-1.gat,77,43,0	script	Guard	904, {
+	  mes "[Guard]";
+	mes "...";
+	close;
+	
+}
+
