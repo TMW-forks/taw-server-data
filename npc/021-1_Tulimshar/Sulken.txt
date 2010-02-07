@@ -125,7 +125,7 @@ L_Pay:
 	if (zeny < 250000) goto L_No_Money;
 	set zeny, zeny - 250000;
 	getitem 1247, 1;
-	set Valen2kx 95;
+	set Valen2kx, 95;
 	close;
 
 L_SilkBack:

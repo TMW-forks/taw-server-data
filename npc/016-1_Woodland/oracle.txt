@@ -85,7 +85,7 @@ L_Future0:
 	mes "The oracle flips the slightly tattered card over and reveals.";
 	mes "[The Blackbird]";
 	mes "The oracle speaks in a soft voice";
-	mes "If you listen to the haunting song of your soul you will find healing and new depths."
+	mes "If you listen to the haunting song of your soul you will find healing and new depths.";
 	set Oracle, 2;
        close;
 
