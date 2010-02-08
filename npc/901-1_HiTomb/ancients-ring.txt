@@ -1,7 +1,7 @@
 //
 
 901-1.gat,83,45,0	script	Ancients Ring	127, {
-if ( isat( "028-1.gat", 83, 45) ) goto Good_pos;
+if ( isat( "901-1.gat", 83, 45) ) goto Good_pos;
 mes "You're too far away to reach the panel.";
 close;
 

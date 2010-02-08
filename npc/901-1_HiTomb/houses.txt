@@ -4,7 +4,7 @@
 
 set @HarvestDelay, 3600000; //Harvest delay in miliseconds
 
-if ( isat( "028-1.gat", 63, 44) ) goto Good_pos;
+if ( isat( "901-1.gat", 63, 44) ) goto Good_pos;
 	mes "The door seems to be closed.";
 	close;
 
