@@ -1,6 +1,0 @@
-028-1.gat,88,42,0	script	Metalman	183, {
-	  mes "[Metalman]";
-	mes "Metaaaal....";
-	close;
-	
-}

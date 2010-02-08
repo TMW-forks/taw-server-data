@@ -1,7 +1,0 @@
-// 028-2 Cave warps
-
-028-2.gat,33,44	warp	ToHitomb	-1,0,028-1.gat,46,47
-028-2.gat,14,33	warp	ToWoodCave	-1,0,012-3.gat,448,62
-028-2.gat,33,26	warp	Cont	-1,0,028-2.gat,33,20
-028-2.gat,33,21	warp	Cont	-1,0,028-2.gat,33,27
-028-2.gat,45,13	warp	Contlvl	-1,0,029-3.gat,73,112
