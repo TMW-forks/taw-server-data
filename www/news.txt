@@ -1,4 +1,12 @@
-##3 Happy New Year
+##3 New area
+##3 2010-02-08
+
+##0 A wizard passed through and opened a passage to 
+##0 an entirely new area. Rumor has it that it's 
+##0 reachable via the Mouboo Hills. Residents of 
+##0 Hurnscald remain skeptical and continue to insist 
+##0 that no such place exists. Cupid has been spotted
+##0 wandering the area..
 
 ##3 Tinkering
 ##3 2010-01-11
