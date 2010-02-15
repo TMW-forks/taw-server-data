@@ -132,6 +132,10 @@ Army_3_ready:
 	set hitomb_army, 5;
 	set hitomb_statue, 0;
 	close2;
+	killmonster "902-3.gat","#WAKEUP::OnA";
+	killmonster "902-3.gat","#WAKEUP::OnB";
+	killmonster "902-3.gat","#WAKEUP::OnC";
+	killmonster "902-3.gat","#WAKEUP::OnD";
 	deltimer "#SK1::OnStrong";
 	deltimer "#SK2::OnStrong";
 	deltimer "#SK3::OnStrong";

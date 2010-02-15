@@ -1,0 +1,17 @@
+//
+
+026-1.gat,26,21,0	script	Ancients Ring	127, {
+if ( isat( "026-1.gat", 26, 21) ) goto Good_pos;
+mes "You're too far away to reach the panel.";
+close;
+
+Good_pos:
+
+set @ring$, "mortale";
+if( ring_mortale == 0 ) getexp 5000, 0;
+set ring_mortale, 1;
+
+callfunc "AncRing";
+close;
+
+}

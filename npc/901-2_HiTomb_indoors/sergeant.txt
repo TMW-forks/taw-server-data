@@ -1,57 +1,32 @@
-901-2.gat,99,33,0	script	Sergeant	904, {
-	if (getgmlevel(0) > 30) goto L_GM;
-	if ($deatharena_disabled == 0) goto Army_start;
-	close;
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+        <title>mune.nu</title>
+</head>
 
-Army_start:
-	if( hitomb_army == 7 ) goto Army_corporal;
-	  mes "[Sergeant]";
-	mes "I will speak only to members of Hitomb army.";
-	close;
+<body bgcolor="white" leftmargin=0 marginwidth=0 marginheight=0 topmargin=0 rightmargin=0
+bottommargin=0>
 
-Army_corporal:
-	  mes "[Sergeant]";
-	mes "I can warp you to death arena, do you want?";
-	menu
-		"Sir, yes, sir!", -,
-		"Sir, no, sir!", L_end;
-
-	  mes "[Sergeant]";
-	mes "Talk to sceleton statue to get back.";	
-	close2;
-	set @setpvp, 0;
-	if ( getareausers("902-3.gat",74,70,110,88) > 0 ) set @setpvp, 1;
-	if ( getareausers("902-3.gat",81,49,95,65) > 0 ) set @setpvp, 1;
-	if ( getareausers("902-3.gat",94,47,127,62) > 0 ) set @setpvp, 1;
-	if ( getareausers("902-3.gat",120,60,127,84) > 0 ) set @setpvp, 1;
-	if ( getareausers("902-3.gat",114,75,127,85) > 0 ) set @setpvp, 1;
-	if ( @setpvp == 1 ) pvpon "902-3.gat";
-	warp "902-3.gat",105,49;
-	end;
-
-L_end:
-	close;
-
-L_GM:
-	  mes "[Sergeant]";
-	mes "Greetings, Game Master, what would you like to do?";
-	menu
-		"Disable DeathArena", L_DAD,
-		"Enable DeathArena", L_DAE,
-		"Continue as normal player in this speech.", Army_start,
-		"Nothing.", L_end;
-L_DAD:
-	set $deatharena_disabled, 1;
-	  mes "[Sergeant]";
-	mes "DeathArena Disabled.";
-	close;
-
-L_DAE:
-	set $deatharena_disabled, 0;
-	  mes "[Sergeant]";
-	mes "DeathArena Enabled.";
-	close;
-
-	
-}
-
+<table><tr><td>
+<ul>
+<font face="Arial,Helvetica"><small>
+<p><strong>This domain name, &#8220;mune.nu&#8221;, may still be available for registration!</strong></p>
+<p>You have arrived at this page because the domain name you
+entered is not currently active on the Internet. If
+you have recently registered or modified this domain name, you
+can expect it to become active within the next 24 hours.</p>
+</small></font>
+</ul>
+</td><td>
+<td>
+<a href="http://www.amazon.com/exec/obidos/ASIN/0312422601/nunames/" target=_blank><img src="http://images.amazon.com/images/P/0312422601.01.TZZZZZZZ.jpg" alt="Info" border="0" hspace=10 vspace="5" align="left"></a>
+    <font face="Arial, Helvetica, sans-serif" size=2>
+	<br>
+    <b>More about Niue</b><br>
+     <i><A HREF="http://www.amazon.com/exec/obidos/ASIN/0312422601/nunames/" target=_blank><font color="#0000ff">Blue Latitudes</font></a></i><br>
+    "Niue... a glimpse of Polynesia not yet ravaged by mass tourism"
+    </font>
+</td>
+</td></tr></table>
+<iframe src="http://www.parkingsedo.com/?dn=mune.nu&pid=2POV31R94" width="100%" height="1000" name="parking lander">
+</body>
+</html>

@@ -1,0 +1,31 @@
+
+902-3.gat,100,49,0	script	Save Statue	911, {
+		 mes "[Save Statue]";
+		mes "Hi, I'm here to save players who stucked here for some reason. But remember, if you have not completed third army quest, it will be reseted. Are you sure you want to do this? It will be same as if you died. But you can try to talk with the Sergeant - he could help you if you're still having problems.";
+		menu
+			"Yes.", L_yes,
+			"No.", -;
+		
+		close;
+
+L_yes:
+		close2;
+		killmonster "902-3.gat","#WAKEUP::OnA";
+		killmonster "902-3.gat","#WAKEUP::OnB";
+		killmonster "902-3.gat","#WAKEUP::OnC";
+		killmonster "902-3.gat","#WAKEUP::OnD";
+		deltimer "#SK1::OnStrong";
+		deltimer "#SK2::OnStrong";
+		deltimer "#SK3::OnStrong";
+		deltimer "#SK4::OnStrong";
+		set @letpvp, 0;
+		if ( getareausers("902-3.gat",74,70,110,88) > 0 ) set @letpvp, 1;
+		if ( getareausers("902-3.gat",81,49,95,65) > 0 ) set @letpvp, 1;
+		if ( getareausers("902-3.gat",94,47,127,62) > 0 ) set @letpvp, 1;
+		if ( getareausers("902-3.gat",120,60,127,84) > 0 ) set @letpvp, 1;
+		if ( getareausers("902-3.gat",114,75,127,85) > 0 ) set @letpvp, 1;
+		if ( @letpvp == 0 ) pvpoff "902-3.gat";
+		warp "901-1.gat",76,45;
+		end;
+
+}
