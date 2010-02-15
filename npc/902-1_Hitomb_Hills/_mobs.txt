@@ -23,7 +23,35 @@
 902-1.gat,48,5,10,6	monster	Wisp	1040,1,0,60000,Mob902-1::On1040
 902-1.gat,11,40,7,6	monster	BloodyMaggot	1999,3,0,30000,Mob902-1::On1999
 
+902-1.gat,26,49,11,21	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,39,60,11,7	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,60,30,8,5	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,43,4,17,4	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,37,13,10,8	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,39,35,4,3	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,26,49,9,19	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,70,57,20,18	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,85,63,36,11	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,91,40,20,31	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,102,49,12,7	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,96,28,10,14	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,92,10,14,8	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,67,9,4,4	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,11,18,13,7	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,18,15,7,5	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,41,8,7,6	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,16,5,11,7	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,44,22,7,6	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,30,8,26,16	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,48,5,10,6	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+902-1.gat,11,40,7,6	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
+
 902-1.gat,0,0,0	script	Mob902-1	-1,{
+On1997: 
+	callfunc "mineral";
+	break;
+
+	end;
 On1002:
 	set @mobID, 1002;
 	callfunc "MobPoints";

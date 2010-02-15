@@ -22,7 +22,8 @@ A_learnf:
 	if (BaseLevel < 60) goto Too_young;
 	  mes "[Megorn]";
 
-	mes "Okay, traveller. I'll teach you. You must enter the ring and touch the panel. Then enter the code of the ring you want to travell to. Remember the codes you'll find!";	
+	mes "Okay, traveller. I'll teach you. You must enter the ring and touch the panel. Then enter the code of the ring you want to travell to. Remember the codes you'll find!";
+	next;	
 
 	set abi_ring, 1;
 	set ancients_quest, 9;
@@ -106,8 +107,7 @@ L_known:
 
 News:
 	mes "[Megorn]";
-	mes "Currently, Captain prepares the exams for joining Hitomb army. And me? I'm searching for the Ancient's book to get their knowledge.";
-
+	mes "Currently, few houses were opened to public. Try them all, NPC you haven't seen yet are waiting. Captain is recruiting to Hitomb army, you can try to pass his exams.";
 	close;
 
 Learnme:
@@ -127,7 +127,7 @@ Whatsring:
 
 Learnring:
 
-	mes "I need you to find the Ancient's book, hiding the secret Ancients knowledge. I'm sure I'll be able to learn you from their notes. I can sence its presence somewhere in Hitomb caves. Bring me it if you find it.";
+	mes "I need you to find the Ancient's book, hiding the secret Ancients knowledge. I'm sure I'll be able to learn you from their notes. I can sence its presence somewhere in Hitomb caves. Bring me it if you find it. If you had any problems, just ask me.";
 
 	set ancients_quest, 1;
 

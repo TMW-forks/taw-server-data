@@ -1,0 +1,161 @@
+902-3.gat,0,0,0	script	#WAKEUP	911, {
+	OnA:
+		enablenpc "#SK1";
+		set hitomb_statue, hitomb_statue + 1;
+		close;
+	OnB:
+		enablenpc "#SK2";
+		set hitomb_statue, hitomb_statue + 1;
+		close;
+	OnC:
+		enablenpc "#SK3";
+		set hitomb_statue, hitomb_statue + 1;
+		close;
+	OnD:
+		enablenpc "#SK4";
+		set hitomb_statue, hitomb_statue + 1;
+		close;
+	OnKilleid:
+		close;
+}
+902-3.gat,82,79,0	script	#SK1	911, {
+if( isin("902-3.gat",81,79,83,80)) goto  Good_pos;
+		npctalk "come closer, darling";
+		close;
+Good_pos:
+	if( hitomb_statue == 0) set hitomb_statue, rand(3);
+	if( hitomb_statue < 5 ) goto M_Weak;
+	if( hitomb_statue == 5) goto OnStrong;
+	if( hitomb_statue > 5) goto M_Back;
+
+
+M_Weak:
+		monster "902-3.gat",82,79,"Live Statue",1043,1,"#WAKEUP::OnA";
+		disablenpc "#SK1";
+		end;
+
+OnStrong:
+		monster "902-3.gat",82,79,"Live Statue",1045,1,"#WAKEUP::OnA";
+		disablenpc "#SK1";
+		end;
+M_Back:
+		if (hitomb_army < 6 ) set hitomb_army, 6;
+		warp "901-1.gat",76,45;
+		end;
+}
+902-3.gat,80,79,0	script	#SK2	911, {
+if( isin("902-3.gat",79,79,81,80)) goto  Good_pos;
+		npctalk "come closer, darling";
+		close;
+Good_pos:
+	if( hitomb_statue == 0) set hitomb_statue, rand(3);
+	if( hitomb_statue < 5 ) goto M_Weak;
+	if( hitomb_statue == 5) goto OnStrong;
+	if( hitomb_statue > 5) goto M_Back;
+
+
+M_Weak:
+		monster "902-3.gat",80,79,"Live Statue",1043,1,"#WAKEUP::OnB";
+		disablenpc "#SK2";
+		end;
+
+OnStrong:
+		monster "902-3.gat",80,79,"Live Statue",1045,1,"#WAKEUP::OnB";
+		disablenpc "#SK2";
+		end;
+M_Back:
+		if (hitomb_army < 6 ) set hitomb_army, 6;
+		warp "901-1.gat",76,45;
+		end;
+
+}
+902-3.gat,78,79,0	script	#SK3	911, {
+if( isin("902-3.gat",77,79,79,80)) goto  Good_pos;
+		npctalk "come closer, darling";
+		close;
+Good_pos:
+	if( hitomb_statue == 0) set hitomb_statue, rand(3);
+	if( hitomb_statue < 5 ) goto M_Weak;
+	if( hitomb_statue == 5) goto OnStrong;
+	if( hitomb_statue > 5) goto M_Back;
+
+
+M_Weak:
+		monster "902-3.gat",78,79,"Live Statue",1043,1,"#WAKEUP::OnC";
+		disablenpc "#SK3";
+		end;
+
+OnStrong:
+		monster "902-3.gat",78,79,"Live Statue",1045,1,"#WAKEUP::OnC";
+		disablenpc "#SK3";
+		end;
+M_Back:
+		if (hitomb_army < 6 ) set hitomb_army, 6;
+		warp "901-1.gat",76,45;
+		end;
+}
+902-3.gat,76,79,0	script	#SK4	911, {
+if( isin("902-3.gat",75,79,77,80)) goto  Good_pos;
+		npctalk "come closer, darling";
+		close;
+Good_pos:
+	if( hitomb_statue == 0) set hitomb_statue, rand(3);
+	if( hitomb_statue < 5 ) goto M_Weak;
+	if( hitomb_statue == 5) goto OnStrong;
+	if( hitomb_statue > 5) goto M_Back;
+
+
+M_Weak:
+		monster "902-3.gat",76,79,"Live Statue",1043,1,"#WAKEUP::OnD";
+		disablenpc "#SK4";
+		end;
+
+OnStrong:
+		monster "902-3.gat",76,79,"Live Statue",1045,1,"#WAKEUP::OnD";
+		disablenpc "#SK4";
+		end;
+M_Back:
+		if (getgmlevel(0) > 30) goto L_GM;
+		if (hitomb_army < 6 ) set hitomb_army, 6;
+		warp "901-1.gat",76,45;
+		set @letpvp, 0;
+		if ( getareausers("902-3.gat",74,70,110,88) > 0 ) set @letpvp, 1;
+		if ( getareausers("902-3.gat",81,49,95,65) > 0 ) set @letpvp, 1;
+		if ( getareausers("902-3.gat",94,47,127,62) > 0 ) set @letpvp, 1;
+		if ( getareausers("902-3.gat",120,60,127,84) > 0 ) set @letpvp, 1;
+		if ( getareausers("902-3.gat",114,75,127,85) > 0 ) set @letpvp, 1;
+		if ( @letpvp == 0 ) pvpoff "902-3.gat";
+		end;
+L_GM:
+	mes "[Statue]";
+	mes "Hello, Game Master.";
+	menu
+		"Spawn", L_spawn,
+		"Kill monsters", L_kill,
+		"Warp me back", -;
+
+		if (hitomb_army < 6 ) set hitomb_army, 6;
+		warp "901-1.gat",76,45;
+		set @letpvp, 0;
+		if ( getareausers("902-3.gat",74,70,110,88) > 0 ) set @letpvp, 1;
+		if ( getareausers("902-3.gat",81,49,95,65) > 0 ) set @letpvp, 1;
+		if ( getareausers("902-3.gat",94,47,127,62) > 0 ) set @letpvp, 1;
+		if ( getareausers("902-3.gat",120,60,127,84) > 0 ) set @letpvp, 1;
+		if ( getareausers("902-3.gat",114,75,127,85) > 0 ) set @letpvp, 1;
+		if ( @letpvp == 0 ) pvpoff "902-3.gat";
+		close;
+
+L_spawn:
+		mes "[Statue]";
+	mes "Id of requested mob to spawn?";
+	input @num;
+	monster "902-3.gat",105,49,"Spawned",@num,1,"#WAKEUP::OnKilleid";
+	close;
+
+L_kill:
+		mes "[Statue]";
+	mes "As you wish...";
+	killmonster "902-3.gat","#WAKEUP::OnKilleid";
+	close;
+
+}

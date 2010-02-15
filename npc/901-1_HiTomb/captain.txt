@@ -3,11 +3,17 @@
 	if( hitomb_army == 1 ) goto Army_1_uncomp;
 	if( hitomb_army == 2 ) goto Army_2_start;
 	if( hitomb_army == 3 ) goto Army_2_back;
-
+	if( hitomb_army == 4 ) goto Army_3_ask;
+	if( hitomb_army == 5 ) goto Army_3_ask;
+	if( hitomb_army == 6 ) goto Army_3_comp;
+	if( hitomb_army == 7 ) goto Army_corporal;
 	  mes "[Captain]";
 
 	if (BaseLevel < 60) goto Too_young;
-	mes "I'm the Captain of the Hitomb. I'll give you chance to prove your qualities. But not this day.";
+	mes "I'm the Captain of the Hitomb. I'll give you chance to prove your qualities. Are you ready?";
+	menu
+		"Yes, sir!", Army_1_start,
+		"No, sir!", -;
 	close;
 
 //50,10 - hill cave
@@ -109,7 +115,7 @@ Army_3_start:
 
 Army_3_start2:
 	  mes "[Captain]";
-	mes "I'll warp you to the death arena... You have to talk to the statues of sceletons. Only one statue is right. If you choose the bad one, it will get alive. If you die I will have to warp you again and your progress will be reseted. Do you want to be warped now?";
+	mes "I'll warp you to the death arena... You have to get out alive. If you die I will have to warp you again and your progress will be reseted. Do you want to be warped now?";
 	menu
 		"Yes, I'm ready!", Army_3_ready,
 		"No, I'll tell you later.", L_end;
@@ -124,9 +130,19 @@ Army_3_ask:
 
 Army_3_ready:
 	set hitomb_army, 5;
+	set hitomb_statue, 0;
 	close2;
-	//warp
+	deltimer "#SK1::OnStrong";
+	deltimer "#SK2::OnStrong";
+	deltimer "#SK3::OnStrong";
+	deltimer "#SK4::OnStrong";
+	addtimer 300000,"#SK1::OnStrong";
+	addtimer 300000,"#SK2::OnStrong";
+	addtimer 300000,"#SK3::OnStrong";
+	addtimer 300000,"#SK4::OnStrong";
+	warp "902-3.gat",105,49;
 	end;	
+
 Army_3_comp:
 	  mes "[Captain]";
 	mes "I see you can become one of us.";
@@ -136,9 +152,14 @@ Army_3_comp:
 	next;
 	mes "[750 000 experience points]";
 	getexp 750000, 0;
-	set hitomb_army, 11;
+	set hitomb_army, 7;
 	close;
 
 	end;
+
+Army_corporal:
+	  mes "[Captain]";
+	mes "Wait for my commands, Corporal. Perhaps, you could try the deatharena in between. Talk to the Sergeant.";
+	close;	
 	
 }

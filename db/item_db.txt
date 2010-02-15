@@ -472,5 +472,22 @@
 5002,	CobaltSeed,			Cobalt Seed,			3,	1000,	50,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}										
 5003,	GambogeSeed,			Gamboge Seed,			3,	1000,	50,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}										
 5004,	AlizarinSeed,			Alizarin Seed,			3,	1000,	50,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
-5005,	Brokenarmor,			Broken Armor,			3,	3000,	1400,	100,	,	,	,	,	,	,	,	,	,	,	{},					{}												
-	
+5005,	BrokenArmor,			Broken Armor,			3,	3000,	1400,	100,	,	,	,	,	,	,	,	,	,	,	{},					{}												
+5006, 	MiningPick, 			Mining Pick, 			4, 	8000, 	4000, 	100, 	10, 	, 	1, 	, 	0, 	2, 	2, 	1, 	1, 	1, 	{}, 					{}							
+//5007 Hitomb armor
+//5008 
+5009,	EmptyPotion,			Empty Potion,			3,	30,	15,	100,	,	,	,	,	,	,	,	,	,	,	{},					{}		
+5010,	TinyHealingPotion,			Tiny Healing Potion,			0,	50,	25,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 50,				0; },					{}					{}		
+5011,	LightHealingPotion,			Light Healing Potion,			0,	120,	60,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 100,				0; },					{}					{}		
+5012,	HealingPotion,			Healing Potion,			0,	260,	130,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 250,				0; },					{}					{}		
+5013,	GreaterHealingPotion,			Greater Healing Potion,			0,	550,	275,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 500,				0; },					{}					{}		
+5014,	MasterHealingPotion,			Master's Healing Potion,			0,	1000,	500,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 1000,				0; },					{}					{}		
+5015,	GrandMasterHealingPotion,			GrandMaster's Healing Potion,			0,	2000,	1000,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 2000,				0; },					{}					{}		
+5016,	TinyManaPotion,			Tiny Mana Potion,			0,	300,	150,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 0,				10; },					{}					{}	
+5017,	LightManaPotion,			Light Mana Potion,			0,	750,	400,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 0,				25; },					{}					{}	
+5018,	MediumManaPotion,			Medium Mana Potion,			0,	1500,	750,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 0,				50; },					{}					{}	
+5019,	GreaterManaPotion,			Greater Mana Potion,			0,	3000,	1500,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 0,				100; },					{}					{}	
+5020,	MasterManaPotion,			Master's Mana Potion,			0,	5000,	3000,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 0,				250; },					{}					{}	
+5021,	GrandmasterManaPotion,			GrandMaster's Mana Potion,			0,	10000,	5000,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 0,				500; },					{}					{}	
+5022,	MastersJuvenility,			Master's Juvenility,			0,	5000,	3000,	10,	,	,	,	,	,	2,	,	,	0,	,	{ set Hp,				Hp + (MaxHp / 3); set Sp,				Sp + (MaxSp / 3); },					{}					{}	
+5023,	MastersChildhood,			Master's Childhood,			0,	10000,	5000,	10,	,	,	,	,	,	2,	,	,	0,	,	{ set Hp,				MaxHp; set Sp,				MaxSp; },					{}					{}	

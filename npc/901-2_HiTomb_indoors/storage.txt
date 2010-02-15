@@ -1,0 +1,9 @@
+901-2.gat,13,58,0	script	Chest#CH1	127, {
+	openstorage;
+	close;
+}
+
+901-2.gat,13,112,0	script	Chest#CH2	127, {
+	openstorage;
+	close;
+}

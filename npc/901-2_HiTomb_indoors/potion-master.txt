@@ -1,0 +1,326 @@
+901-2.gat,58,58,0	script	Rayak	913, {
+	if ( rayak_known == 6 ) goto L_merge;
+	if ( rayak_known == 5 ) goto L_greater;
+	if ( rayak_known == 4 ) goto L_heal;
+	if ( rayak_known == 3 ) goto L_light;
+	if ( rayak_known == 2 ) goto L_tiny;
+	if ( rayak_known == 1 ) goto L_known;
+	  mes "[Rayak]";
+	mes "Good day. I'm Rayak.";
+	menu
+		"Man! What is it with your right shoulder!?", -;
+
+	set rayak_known, 1;
+	  mes "[Rayak]";
+	mes "It's a parasite eating me alive. It couldn't be healed, only slowed down.";
+	menu
+		"Does it hurts?", -,
+		"Yuk!", L_what;
+
+	  mes "[Rayak]";
+	mes "Indeed. Whole night, whole day.";
+	next;
+
+L_what:
+	  mes "[Rayak]";
+	mes "I am a potion master. My potions can help you on battlefield. They are divided to 3 groups:";
+	next;
+	  mes "[Rayak]";
+	mes "Healing potions, increasing you health regeneration,";
+	next;
+	  mes "[Rayak]";
+	mes "Mana potions, restoring your magical energy and finally...";
+	next;
+	  mes "[Rayak]";
+	mes "Two potions instantly restoring your mana and health.";
+	menu
+		"Wow, how can I get them?", L_getpotions,
+		"I don't care.", L_end;
+
+L_end:
+	  mes "[Rayak]";
+	mes "May nature powers bless you...";
+	close;
+
+L_getpotions:
+	  mes "[Rayak]";
+	mes "I don't care of money... Death will find me soon, anyway...";
+	next;
+	  mes "[Rayak]";
+	mes "Here - take these potions and try them. Come back when you tryed them all.";
+	if( countitem(5012) > 0 ) set ign_5012, 1;
+	if( countitem(5013) > 0 ) set ign_5013, 1;
+	if( countitem(5014) > 0 ) set ign_5014, 1;
+	if( countitem(5022) > 0 ) set ign_5022, 1;
+	if( countitem(5023) > 0 ) set ign_5023, 1;
+	if( countitem(5018) > 0 ) set ign_5018, 1;
+	if( countitem(5019) > 0 ) set ign_5019, 1;
+	if( countitem(5020) > 0 ) set ign_5020, 1;
+	if( countitem(5012) == 0 ) getitem 5012, 1;
+	if( countitem(5013) == 0 ) getitem 5013, 1;
+	if( countitem(5014) == 0 ) getitem 5014, 1;
+	if( countitem(5022) == 0 ) getitem 5022, 1;
+	if( countitem(5023) == 0 ) getitem 5023, 1;
+	if( countitem(5018) == 0 ) getitem 5018, 1;
+	if( countitem(5019) == 0 ) getitem 5019, 1;
+	if( countitem(5020) == 0 ) getitem 5020, 1;
+	close;
+
+L_known:
+	if (countitem(5012) > 0 && ign_5012 == 0) goto L_drink;
+	if (countitem(5013) > 0 && ign_5013 == 0) goto L_drink;
+	if (countitem(5014) > 0 && ign_5014 == 0) goto L_drink;
+	if (countitem(5022) > 0 && ign_5022 == 0) goto L_drink;
+	if (countitem(5023) > 0 && ign_5023 == 0) goto L_drink;
+	if (countitem(5018) > 0 && ign_5018 == 0) goto L_drink;
+	if (countitem(5019) > 0 && ign_5019 == 0) goto L_drink;
+	if (countitem(5020) > 0 && ign_5020 == 0) goto L_drink;
+
+	  mes "[Rayak]";
+	mes "Hope you liked it.";
+	next;
+	set rayak_known, 2;
+	  mes "[Rayak]";
+	mes "Slimes often hides tiny healing potions. If you bring me some, I can merge 3 tiny potions to 1 light for you. Bring me 3 tiny healing potions and I'll show you.";
+	close;		
+
+L_drink:
+	  mes "[Rayak]";
+	mes "Try all the potions first please.";
+	close;
+
+L_notiny:
+	  mes "[Rayak]";
+	mes "Bring me 3 tiny healing potions, please.";
+	close;	
+
+L_tiny:
+	if (countitem(5010) < 3) goto L_notiny;
+	mes "Rayak puts all three potions to a pot and mumbles something.";
+	next;	
+	delitem 5010, 3;
+	getitem 5011, 1;
+	set rayak_known, 3;
+	  mes "[Rayak]";
+	mes "Here it is. A light healing potion.";
+	getexp 1000, 0;
+	next;
+	  mes "[Rayak]";
+	mes "Now I want you to bring me 3 light healing potions and I'll make you 1 classic healing potion.";
+	close;	
+
+L_tiny2:
+	if (countitem(5010) < 3) goto L_nopots;
+	  mes "[Rayak]";
+	mes "How many light potions do you want? Remember you must have 3 tiny potions to create 1 light.";
+	input @num;
+	if (countitem(5010) < 3*@num) goto L_nopots;		
+	delitem 5010, 3*@num;
+	getitem 5011, @num;
+	  mes "[Rayak]";
+	mes "Here it is!";
+	close;	
+
+L_light:
+	  mes "[Rayak]";
+	mes "Good day, sir.";	
+	menu
+		"I have another tiny potions.", L_tiny2,
+		"I have 3 light potions.", -,
+		"Just wanted to greet you.", L_end;
+
+	if (countitem(5011) < 3) goto L_nolight;
+	mes "Rayak puts all three potions to a pot and mumbles something.";
+	next;	
+	delitem 5011, 3;
+	getitem 5012, 1;
+	set rayak_known, 4;
+	  mes "[Rayak]";
+	mes "Here it is. A healing potion.";
+	getexp 5000, 0;
+	next;
+	  mes "[Rayak]";
+	mes "Now I want you to bring me 3 healing potions and I'll make you 1 greater healing potion.";
+	close;	
+
+L_nolight:
+	  mes "[Rayak]";
+	mes "Bring me 3 light healing potions, please.";
+	close;
+
+L_light2:
+	if (countitem(5011) < 3) goto L_nopots;
+	  mes "[Rayak]";
+	mes "How many healing potions do you want? Remember you must have 3 light potions to create 1 classic.";
+	input @num;
+	if (countitem(5011) < 3*@num) goto L_nopots;		
+	delitem 5011, 3*@num;
+	getitem 5012, @num;
+	  mes "[Rayak]";
+	mes "Here it is!";
+	close;
+
+
+L_heal:
+	  mes "[Rayak]";
+	mes "Good day, sir.";	
+	menu
+		"I have tiny healing potions.", L_tiny2,
+		"I have light healing potions.", L_light2,
+		"I have 3 healing potions.", -,
+		"Just wanted to greet you.", L_end;
+
+	if (countitem(5012) < 3) goto L_noheal;
+	mes "Rayak puts all three potions to a pot and mumbles something.";
+	next;	
+	delitem 5012, 3;
+	getitem 5013, 1;
+	set rayak_known, 5;
+	  mes "[Rayak]";
+	mes "Here it is. A greater healing potion.";
+	getexp 15000, 0;
+	next;
+	  mes "[Rayak]";
+	mes "Now I want you to bring me 3 greater healing potions and I'll make you 1 master's healing potion.";
+	close;	
+
+L_noheal:
+	  mes "[Rayak]";
+	mes "Bring me 3 healing potions, please. Classic ones.";
+	close;
+
+L_heal2:
+	if (countitem(5012) < 3) goto L_nopots;
+	  mes "[Rayak]";
+	mes "How many healing potions do you want? Remember you must have 3 healing potions to create 1 greater.";
+	input @num;
+	if (countitem(5012) < 3*@num) goto L_nopots;		
+	delitem 5012, 3*@num;
+	getitem 5013, @num;
+	  mes "[Rayak]";
+	mes "Here it is!";
+	close;
+
+L_greater:
+	  mes "[Rayak]";
+	mes "Good day, sir.";	
+	menu
+		"I have tiny healing potions.", L_tiny2,
+		"I have light healing potions.", L_light2,
+		"I have healing potions.", L_heal2,
+		"I have 3 greater healing potions.", -,
+		"Just wanted to greet you.", L_end;
+
+	if (countitem(5013) < 3) goto L_nogreater;
+	mes "Rayak puts all three potions to a pot and mumbles something.";
+	next;	
+	delitem 5013, 3;
+	getitem 5014, 1;
+	set rayak_known, 6;
+	  mes "[Rayak]";
+	mes "Here it is. A master's healing potion.";
+	getexp 50000, 0;
+	next;
+	  mes "[Rayak]";
+	mes "That's all for now. I can merge mana potions too. Come back when you need some potions.";
+	close;	
+
+L_nogreater:
+	  mes "[Rayak]";
+	mes "Bring me 3 greater healing potions, please.";
+	close;
+
+L_greater2:
+	if (countitem(5013) < 3) goto L_nopots;
+	  mes "[Rayak]";
+	mes "How many healing potions do you want? Remember you must have 3 greater potions to create 1 master's.";
+	input @num;
+	if (countitem(5013) < 3*@num) goto L_nopots;		
+	delitem 5013, 3*@num;
+	getitem 5014, @num;
+	  mes "[Rayak]";
+	mes "Here it is!";
+	close;
+
+L_merge:
+	  mes "[Rayak]";
+	mes "Good day, sir. What do you need?";	
+	menu
+		"Merge tiny healing potions.", L_tiny2,
+		"Merge light healing potions.", L_light2,
+		"Merge healing potions.", L_heal2,
+		"Merge greater healing potions.", L_greater2,
+		"Merge mana potions.", L_mana,
+		"Buy potions.", L_buy,
+		"Just wanted to greet you.", L_end;	
+
+L_buy:
+	  mes "[Rayak]";
+	mes "I'm sorry, I have no potions to sell you. There's a castle in north. My friend Lazurak sells potions. But this area is not accessible now. Keep asking Megorn about news every week.";
+	if( rayak_quest == 0 ) set rayak_quest, 1;	
+	close;
+
+L_mana:
+	  mes "[Rayak]";
+	mes "What potions do you want to merge?";	
+	menu
+		"Merge tiny mana potions.", L_mtiny,
+		"Merge light mana potions.", L_mlight,
+		"Merge medium mana potions.", L_mmedium
+		"Merge greater mana potions.", L_mgreater,
+		"Oh, nothing.", L_end;	
+
+L_mtiny:
+	if (countitem(5016) < 3) goto L_nopots;
+	  mes "[Rayak]";
+	mes "How many light potions do you want? Remember you must have 3 tiny potions to create 1 light.";
+	input @num;
+	if (countitem(5016) < 3*@num) goto L_nopots;		
+	delitem 5016, 3*@num;
+	getitem 5017, @num;
+	  mes "[Rayak]";
+	mes "Here it is!";
+	close;
+
+L_mlight:
+	if (countitem(5017) < 3) goto L_nopots;
+	  mes "[Rayak]";
+	mes "How many medium potions do you want? Remember you must have 3 light potions to create 1 medium.";
+	input @num;
+	if (countitem(5017) < 3*@num) goto L_nopots;		
+	delitem 5017, 3*@num;
+	getitem 5018, @num;
+	  mes "[Rayak]";
+	mes "Here it is!";
+	close;
+
+L_mmedium:
+	if (countitem(5018) < 3) goto L_nopots;
+	  mes "[Rayak]";
+	mes "How many greater potions do you want? Remember you must have 3 medium potions to create 1 greater.";
+	input @num;
+	if (countitem(5018) < 3*@num) goto L_nopots;		
+	delitem 5018, 3*@num;
+	getitem 5019, @num;
+	  mes "[Rayak]";
+	mes "Here it is!";
+	close;
+
+L_mgreater:
+	if (countitem(5019) < 3) goto L_nopots;
+	  mes "[Rayak]";
+	mes "How many master's potions do you want? Remember you must have 3 greater potions to create 1 master's.";
+	input @num;
+	if (countitem(5019) < 3*@num) goto L_nopots;		
+	delitem 5019, 3*@num;
+	getitem 5020, @num;
+	  mes "[Rayak]";
+	mes "Here it is!";
+	close;
+
+L_nopots:
+	  mes "[Rayak]";
+	mes "You don't have enough potions!";
+	close;	
+
+}

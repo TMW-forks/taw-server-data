@@ -1,7 +1,19 @@
 function	script	mineral	{
 
-if(getitemequiped(3)==5006){
-	
-}
+if(getequipid(4)==5006) goto L_Equiped;
+	return;
+L_Equiped:
+	set @item, Rand(1);
+	set @luck, Rand(1000);
+
+	if( @item == 0 ) goto G_IronOre;
+	return;
+
+G_IronOre:
+	if( @luck > 700 ) getitem "IronOre", 1;
+	if( @luck > 970 ) getitem "IronOre", 1;
+	if( @luck > 995 ) getitem "IronOre", 1;
+	return;
+
 
 }

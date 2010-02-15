@@ -1,0 +1,12 @@
+// 901-3 mobs
+
+901-3.gat,14,41,1,1	monster	Mineral	1997,1,0,120000,Mob901-3::On1997
+
+
+901-3.gat,0,0,0	script	Mob901-3	-1,{
+On1997: 
+	callfunc "mineral";
+	break;
+
+	end;
+}

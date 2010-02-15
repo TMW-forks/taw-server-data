@@ -1,0 +1,49 @@
+901-2.gat,41,26,0	script	Taudus	109, {
+	if (ht_mining_quest == 2) goto L_done;
+	if (ht_mining_quest == 1) goto L_quest;
+	  mes "[Taudus] looks sadly";
+	mes "Hi... ";
+	menu
+		"Hi, why are you so sad?", -, 
+		"Bye!", L_end;
+
+	  mes "[Taudus]";
+	mes "Bloody Maggots have stolen me my favourite mining pick... I'm too scared to search for it.";
+	menu
+		"I will find your mining pick.", -,
+		"Ha-ha", L_end;
+
+	  mes "[Taudus]";
+	mes "Really? I would be greatful to you...";	
+	set ht_mining_quest, 1;
+	close;
+
+L_quest:
+	if( countitem(5006) > 0 ) goto L_have;
+	  mes "[Taudus]";
+	mes "I think the mining pick is lost forewer... :'(";
+	close;
+
+L_have:
+	  mes "[Taudus]";
+	mes "You have found the pick!";
+	getexp 50000, 0;
+	next;
+	  mes "[Taudus]";
+	mes "Well... thank you... but..";
+	next;
+	  mes "[Taudus]";
+	mes "I don't need it anymore. Keep it as a souvenir. If you kill the mineral with it, you have chance to get some Ores! Otherwise, you'll get only dust.";
+	set ht_mining_quest, 2;	
+	close;	
+
+L_done:
+	  mes "[Taudus]";
+	mes "Thank you for finding my mining pick.";
+	close;
+
+L_end:
+	close;
+
+}
+

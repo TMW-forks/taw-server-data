@@ -1,0 +1,11 @@
+901-2.gat,11,57,0	script	Bed#B1	127, {
+	heal 10000, 10000;
+	mes "You woke up strong and fresh.";
+	close;
+}
+
+901-2.gat,15,112,0	script	Bed#B2	127, {
+	heal 10000, 10000;
+	mes "You woke up strong and fresh.";
+	close;
+}

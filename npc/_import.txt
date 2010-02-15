@@ -53,6 +53,7 @@ import: npc/027-1_Graveyard/_import.txt
 import: npc/027-2_Caretakers_House/_import.txt
 import: npc/027-5_Woodland_mining_camp/_import.txt
 import: npc/901-1_HiTomb/_import.txt
+import: npc/901-2_HiTomb_indoors/_import.txt
 import: npc/901-3_Hitomb_Cave/_import.txt
 import: npc/902-1_Hitomb_Hills/_import.txt
 import: npc/902-3_Hitomb_Cave2/_import.txt

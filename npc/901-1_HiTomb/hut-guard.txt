@@ -87,7 +87,7 @@ H_buy:
 	getexp 30000, 0;
 
 	  mes "[Hut guard]";
-	mes "This is the key, the hut left from me is yours now. Stand in front of the doors and talk to it and you'll be allowed to enter. Have fun!";
+	mes "This is the key, the hut left from me is yours now. Simply enter the door, you are now allowed to enter.";
 	close;
 
 H_nocash:

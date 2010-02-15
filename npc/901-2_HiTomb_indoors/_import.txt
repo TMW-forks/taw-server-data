@@ -1,0 +1,8 @@
+map: 901-2.gat
+npc: npc/901-2_HiTomb_indoors/_warps.txt
+npc: npc/901-2_HiTomb_indoors/flowerpot.txt
+npc: npc/901-2_HiTomb_indoors/storage.txt
+npc: npc/901-2_HiTomb_indoors/bed.txt
+npc: npc/901-2_HiTomb_indoors/potion-master.txt
+npc: npc/901-2_HiTomb_indoors/sergeant.txt
+npc: npc/901-2_HiTomb_indoors/taudus.txt

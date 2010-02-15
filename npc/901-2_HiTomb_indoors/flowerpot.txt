@@ -1,0 +1,102 @@
+901-2.gat,13,60,0	script	Flowerpot#F1	127, {
+	callfunc "flowerpot";
+	close;
+}
+
+901-2.gat,11,111,0	script	Flowerpot#F2	127, {
+	callfunc "flowerpot";
+	close;
+}
+
+function	script	flowerpot	{
+
+	if ( hitomb_fl_pots < 1 ) set hitomb_fl_pots, 1;
+	if ( hitomb_fl_ready > 0) goto L_CheckLoop;
+	mes "[Flowerpot] What do you want to plant?";
+	menu
+		"Mauve Plant", P_mauve,
+		"Cobalt Plant", P_cobalt,
+		"Gamboge Plant", P_gamboge,
+		"Alizarin Plant", P_alizarin,
+		"Nothing", L_end;
+
+F_clean:
+	set hitomb_fl_ready, 0;
+	getitem hitomb_fl_planted, (rand(3) + 1) + ((rand(2) + 1) * (hitomb_fl_pots - 1));	
+	mes "[Flowerpot] You have cleaned your flowerpot and found few herbs already grown.";
+	deltimer "#hut::OnEnough";	
+	close;
+
+F_ready:
+	mes "[Flowerpot] Time to harvest your plants!";
+	getitem hitomb_fl_planted, (rand(10) + 15) + ((rand(4) + 5) * (hitomb_fl_pots - 1));
+	set hitomb_fl_ready, 0;
+	deltimer "#hut::OnEnough";
+	close;
+
+P_mauve:
+	set @herb, 680;
+	set @seed, 5001;
+	goto L_Plant;
+
+P_cobalt:
+	set @herb, 681;
+	set @seed, 5002;
+	goto L_Plant;
+
+P_gamboge:
+	set @herb, 682;
+	set @seed, 5003;
+	goto L_Plant;
+
+P_alizarin:
+	set @herb, 683;
+	set @seed, 5004;
+	goto L_Plant;
+
+P_noseed:
+	mes "[Flowerpot] You don't have any seed!";
+	close;
+
+L_end:
+	return;
+
+L_Plant:
+	if (countitem(@seed) < 1) goto P_noseed;
+	delitem @seed, 1;
+	set hitomb_fl_planted, @herb;
+	set hitomb_fl_ready, 1;
+	mes "[Flowerpot] Your seed has been planted!";
+	set @index, getarraysize($harvestingDay);
+	set $harvestingID[@index], getcharid(0);
+	set $harvestingTime[@index], gettime(3);
+	set $harvestingDay[@index], gettime(5);
+	close;
+
+L_CheckLoop:
+	mes "[Flowerpot]";
+	mes "\"Lets check if anything has grown already...\"";
+	next;
+	set @charID, getcharid(0);
+	set @index, -1;
+	innerLoop:
+	set @index, @index + 1;
+	// if it hasnt reached the index of player and loop hasnt exceed size of array
+	if( ($harvestingID[@index] != @charID)  && (@index <= getarraysize($harvestingDay)) ) goto innerLoop;
+	if(( gettime(3) > $harvestingTime[@index]) || (gettime(5) != $harvestingDay[@index])) goto L_DONE;
+	// time is variable depending on how much time is left in the hour. Also only pitfall is if the person checks back within the same day of the next month before the time was set.
+	mes "[Flowerpot]";
+	mes "\"Nothing yet.\"";
+	menu
+		"Clean flowerpot", F_clean,
+		"Leave", L_end;	
+L_DONE:
+	mes "[Flowerpot]";
+	mes "\"Aah, it's time to harvest your plants!\"";
+	getitem hitomb_fl_planted, (rand(10) + 15) + ((rand(4) + 5) * (hitomb_fl_pots - 1));
+	set hitomb_fl_ready, 0;
+	set $harvestingId[@index], 0;
+	set $harvestingDay[@index], 0;
+	close;
+
+}

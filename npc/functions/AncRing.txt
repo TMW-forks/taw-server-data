@@ -18,16 +18,17 @@ leave:
 	return;
 
 Learned:
-	  mes "[Ancients Ring '" + @ring + "']";
+	  mes "[Ancients Ring '" + @ring$ + "']";
 	mes "As you entered the ring and touched the panel, you feel a warm energy. The voice in your mind asks you for a code.";
 	input @code$;
 	if( @code$ == "gawlson" ) goto gawlson;
 	if( @code$ == "kagerat" ) goto kagerat;
 	if( @code$ == "lumenum" && ring_lumenum == 1 ) goto lumenum;
+	if( @code$ == "mortale" && ring_mortale == 1 ) goto mortale;
 	mes "Nothing happened...";
 	return;
 
-// Codes of the ancients rings
+// Codes of the ancients rings - all should be 7 characters long
 
 //HiTomb AR code
 gawlson:
@@ -45,5 +46,9 @@ lumenum:
 	warp "009-3", 80, 26;
 	return;
 
+mortale:
+	mes "You feel a movement in your body...";
+	warp "026-1", 26, 21;
+	return;
 
 }
