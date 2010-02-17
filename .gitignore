@@ -1,6 +1,7 @@
 *.class
 
 # Local configuration files
+conf/build-magic.sh
 conf/*_local.conf
 conf/eathena-monitor.conf
 conf/gm_account.txt
@@ -13,6 +14,7 @@ conf/spells-build.sh
 eathena-monitor
 
 # Copied/linked server executables
+eathena.sh
 char-server
 login-server
 map-server
