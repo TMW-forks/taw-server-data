@@ -5,3 +5,4 @@ npc: npc/009-3_Cave_beneath_Hurnscald/mekki.txt
 npc: npc/009-3_Cave_beneath_Hurnscald/monsters.txt
 npc: npc/009-3_Cave_beneath_Hurnscald/sword.txt
 npc: npc/009-3_Cave_beneath_Hurnscald/ancients-ring.txt
+npc: npc/009-3_Cave_beneath_Hurnscald/flying-beast.txt

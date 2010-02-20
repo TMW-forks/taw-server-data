@@ -1,0 +1,22 @@
+009-3.gat,115,93,0	script	Flying Beast	915, {
+	mes "The Beast seems to be aggressive. Be careful!";
+	menu
+		"Try to tame it.", -,
+		"Leave it alone.", L_end;
+
+	if (BaseLevel < 60) goto Too_young;
+	mes "You tamed the beast. You sit on it's back and it... flyes away!";	
+	close2;
+	warp "901-1.gat",83,49;
+	end;
+
+Too_young:
+	mes "Oh! The beast attacks you and torns you to small pieces. Yuk!";
+	itemheal -20, 0;
+	close2;
+	itemheal -hp, 0;
+	end;
+
+L_end:
+	close;
+}

@@ -99,6 +99,10 @@ Army_2_comp:
 	if( countitem(716) < 20 ) goto Army_2_not;
 	if( countitem(717) < 30 ) goto Army_2_not;
 	if( countitem(714) < 40 ) goto Army_2_not;
+	delitem 715, 10;
+	delitem 716, 20;
+	delitem 717, 30;
+	delitem 714, 50;
 	  mes "[Captain]";
 	mes "You're fast! Thank you a lot... ";
 	next;
@@ -144,6 +148,10 @@ Army_3_ready:
 	addtimer 300000,"#SK2::OnStrong";
 	addtimer 300000,"#SK3::OnStrong";
 	addtimer 300000,"#SK4::OnStrong";
+	enablenpc "#SK1";
+	enablenpc "#SK2";
+	enablenpc "#SK3";
+	enablenpc "#SK4";
 	warp "902-3.gat",105,49;
 	end;	
 
@@ -162,8 +170,20 @@ Army_3_comp:
 	end;
 
 Army_corporal:
+	if ( abi_ring == 0 ) goto Noring;
 	  mes "[Captain]";
-	mes "Wait for my commands, Corporal. Perhaps, you could try the deatharena in between. Talk to the Sergeant.";
-	close;	
-	
+	mes "Hello Corporal, you are allowed to enter Hitomb Castle called Thunder Hill. They will need you more. You will probably find lot of interesting things with a time there. I can warp you to the hill - you will find the way to Castle easily. Are you ready?";
+	menu
+		"Yes, I'm. Warp me, sir.", -,
+		"No, not yet.", L_end;
+	  mes "[Captain]";
+	mes "We will probably see each other later there. Good luck, Corporal!";
+	close2;
+	warp "902-1.gat",29,34;
+	end;	
+
+Noring:
+	  mes "[Captain]";
+	mes "Talk to Megorn now, he told me about some teleportation system. It could be useful for our army to know something about it.";
+	close;
 }

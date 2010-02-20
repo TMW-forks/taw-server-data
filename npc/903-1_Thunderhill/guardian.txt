@@ -1,0 +1,26 @@
+
+903-1.gat,27,31,0	script	Guard	904, {
+	close;
+	
+}
+
+903-1.gat,65,26,0	script	Guard	904, {
+	close;
+	
+}
+
+903-1.gat,69,26,0	script	Guard	904, {
+	  mes "[Guard]";
+	mes "You are not allowed to go there!";
+	close;
+	
+}
+
+903-1.gat,66,24,0	script	#SergeantGate	0,2,1 {
+	  mes "[Guard]";
+	mes "Corporals are not allowed to go there!";
+	warp "903-1", 67, 27;
+	close;
+	
+}
+

@@ -1,0 +1,29 @@
+//
+
+903-2.gat,78,90,0	script	Viur	914, {
+  if( rayak_quest == 1 ) goto Q_rayak;
+    mes "[Viur]";
+  mes "I don't have time for you.";
+  close;
+  
+  Q_rayak:
+      mes "[Viur]";
+    mes "I don't have time for you.";
+  menu
+    "Wait, Rayak has sent me. I'm searching for Lazurak.", -;
+    
+     mes "[Viur]";
+   mes "You're friend of Rayak? Well, that's different. Sorry, I really have hard work here. Perhaps you could help me... oh - Lazurak... You can find him in Northern castle.";
+   menu
+      "Thanks for the help. You said you need something...", -,
+      "Thanks for the help. Bye.", Q_rayakleave;
+
+    mes "[Viur]";
+  mes "Yes... I'm trying to reveal new recipe to create mana potions. ";
+      
+      
+   Q_rayakleave:
+      mes "[Viur]";
+    mes "See you later.";
+    set rayak_quest, 2;
+}

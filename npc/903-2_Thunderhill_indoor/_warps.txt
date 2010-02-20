@@ -1,0 +1,7 @@
+// 903-2 Indoor warps
+
+903-2.gat,47,70	warp	ToWall	-1,0,903-1.gat,40,27
+903-2.gat,74,68	warp	ToWall	-1,0,903-1.gat,62,27
+903-2.gat,111,70	warp	ToWall	-1,0,903-1.gat,88,31
+903-2.gat,76,96	warp	ToWall	-1,0,903-1.gat,76,35
+903-2.gat,71,59	warp	ToWall	-1,0,903-1.gat,62,21

@@ -1,0 +1,10 @@
+// 903-1 Castle warps
+
+903-1.gat,55,55	warp	ToHitomb	1,0,902-1.gat,63,1
+903-1.gat,103,26	warp	Wall1	-1,0,903-1.gat,103,29
+903-1.gat,103,28	warp	Wall2	-1,0,903-1.gat,103,24
+903-1.gat,40,26	warp	ToWall	-1,0,903-2.gat,47,68
+903-1.gat,62,26	warp	ToWall	-1,0,903-2.gat,74,66
+903-1.gat,88,30	warp	ToWall	-1,0,903-2.gat,111,69
+903-1.gat,76,34	warp	ToWall	-1,0,903-2.gat,76,94
+903-1.gat,62,20	warp	ToWall	-1,0,903-2.gat,72,59

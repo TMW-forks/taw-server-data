@@ -1,0 +1,18 @@
+
+903-1.gat,27,31,0	script	Guard	904, {
+	close;
+	
+}
+
+903-1.gat,65,26,0	script	Guard	904, {
+	close;
+	
+}
+
+903-1.gat,69,26,0	script	Guard	904, {
+	  mes "[Guard]";
+	mes "...";
+	close;
+	
+}
+

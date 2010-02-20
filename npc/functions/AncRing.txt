@@ -25,6 +25,7 @@ Learned:
 	if( @code$ == "kagerat" ) goto kagerat;
 	if( @code$ == "lumenum" && ring_lumenum == 1 ) goto lumenum;
 	if( @code$ == "mortale" && ring_mortale == 1 ) goto mortale;
+	if( @code$ == "vidense" && ring_vidense == 1 ) goto vidense;
 	mes "Nothing happened...";
 	return;
 
@@ -36,19 +37,29 @@ gawlson:
 	warp "901-1", 83, 45;
 	return;
 
+// Tulimshar
 kagerat:
 	mes "You feel a movement in your body...";
 	warp "024-1", 80, 35;
 	return;
 
+//Hurnscald
 lumenum:
 	mes "You feel a movement in your body...";
 	warp "009-3", 80, 26;
 	return;
 
+//Graveyard
 mortale:
 	mes "You feel a movement in your body...";
 	warp "026-1", 26, 21;
 	return;
+
+//Thunderhill
+vidense:
+	mes "You feel a movement in your body...";
+	warp "903-1", 92, 33;
+	return;
+
 
 }

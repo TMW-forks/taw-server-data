@@ -19,7 +19,7 @@ if (megorn_know == 1) goto L_known;
 		"Sorry, I'm in a hurry.", L_end;
 
 A_learnf:
-	if (BaseLevel < 60) goto Too_young;
+	if (BaseLevel < 40) goto Too_young;
 	  mes "[Megorn]";
 
 	mes "Okay, traveller. I'll teach you. You must enter the ring and touch the panel. Then enter the code of the ring you want to travell to. Remember the codes you'll find!";

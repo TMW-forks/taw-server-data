@@ -1,0 +1,31 @@
+
+009-1.gat,63,33,0	script	Warrior	903, {
+	if (knows_hitomb == 1) goto Knows;
+	  mes "[Warrior]";
+	mes "Greetings, it's nice day, isn't it?";
+	menu
+		"I have never seen you before, are you new here?", -,
+		"I have more important things to do than talking about weather!", L_end;
+
+	  mes "[Warrior]";
+	mes "Yes, I came from Hitomb. Place far far away from Hurnscald. I came here to find brave soldiers to show them how to  get there. We need brave soldiers.";
+	menu
+		"Where can I find it?", -,
+		"Okay, nice story. Got to go now.", L_end;
+
+
+	  mes "[Warrior]";
+	mes "Great! If you feel strong enough, you can visit these hurnscal caves. I left my flying beast for travellers there. Take the south way and you will find it on the small island. Try to tame it, won't be hard for you. If you won't be able to tame it, you can try to find path through caves near injured mouboo.";
+	set knows_hitomb, 1;	
+	close;
+
+Knows:
+	  mes "[Warrior]";
+	mes "I hope you will like Hitomb. Remember, my flying beast is south in Hurnscald caves on small island.";
+	close;
+
+L_end:
+	close;
+	
+}
+

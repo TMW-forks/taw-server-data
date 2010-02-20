@@ -57,4 +57,6 @@ import: npc/901-2_HiTomb_indoors/_import.txt
 import: npc/901-3_Hitomb_Cave/_import.txt
 import: npc/902-1_Hitomb_Hills/_import.txt
 import: npc/902-3_Hitomb_Cave2/_import.txt
+import: npc/903-1_Thunderhill/_import.txt
+import: npc/903-2_Thunderhill_indoor/_import.txt
 import: npc/botcheck/_import.txt
