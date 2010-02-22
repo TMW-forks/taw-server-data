@@ -1,4 +1,4 @@
-901-2.gat,58,58,0	script	Rayak	915, {
+901-2.gat,58,58,0	script	Rayak	913, {
 	if ( rayak_known == 6 ) goto L_merge;
 	if ( rayak_known == 5 ) goto L_greater;
 	if ( rayak_known == 4 ) goto L_heal;
