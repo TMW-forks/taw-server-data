@@ -1,6 +1,6 @@
 // 901-1 HiTomb warps
 
-901-1.gat,49,55	warp	PathDown	2,-1,902-1.gat,51,56
+901-1.gat,49,55	warp	PathDown	2,-1,902-1.gat,49,56
 901-1.gat,46,46	warp	ToCave	-1,0,901-3.gat,34,43
 901-1.gat,41,53	warp	Potions	-1,0,901-2.gat,56,62
 901-1.gat,74,42	warp	Army	-1,0,901-2.gat,92,38
