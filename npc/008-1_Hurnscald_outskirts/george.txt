@@ -10,7 +10,116 @@
 
 L_Pirate:
 	mes "[George the Pirate]";
+	if (Q_pirate_quest4 == 3)
+		goto L_real_pirate;
+	if (Q_pirate_quest4 == 1)
+		goto L_havent_see_the_doctor;
+	if (Q_pirate_quest4 == 2)
+		goto L_have_see_the_doctor;
+	if (Q_pirate_quest3 == 1)
+		goto L_pirate_quest3;
+	if (Q_pirate_quest2 == 1)
+		goto L_pirate_quest2;
+	if (Q__pirate_collecting_items == 1)
+		goto L_pirate_quest1_items;
+
+L_real_pirate:
+	mes "[George the Pirate]";
 	mes "\"Arrrrh! Ye be wearing a pirate's hat!\"";
+	if (Q_pirate_quest4 != 3)
+		goto L_first_time_quest;
+	close;
+
+L_first_time_quest:
+	mes "\"Ye look strong too! Can ye prove ye be a real pirate?\"";
+	next;
+	menu "Yes", L_ans_yes,
+	"No", L_ans_no,
+	"What do you want ?", L_pirate_quest1;
+
+L_ans_yes:
+	close;
+
+L_ans_no:
+	close;
+
+L_pirate_quest1:
+	set Q__pirate_collecting_items, 1;
+	mes "\"Bring me 2 bones and 1 dark crystal to prove yer strenth.\"";
+	close;
+
+L_pirate_quest1_items:
+	mes "\"Ye have the items?\"";
+	next;
+	menu "Yes", L_check_item1,
+	"No", L_end_nothing;
+	
+
+L_check_item1:
+	if (countitem("bone") < 2 || countitem("darkcrystal") == 0)
+		goto L_not_enough_item;
+	goto L_quest1_reward;	
+
+L_quest1_reward:
+	set Q_pirate_quest2, 1;
+	delitem "bone", 2;
+	delitem "darkcrystal", 1;
+	getexp 100000, 0;
+	set Zeny, Zeny + 10000;
+	mes "\"Ye proved yer strength matey, but ye still look like a landlubber! Come back when ye have your outfit...\"";
+	close;
+
+L_pirate_quest2:
+	set @ARMOR, getequipid(equip_torso);
+	set @BOOTS, getequipid(equip_shoes);
+	set @GLOVES, getequipid(equip_gloves);
+	if ((@GLOVES == 2166) && (@BOOTS == 2156) && (@ARMOR == 2086))
+		goto L_good_equipement;
+	goto L_bad_equipement;
+
+L_good_equipement:
+	set Q_pirate_quest3, 1;
+	mes "\"ARH! me matey I Like ye. Tell ye what, if ye get me 10 pearls and 10 beers i'll give ye something in return.\"";
+	close;
+
+L_bad_equipement:
+	mes "\"Ye don't look like a pirate.\"";
+	close;
+
+L_pirate_quest3:
+	mes "\"Do ye have the bootie?\"";
+	next;
+	menu "yes", L_check_item2,
+	"no", L_end_nothing;
+
+L_end_nothing:
+	close;
+
+L_check_item2:
+	if (countitem("pearl") < 10 || countitem("beer") < 10)
+		goto L_not_enough_item;
+	goto L_quest2_reward;	
+
+L_quest2_reward:
+	set Q_pirate_quest4, 1;
+	delitem "beer", 10;
+	delitem "pearl", 10;
+	mes "\"Yarg! I lost me eyepatch! Maybe the Doc has a spare..\"";
+	close;
+
+L_havent_see_the_doctor:
+	mes "\"Hurry up matey!\"";
+	close;
+
+L_have_see_the_doctor:
+	set Q_pirate_quest4, 3;
+	getexp 200000, 0;
+        getitem "eyepatch", 1;
+	mes "\"Thanks matie I be in yer debt! I found me other eyepatch so here!\"";
+	close;
+
+L_not_enough_item:
+	mes "\"You don't have what I wanted! Arr.\"";
 	close;
 
 L_Bandana:

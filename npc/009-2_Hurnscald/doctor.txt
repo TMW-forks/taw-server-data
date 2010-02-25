@@ -7,6 +7,9 @@
 	mes "[Doctor]";
 	mes "\"Hello, can I help you?\"";
 	next;
+	
+	if (Q_pirate_quest4 == 1)
+		goto L_pirate_quest_eyepatch;
 
 	if (Inspector == 1)
 		menu
@@ -20,6 +23,11 @@
 
 	mes "[Doctor]";
 	mes "\"Then please stop wasting my precious time.\"";
+	close;
+
+L_pirate_quest_eyepatch:
+	set Q_pirate_quest4, 2;
+	mes "\"Oh.. George lost his eyepatch? I'll send the Nurse to give him a new one\"";
 	close;
 
 L_Cure:
