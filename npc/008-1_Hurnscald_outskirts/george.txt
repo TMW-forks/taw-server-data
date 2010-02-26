@@ -9,7 +9,6 @@
 	close;
 
 L_Pirate:
-	mes "[George the Pirate]";
 	if (Q_pirate_quest4 == 3)
 		goto L_real_pirate;
 	if (Q_pirate_quest4 == 1)
