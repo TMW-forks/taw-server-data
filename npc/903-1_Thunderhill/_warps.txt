@@ -8,3 +8,4 @@
 903-1.gat,88,30	warp	ToWall	-1,0,903-2.gat,111,69
 903-1.gat,76,34	warp	ToWall	-1,0,903-2.gat,76,94
 903-1.gat,62,20	warp	ToWall	-1,0,903-2.gat,72,59
+903-1.gat,19,38	warp	ToWest	-1,-1,904-1.gat,52,38

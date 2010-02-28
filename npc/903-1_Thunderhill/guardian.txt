@@ -24,3 +24,15 @@
 	
 }
 
+903-1.gat,28,30,0	script	#Cave	0,0,0 {
+if (hitomb_army == 7) goto L_corporal;
+	  mes "[Guard]";
+	mes "Only members of Hitomb armyare allowed to enter ThunderHill Castle.";
+	warp "903-1", 28, 31;
+	close;
+
+L_corporal:
+	warp "903-2", 31, 58;
+	close;	
+	
+}

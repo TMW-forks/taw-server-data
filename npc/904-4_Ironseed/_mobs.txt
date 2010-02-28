@@ -1,0 +1,13 @@
+// 904-4 Ironseed mobs
+
+904-4.gat,18,15,19,23	monster	Object	1991,1,0,30000,Mob904-4::On1991
+
+
+904-4.gat,0,0,0	script	Mob904-4	-1,{
+On1991:
+	set @mobID, 1991;
+	callfunc "MobPoints";
+	break;
+
+	end;
+}
