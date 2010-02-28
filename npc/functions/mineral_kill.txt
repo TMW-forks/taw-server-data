@@ -10,9 +10,9 @@ L_Equiped:
 	return;
 
 G_IronOre:
-	if( @luck > 650 ) getitem "IronOre", 1;
-	if( @luck > 970 ) getitem "IronOre", 1;
-	if( @luck > 995 ) getitem "IronOre", 1;
+	if( @luck > 520 ) getitem "IronOre", 1;
+	if( @luck > 760 ) getitem "IronOre", 1;
+	if( @luck > 915 ) getitem "IronOre", 1;
 	return;
 
 

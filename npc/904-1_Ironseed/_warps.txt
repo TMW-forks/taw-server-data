@@ -1,0 +1,4 @@
+// 904-1 Ironseed warps
+
+904-1.gat,28,57	warp	Sounthpath	-1,-1,904-4.gat,12,6
+904-1.gat,53,38	warp	ToCastle	-1,-1,903-1.gat,20,38

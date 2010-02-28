@@ -32,12 +32,12 @@ Good_pos:
 M_Weak:
 		monster "902-3.gat",82,79,"Live Statue",1043,1,"#WAKEUP::OnA";
 		disablenpc "#SK1";
-		end;
+		close;
 
 OnStrong:
 		monster "902-3.gat",82,79,"Live Statue",1045,1,"#WAKEUP::OnA";
 		disablenpc "#SK1";
-		end;
+		close;
 M_Back:
 		if (hitomb_army < 6 ) set hitomb_army, 6;
 		killmonster "902-3.gat","#WAKEUP::OnA";
@@ -56,7 +56,7 @@ M_Back:
 		if ( getareausers("902-3.gat",120,60,127,84) > 0 ) set @letpvp, 1;
 		if ( getareausers("902-3.gat",114,75,127,85) > 0 ) set @letpvp, 1;
 		if ( @letpvp == 0 ) pvpoff "902-3.gat";
-		end;
+		close;
 }
 902-3.gat,80,79,0	script	#SK2	911, {
 if( isin("902-3.gat",79,79,81,80)) goto  Good_pos;
@@ -73,12 +73,12 @@ Good_pos:
 M_Weak:
 		monster "902-3.gat",80,79,"Live Statue",1043,1,"#WAKEUP::OnB";
 		disablenpc "#SK2";
-		end;
+		close;
 
 OnStrong:
 		monster "902-3.gat",80,79,"Live Statue",1045,1,"#WAKEUP::OnB";
 		disablenpc "#SK2";
-		end;
+		close;
 M_Back:
 		if (hitomb_army < 6 ) set hitomb_army, 6;
 		killmonster "902-3.gat","#WAKEUP::OnA";
@@ -97,7 +97,7 @@ M_Back:
 		if ( getareausers("902-3.gat",120,60,127,84) > 0 ) set @letpvp, 1;
 		if ( getareausers("902-3.gat",114,75,127,85) > 0 ) set @letpvp, 1;
 		if ( @letpvp == 0 ) pvpoff "902-3.gat";
-		end;
+		close;
 }
 902-3.gat,78,79,0	script	#SK3	911, {
 if( isin("902-3.gat",77,79,79,80)) goto  Good_pos;
@@ -113,12 +113,12 @@ Good_pos:
 M_Weak:
 		monster "902-3.gat",78,79,"Live Statue",1043,1,"#WAKEUP::OnC";
 		disablenpc "#SK3";
-		end;
+		close;
 
 OnStrong:
 		monster "902-3.gat",78,79,"Live Statue",1045,1,"#WAKEUP::OnC";
 		disablenpc "#SK3";
-		end;
+		close;
 M_Back:
 		if (hitomb_army < 6 ) set hitomb_army, 6;
 		killmonster "902-3.gat","#WAKEUP::OnA";
@@ -137,7 +137,7 @@ M_Back:
 		if ( getareausers("902-3.gat",120,60,127,84) > 0 ) set @letpvp, 1;
 		if ( getareausers("902-3.gat",114,75,127,85) > 0 ) set @letpvp, 1;
 		if ( @letpvp == 0 ) pvpoff "902-3.gat";
-		end;
+		close;
 }
 902-3.gat,76,79,0	script	#SK4	911, {
 if( isin("902-3.gat",75,79,77,80)) goto  Good_pos;
@@ -153,12 +153,12 @@ Good_pos:
 M_Weak:
 		monster "902-3.gat",76,79,"Live Statue",1043,1,"#WAKEUP::OnD";
 		disablenpc "#SK4";
-		end;
+		close;
 
 OnStrong:
 		monster "902-3.gat",76,79,"Live Statue",1045,1,"#WAKEUP::OnD";
 		disablenpc "#SK4";
-		end;
+		close;
 M_Back:
 		if (getgmlevel(0) > 30) goto L_GM;
 		if (hitomb_army < 6 ) set hitomb_army, 6;
