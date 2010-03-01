@@ -266,7 +266,7 @@ L_mana:
 	menu
 		"Merge tiny mana potions.", L_mtiny,
 		"Merge light mana potions.", L_mlight,
-		"Merge medium mana potions.", L_mmedium
+		"Merge medium mana potions.", L_mmedium,
 		"Merge greater mana potions.", L_mgreater,
 		"Oh, nothing.", L_end;	
 

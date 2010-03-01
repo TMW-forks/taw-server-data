@@ -40,7 +40,7 @@ L_Reward:
         getitem 634, 1;
         mes "[Edward]";
         mes "Thank you for your help, here's your reward, it will protect you from the sun.";
-        set EdwardQuest, 1
+        set EdwardQuest, 1;
         close;
 
 L_ThanksAgain:
