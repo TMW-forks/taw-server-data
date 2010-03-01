@@ -1,4 +1,4 @@
-006-1.gat,23,100,0	script	Pachua	143, {
+006-1.gat,23,100,0	script	Pachua	143,{
 
 	set @LEATHER_PATCH_PRICE, 300;
 
@@ -6,34 +6,34 @@
 
 	mes "[Chief Pachua]";
 	mes "\"How!\"";
+	next;
 	
-	if(Valen2kx == 21) goto L_Cupid;
-	if(Valen2kx == 30) goto L_Skinback;
-	if(Valen2kx == 31) goto L_Herbback;
-	if(Valen2kx == 96) goto L_Herbback;
-		
-L_Shops:
 	if (getequipid(equip_head) == 643 || getequipid(equip_head) == 644) goto L_WearingCowboy;
 	if (getequipid(equip_legs) == 642) goto L_WearingChaps;
+
 	mes "[Chief Pachua]";
 	mes "\"For generations my tribe has been crafting special clothes out of different items.\"";
 	next;
-	
+
 L_Check_Shops:
 	if((countitem("JeansShorts") > 0 && countitem("SnakeSkin") > 9) && (countitem("FancyHat") > 0 && countitem("SnakeSkin") > 1)) goto L_Super_store;
 	if(countitem("JeansShorts") > 0 && countitem("SnakeSkin") > 9) goto L_Chaps_store;
 	if(countitem("FancyHat") > 0 && countitem("SnakeSkin") > 1) goto L_Cowboy_store;
+
 	mes "[Chief Pachua]";
 	mes "\"Maybe if you bring me the right materials I can make something for you.\"";
         next;
+
         if (@wants_leather_patch)
 		menu	"Wait, can you make a leather patch for me?", L_leather_patch,
                 	"OK, bye.", -;
+
 	close;
 
 L_CheckStuff:
 	mes "[Chief Pachua]";
 	mes "\"Let me see what you have there.\"";
+	next;
 	return;
 
 L_Super_store:
@@ -179,7 +179,7 @@ L_NoSkins:
 L_WearingCowboy:
 	mes "[Chief Pachua]";
 	mes "\"Ah, I see that you are wearing a hat made with the ancient methods of my tribe.\"";
-	
+	next;
 	goto L_Check_Shops;
 
 L_WearingChaps:
@@ -195,190 +195,4 @@ L_TooMany:
 	mes "[Chief Pachua]";
 	mes "\"You don't have room for a leather patch. Come back later.\"";
 	close;
-
-L_Cupid:
-	mes "[Chief Pachua]";
-	mes "\"What can Chief Pachua do for you young Pale Face.";
-	mes "You come for Good Indian Wares?";
-	menu
-		"Yes, what do you sell?", L_Shops,
-		"Actually, I was told you make sinew.", L_Sinew,
-		"I just come to say Hello.", L_End;
-
-L_Sinew:
-	mes "[Chief Pachua]";
-	mes "\"Ah, yes, Chief Pachua make this.";
-	mes "But I make this for only special customers.\"";
-	menu
-		"Well, Nicolas the Blacksmith sent me.", L_Start,
-		"Its not for me.", L_Whothen;
-
-L_Whothen:
-	mes "[Chief Pachua]";
-	mes "\"Who then sends you to Pachua?";
-	mes "And what do they make.\"";
-	menu
-		"Why should I tell you anything I just want sinew.", L_Attitude,		
-		"Nicolas the Blacksmith is making arrowheads for Herzensbrecher.", L_Start;
-
-L_Attitude:
-	mes "[Chief Pachua]";
-	mes "\"I dont like Pale faces attitude.";
-	mes "Indian Chief too busy for games.";
-	mes "Indian Chief think he not keep you safe here.";
-	mes "Indian Chief think you need to learn manners.";
-	mes "Indian Chief think his desert guardians will teach you manners.\"";
-	monster "006-1.gat",27,105,"The Desert Guardians",1009,5;
-	close;
-
-L_Start:
-	mes "[Chief Pachua]";
-	mes "\"Ah my good friend Nicolas.";
-	mes "We do good business for each other.";
-	mes "He is making many good things for Indians.\"";
-	menu
-		"He is out of sinew and needs it Urgently.", L_Fast;
-
-L_Fast:
-	mes "[Chief Pachua]";
-	mes "\"Oh Chief Pachua has no time for fast.";
-	mes "Big PowWow coming.";
-	mes "Must travel to get Peace Pipe Herb.\"";
-	next;
-	mes "[Chief Pachua]";
-	mes "\"Sinew takes Pachua time.";
-	mes "Must hunt many snakes for skins.";
-	mes "Then must do special things to make sinew.\"";
-	menu
-		"Ok, well where else can I get sinew?", L_Nowhere,
-		"Can I hunt the skins for you?", L_Skins;
-
-L_Nowhere:
-	mes "[Chief Pachua]";
-	mes "\"Modern times is hard on Indian ways.";
-	mes "Young people dont learn.";
-	mes "White man use cheap plastics.";
-	mes "Chief Pachua only make sinew now.\"";
-	menu
-		"Ok I will collect skins for you.", L_Skins;
-
-L_Skins:
-	mes "[Chief Pachua]";
-	mes "\"If you bring Chief Pachua 10 snake skins.";
-	mes "Chief Pachua will make good spool of sinew.";
-	mes "But I still must travel.\"";
-	menu
-		"How long does it take to make sinew.", L_Time,
-		"Can I get your peace herb for you?", L_Time2;
-
-L_Time:
-	mes "[Chief Pachua]";
-	mes "\"Sinew is not short process.";
-	mes "It will take Chief Pachua a little while";
-	mes "Trip for herb is long";
-	mes "Cheif Pachua cannot miss getting herb for PowWow.\"";
-	menu
-		"Can I go get the peace herb while you do the sinew?", L_Time2;
-
-L_Time2:
-	mes "[Chief Pachua]";
-	mes "\"You bring 10 snake skins.";
-	mes "Chief Pachua will send smoke signal";
-	mes "Tell them you come get herb.";
-	mes "Cheif Pachua will give directions.";
-	mes "when you bring back skins.\"";
-	set Valen2kx, 30;
-	close;
-
-L_Skinback:
-	mes "[Chief Pachua]";
-	mes "\"Did you get the snake skins?\"";
-	menu
-		"Sorry I forget how many you need.", L_Forgetskin,
-		"Yes, here you go.", L_Skincheck;
-
-L_Skincheck:
-	if(countitem(641) <10) goto L_NotYet;
-        delitem 641, 10;
-	mes "[Chief Pachua]";
-        mes "\"This is very good.";
-	mes "Now you go get Peace Herb for Indian Chief\"";
-	next;
-	mes "[Chief Pachua]";
-	mes "\"There is a very good gardener to the west.";
-	mes "She collects many different plants and herbs";
-	mes "She mixes and dries these to perfection\"";
-	next;
-	mes "[Chief Pachua]";
-	mes "\"Tell her you come for Pachua Peace Herb.";
-	mes "She knows what we need for our PowWow.\"";
-	next;
-	mes "[Chief Pachua]";
-	mes "\"You bring back Peace Herb.";
-	mes "Chief Pachua will have your sinew ready.";
-	set Valen2kx, 31;
-	close;
-
-L_Forgetskin:
-	mes "[Chief Pachua]";
-	mes "\"You bring 10 snake skins.";
-	mes "Chief Pachua already send smoke signal";
-	mes "You must hurry or I will not have time.\"";
-	close;
-
-L_NotYet:
-	mes "[Chief Pachua]";
-	mes "\"Are you trying to cheat Pachua?";
-	mes "You dont have what I need.";
-	mes "Come back when you have it all.\"";
-	close;
-
-L_Herbback:
-	mes "[Chief Pachua]";
-	mes "\"Chief Pachua is anxious for some Herb.\"";
-	menu
-		"Sorry I forget where to go.", L_ForgetAlice,
-		"Yes, here you go.", L_Herbcheck;
-
-L_Herbcheck:
-	if(countitem(1248) <1) goto L_NotYet2;
-        delitem 1248, 1;
-	mes "[Chief Pachua]";
-	mes "\"I just finish wrapping sinew.";
-	mes "This is good amount for Nicolas";
-	mes "Tell him to give better notice next time.\"";
-	next;
-	mes "[Chief Pachua]";
-	mes "\"Oh I can smell the Peace Herb";
-	mes "Chief Pachua is craving this.\"";
-	next;
-	mes "[Chief Pachua]";
-	mes "\"Here you go now. Pachua test herb.";
-	getitem 1246, 1;
-	set Valen2kx, 97;
-	close;
-
-L_ForgetAlice:
-	mes "[Chief Pachua]";
-	mes "\"Alice is a very good gardener.";
-	mes "She mixes and dries herbs to perfection\"";
-	next;
-	mes "[Chief Pachua]";
-	mes "\"She is expecting you.";
-	mes "You must hurry the PowWow will be soon.\"";
-	close;
-
-L_NotYet2:
-	mes "[Chief Pachua]";
-	mes "\"Did you smoke all the Peace Herb";
-	mes "You dont have any.";
-	mes "Come back when you have it.\"";
-	close;
-
-L_Herbgood:
-	mes "[Chief Pachua]";
-	mes "\"Chief Pachua tried some Herb.";
-	mes "\"Chief Pachua thinks PowWow will be very successful.";
-	close;
-
 }

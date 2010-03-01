@@ -9,6 +9,5 @@ npc: npc/021-1_Tulimshar/nodrop.txt
 npc: npc/021-1_Tulimshar/north_shops.txt
 npc: npc/021-1_Tulimshar/royal_guards.txt
 npc: npc/021-1_Tulimshar/shelly.txt
-npc: npc/021-1_Tulimshar/Sulken.txt
 npc: npc/021-1_Tulimshar/weellos.txt
 npc: npc/021-1_Tulimshar/workers.txt
