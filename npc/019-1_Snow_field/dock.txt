@@ -1,0 +1,6 @@
+// The ferry dock
+
+019-1.gat,106,96,0	script	#nivalisdock	127,2,1,{
+	set @loc, DOCK_nivalis;
+	callfunc "Ferry";
+}

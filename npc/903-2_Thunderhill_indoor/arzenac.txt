@@ -1,0 +1,43 @@
+//
+
+903-2.gat,77,62,0	script	Arzenac	919, {
+      mes "[Arzenac]";
+    mes "Hey, are you a miner?";
+    menu
+	"Somehow...", -,
+	"No, I'm a warrior!", L_war;
+
+      mes "[Arzenac]";
+    mes "I can enchant your mining pick. You'll be faster when mining and be able to get some rougher minerals. I just need you to bring me your pick and 10 gold ores.";
+
+    menu
+	"I have all you need, take it.", -,
+	"Hm... maybe later.", L_end;	
+
+	if(countitem(5006) < 1) goto L_no;
+	if(countitem(5040) < 10) goto L_no;
+
+      mes "Arzenac puts gold in pocket and mumbles something with your mining pick in hand.";
+	next;
+	delitem 5006, 1;
+	delitem 5040, 10;
+	getitem 5045, 1;
+      mes "[Arzenac]";
+    mes "Here is your new enchanted pick!";
+	close;
+
+L_no:
+      mes "[Arzenac]";
+    mes "No, you don't!";
+	close;
+	 
+
+L_war:
+      mes "[Arzenac]";
+    mes "Good, warriors are needed to defend our castle.";
+	close;
+
+L_end:
+	close;
+
+}

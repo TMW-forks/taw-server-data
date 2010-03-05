@@ -1,7 +1,7 @@
-// 901-3 Cave warps
+// 901-3 Hitomb Cave warps
 
-901-3.gat,33,44	warp	ToHitomb	-1,0,901-1.gat,46,47
-901-3.gat,14,33	warp	ToWoodCave	-1,0,012-3.gat,448,62
-901-3.gat,33,26	warp	Cont	-1,0,901-3.gat,33,20
-901-3.gat,33,21	warp	Cont	-1,0,901-3.gat,33,27
-901-3.gat,45,14	warp	Contlvl	-1,0,902-3.gat,73,112
+901-3.gat,34,44	warp	Hitomb	0,-1,901-1.gat,46,47
+901-3.gat,15,33	warp	Woodland	2,-1,012-3.gat,448,62
+901-3.gat,33,26	warp	cont_up	-1,-1,901-3.gat,33,20
+901-3.gat,33,21	warp	cont_down	1,-1,901-3.gat,33,27
+901-3.gat,45,13	warp	level2	-1,-1,902-3.gat,73,112

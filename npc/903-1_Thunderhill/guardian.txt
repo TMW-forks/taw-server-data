@@ -32,7 +32,8 @@ if (hitomb_army == 7) goto L_corporal;
 	close;
 
 L_corporal:
-	warp "903-2", 31, 58;
-	close;	
+	warp "903-3", 9, 32;
+	end;
+	close;
 	
 }

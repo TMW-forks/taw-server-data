@@ -1,57 +1,41 @@
 // 902-1 HiTomb hills mobs
 
-902-1.gat,26,49,11,21	monster	Scorpion	1009,5,0,40000,Mob902-1::On1009
-902-1.gat,39,60,11,7	monster	Snakes	1010,4,0,50000,Mob902-1::On1010
-902-1.gat,60,30,8,5	monster	Red	1004,2,0,10000,Mob902-1::On1004
+902-1.gat,26,49,11,21	monster	Scorpion	1009,7,0,40000,Mob902-1::On1009
+902-1.gat,39,60,11,7	monster	Snakes	1010,3,0,50000,Mob902-1::On1010
+902-1.gat,60,30,8,5	monster	Red	1004,3,0,10000,Mob902-1::On1004
 902-1.gat,43,4,17,4	monster	Spectre	1042,2,0,50000,Mob902-1::On1042
 902-1.gat,37,13,10,8	monster	BloodyMaggot	1999,1,0,20000,Mob902-1::On1999
-902-1.gat,39,35,4,3	monster	Scorpion	1009,3,0,1999,Mob902-1::On1009
-902-1.gat,26,49,9,19	monster	Snakes	1010,4,0,40000,Mob902-1::On1010
-902-1.gat,70,57,20,18	monster	Snakes	1010,5,0,100000,Mob902-1::On1010
-902-1.gat,85,63,36,11	monster	Scorpions	1009,7,0,90000,Mob902-1::On1009
-902-1.gat,91,40,20,31	monster	Magots	1002,35,0,100000,Mob902-1::On1002
-//902-1.gat,102,49,12,7	monster	Grasshere	1034,1,0,250,Mob902-1::On1034
+902-1.gat,39,35,4,3	monster	Scorpion	1009,3,0,2500,Mob902-1::On1009
+902-1.gat,26,49,9,19	monster	Snakes	1010,5,0,40000,Mob902-1::On1010
+902-1.gat,70,57,20,18	monster	Snakes	1010,6,0,100000,Mob902-1::On1010
+902-1.gat,85,63,36,11	monster	Scorpions	1009,6,0,90000,Mob902-1::On1009
+902-1.gat,91,40,20,31	monster	Magots	1002,25,0,100000,Mob902-1::On1002
+902-1.gat,102,49,12,7	monster	Mineral	1997,1,0,60000,Mob902-1::On1997
 902-1.gat,96,28,10,14	monster	GiantMaggot	1006,3,0,30000,Mob902-1::On1006
 902-1.gat,92,10,14,8	monster	Fallens	1045,3,0,60000,Mob902-1::On1045
-902-1.gat,67,9,4,4	monster	Zombie	1036,1,0,19990,Mob902-1::On1036
+902-1.gat,67,9,4,4	monster	Zombie	1036,1,0,25000,Mob902-1::On1036
 902-1.gat,11,18,13,7	monster	GrassSnake	1034,2,0,20000,Mob902-1::On1034
-//902-1.gat,18,15,7,5	monster	Snail	1041,2,0,30000,Mob902-1::On1041
-902-1.gat,41,8,7,6	monster	Poltergeist	1047,2,0,30000,Mob902-1::On1047
-902-1.gat,16,5,11,7	monster	Wisp	1040,1,0,19990,Mob902-1::On1040
-902-1.gat,44,22,7,6	monster	Wisp	1040,2,0,19990,Mob902-1::On1040
-902-1.gat,30,8,26,16	monster	Bat	1017,9,0,2000,Mob902-1::On1017
-902-1.gat,48,5,10,6	monster	Wisp	1040,1,0,60000,Mob902-1::On1040
+902-1.gat,41,8,7,6	monster	Poltergeist	1047,1,0,30000,Mob902-1::On1047
+902-1.gat,16,5,11,7	monster	Wisp	1040,1,0,25000,Mob902-1::On1040
+902-1.gat,44,22,7,6	monster	Wisp	1040,1,0,25000,Mob902-1::On1040
+902-1.gat,30,8,26,16	monster	Bat	1017,7,0,2000,Mob902-1::On1017
+902-1.gat,48,6,10,6	monster	Wisp	1040,1,0,60000,Mob902-1::On1040
 902-1.gat,11,40,7,6	monster	BloodyMaggot	1999,3,0,30000,Mob902-1::On1999
+902-1.gat,104,41,6,11	monster	Mineral	1997,1,0,60000,Mob902-1::On1997
+902-1.gat,100,64,5,4	monster	Mineral	1997,1,0,60000,Mob902-1::On1997
+902-1.gat,77,54,9,4	monster	Mineral	1997,1,0,60000,Mob902-1::On1997
+902-1.gat,13,64,11,4	monster	Mineral	1997,1,0,600000,Mob902-1::On1997
+902-1.gat,14,48,4,3	monster	Mineral	1997,1,0,1200000,Mob902-1::On1997
+902-1.gat,27,47,4,3	monster	Mineral	1997,1,0,60000,Mob902-1::On1997
+902-1.gat,20,56,4,3	monster	Mineral	1997,1,0,60000,Mob902-1::On1997
+902-1.gat,29,32,4,3	monster	Mineral	1997,1,0,1200000,Mob902-1::On1997
+902-1.gat,14,27,4,3	monster	Mineral	1997,1,0,60000,Mob902-1::On1997
+902-1.gat,24,21,4,3	monster	Mineral	1997,1,0,60000,Mob902-1::On1997
+902-1.gat,19,7,4,3	monster	Mineral	1997,1,0,60000,Mob902-1::On1997
+902-1.gat,52,6,4,3	monster	Mineral	1997,1,0,60000,Mob902-1::On1997
 
-902-1.gat,26,49,11,21	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,39,60,11,7	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,60,30,8,5	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,43,4,17,4	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,37,13,10,8	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,39,35,4,3	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,26,49,9,19	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,70,57,20,18	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,85,63,36,11	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,91,40,20,31	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,102,49,12,7	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,96,28,10,14	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,92,10,14,8	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,67,9,4,4	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,11,18,13,7	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,18,15,7,5	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,41,8,7,6	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,16,5,11,7	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,44,22,7,6	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,30,8,26,16	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,48,5,10,6	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
-902-1.gat,11,40,7,6	monster	Mineral	1997,1,0,120000,Mob902-1::On1997
 
 902-1.gat,0,0,0	script	Mob902-1	-1,{
-On1997: 
-	callfunc "mineral";
-	break;
-
-	end;
 On1002:
 	set @mobID, 1002;
 	callfunc "MobPoints";
@@ -98,11 +82,6 @@ On1040:
 	callfunc "MobPoints";
 	break;
 
-On1041:
-	set @mobID, 1041;
-	callfunc "MobPoints";
-	break;
-
 On1042:
 	set @mobID, 1042;
 	callfunc "MobPoints";
@@ -116,6 +95,11 @@ On1045:
 
 On1047:
 	set @mobID, 1047;
+	callfunc "MobPoints";
+	break;
+
+On1997:
+	set @mobID, 1997;
 	callfunc "MobPoints";
 	break;
 

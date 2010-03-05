@@ -59,6 +59,8 @@ import: npc/902-1_Hitomb_Hills/_import.txt
 import: npc/902-3_Hitomb_Cave2/_import.txt
 import: npc/903-1_Thunderhill/_import.txt
 import: npc/903-2_Thunderhill_indoor/_import.txt
+import: npc/903-3_Thunderhill_Dungeon/_import.txt
 import: npc/904-1_Ironseed/_import.txt
 import: npc/904-4_Ironseed/_import.txt
+import: npc/904-5_Ironseed/_import.txt
 import: npc/botcheck/_import.txt

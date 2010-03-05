@@ -329,13 +329,6 @@
 1240,	SantaSnowGlobe,			Santa Snow Globe,		3,	7500,	5000,	1,	,	,	,	,	,	2,	,	,	0,	,	{},					{}
 1241,	SnowmanSnowGlobe,		Snowman Snow Globe,		3,	7500,	5000,	1,	,	,	,	,	,	2,	,	,	0,	,	{},					{}
 1242,	SnowGoggles,			Snow Goggles,			5,	7500,	5000,	10,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}
-1243,	EnchantedArrow,			EnchantedArrow,			3,	0,	0,	0,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}
-1244,	Feather,			Feather,			3,	0,	1,	1,	,	,	,	,	,	2,	,	,	0,	,	{},					{}
-1245,	Arrowhead,			Arrowhead,			3,	0,	1,	1,	,	,	,	,	,	2,	,	,	0,	,	{},					{}
-1246,	Sinew,				Sinew,				5,	0,	0,	0,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}
-1247,	Silkthread,			Silkthread,			5,	0,	0,	0,,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}
-1248,	PeaceHerb,			PeaceHerb,			5,	0,	0,	0,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}
-1249,	Heartglasses,			Heartglasses,			5,	7500,	5000,	10,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}
 
 2050,	RedCottonShirt,			Red Cotton Shirt,		5,	10,	5,	10,	,	2,	,	-4,	0,	2,	512,	,	0,	0,	{},					{}										
 2051,	GreenCottonShirt,		Green Cotton Shirt,		5,	10,	5,	10,	,	2,	,	-4,	0,	2,	512,	,	0,	0,	{},					{}										
@@ -491,3 +484,27 @@
 5021,	GrandmasterManaPotion,			GrandMaster's Mana Potion,			0,	10000,	5000,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 0,				500; },					{}					{}	
 5022,	MastersJuvenility,			Master's Juvenility,			0,	5000,	3000,	10,	,	,	,	,	,	2,	,	,	0,	,	{ set Hp,				Hp + (MaxHp / 3); set Sp,				Sp + (MaxSp / 3); },					{}					{}	
 5023,	MastersChildhood,			Master's Childhood,			0,	10000,	5000,	10,	,	,	,	,	,	2,	,	,	0,	,	{ set Hp,				MaxHp; set Sp,				MaxSp; },					{}					{}	
+5024,	MauveDust,			Mauve Dust,			3,	0,	1,	1,	,	,	,	,	,	2,	,	,	0,	,	{},					{}
+5025,	CobaltDust,			Cobalt Dust,			3,	0,	1,	1,	,	,	,	,	,	2,	,	,	0,	,	{},					{}
+5026,	GamgogeDust,			Gamboge Dust,			3,	0,	1,	1,	,	,	,	,	,	2,	,	,	0,	,	{},					{}
+5027,	AlizarinDust,			Alizarin Dust,			3,	0,	1,	1,	,	,	,	,	,	2,	,	,	0,	,	{},					{}
+5028,	CurryPowder,			Curry Powder,			3,	0,	1,	1,	,	,	,	,	,	2,	,	,	0,	,	{},					{}
+5029,	ChillyPowder,			Chilly Powder,			3,	0,	1,	1,	,	,	,	,	,	2,	,	,	0,	,	{},					{}
+5030,	CorianderPowder,			Coriander Powder,			3,	0,	1,	1,	,	,	,	,	,	2,	,	,	0,	,	{},					{}
+5031,	GoldDust,			Gold Dust,			3,	0,	1,	1,	,	,	,	,	,	2,	,	,	0,	,	{},					{}
+5032,	SilverDust,			Silver Dust,			3,	0,	1,	1,	,	,	,	,	,	2,	,	,	0,	,	{},					{}
+5033,	CopperDust,			Copper Dust,			3,	0,	1,	1,	,	,	,	,	,	2,	,	,	0,	,	{},					{}
+5034,	EnchantedArrow,			EnchantedArrow,			3,	0,	0,	0,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}
+5035,	Feather,			Feather,			3,	0,	1,	1,	,	,	,	,	,	2,	,	,	0,	,	{},					{}
+5036,	Arrowhead,			Arrowhead,			3,	0,	1,	1,	,	,	,	,	,	2,	,	,	0,	,	{},					{}
+5037,	Sinew,				Sinew,				5,	0,	0,	0,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}
+5038,	Silkthread,			Silkthread,			5,	0,	0,	0,,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}
+5039,	PeaceHerb,			PeaceHerb,			5,	0,	0,	0,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}
+5040, 	GoldOre, 			Gold Ore, 			3, 	2000, 	1000, 	1, 	, 	, 	, 	, 	, 	2, 	, 	, 	0, 	, 	{}, 					{}
+5041, 	SilverOre, 			Silver Ore, 			3, 	1000, 	500, 	1, 	, 	, 	, 	, 	, 	2, 	, 	, 	0, 	, 	{}, 					{}
+5042, 	CopperOre, 			Copper Ore, 			3, 	500, 	250, 	1, 	, 	, 	, 	, 	, 	2, 	, 	, 	0, 	, 	{}, 					{}
+5043,	LightCrystal,			Light Crystal,			3,	100,	50,	10,	,	,	,	,	,	,	,	,	,	,	{},					{}
+5044,	SkeletonPattern,		Skeleton Pattern,			0,	1500,	750,	10,	,	,	,	,	,	2,	,	,	0,	,	{ summon "Skeleton",1043; },					{}
+5045, 	EnchantedMiningPick, 			Enchanted Mining Pick, 			4, 	8000, 	4000, 	100, 	100, 	, 	1, 	, 	0, 	2, 	2, 	1, 	1, 	1, 	{}, 					{}							
+
+5100,	Heartglasses,			Heartglasses,			5,	7500,	5000,	10,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}

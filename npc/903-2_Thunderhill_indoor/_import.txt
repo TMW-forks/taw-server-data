@@ -1,3 +1,4 @@
 map: 903-2.gat
 npc: npc/903-2_Thunderhill_indoor/_warps.txt
 npc: npc/903-2_Thunderhill_indoor/viur.txt
+npc: npc/903-2_Thunderhill_indoor/arzenac.txt

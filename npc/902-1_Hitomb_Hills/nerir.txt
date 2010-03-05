@@ -5,8 +5,41 @@ if ( ancients_quest == 5 ) goto A_again;
 if ( ancients_quest == 4 ) goto A_warpme;
 if ( ancients_quest == 3 ) goto A_warpme2;
 	  mes "[Nerir]"; 
-	mes "Sssh, I'm trying to concentrate!";
+	mes "Sssh, I'm trying to concentrate! Do you need anything?";
+	menu
+		"I would like to merge Cactus Drinks", L_drinks,
+		"I would like to merge Cactus Potions", L_potions,
+		"Nothing", -;
 close;
+
+L_drinks:
+	if (countitem(501) < 3) goto L_nopots;
+	  mes "[Nerir]";
+	mes "How many potions do you want to create?";
+	input @num;
+	if (countitem(501) < 3*@num) goto L_nopots;		
+	delitem 501, 3*@num;
+	getitem 502, @num;
+	  mes "[Nerir]";
+	mes "Done.";
+	close;
+
+L_potions:
+	if (countitem(502) < 3) goto L_nopots;
+	  mes "[Nerir]";
+	mes "How many potions do you want to create?";
+	input @num;
+	if (countitem(502) < 3*@num) goto L_nopots;		
+	delitem 502, 3*@num;
+	getitem 5010, @num;
+	  mes "[Nerir]";
+	mes "Done.";
+	close;
+
+L_nopots:
+	  mes "[Nerir]"; 
+	mes "Seems you don't have any!";
+	close;
 
 A_again:
 	  mes "[Nerir]"; 
