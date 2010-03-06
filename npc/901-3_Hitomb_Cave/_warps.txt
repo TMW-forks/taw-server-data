@@ -5,3 +5,4 @@
 901-3.gat,33,26	warp	cont_up	-1,-1,901-3.gat,33,20
 901-3.gat,33,21	warp	cont_down	1,-1,901-3.gat,33,27
 901-3.gat,45,13	warp	level2	-1,-1,902-3.gat,73,112
+901-3.gat,53,23	warp	cont_up	-1,-1,901-4.gat,6,49
