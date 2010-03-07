@@ -8,20 +8,20 @@
 		"Bye!", L_end;
 
 	  mes "[Taudus]";
-	mes "Bloody Maggots have stolen me my favourite mining pick... I'm too scared to search for it.";
+	mes "Bloody Maggots have stolen my favourite mining pick... I'm too scared to search for it.";
 	menu
 		"I will find your mining pick.", -,
 		"Ha-ha", L_end;
 
 	  mes "[Taudus]";
-	mes "Really? I would be greatful to you...";	
+	mes "Really? I would be greatful to them...";	
 	set ht_mining_quest, 1;
 	close;
 
 L_quest:
 	if( countitem(5006) > 0 ) goto L_have;
 	  mes "[Taudus]";
-	mes "I think the mining pick is lost forewer... :'(";
+	mes "I think the mining pick is lost forever... :'(";
 	close;
 
 L_have:
@@ -33,7 +33,7 @@ L_have:
 	mes "Well... thank you... but..";
 	next;
 	  mes "[Taudus]";
-	mes "I don't need it anymore. Keep it as a souvenir. If you kill the mineral with it, you have chance to get some Ores! Otherwise, you'll get only dust.";
+	mes "I don't need it anymore. Keep it as a souvenir. If you kill the mineral with it, you have the chance to get some Ores! Otherwise, it will be dusty.";
 	set ht_mining_quest, 2;	
 	close;	
 
