@@ -33,7 +33,7 @@ L_have:
 	mes "Well... thank you... but..";
 	next;
 	  mes "[Taudus]";
-	mes "I don't need it anymore. Keep it as a souvenir. If you kill the mineral with it, you have the chance to get some Ores! Otherwise, it will be dusty.";
+	mes "I don't need it anymore. Keep it as a souvenir. If you kill the mineral with it, you have the chance to get some Ores!";
 	set ht_mining_quest, 2;	
 	close;	
 
