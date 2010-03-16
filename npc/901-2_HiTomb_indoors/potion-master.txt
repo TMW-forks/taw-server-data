@@ -14,7 +14,7 @@
 	  mes "[Rayak]";
 	mes "It's a parasite eating me alive. It couldn't be healed, only slowed down.";
 	menu
-		"Does it hurts?", -,
+		"Does it hurt?", -,
 		"Yuk!", L_what;
 
 	  mes "[Rayak]";

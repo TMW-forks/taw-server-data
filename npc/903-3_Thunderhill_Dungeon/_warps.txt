@@ -1,0 +1,4 @@
+// 903-3 Thunderhill Dungeon warps
+
+903-3.gat,9,33	warp	Out	-1,-1,903-1.gat,28,31
+903-3.gat,24,26	warp	ToCastle	1,-1,903-2.gat,31,58

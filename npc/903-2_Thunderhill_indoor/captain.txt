@@ -1,0 +1,4 @@
+903-2.gat,47,55,0	script	Captain Morqell	905, {
+	mes "[Captain Morqell]";
+	mes "Corporal, the war is near. There is an enemy castle west of Thunderhill. ";
+}

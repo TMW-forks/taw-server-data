@@ -1,0 +1,5 @@
+904-1.gat,16,21,0	script	Captain Morqell	905, {
+	mes "[Captain Morqell]";
+	mes "You must return. Enemy behind these hills is too strong. We need to think of some strategic plan. I'll let you know as I return to Thunderhill Castle. Currently, my soldiers are exploring the area.";
+	close;
+}

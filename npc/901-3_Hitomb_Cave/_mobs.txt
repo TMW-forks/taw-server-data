@@ -1,11 +1,14 @@
-// 901-3 mobs
+// 901-3 Hitomb Cave mobs
 
-901-3.gat,14,41,1,1	monster	Mineral	1997,1,0,120000,Mob901-3::On1997
+901-3.gat,15,40,4,3	monster	mineral	1997,1,0,180000,Mob901-3::On1997
+901-3.gat,47,27,3,3	monster	mineral	1997,1,0,180000,Mob901-3::On1997
+901-3.gat,45,16,3,3	monster	mineral	1997,1,0,180000,Mob901-3::On1997
 
 
 901-3.gat,0,0,0	script	Mob901-3	-1,{
-On1997: 
-	callfunc "mineral";
+On1997:
+	set @mobID, 1997;
+	callfunc "MobPoints";
 	break;
 
 	end;

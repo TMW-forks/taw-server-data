@@ -1,0 +1,4 @@
+// 904-5 Ironseed warps
+
+904-5.gat,12,5	warp	Ironseed	-1,-1,904-1.gat,0,1
+904-5.gat,33,14	warp	hitomb	-1,1,902-1.gat,4,36

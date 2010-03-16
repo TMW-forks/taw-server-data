@@ -1,14 +1,16 @@
 // The ferry system
 
 function	script	Ferry	{
-	set @cost_tulimshar, 5;
-	set @cost_hurnscald, 5;
+	set @cost_tulimshar, 50;
+	set @cost_hurnscald, 50;
+	set @cost_nivalis, 250;
 	mes "Where would you like to go?";
 	next;
 
 	menu
 		"Tulimshar (" + @cost_tulimshar + "GP)", L_Tulimshar,
 		"Hurnscald (" + @cost_hurnscald + "GP)", L_Hurnscald,
+		"Nivalis (" + @cost_nivalis + "GP)", L_Nivalis,
 		"Nevermind", -;
 	close;
 
@@ -31,6 +33,17 @@ L_Hurnscald:
 	set zeny, zeny - @cost_hurnscald;
 	warp "008-1.gat", 137, 64;
 	close;
+
+L_Nivalis:
+        if (@loc == DOCK_nivalis)
+                goto L_AlreadyThere;
+        if (zeny < @cost_nivalis)
+                goto L_NotEnoughGP;
+
+        set zeny, zeny - @cost_nivalis;
+        warp "019-1.gat", 104, 96;
+        close;
+
 
 L_AlreadyThere:
 	mes "You're already here!";

@@ -1,33 +1,99 @@
 //
 
 903-2.gat,78,90,0	script	Viur	914, {
- // if( rayak_quest == 1 ) goto Q_rayak;
-    mes "[Viur]";
-  mes "I don't have time for you.";
-  close;
-  
-  Q_rayak:
       mes "[Viur]";
-    mes "I don't have time for you.";
+    mes "Greetings,  I'm Corporals alchemist. I can create potions for you.";
+    next;
+	set viur_know, 1;
+      mes "[Viur]";
+    mes "What do you need?";
   menu
-    "Wait, Rayak has sent me. I'm searching for Lazurak.", -;
-    
-     mes "[Viur]";
-   mes "You're friend of Rayak? Well, that's different. Sorry, I really have hard work here. Perhaps you could help me... oh - Lazurak... You can find him in Northern castle.";
-   menu
-      "Thanks for the help. You said you need something...", -,
-      "Thanks for the help. Bye.", Q_rayakleave;
+    "Healing potions", L_heal,
+    "Mana potions", L_mana,
+    "Recovery potions", L_recovery,
+    //"I would like to become Alchemist", L_alch,
+    "Never mind.", L_close;
 
-    mes "[Viur]";
-  mes "Yes... I'm trying to reveal new recipe to create mana potions. ";
-  next;
-    mes "[Viur]";
-  mes "Let me think what about it and ask me next week, please.";
-	set rayak_quest, 3;
-  close;
-      
-   Q_rayakleave:
+L_close:
       mes "[Viur]";
     mes "See you later.";
-    set rayak_quest, 2;
+    close;
+
+L_heal:
+      mes "[Viur]";
+    mes "I can make 1 tiny healing potion from 1 Alizarin Herb. Or I can make light healing potion from 1 Alizarin Herb and 1 Black Scorpion's Stinger.";
+	menu
+		"I want tiny healing potions", L_htiny,
+		"I want light healing potions", L_hlight,
+		"I don't want anything", L_close;
+
+L_htiny:
+	if (countitem(683) < 1) goto L_nopots;
+	  mes "[Viur]";
+	mes "Tell me how many potions do you want.";
+	input @num;
+	if (countitem(683) < @num) goto L_nopots;		
+	delitem 683, @num;
+	getitem 5010, @num;
+	  mes "[Viur]";
+	mes "Here you are.";
+	close;
+
+L_hlight:
+	if (countitem(683) < 1) goto L_nopots;
+	if (countitem(709) < 1) goto L_nopots;
+	  mes "[Viur]";
+	mes "Tell me how many potions do you want.";
+	input @num;
+	if (countitem(683) < @num) goto L_nopots;
+	if (countitem(709) < @num) goto L_nopots;
+	delitem 683, @num;
+	delitem 709, @num;
+	getitem 5011, @num;
+	  mes "[Viur]";
+	mes "Here you are.";
+	close;
+
+L_mana:
+	  mes "[Viur]";
+	mes "I can make 1 tiny mana potion from 5 Cobalt and 5 Mauve Herbs";
+	if (countitem(680) < 5) goto L_nopots;
+	if (countitem(681) < 5) goto L_nopots;
+	  mes "[Viur]";
+	mes "Tell me how many potions do you want.";
+	input @num;
+	if (countitem(680) < 5*@num) goto L_nopots;
+	if (countitem(681) < 5*@num) goto L_nopots;
+	delitem 680, 5*@num;
+	delitem 681, 5*@num;
+	getitem 5016, @num;
+	  mes "[Viur]";
+	mes "Here you are.";
+	close;
+
+L_recovery:
+	  mes "[Viur]";
+	mes "I can make Master's Juvenility if you bring me 3 tiny healing potions, 3 tiny mana potions and 1 Light Crystal.";
+	if (countitem(5010) < 3) goto L_nopots;
+	if (countitem(5016) < 3) goto L_nopots;
+	if (countitem(5043) < 1) goto L_nopots;
+	  mes "[Viur]";
+	mes "Tell me how many potions do you want.";
+	input @num;
+	if (countitem(5010) < 3*@num) goto L_nopots;
+	if (countitem(5016) < 3*@num) goto L_nopots;
+	if (countitem(5043) < @num) goto L_nopots;
+	delitem 5010, 3*@num;
+	delitem 5016, 3*@num;
+	delitem 5043, @num;
+	getitem 5022, @num;
+	  mes "[Viur]";
+	mes "Here you are.";
+	close;
+	
+L_nopots:
+      mes "[Viur]";
+    mes "It's sad, but you  don't have things I need.";
+    close;
+
 }
