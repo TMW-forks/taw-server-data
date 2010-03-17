@@ -6,3 +6,4 @@
 902-1.gat,11,61	warp	bridge_up	0,-1,902-1.gat,10,55
 902-1.gat,49,55	warp	Hitomb	2,-1,901-1.gat,48,54
 902-1.gat,80,22	warp	Hitomb	0,-1,901-1.gat,80,31
+902-1.gat,55,0	warp	Thunderhill	1,-1,903-1.gat,55,54
