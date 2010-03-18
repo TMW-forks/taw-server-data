@@ -3,3 +3,4 @@ npc: npc/016-1_Woodland/_mobs.txt
 npc: npc/016-1_Woodland/_warps.txt
 npc: npc/016-1_Woodland/monsters.txt
 npc: npc/016-1_Woodland/oracle.txt
+npc: npc/016-1_Woodland/boyscout.txt

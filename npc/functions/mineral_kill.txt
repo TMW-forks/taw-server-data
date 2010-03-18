@@ -3,13 +3,14 @@ function	script	mineral	{
 if(getequipid(4)==5006 || getequipid(4)==5045) goto L_Equiped;
 	return;
 L_Equiped:
-	set @item, Rand(4);
+	set @item, Rand(4000);
 	set @luck, Rand(1000);
 
-	if( @item == 0 || @luck < 701 ) goto G_IronOre;
-	if( @item == 1 || @luck < 811  ) goto G_CopperOre;
-	if( @item == 2 || @luck < 901  ) goto G_SilverOre;
-	if( @item == 3 ) goto G_GoldOre;
+	if(getequipid(4)==5045) set @luck, @luck + 100;
+	if( @item < 1000 || @luck < 701 ) goto G_IronOre;
+	if( @item < 2000 || @luck < 811  ) goto G_CopperOre;
+	if( @item < 3000 || @luck < 901  ) goto G_SilverOre;
+	if( @item < 4000 ) goto G_GoldOre;
 	return;
 
 G_IronOre:
@@ -31,9 +32,9 @@ G_SilverOre:
 	return;
 
 G_GoldOre:
-	if( @luck > 900 ) getitem "GoldOre", 1;
+	if( @luck > 850 ) getitem "GoldOre", 1;
+	if( @luck > 970 ) getitem "GoldOre", 1;
 	if( @luck > 990 ) getitem "GoldOre", 1;
-	if( @luck > 998 ) getitem "GoldOre", 1;
 	return;
 
 }
