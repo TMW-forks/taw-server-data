@@ -1,0 +1,51 @@
+//
+
+903-2.gat,37,47,0	script	Mayuk	162, {
+if (M_copperore == 1) goto L_thanks;
+      mes "[Mayuk]";
+    mes "I would pay gold for Copper Ingot...";
+    menu
+	"What happened?", -,
+	"Sounds interesting", -,
+	"That's great but tell it someone else.", L_end;
+
+      mes "[Mayuk]";
+    mes "I'm in need of Copper Ingot. I must bring a device made of copper but i found that I miss 1 Copper Ingot! I don't know where to get it, this blacksmith doesn't have any free. Don't you have one?";
+
+    menu
+	"Okay, I see you need a help... here you are.", L_give,
+	"How much gold will I get?", -,
+	"Wait a minute,  I'll get one for you!", L_end,
+	"Hm... maybe later.", L_end;	
+
+      mes "[Mayuk]";
+    mes "I would give you this Gold Ore. That's very good deal, isn't it?";
+    menu
+	"Okay, I see you need a help... here you are.", L_give,
+	"Wait a minute,  I'll get one for you!", L_end,
+	"Only one??? Never!", L_end,
+	"Hm... maybe later.", L_end;	
+
+L_give:
+	if(countitem(5075) < 1) goto L_no;
+      mes "[Mayuk]";
+      mes "Wow! Thank you! Blacksmith? Here is the last ingot you needed. And now as I promissed. Here is your Ore.";
+	delitem 5075, 1;
+	getitem 5040, 1;
+	set M_copperore, 1;
+	close;
+
+L_no:
+      mes "[Mayuk]";
+    mes "You don't have any Ingot! Did you want to cheat?";
+	close;
+	 
+L_thanks:
+      mes "[Mayuk]";
+      mes "Thank you for helping me!";
+	close;	
+
+L_end:
+	close;
+
+}
