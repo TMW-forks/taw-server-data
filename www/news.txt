@@ -1,3 +1,16 @@
+##3 St. Patricks Day
+##3 03-20-2010
+
+##0 Patrick has just arrived to Hurnscald!
+##0 Celebrate St. Patrick's day with him,
+##0 he has a reward for you. Our WEB page
+##0 http://thealternateworld.org has been
+##0 updated. News are posted there so take a
+##0 look. 2 new maps are in testing mode. They
+##0 can be reached through Thunderhill Blacksmiths.
+##0 Remember, that in case of stucking somewhere, 
+##0 you can use @die command now to die and get free.
+
 ##3 Minor updates
 ##3 03-01-2010
 
