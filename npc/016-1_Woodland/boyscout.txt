@@ -1,7 +1,7 @@
 //boyscout 
 
 
-016-1.gat,116,74,0	script	Billy	600,{
+016-1.gat,116,74,0	script	Billy	929,{
 	if(QUEST_Boyscout==1)goto L_boyscoutquest1_1;
 	if(QUEST_Boyscout==2)goto L_boyscoutquest1_2;
 	if(QUEST_Boyscout==3)goto L_boyscoutquest2_1;

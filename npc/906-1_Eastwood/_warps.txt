@@ -1,0 +1,5 @@
+// 906-1 Eastwood warps
+
+906-1.gat,-51,38	warp	ToWest	-1,-1,904-1.gat,1,1
+906-1.gat,110,24	warp	Island	-1,0,906-5.gat,13,43
+

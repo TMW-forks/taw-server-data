@@ -64,4 +64,6 @@ import: npc/903-3_Thunderhill_Dungeon/_import.txt
 import: npc/904-1_Ironseed/_import.txt
 import: npc/904-4_Ironseed/_import.txt
 import: npc/904-5_Ironseed/_import.txt
+import: npc/906-1_Eastwood/_import.txt
+import: npc/906-5_Eastwood_seaside/_import.txt
 import: npc/botcheck/_import.txt

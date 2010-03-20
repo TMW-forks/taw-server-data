@@ -6,7 +6,9 @@ L_Equiped:
 	set @item, Rand(4000);
 	set @luck, Rand(1000);
 
-	if(getequipid(4)==5045) set @luck, @luck + 100;
+	if(getequipid(4)==5045) set @luck, @luck + 75;
+	if(skill_mining_pick > 0) set @luck, @luck + skill_mining_pick;
+
 	if( @item < 1000 || @luck < 701 ) goto G_IronOre;
 	if( @item < 2000 || @luck < 811  ) goto G_CopperOre;
 	if( @item < 3000 || @luck < 901  ) goto G_SilverOre;

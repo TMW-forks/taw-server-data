@@ -533,6 +533,6 @@
 5075,	CopperIngot,			Copper Ingot,			3,	500,	250,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
 5076,	SilverIngot,			Silver Ingot,			3,	1000,	500,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
 5077,	GoldIngot,			Gold Ingot,			3,	2000,	1000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
-5078,	GreenBeer,			Green Beer,				0,	175,	87,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 250,				5; },					{}					
+5078,	GreenBeer,				Green Beer,				0,	175,	87,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 250,				5; },					{}									
 
 5100,	Heartglasses,			Heartglasses,			5,	7500,	5000,	10,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}
