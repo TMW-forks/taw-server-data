@@ -2,11 +2,13 @@
 ##3 http://thealternateworld.org. You can see
 ##3 what's being worked on. @die command is enabled.
 
+##3
+
 ##3 Searching for the Ice Power
 ##3 03-22-2010
 
-##0 Old wizard has been spoted in Nivalis.
-##0 People mumbles he's searching for the
+##0 Old wizard has been spotted in Nivalis.
+##0 People mumble he's searching for the
 ##0 Ice Power, but he needs to help with
 ##0 something.
 
