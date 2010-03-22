@@ -1,0 +1,54 @@
+//
+
+020-1.gat,92,43,0	script	Darren	168, {
+	if(Q_iceknife == 7) goto L_notyet;
+	if(Q_iceknife > 0) goto L_razor;
+	mes "[Darren]";
+	mes "Greetings. I'm Darren and I'm searching for the power of Ice.";
+	next;
+	mes "[Darren]";
+	mes "I feel I'm close, but I can't absorb it alone. You seem to be strong and powerful. Perhaps you could help me. And than I could probably help you.";
+	menu
+		"I'd like to help you", -,
+		"I have my own business", L_end;
+
+	mes "[Darren]";
+	mes "It's hidden in a mysterious stone, but to free it I need a special, enchanted weapon."; 
+	next;
+	set Q_iceknife, 1;
+	goto L_razor;
+
+L_razor:
+	mes "[Darren]";
+	mes "As the base, I need the Razor Knife.";
+	menu
+		"Here you are", -,
+		"Where could I get it?", L_get,
+		"It's not interesting for me anymore.", L_end;
+
+	if(countitem(5079)<1) goto L_norazor;
+	set Q_iceknife, 7;
+	getexp 75000, 2500;
+	mes "[Darren]";
+	mes "Good. You have the knife. Now I need to think of good Enchancement which could release Ice Spirit. It can take few days. Return later.";
+	close;
+
+L_norazor:
+	mes "[Darren]";
+	mes "You don't have Razor Knife!";
+	close;
+
+L_get:
+	mes "[Darren]";
+	mes "I've heard of one Cutler in Woodland. His name is Billy. His work is precise. Ask him to make you Razor Knife.";
+	close;
+
+L_end:
+	close;
+
+L_notyet:
+	mes "[Darren]";
+	mes "No! I didn't find out good Enchancement yet! Come later.";
+	close;
+
+}
