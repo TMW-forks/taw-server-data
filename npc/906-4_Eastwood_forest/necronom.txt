@@ -1,0 +1,6 @@
+
+906-4.gat,93,54,0	script	Necronom	941,0,0 {
+	close;
+}
+ 
+ 

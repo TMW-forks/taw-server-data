@@ -1,0 +1,70 @@
+
+903-2.gat,47,42,0	script	Eglas	940,0,0 {
+	mes "[Eglas]";
+	mes "Hey. What would you like to have?";
+	menu
+		"Savior Armor", M_Savior,
+		"Omen Robe", M_Omen,
+		"Nothing", L_end;
+
+L_end:
+	close;
+
+M_wenig:
+	mes "[Eglas]";
+	mes "You don't have what I need.";
+	close;
+
+M_Savior:
+	mes "[Eglas]";
+	mes "I will need:";
+	mes "5 Gold Ingots";
+	mes "Warlord Plate";
+	mes "20 Cotton Clothes";
+	menu
+		"Uh... I have changed my mind", L_end,
+		"I have what you need, do your work", -;
+
+	if(countitem(660)<20) goto M_wenig;
+	if(countitem(5077)<5) goto M_wenig;
+	if(countitem(658)<1) goto M_wenig;
+	delitem 660, 20;
+	delitem 5077, 5;
+	delitem 658, 1;
+	mes "[Eglas]";
+	mes "Savior Armor is yours";
+	getitem 5048, 1;
+	if (m_savior == 0) getexp 150000, 0;
+	set m_savior, 1;
+	close;
+
+M_Omen:
+	mes "[Eglas]";
+	mes "I will need:";
+	mes "Black Robe";
+	mes "Warlord Plate";
+	mes "25 Alizarin Dusts";
+	mes "10 Copper Ingots";
+	menu
+		"Uh... I have changed my mind", L_end,
+		"I have what you need, do your work", -;
+
+	if(countitem(2086)<1) goto M_wenig;
+	if(countitem(658)<1) goto M_wenig;
+	if(countitem(5027)<25) goto M_wenig;
+	if(countitem(5075)<10) goto M_wenig;
+	delitem 2086, 1;
+	delitem 5027, 25;
+	delitem 5075, 10;
+	delitem 658, 1;
+	mes "[Eglas]";
+	mes "Omen Robe is yours";
+	getitem 5055, 1;
+	if (m_omen == 0) getexp 150000, 0;
+	set m_omen, 1;
+	close;
+
+
+}
+ 
+ 

@@ -10,3 +10,4 @@
 903-1.gat,62,20	warp	ToWall	-1,0,903-2.gat,72,59
 903-1.gat,19,38	warp	ToWest	-1,-1,904-1.gat,52,38
 903-1.gat,104,44	warp	Blacksmith	-1,0,903-2.gat,35,40
+903-1.gat,25,48	warp	Eastwood	1,-1,903-4.gat,25,19

@@ -1,18 +1,13 @@
 
-903-1.gat,27,31,0	script	Guard	904, {
-	close;
-	
-}
-
-903-1.gat,65,26,0	script	Guard	904, {
-	close;
-	
-}
-
-903-1.gat,69,26,0	script	Guard	904, {
+903-2.gat,35,39,0	script	#Castle	0,0,0 {
+if (hitomb_army > 6) goto L_corporal;
 	  mes "[Guard]";
-	mes "...";
+	mes "Only members of Hitomb armyare allowed to enter ThunderHill Castle.";
+	warp "903-2", 35, 40;
 	close;
-	
-}
 
+L_corporal:
+	warp "903-1", 103, 44;
+	end;
+	close;
+}

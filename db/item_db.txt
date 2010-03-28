@@ -467,7 +467,7 @@
 5004,	AlizarinSeed,			Alizarin Seed,			3,	1000,	50,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
 5005,	BrokenArmor,			Broken Armor,			3,	3000,	1400,	100,	,	,	,	,	,	,	,	,	,	,	{},					{}												
 5006, 	MiningPick, 			Mining Pick, 			4, 	8000, 	4000, 	100, 	10, 	, 	1, 	, 	0, 	2, 	2, 	1, 	1, 	1, 	{}, 					{}							
-//5007 Hitomb armor
+5007,	HitombArmor,			Hitomb Armor,			5,	500000,	10000,	275,	,	29,	,	-100,	0,	2,	512,	,	0,	0,	{},	{ bonus bLUK,5; }
 //5008 
 5009,	EmptyPotion,			Empty Potion,			3,	30,	15,	100,	,	,	,	,	,	,	,	,	,	,	{},					{}		
 5010,	TinyHealingPotion,			Tiny Healing Potion,			0,	50,	25,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 50,				0; },					{}					{}		
@@ -508,7 +508,7 @@
 5045, 	EnchantedMiningPick, 			Enchanted Mining Pick, 			4, 	8000, 	4000, 	100, 	100, 	, 	1, 	, 	0, 	2, 	2, 	1, 	1, 	1, 	{}, 					{}							
 5046,	ForestArmor,			Forest Armor,			5,	100000,	3000,	275,	,	27,	,	-170,	0,	2,	512,	,	0,	0,	{}, 					{}							
 5047,	WitchDoctorsMask,		Witch Doctor's Mask,			5,	10000,	5000,	15,	,	3,	,	5,	0,	2,	256,	,	0,	0,	{},					{}
-5048,	SaviorArmor,			Savior Armor,			5,	100000,	3000,	275,	,	27,	,	-170,	0,	2,	512,	,	0,	0,	{},					{}
+5048, 	SaviorArmor, 			Savior Armor, 			5, 	100000, 	3000, 	275, 	, 	28, 	, 	-170, 	0, 	2, 	512, 	, 	0, 	0, 	{}, 					{}
 5049,	WhiteLightStaff,			White Light Staff,			4,	1000,	200,	180,	25,	,	1,	0,	0,	2,	2,	1,	1,	1,	{},	{}
 5050,	RedLightStaff,			Red Light Staff,			4,	1000,	200,	180,	25,	,	1,	0,	0,	2,	2,	1,	1,	1,	{},					{}	5051,	GreenLightStaff,			Green Light Staff,			4,	1000,	200,	180,	25,	,	1,	0,	0,	2,	2,	1,	1,	1,	{},					{}										
 5052,	BlueLightStaff,			Blue Light Staff,			4,	1000,	200,	180,	25,	,	1,	0,	0,	2,	2,	1,	1,	1,	{},					{}	5053,	YellowLightStaff,			Yellow Light Staff,			4,	1000,	200,	180,	25,	,	1,	0,	0,	2,	2,	1,	1,	1,	{},					{}

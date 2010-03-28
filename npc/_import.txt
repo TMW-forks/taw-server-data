@@ -61,9 +61,11 @@ import: npc/902-3_Hitomb_Cave2/_import.txt
 import: npc/903-1_Thunderhill/_import.txt
 import: npc/903-2_Thunderhill_indoor/_import.txt
 import: npc/903-3_Thunderhill_Dungeon/_import.txt
+import: npc/903-4_Thunderhill_Park/_import.txt
 import: npc/904-1_Ironseed/_import.txt
 import: npc/904-4_Ironseed/_import.txt
 import: npc/904-5_Ironseed/_import.txt
 import: npc/906-1_Eastwood/_import.txt
+import: npc/906-4_Eastwood_forest/_import.txt
 import: npc/906-5_Eastwood_seaside/_import.txt
 import: npc/botcheck/_import.txt

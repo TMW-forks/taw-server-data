@@ -1,0 +1,4 @@
+// 903-4 Thunderhill Park warps
+
+903-4.gat,87,24	warp	Castle	-1,-1,903-2.gat,17,51
+903-4.gat,25,18	warp	Hitomb	1,-1,903-1.gat,25,47

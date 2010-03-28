@@ -1,0 +1,4 @@
+// 906-4 Eastwood forest warps
+
+906-4.gat,14,45	warp	Woodland	-1,1,017-1.gat,135,55
+906-4.gat,73,19	warp	Eastwood	1,-1,906-5.gat,13,90
