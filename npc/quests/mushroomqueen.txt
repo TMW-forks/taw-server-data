@@ -1,5 +1,5 @@
-﻿// mushhatquest
-011-1.gat,38,36,0	script	Bella	901,{
+// mushhatquest
+011-1.gat,38,36,0	script	Bella	928,{
 	if (QUEST_shroomhat == 1) goto L_first;
 	if (QUEST_shroomhat == 2) goto L_items1;
 	if (QUEST_shroomhat == 3) goto L_items2;
@@ -55,7 +55,7 @@ L_items1:
 L_items2:
 	set QUEST_shroomhat, 3;
 	mes "[Bella]";
-	mes "\"Bring me a Fancy Hat and a Head Band for your reward.\"";
+	mes "\"Bring me a Fancy Hat and a Cotton Head Band for your reward.\"";
 	if (countitem("fancyhat") < 1) close;
 	if (countitem("cottonheadband") < 1) close;
 	next;
@@ -69,13 +69,15 @@ L_items2:
 	next;
 	mes "[Bella]";
 	mes "\"Let me send you back to town so you can show it off!\"";
-	gmcommand strcharinfo(0)+":@die ";
+	close2;
+	heal -hp, 0;
 	close;
 	
 L_already:
 	mes "[Bella]";
 	mes "\"Thank you for your help. I don't need you anymore. You can die now.\"";
-	gmcommand strcharinfo(0)+":@die ";
+	close2;
+	heal -hp, 0;
 	close;
 }
 

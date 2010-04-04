@@ -1,0 +1,168 @@
+//
+
+020-1.gat,92,43,0	script	Darren	168, {
+	if(Q_iceknife == 13) goto L_enchant50;
+	if(Q_iceknife == 12 && Q_iceknife_hour == gettime(3)) goto L_enchant40;
+	if(Q_iceknife == 12) goto L_enchant5;
+	if(Q_iceknife == 11) goto L_enchant4;
+	if(Q_iceknife == 10 && Q_iceknife_hour == gettime(3)) goto L_enchant30;
+	if(Q_iceknife == 10) goto L_enchant4;
+	if(Q_iceknife == 9) goto L_enchant3;
+	if(Q_iceknife == 8) goto L_enchant2;
+	if(Q_iceknife == 7) goto L_enchant;
+	if(Q_iceknife > 0) goto L_razor;
+	mes "[Darren]";
+	mes "Greetings. I'm Darren and I'm searching for the power of Ice.";
+	next;
+	if(BaseLevel < 70) goto L_young;
+	mes "[Darren]";
+	mes "I feel I'm close, but I can't absorb it alone. You seem to be strong and powerful. Perhaps you could help me. And than I could probably help you.";
+	menu
+		"I'd like to help you", -,
+		"I have my own business", L_end;
+
+	mes "[Darren]";
+	mes "It's hidden in a mysterious stone, but to free it I need a special, enchanted weapon."; 
+	next;
+	set Q_iceknife, 1;
+	goto L_razor;
+
+L_young:
+	mes "[Darren]";
+	mes "I feel I'm close, but I can't absorb it alone. I'm afraid you are too weak to help me.";
+	close;
+
+L_young2:
+	mes "[Darren]";
+	mes "To use my Enchant you must be at least lvl 75. Come back after you trained more.";
+	close;
+
+
+L_razor:
+	mes "[Darren]";
+	mes "As the base, I need the Razor Knife.";
+	menu
+		"Here you are", -,
+		"Where could I get it?", L_get,
+		"It's not interesting for me anymore.", L_end;
+
+	if(countitem(5079)<1) goto L_norazor;
+	set Q_iceknife, 7;
+	getexp 75000, 2500;
+	mes "[Darren]";
+	mes "Good. You have the knife. Now I need to think of good Enchancement which could release Ice Spirit. It can take few days. Return later.";
+	close;
+
+L_norazor:
+	mes "[Darren]";
+	mes "You don't have Razor Knife!";
+	close;
+
+L_get:
+	mes "[Darren]";
+	mes "I've heard of one Cutler in Woodland. His name is Billy. His work is precise. Ask him to make you Razor Knife.";
+	close;
+
+L_end:
+	close;
+
+L_notyet:
+	mes "[Darren]";
+	mes "No! I didn't find out good Enchancement yet! Come later.";
+	close;
+
+L_enchant:
+	if (BaseLevel < 75) goto L_young2;
+	mes "[Darren]";
+	mes "Okay, now we need to enchant your Razor Knife. It's very hard work and needs lot of patience and ingredients.";
+	next;
+	mes "[Darren]";
+	mes "You won't be able probably to do it in one day, so don't hurry. It's okay when it takes you more time, it will be worthy. Just please don't get bored. You can do lot of other things in between.";
+	next;
+	goto L_enchant2;
+
+L_enchant2:
+	mes "[Darren]";
+	mes "For first enchant pattern, I will need some herb dusts. Bring me 5 Mauve, Cobalt, Gamboge and Alizarin Dusts. And a bottle of water! Remember, that won't be all. Caul can powder your Herbs if you are out of dusts.";
+	set Q_iceknife, 8;
+	if ( countitem(5024) < 5) goto L_end;
+	if ( countitem(5025) < 5) goto L_end;
+	if ( countitem(5026) < 5) goto L_end;
+	if ( countitem(5027) < 5) goto L_end;
+	if ( countitem(541) < 1) goto L_end;
+	delitem 5024, 5;
+	delitem 5025, 5;
+	delitem 5026, 5;
+	delitem 5027, 5;
+	delitem 541, 1;
+	getexp 100000, 5000;
+	set Q_iceknife, 9;
+	next;
+	goto L_enchant3;
+
+L_enchant3:
+	mes "[Darren]";
+	mes "Now I need you to bring me 10 Iron Ingots, 5 Copper Ingots, 3 Silver Ingots and 1 Gold Ingot. You can ask other players to obtain Ingots for you. Usual price is 5 Ores for 1 Ingot.";
+	if ( countitem(5074) < 10) goto L_end;
+	if ( countitem(5075) < 5) goto L_end;
+	if ( countitem(5076) < 3) goto L_end;
+	if ( countitem(5077) < 1) goto L_end;
+	delitem 5074, 10;
+	delitem 5075, 5;
+	delitem 5076, 3;
+	delitem 5077, 1;
+	getexp 600000, 25000;
+	set Q_iceknife, 10;
+	set Q_iceknife_hour, gettime(3);
+	next;
+	mes "[Darren]";
+	mes "Take this as a present to have something to play with.";
+	next;
+	getitem 5044, 5;	
+	goto L_enchant30;
+
+L_enchant30:
+	mes "[Darren]";
+	mes "I need to boil the Ingot Wine. It will take an hour.";
+	close;
+
+L_enchant4:
+	mes "[Darren]";
+	mes "The last part of this strong enchant pattern is made of crystals. I need to use force of 10 Light Crystals and 10 Dark Crystals. Bring me them please.";
+	set Q_iceknife, 11;
+	if ( countitem(5043) < 10) goto L_end;
+	if ( countitem(631) < 10) goto L_end;
+	delitem 5043, 10;
+	delitem 631, 10;
+	getexp 250000, 1000;
+	set Q_iceknife, 12;
+	set Q_iceknife_hour, gettime(4);
+	next;
+	goto L_enchant40;
+	
+
+L_enchant40:
+	mes "[Darren]";
+	mes "Whole Enchant Pattern will take a day to prepare. Come tomorrow.";
+	close;
+
+L_enchant5:
+	mes "[Darren]";
+	mes "Good News, enchant is ready. Give me your Razor Knife and I'll enchant it.";
+	next;
+	if( countitem(5079) < 1) goto L_norazor;
+	delitem 5079, 1;
+	getitem 5080, 1;
+	getexp 100000, 1000;
+	mes "[Darren]";
+	mes "Now your knife is more faster than before.";
+	next;
+	set Q_iceknife,13;
+	goto L_enchant50;
+
+
+L_enchant50:
+	mes "[Darren]";
+	mes "I haven't localized the Source of Ice Power. I've been busy with your Enchancement. Come back after few days, please.";
+	close;
+}

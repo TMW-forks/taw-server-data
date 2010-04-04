@@ -1,0 +1,3 @@
+map: 903-3.gat
+npc: npc/903-3_Thunderhill_Dungeon/_mobs.txt
+npc: npc/903-3_Thunderhill_Dungeon/_warps.txt

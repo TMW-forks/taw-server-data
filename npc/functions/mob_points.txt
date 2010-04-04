@@ -55,12 +55,15 @@ function	script	MobPoints	{
 
 
 	// Make money too!
-	if (rand(10) > 7) set Zeny, Zeny + @points[@mobID - 1002];
+	if (rand(10) > 7) set Zeny, Zeny + (@points[@mobID - 1002]*8 + rand(@points[@mobID - 1002]*4))/10;
 
 	if (MPQUEST == 1) set Mobpt, Mobpt + @points[@mobID - 1002];
 
 	if ((@mobID == 1003) || (@mobID == 1004) || (@mobID == 1009))
 		goto L_good;
+
+	if (@mobID == 1997)
+		callfunc "mineral";
 
 
 	// Attitude adjustment for the witch (can we refactor this to another function?  Not sure about max. recursion depth)

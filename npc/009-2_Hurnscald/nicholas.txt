@@ -35,6 +35,11 @@
         set @Q_SETZER_status, (QUEST_Forestbow_state & @Q_SETZER_MASK) >> @Q_SETZER_SHIFT;
         set @Q_SHIELD_status, (QUEST_Forestbow_state & @Q_SHIELD_MASK) >> @Q_SHIELD_SHIFT;
 
+if (Q_iceknife  == 2) goto L_iceknife;
+if (Q_iceknife  == 3) goto Q_ingots;
+if (Q_iceknife  == 4 && Q_iceknife_hour == gettime(3)) goto Q_notready;
+if (Q_iceknife  == 4) goto Q_ready;
+
 	mes "[Nicholas]";
 	mes "\"Hello there,";
 	mes "I'm an expert blacksmith.";
@@ -397,4 +402,87 @@ L_TooMany:
         mes "[Nicholas]";
         mes "\"You don't have room for it. Come back later when you do.\"";
 	close;
+
+L_iceknife:
+	mes "[Nicholas]";
+	mes "\"Hello there,";
+	mes "I'm an expert blacksmith.";
+	mes "If you get me some Iron Ore";
+	mes "I could make you a very valuable shield";
+        mes "or helmet.\"";
+	next;
+	menu
+		"I need something special. Billy has sent me for a Sharp Silvered Blade.", L_ssblade,
+		"I have some Iron Ore!", L_Check,
+		"Where can I get this Iron Ore?", L_Info,
+		"I'm okay, thanks.", L_Pass;
+
+L_ssblade:
+	set Q_iceknife, 3;
+	mes "[Nicholas]";
+	mes "\"Mmmm... Sir knows what is valuable. This item requires special materials. I will need 3 Iron Ingots and 2 Silver Ingots.\"";
+	menu
+		"Okay, I'm right back.", L_end,
+		"Okay, here.", Q_ingots2,
+		"Where can I get Iron and Silver Ingots?", -;
+
+	mes "[Nicholas]";
+	mes "\"One Blacksmith in ThunderHill Castle makes Ingots from Ores. I can send for the needed Ingots if you brought me 15 Iron Ores and 10 Silver Ores.\"";
+	menu
+		"I'll get them on my own.", L_end,
+		"I have the Ores. Here you are.", Q_ores,
+		"I need to get some Ores first.", L_end;
+
+Q_ingots2:
+	if(countitem(5074)<3) goto Q_noingots;
+	if(countitem(5076)<2) goto Q_noingots;
+	delitem 5074, 3;
+	delitem 5076, 2;
+	mes "[Nicholas]";
+	mes "\"Good. The blade should be ready in an hour.\"";
+	set Q_iceknife_hour, gettime(3);
+	set Q_iceknife, 4;
+	close;
+
+Q_notready:
+	mes "[Nicholas]";
+	mes "\"The blade isn't finished yet.\"";	
+	close;
+
+Q_ready:
+	mes "[Nicholas]";
+	mes "\"One Silvered Blade for you, Sir.\"";
+	getitem 5081, 1;
+	set Q_iceknife, 5;
+	close;
+
+Q_ores:
+	if(countitem(640)<15) goto Q_noores;
+	if(countitem(5041)<10) goto Q_noores;
+	delitem 640, 15;
+	delitem 5041, 10;
+	mes "[Nicholas]";
+	mes "\"Good. The blade should be ready in an hour.\"";
+	set Q_iceknife_hour, gettime(3);
+	set Q_iceknife, 4;
+	close;
+
+Q_ingots:
+	mes "[Nicholas]";
+	mes "\"Did you get Ingots?\"";
+	menu
+		"I have the Ingots.", Q_ingots2,
+		"I have the Ores.", Q_ores,
+		"I need to get some Ores first.", L_end;
+
+Q_noores:
+	mes "[Nicholas]";
+	mes "\"I need 15 Iron Ores and 10 Silver Ores. Do you think Ingots are growing on a tree???\"";
+	close;
+
+Q_noingots:
+	mes "[Nicholas]";
+	mes "\"I need 3 Iron Ingotss and 2 Silver Ingotss. Do you think they are growing on a tree???\"";
+	close;
+
 }

@@ -1,0 +1,45 @@
+// 906-1 Eastwood mobs
+
+906-1.gat,70,32,7,8	monster	RedFairy	1985,3,0,30000,Mob906-1::On1985
+906-1.gat,72,21,12,7	monster	BlueFairy	1984,4,0,30000,Mob906-1::On1984
+906-1.gat,50,14,22,16	monster	Gamboge	1031,4,0,50000,Mob906-1::On1031
+906-1.gat,50,13,12,10	monster	GambogeG	1980,3,0,120000,Mob906-1::On1980
+906-1.gat,46,44,15,16	monster	Mauve	1029,3,0,50000,Mob906-1::On1029
+906-1.gat,47,45,12,10	monster	MauveG	1978,2,0,120000,Mob906-1::On1978
+906-1.gat,49,29,7,8	monster	RedFairy	1985,3,0,30000,Mob906-1::On1985
+906-1.gat,91,13,12,7	monster	BlueFairy	1984,4,0,30000,Mob906-1::On1984
+
+
+906-1.gat,0,0,0	script	Mob906-1	-1,{
+On1029:
+	set @mobID, 1029;
+	callfunc "MobPoints";
+	break;
+
+On1031:
+	set @mobID, 1031;
+	callfunc "MobPoints";
+	break;
+
+On1978:
+	set @mobID, 1978;
+	callfunc "MobPoints";
+	break;
+
+On1980:
+	set @mobID, 1980;
+	callfunc "MobPoints";
+	break;
+
+On1984:
+	set @mobID, 1984;
+	callfunc "MobPoints";
+	break;
+
+On1985:
+	set @mobID, 1985;
+	callfunc "MobPoints";
+	break;
+
+	end;
+}

@@ -1,0 +1,39 @@
+901-1.gat,79,30,0	script	#gm_hill	127,1,0 {
+	if (getgmlevel(0) > 30) goto L_GM;
+	if ($gm_hill == 1) goto gm_warp;
+		  mes "[Bridge Guard]";
+	mes "The bridge is closed! You can't go in there!";
+	close;
+
+gm_warp:
+	warp "902-1.gat",79,21;
+	end;
+	close;	
+
+L_GM:
+	mes "Any commands, sir?";
+	menu
+		"Open GM hill", L_open,
+		"Close GM hill", L_close,
+		"Warp to GM hill", L_warp,
+		"Nothing", L_end;
+
+L_open:
+	disablenpc "Guard#BG";
+	set $gm_hill, 1;
+	close;	
+
+L_close:
+	enablenpc "Guard#BG";
+	set $gm_hill, 0;
+	close;	
+
+L_warp:
+	warp "902-1.gat",79,21;
+	close;	
+
+L_end:
+	close;
+
+}
+

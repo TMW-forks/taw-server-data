@@ -1,0 +1,40 @@
+//St. Patrick's Day
+//--Blarney Stone
+//2010
+
+
+018-1.gat,51,61,0	script	Blarney Stone	144,	{
+
+	mes "[Blarney]";
+	mes "\"Welcome\"";
+	next;
+	if(st_BS == 0) goto L_Quest;
+	if(st_BS == 1) goto L_Done;
+	close;
+	
+L_Quest:
+	menu	
+		"A talking stone, am I crazy?", -,
+		"May I kiss you?", L_Kiss,
+		"Who or what are you?", L_Explanation;
+		
+	close;
+	
+L_Kiss:
+	mes "[Blarney]";
+	mes "Have fun on St. Patrick's Day!";
+	getexp 1500, 0;
+	set st_BS, 1;
+	close;
+	
+L_Explanation:
+	mes "[Blarney]";
+	mes "I am a lucky, try to kiss me and you will get a reward!";
+	close;
+
+L_Done:
+	mes "[Blarney]";
+	mes "Celebrate Saint Patrick!";
+	close;
+	
+}

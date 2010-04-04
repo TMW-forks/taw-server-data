@@ -69,6 +69,10 @@ L_M_no_mopox_cure:
 
 L_M_no_inspector:
 
+        set @choice_idx[@choices_nr], @C_dust;
+        set @choice$[@choices_nr], "I need to dust Herbs";
+        set @choices_nr, @choices_nr + 1;
+
         set @choice_idx[@choices_nr], @C_bye;
         set @choice$[@choices_nr], "Never mind";
         set @choices_nr, @choices_nr + 1;
@@ -91,6 +95,8 @@ L_M_no_inspector:
 		goto L_mopox_cure_start;
         if (@choice == @C_nohmask)
 		goto L_NohMask;
+        if (@choice == @C_dust)
+		goto L_dust;
         if (@choice == @C_bye)
 		goto L_close;
 
@@ -703,5 +709,54 @@ S_Update_Var:
 L_NohMask:
 	mes "[Caul]";
 	mes "\"I'm sorry, but I didn't. I'm staying in town. Try asking one of the miners.\"";
+	close;
+
+L_dust:
+	mes "[Caul]";
+	mes "\"What herbs do you want to dust? I need 25 herbs to make one dust.\"";
+	menu
+		"Mauve Herbs", L_dmauve,
+		"Cobalt Herbs", L_dcobalt,
+		"Gamboge Herbs", L_dgamboge,
+		"Alizarin Herbs", L_dalizarin,
+		"Nothing", -;
+	close;
+
+L_dmauve:
+	if(countitem(680)<25) goto L_wenig;
+	delitem 680, 25;
+	getitem 5024, 1;
+	mes "[Caul]";
+	mes "\"Here is your dust.\"";
+	next;
+	goto L_dust;
+L_dcobalt:
+	if(countitem(681)<25) goto L_wenig;
+	delitem 681, 25;
+	getitem 5025, 1;
+	mes "[Caul]";
+	mes "\"Here is your dust.\"";
+	next;
+	goto L_dust;
+L_dgamboge:
+	if(countitem(682)<25) goto L_wenig;
+	delitem 682, 25;
+	getitem 5026, 1;
+	mes "[Caul]";
+	mes "\"Here is your dust.\"";
+	next;
+	goto L_dust;
+L_dalizarin:
+	if(countitem(683)<25) goto L_wenig;
+	delitem 683, 25;
+	getitem 5027, 1;
+	mes "[Caul]";
+	mes "\"Here is your dust.\"";
+	next;
+	goto L_dust;
+
+L_wenig:
+	mes "[Caul]";
+	mes "\"I need 25 Herbs to make one dust and you don't have enough.\"";
 	close;
 }

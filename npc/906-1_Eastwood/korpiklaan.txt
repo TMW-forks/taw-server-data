@@ -1,0 +1,41 @@
+
+906-1.gat,91,31,0	script	Korpiklaan	942,0,0 {
+	if ( Q_korpiklaan == 1) goto L_help;
+	mes "[Korpiklaan]";
+	mes "Vodkaa? Niet Vodki?";
+	next;
+	mes "[Korpiklaan]";
+	mes "I have hurt my leg. I need to cure it. Bring me 10 tiny healing potions please. I need red ones. And be fast. I'm dying.";
+	menu
+		"I will bring it, hold on!", -,
+		"Help yourself, I have my own business.", L_end;
+	set Q_korpiklaan, 1;
+	goto L_no;
+L_no:
+	mes "[Korpiklaan]";
+	mes "Hurry please.";
+	close;
+
+L_help:
+	mes "[Korpiklaan]";
+	mes "Do you have 10 red tiny healing potions?";
+	menu
+		"Yes", -,
+		"No", L_no;
+
+	if(countitem(5010) < 10) goto L_not;
+	delitem 5010, 10;
+	mes "[Korpiklaan]";
+	mes "Ah, thank you for your help. Here - take my mace club. It can help you one day.";
+	//item Mace Club
+
+
+L_not:
+	mes "[Korpiklaan]";
+	mes "No, I need 10 red tiny healing potions! Hurry!";
+	close;
+
+L_end:
+	close;
+}
+ 

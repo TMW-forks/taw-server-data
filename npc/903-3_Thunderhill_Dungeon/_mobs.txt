@@ -1,0 +1,7 @@
+// 903-3 Thunderhill Dungeon mobs
+
+
+
+903-3.gat,0,0,0	script	Mob903-3	-1,{
+	end;
+}

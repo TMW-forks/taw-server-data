@@ -1,0 +1,3 @@
+map: 906-5.gat
+npc: npc/906-5_Eastwood_seaside/_mobs.txt
+npc: npc/906-5_Eastwood_seaside/_warps.txt

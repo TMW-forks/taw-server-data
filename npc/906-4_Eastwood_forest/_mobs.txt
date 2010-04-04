@@ -1,0 +1,7 @@
+// 906-4 Eastwood forest mobs
+
+
+
+906-4.gat,0,0,0	script	Mob906-4	-1,{
+	end;
+}

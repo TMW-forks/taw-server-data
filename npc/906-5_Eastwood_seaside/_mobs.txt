@@ -1,0 +1,56 @@
+// 906-5 Eastwood seaside mobs
+
+906-5.gat,77,74,31,26	monster	EvilPinkie	1990,9,0,25000,Mob906-5::On1990
+906-5.gat,63,39,12,13	monster	Spiky Mushroom	1019,10,0,60000,Mob906-5::On1019
+906-5.gat,13,77,19,17	monster	Fire Goblin	1011,5,0,30000,Mob906-5::On1011
+906-5.gat,50,80,13,11	monster	Plants	1030,5,0,60000,Mob906-5::On1030
+906-5.gat,51,92,10,8	monster	CobaltG	1977,1,0,60000,Mob906-5::On1977
+906-5.gat,79,70,10,8	monster	RedFairy	1985,3,0,30000,Mob906-5::On1985
+906-5.gat,51,81,10,8	monster	BlueFairy	1985,3,0,30000,Mob906-5::On1985
+906-5.gat,13,79,10,8	monster	BlueFairy	1984,3,0,30000,Mob906-5::On1984
+906-5.gat,77,74,31,26	monster	Pinkie	1018,16,0,25000,Mob906-5::On1018
+
+
+906-5.gat,0,0,0	script	Mob906-5	-1,{
+On1011:
+	set @mobID, 1011;
+	callfunc "MobPoints";
+	break;
+
+On1018:
+	set @mobID, 1018;
+	callfunc "MobPoints";
+	break;
+
+On1019:
+	set @mobID, 1019;
+	callfunc "MobPoints";
+	break;
+
+On1030:
+	set @mobID, 1030;
+	callfunc "MobPoints";
+	break;
+
+On1977:
+	set @mobID, 1977;
+	callfunc "MobPoints";
+	break;
+
+On1984:
+	set @mobID, 1984;
+	callfunc "MobPoints";
+	break;
+
+On1985:
+	set @mobID, 1985;
+	callfunc "MobPoints";
+	break;
+
+On1990:
+	set @mobID, 1990;
+	callfunc "MobPoints";
+	break;
+
+	end;
+}

@@ -1,0 +1,27 @@
+// 901-4 Hitomb Mine mobs
+
+901-4.gat,62,54,3,4	monster	Terranite Masks	1986,2,0,30000,Mob901-4::On1986
+901-4.gat,21,54,3,3	monster	Terranite Mask	1986,1,0,30000,Mob901-4::On1986
+901-4.gat,58,13,3,2	monster	Terranite Masks	1986,1,0,30000,Mob901-4::On1986
+901-4.gat,39,10,2,2	monster	Terranite Masks	1986,1,0,30000,Mob901-4::On1986
+901-4.gat,38,17,2,2	monster	Terranite Masks	1986,1,0,30000,Mob901-4::On1986
+901-4.gat,30,13,3,4	monster	Fireslimes	1995,3,0,30000,Mob901-4::On1995
+901-4.gat,18,22,3,1	monster	Fireslimes	1995,1,0,30000,Mob901-4::On1995
+901-4.gat,17,30,4,3	monster	Terranite Masks	1986,1,0,30000,Mob901-4::On1986
+901-4.gat,18,5,9,2	monster	Fireslimes	1995,2,0,30000,Mob901-4::On1995
+901-4.gat,7,5,2,2	monster	Terranite Masks	1986,1,0,30000,Mob901-4::On1986
+
+
+901-4.gat,0,0,0	script	Mob901-4	-1,{
+On1986:
+	set @mobID, 1986;
+	callfunc "MobPoints";
+	break;
+
+On1995:
+	set @mobID, 1995;
+	callfunc "MobPoints";
+	break;
+
+	end;
+}

@@ -1,3 +1,40 @@
+##3 Keep watching our updated web page 
+##3 http://thealternateworld.org. You can see
+##3 what's being worked on. @die command is enabled.
+
+##3
+
+##3 Searching for the Ice Power
+##3 03-28-2010
+
+##0 Darren has found out how to enchant
+##0 razor knife. Eastwood has been connected
+##0 with Woodland. Cault can powder Herbs.
+##0 ThunderHill Blacksmith is accessible
+##0 for non-army players as well and
+##0 offers players 2 new armors.
+
+##3 Searching for the Ice Power
+##3 03-22-2010
+
+##0 Old wizard has been spotted in Nivalis.
+##0 People mumble he's searching for the
+##0 Ice Power, but he needs to help with
+##0 something.
+
+##3 St. Patricks Day
+##3 03-20-2010
+
+##0 Patrick has just arrived to Hurnscald!
+##0 Celebrate St. Patrick's day with him,
+##0 he has a reward for you. Our WEB page
+##0 http://thealternateworld.org has been
+##0 updated. News are posted there so take a
+##0 look. 2 new maps are in testing mode. They
+##0 can be reached through Thunderhill Blacksmiths.
+##0 Remember, that in case of stucking somewhere, 
+##0 you can use @die command now to die and get free.
+
 ##3 Minor updates
 ##3 03-01-2010
 

@@ -16,8 +16,14 @@
 
 901-1.gat,77,43,0	script	Guard	904, {
 	  mes "[Guard]";
-	mes "...";
+	mes "...";79
 	close;
 	
 }
 
+901-1.gat,79,30,0	script	Guard#BG	904, {
+	  mes "[Bridge Guard]";
+	mes "The bridge is closed! You can't go in there!";
+	close;
+	
+}

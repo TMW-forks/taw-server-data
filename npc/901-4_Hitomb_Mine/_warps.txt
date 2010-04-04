@@ -1,0 +1,7 @@
+// 901-4 Hitomb Mine warps
+
+901-4.gat,5,49	warp	Hitomb	-1,1,901-3.gat,52,23
+901-4.gat,62,49	warp	Ancients	-1,-1,901-4.gat,58,24
+901-4.gat,59,25	warp	Access	2,-1,901-4.gat,62,50
+901-4.gat,66,16	warp	Trap	1,-1,901-4.gat,54,5
+901-4.gat,54,5	warp	Bridge	-1,-1,901-4.gat,65,15

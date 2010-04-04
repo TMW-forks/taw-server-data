@@ -1,3 +1,4 @@
 map: 904-1.gat
 npc: npc/904-1_Ironseed/_mobs.txt
 npc: npc/904-1_Ironseed/_warps.txt
+npc: npc/904-1_Ironseed/captain.txt

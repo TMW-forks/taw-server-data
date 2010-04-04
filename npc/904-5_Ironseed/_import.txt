@@ -1,0 +1,3 @@
+map: 904-5.gat
+npc: npc/904-5_Ironseed/_mobs.txt
+npc: npc/904-5_Ironseed/_warps.txt

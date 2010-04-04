@@ -1,0 +1,176 @@
+//boyscout 
+
+
+
+016-1.gat,116,74,0	script	Billy	929,{
+	if(Q_iceknife == 1) goto L_razor;
+	if(Q_iceknife == 2) goto L_razor3;
+	if(Q_iceknife == 3) goto L_razor3;
+	if(Q_iceknife == 4) goto L_razor3;
+	if(Q_iceknife == 5) goto L_razor4;
+	if(QUEST_Boyscout==1)goto L_boyscoutquest1_1;
+	if(QUEST_Boyscout==2)goto L_boyscoutquest1_2;
+	if(QUEST_Boyscout==3)goto L_boyscoutquest2_1;
+	mes "[Boyscout]";
+	mes "Hi I'm Billy the Boyscout";
+	set QUEST_Boyscout, 1;
+	close;
+
+L_boyscoutquest1_1:
+	mes "[Billy]";
+	mes "I was robbed by the squirell-gang!";
+	
+        emotion 2;
+        mes "now I haven't any acorn anymore";
+	next;
+	mes "[Billy]";
+	mes "Pleeeaasse, can you help me get them back.";
+	menu
+	     "Of course!", L_boyscoutquest1_2,
+             "This is not my problem, do it on your own!", -;
+
+
+	close;
+
+L_boyscoutquest1_2:
+	set QUEST_Boyscout, 2;
+	mes "[Billy]";
+	mes "Thats great!";
+	mes "OK the squirells stolen 1000 acorns.";
+	mes "If you return it to me, I'll give you an little reward";
+	next;
+	mes "[Billy]";
+	mes "You get all of them back?";
+	menu
+		"Yeah, it wasn't a problem", L_boyscoutquest1_3,
+		"No I'll do it later cu", -;
+	close;
+
+L_boyscoutquest1_3:
+	if(countitem("acorn")<1000)goto L_noacorns;
+	mes "[Billy]";
+	mes "Cool you made it";
+	mes "I'll give you 100 caramel apples";
+	delitem "acorn", 1000;
+	getitem "caramelapple", 100;
+	set QUEST_Boyscout, 3;
+	close;
+
+L_noacorns:
+	mes "[Billy]";
+        mes "Noooo, thats not all!";
+        close;
+
+L_boyscoutapples1:
+        set @acorn, countitem("acorn");
+        if(@acorn<100),goto L_noacorns;
+        set @q, 10;
+        if(@acorn>=1000), set @q, 11;
+        if(@acorn>=5000), set @q, 12;
+        if(@acorn>=10000), set @q, 13;
+        if(@acorn>=50000), set @q, 14;
+        if(@acorn>=100000), set @q, 15;
+
+	mes "[Billy]";
+	mes "I'll exchange you "+@acorn+" acorns to "+(@acorn/100)*@q +" caramel apples";
+        delitem "acorn", @acorn;
+        getitem "caramelapple", (@acorn/100)*@q;  
+        if(strcharinfo(0)=="Kurenai") goto L_kurenai;
+      close;
+
+L_kurenai:
+	next;
+	mes "[Billy]";
+	mes "Kurenai, thank you very much for your great idea";
+	mes "now i can help others";
+	mes "I'll give you something, wait a moment";
+	next;
+	mes "[Billy]";
+	mes "here a little gift of friendship";
+	getitem "yellowrose", 3;
+	close;
+
+L_boyscoutquest2_1:
+	mes "[Billy]";
+        mes "Hi my friend";
+        menu
+                "Can you exchange my acorns into caramel apples, please.", L_boyscoutapples1,
+                "Bye",-;
+	mes "[Billy]";
+        mes "Bye";
+        close;
+
+L_razor:
+	menu
+		"I've been told you're an excellent cutler...", -;
+	
+	mes "[Billy]";
+	mes "I'm. But not for everyone.";
+	if(QUEST_Boyscout == 3) goto Q_helped;
+	menu
+		"Darren told me you could make me one of your great Razor Knives", -;
+	
+	mes "[Billy]";
+	mes "You're friend of Darren? That's different then.";
+	next;
+	goto L_razor2;
+
+Q_helped:
+	next;
+	mes "[Billy]";
+	mes "But you helped me in the past... so I will help you now.";
+	next;
+	goto L_razor2;
+
+L_razor2:
+	set Q_iceknife, 2;
+	mes "[Billy]";
+	mes "Okay. Let's make a Razor Knife for you. I will need some bones to make a handle and sharp silvered blade.";
+	menu
+		"Where can I get these items?", -;
+
+	mes "[Billy]";
+	mes "Bones can be 'borrowed' from undeads. Bring me a big one. Good sharp silvered blade can make uhm... Nicholas. Nicholas from Hurnscald. Find him and tell him I send you.";
+	close;
+
+L_razor3:
+mes "[Billy]";
+	mes "I will need some bones to make a handle and sharp silvered blade. Bones can be 'borrowed' from undeads. Bring me a big one. Good sharp silvered blade can make uhm... Nicholas. Nicholas from Hurnscald. Find him and tell him I send you.";
+	close;
+
+L_end:
+	close;
+
+L_razor4:
+	if(countitem(5081) < 1) goto L_lostblade;
+	if(countitem(775) < 8) goto L_nobone;
+	delitem 5081, 1;
+	mes "[Billy]";
+	mes "I'll take these three bones, that should be enough.";
+	next;
+	delitem 775, 3;
+	delitem 5081, 1;
+	mes "[Billy]";
+	mes "Have fun with my Razor Knife.";
+	getitem 5079, 1;
+	set Q_iceknife, 6;
+	close;
+
+L_nobone:
+	mes "[Billy]";
+	mes "Nice bones. But no bone is big enough. Try to bring more bones so we can choose.";
+	close;
+
+L_lostblade:
+	mes "[Billy]";
+	mes "Did you lost the blade?";
+	menu
+		"Yes.", -,
+		"No.", L_end;
+
+	mes "[Billy]";
+	mes "Get new one, and be more carefull next time.";
+	set Q_iceknife, 2;
+	close;
+
+}

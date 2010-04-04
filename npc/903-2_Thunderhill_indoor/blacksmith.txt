@@ -1,0 +1,109 @@
+//
+
+903-2.gat,44,41,0	script	Blacksmith	926, {
+      mes "[Blacksmith]";
+    mes "Hey man! What brings you here?";
+	menu
+		"I need some Ores", L_ores,
+		"I need some Ingots", L_ingots,
+		"Nothing.", L_end;
+
+L_ingots:
+      mes "[Blacksmith]";
+    mes "I can make 1 ingot of 3 ores. What ingot do you need?";
+	menu
+		"Iron Ingot", I_iron,
+		"Copper Ingot", I_copper,
+		"Silver Ingot", I_silver,
+		"Gold Ingot", I_gold,
+		"No Ingots", L_end;
+
+I_iron:
+	if(countitem(640) < 3) goto I_nopow;
+	delitem 640, 3;
+	getitem 5074, 1;
+      mes "[Blacksmith]";
+    mes "Here is your Ingot.";	
+	goto L_ingots;
+I_nopow:
+      mes "[Blacksmith]";
+    mes "You're out of powders!";	
+	goto L_ores;
+
+I_copper:
+	if(countitem(5042) < 3) goto I_nopow;
+	delitem 5042, 3;
+	getitem 5075, 1;
+      mes "[Blacksmith]";
+    mes "Here is your Ingot.";	
+	goto L_ingots;
+I_silver:
+	if(countitem(5041) < 3) goto I_nopow;
+	delitem 5041, 3;
+	getitem 5076, 1;
+      mes "[Blacksmith]";
+    mes "Here is your Ingot.";	
+	goto L_ingots;
+I_gold:
+	if(countitem(5040) < 3) goto I_nopow;
+	delitem 5040, 3;
+	getitem 5077, 1;
+      mes "[Blacksmith]";
+    mes "Here is your Ingot.";	
+	goto L_ingots;
+
+
+
+L_ores:
+      mes "[Blacksmith]";
+    mes "I can give you 1 Ore for 5 powders. What ores do you need?";
+	menu
+		"Iron Ores", O_iron,
+		"Copper Ores", O_copper,
+		"Silver Ores", O_silver,
+		"Gold Ores", O_gold,
+		"No Ores", L_end;
+		
+O_iron:
+	if(countitem(704) < 5) goto O_nopow;
+	delitem 704, 5;
+	getitem 640, 1;
+      mes "[Blacksmith]";
+    mes "Five powders for me, one ore for you.";	
+	goto L_ores;
+
+O_nopow:
+      mes "[Blacksmith]";
+    mes "You're out of powders!";	
+	goto L_ores;
+
+O_copper:
+	if(countitem(5033) < 5) goto O_nopow;
+	delitem 5033, 5;
+	getitem 5042, 1;
+      mes "[Blacksmith]";
+    mes "Five powders for me, one ore for you.";	
+	goto L_ores;
+
+O_silver:
+	if(countitem(5032) < 5) goto O_nopow;
+	delitem 5032, 5;
+	getitem 5041, 1;
+      mes "[Blacksmith]";
+    mes "Five powders for me, one ore for you.";	
+	goto L_ores;
+
+O_gold:
+	if(countitem(5031) < 5) goto O_nopow;
+	delitem 5031, 5;
+	getitem 5040, 1;
+      mes "[Blacksmith]";
+    mes "Five powders for me, one ore for you.";	
+	goto L_ores;
+
+
+
+L_end:
+	close;
+
+}

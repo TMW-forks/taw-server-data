@@ -1,0 +1,153 @@
+//St. Patrick's Day
+//--Patrick
+//2010
+
+
+
+009-1.gat,94,26,0	script	Patrick	927,	{
+	
+	mes "[Patrick]";
+	mes "Happy St. Patrick's Day! What's your name my friend?";
+	next;
+	input @name$;
+	if(SPD == 0) goto L_Quest;
+	if(SPD == 1) goto L_Happy;
+	close;
+	
+
+L_Quest:
+	mes "[Patrick]";
+	mes "\"Ah, hello " + @name$ + ", how are you today, ready for St. Patrick's Day???\"";
+	next;
+	menu
+
+		"Oh, yeah, I am!", L_Yeah,
+		"I'm not sure...", L_NotSure,
+		"Definitely not", L_No,
+		"What's St. Patrick's Day?", L_Explanation;
+		
+	close;
+
+L_Happy:
+	mes "[Patrick]";
+	mes "You've alreday got your reward. Please give the others also a try! And keep in mind that St. Patrick's Day is an event to celebrate St. Patrick.  Next year, you can find my at the same location. Now, go go go and trink as much green beer as you want!";
+	mes "See you next year my friend.";
+	close;
+
+L_Yeah:
+	mes "[Patrick]";
+	mes "That's what I wanted to hear!";
+	mes "Have you ever kissed the Blarney stone?";
+	menu
+		"Sure", L_Kissed,
+		"Nah", -,
+		"Blarney Stone?", L_Stone;
+	
+	close;
+	
+
+L_NotSure:
+	mes "[Patrick]";
+	mes "St. Patrick's Day is really exciting...better think about it and tell me your decision later.";
+	mes "See you.";
+	close;
+
+L_No:
+	mes "[Patrick]";
+	mes "You're not ready for St. Patrick's Day?!";
+	mes "A pity...";
+	close;
+
+L_Explanation:
+	mes "[Patrick]";
+	mes "Are you kidding, you don't know Saint Patrick? Well, he's the irish patron saint. He is celebrated every year on 17 March! Have much fun today and don't forget to drink some green beer. Go go go and celebrate the 17 March!";
+	close;
+
+L_Kissed:
+	if(st_BS == 0) goto L_Kiss;
+	if(st_BS == 1) goto L_Done;
+
+L_Done:
+	mes "[Patrick]";
+	mes "\"Oh yeah, that's good. May I ask whether you want to participate in a little game?\"";
+	next;
+	menu
+		"YAY!", L_Ok,
+		"Maybe next year...", -;
+	close;
+
+L_Stone:
+	mes "[Patrick]";
+	mes "\"The Blarney Stone is an ancient misterious rock. Try to kiss the stone and you might get something.\"";
+	next;
+	menu
+		"No, thank you", -,
+		"Where can i find the Blarney Stone?", L_Location,
+		"Wow, I am on my way!", -;
+	close;
+	
+L_Location:
+	mes "[Patrick]";
+	mes "I don't know the exact location, but I think the stone is somewhere near the mining camp north of Hurnscald.";
+	mes "Find the stone and come back!";
+	close;
+	
+L_Ok:
+	mes "[Patrick]";
+	mes "I'm glad to hear that.";
+	mes "Come on, turn on this wheel and you might win something.";
+	next;
+		set @TEMP, rand(4);
+		if(@TEMP == 0) goto L_Reward0;
+		if(@TEMP == 1) goto L_Reward1;
+		if(@TEMP == 2) goto L_Reward2;
+		if(@TEMP == 3) goto L_Reward3;
+		if(@TEMP == 4) goto L_Reward4;
+		
+L_Reward0:
+	mes "[Patrick]";
+	mes "Unfortunately a blank. But take this as a consolation prize!";
+	getitem 5078, 15;
+	set SPD, 1;
+	close;
+
+L_Reward1:
+	mes "[Patrick]";
+	mes "Take this as reward.";
+	getitem 5078, 30;
+	getexp 500, 0;
+	set SPD, 1;
+	close;
+
+L_Reward2:
+	mes "[Patrick]";
+	mes "Here's your prize.";
+	getitem 5078, 30;
+	set zeny, zeny + 1000;
+	set SPD, 1;
+	close;
+
+L_Reward3:
+	mes "[Patrick]";
+	mes "Take this.";
+	getitem 5078, 30;
+	getexp 600, 0;
+	set SPD, 1;
+	close;
+
+L_Reward4:
+	mes "[Patrick]";
+	mes "Have fun with your reward.";
+	getitem 5078, 30;
+	set zeny, zeny + 1500;
+	set SPD, 1;
+	close;
+	
+L_Kiss:
+	mes "[Patrick]";
+	mes "Seems like you haven't kissed the stone...try to find the Blarney!";
+	close;
+	
+}
+
+

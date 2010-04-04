@@ -11,3 +11,4 @@ npc: npc/901-1_HiTomb/guardian.txt
 npc: npc/901-1_HiTomb/houses.txt
 npc: npc/901-1_HiTomb/metalist.txt
 npc: npc/901-1_HiTomb/shops.txt
+npc: npc/901-1_HiTomb/gm_hill.txt
