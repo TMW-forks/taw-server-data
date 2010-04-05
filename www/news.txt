@@ -4,6 +4,15 @@
 
 ##3
 
+##3 Server update
+##3 04-04-2010
+
+##0 Users of 3rd party client modifications
+##0 may experience disconnections due to the
+##0 new anti-flood system in the server.
+##0 Tips: Don't hammer on the pickup key or
+##0 cast many spells at once.
+
 ##3 Searching for the Ice Power
 ##3 03-28-2010
 
