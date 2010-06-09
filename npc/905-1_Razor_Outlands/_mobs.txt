@@ -1,0 +1,28 @@
+// 905-1 Razor Outlands mobs
+
+905-1.gat,105,39,5,2	monster	Razors	1998,3,0,10000,Mob905-1::On1998
+905-1.gat,123,38,3,4	monster	Razors	1998,3,0,10000,Mob905-1::On1998
+905-1.gat,118,23,8,6	monster	Razors	1961,3,0,10000,Mob905-1::On1961
+905-1.gat,18,21,8,6	monster	Razors	1961,5,0,10000,Mob905-1::On1961
+905-1.gat,53,19,8,6	monster	Razors	1961,7,0,100000,Mob905-1::On1961
+905-1.gat,67,31,8,6	monster	Razors	1961,7,0,100000,Mob905-1::On1961
+905-1.gat,30,56,8,6	monster	Razors	1961,7,0,100000,Mob905-1::On1961
+905-1.gat,56,88,21,14	monster	Razors	1961,11,0,100000,Mob905-1::On1961
+905-1.gat,30,18,3,3	monster	Razors	1961,3,0,10000,Mob905-1::On1961
+905-1.gat,33,40,3,3	monster	Razors	1961,3,0,10000,Mob905-1::On1961
+905-1.gat,54,62,3,3	monster	Razors	1961,3,0,10000,Mob905-1::On1961
+
+
+905-1.gat,0,0,0	script	Mob905-1	-1,{
+On1961:
+	set @mobID, 1961;
+	callfunc "MobPoints";
+	break;
+
+On1998:
+	set @mobID, 1998;
+	callfunc "MobPoints";
+	break;
+
+	end;
+}

@@ -1,3 +1,4 @@
 map: 906-4.gat
 npc: npc/906-4_Eastwood_forest/_mobs.txt
 npc: npc/906-4_Eastwood_forest/_warps.txt
+npc: npc/906-4_Eastwood_forest/necronom.txt

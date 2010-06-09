@@ -1,3 +1,4 @@
 map: 906-1.gat
 npc: npc/906-1_Eastwood/_mobs.txt
 npc: npc/906-1_Eastwood/_warps.txt
+npc: npc/906-1_Eastwood/korpiklaan.txt

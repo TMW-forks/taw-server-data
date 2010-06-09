@@ -3,7 +3,8 @@
 904-5.gat,16,29,6,4	monster	minerals	1970,5,0,30000,Mob904-5::On1970
 904-5.gat,8,35,3,2	monster	thunderfist	1996,1,0,30000,Mob904-5::On1996
 904-5.gat,26,35,3,2	monster	thunderfist	1996,1,0,30000,Mob904-5::On1996
-
+904-5.gat,12,29,3,2	monster	thunderfist	1996,1,0,30000,Mob904-5::On1996
+904-5.gat,21,29,3,2	monster	thunderfist	1996,1,0,30000,Mob904-5::On1996
 
 904-5.gat,0,0,0	script	Mob904-5	-1,{
 On1970:

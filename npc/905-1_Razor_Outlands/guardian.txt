@@ -1,0 +1,31 @@
+905-1.gat,67,46,0	script	#Tower2	0,1,1 {
+	// max Razor Carvers
+	set @MAX, 4;
+
+	set @sum, @MAX - $Tower2;
+	
+	areamonster "905-1.gat",56,54,59,55,"RazorCarver",@sum,"#Tower2::L_kill";
+	set $Tower2, @MAX;
+	close;
+
+L_kill:
+	set $Tower2,	$Tower2 - 1;
+	end;	
+	close;
+}
+
+905-1.gat,45,43,0	script	#Tower2b	0,0,7 {
+	// max Razor Carvers_warps.
+	set @MAX, 4;
+
+	set @sum, @MAX - $Tower2;
+	
+	areamonster "905-1.gat",56,54,59,55,"RazorCarver",@sum,"#Tower2::L_kill";
+	set $Tower2, @MAX;
+	close;
+}
+
+905-1.gat,34,47,0	script	Tower2cl	0,0,2 {
+	if ( getareausers("905-1.gat",48,38,66,47) > 0 ) close;
+	killmonster "905-1.gat","#Tower2::L_kill";
+}
