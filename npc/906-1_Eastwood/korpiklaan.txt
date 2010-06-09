@@ -1,5 +1,6 @@
 
 906-1.gat,91,31,0	script	Korpiklaan	942,0,0 {
+	if ( Q_korpiklaan == 2) close;
 	if ( Q_korpiklaan == 1) goto L_help;
 	mes "[Korpiklaan]";
 	mes "Vodkaa? Niet Vodki?";
@@ -27,7 +28,10 @@ L_help:
 	delitem 5010, 10;
 	mes "[Korpiklaan]";
 	mes "Ah, thank you for your help. Here - take my mace club. It can help you one day.";
-	//item Mace Club
+	getitem 5091;
+	getexp 1000, 0;
+	set Q_korpiklaan, 2;
+	close;
 
 
 L_not:

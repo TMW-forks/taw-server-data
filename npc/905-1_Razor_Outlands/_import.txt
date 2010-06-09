@@ -1,0 +1,5 @@
+map: 905-1.gat
+npc: npc/905-1_Razor_Outlands/.d3lphinview
+npc: npc/905-1_Razor_Outlands/_mobs.txt
+npc: npc/905-1_Razor_Outlands/_warps.txt
+npc: npc/905-1_Razor_Outlands/guardian.txt

@@ -1,0 +1,13 @@
+// 905-2 warps
+
+905-2.gat,29,37	warp	ToOutside	0,-1,905-1.gat,107,37
+905-2.gat,21,34	warp	ToTower1	0,-1,905-2.gat,58,34
+905-2.gat,34,36	warp	ToTower1	-1,0,905-2.gat,109,35
+905-2.gat,36,24	warp	ToTower1	-1,-1,905-2.gat,44,63
+905-2.gat,21,24	warp	ToTower1	-1,-1,905-2.gat,67,63
+905-2.gat,59,24	warp	ToTower1	-1,-1,905-2.gat,21,63
+905-2.gat,108,35	warp	ToTower1	-1,1,905-2.gat,34,35
+905-2.gat,59,34	warp	ToTower1	0,-1,905-2.gat,20,34
+905-2.gat,44,63	warp	ToTower1	-1,-1,905-2.gat,36,24
+905-2.gat,67,63	warp	ToTower1	-1,-1,905-2.gat,21,24
+905-2.gat,21,63	warp	ToTower1	-1,-1,905-2.gat,59,24

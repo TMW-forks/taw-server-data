@@ -1,0 +1,13 @@
+// 905-1 Razor Outlands warps
+
+905-1.gat,169,58	warp	ToCastle	-1,-1,903-1.gat,0,1
+905-1.gat,121,58	warp	Warpback	-1,1,904-1.gat,8,38
+905-1.gat,135,41	warp	Ironseed	-1,0,904-1.gat,21,21
+905-1.gat,58,53	warp	ToTower2	0,-1,905-3.gat,29,37
+905-1.gat,38,77	warp	ToTower3	0,-1,905-4.gat,29,37
+905-1.gat,107,37	warp	ToTower1	0,-1,905-2.gat,29,37
+905-1.gat,66,62	warp	ToOutside	-1,-1,905-1.gat,63,58
+905-1.gat,89,41	warp	ToOutside	-1,0,905-1.gat,84,40
+905-1.gat,85,41	warp	ToOutside	-1,0,905-1.gat,89,40
+905-1.gat,19,16	warp	ToFarmersHouse	-1,-1,905-5.gat,53,32
+905-1.gat,15,6	warp	ToCowshed	-1,-1,905-5.gat,26,34

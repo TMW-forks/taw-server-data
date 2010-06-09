@@ -537,5 +537,9 @@
 5079,	RazorKnife,			Razor Knife,			4,	10000,	6000,	100,	115,	,	1,	,	0,	2,	2,	1,	1,	1,	{},					{}	
 5080,	EnchantedRazorKnife,			Enchanted Razor Knife,			4,	10000,	6000,	115,	110,	,	1,	,	0,	2,	2,	1,	1,	1,	{},		{ bonus bAspdAddRate, 15; }	
 5081,	SilveredBlade,			Silvered Blade,			3,	1500,	0,	6,	,	,	,	,	,	,	,	,	,	,	{},					{}		
+5088,  	FallenPattern,  		Fallen Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1045"; },	{}
+5089,  	SkullPattern,  		Skull Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1024"; },	{}
+5090,  	SkulllordPattern,  		Skulllord Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1087"; },	{}
+5091, 	ForestAxe, 			Forest Axe, 			4, 	1200, 	400, 	15, 	7, 	, 	2, 	, 	0, 	2, 	2, 	1, 	1, 	1, 	{}, 					{}										
 
 5100,	Heartglasses,			Heartglasses,			5,	7500,	5000,	10,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}

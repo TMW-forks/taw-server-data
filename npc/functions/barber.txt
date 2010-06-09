@@ -27,12 +27,21 @@ L_Style:
 		"Wave", -,
 		"Mane", -,
 		"Bun", -,
+		"Fake ponytail", -,
+		"Braided ponytail", -,
+		"Long ponytail", -,
+		"Long and tied", -,
+		"Very long and lick", -,
+		"Curly", -,
+		"High Ponytail", -,
+		"Frizzy", -,
 		"Surprise me", -,
 		"Nah, I'm fine", L_Done;
 
 L_Process_Style:
 	set @style, @menu - 1;
-	if (@style == 17) set @style, rand(17);
+	if (@style == 25) set @style, rand(24);
+	if (@style == 23) set @style, 24;
 	setlook 1, @style;
 	return;
 
@@ -49,10 +58,15 @@ L_Color:
 		"Blue", -,
 		"Dark purple", -,
 		"Black", -,
+		"Pink", -,
+		"Brown", -,
+		"White", -,
+		"Darkbrown", -,
+		"Royal blue", -,
 		"Surprise me", -,
 		"Nah, I'm fine", L_Done;
 	set @color, @menu - 1;
-	if (@color == 11) set @color, rand(11);
+	if (@color == 16) set @color, rand(16);
 	setlook 6, @color;
 	return;
 
