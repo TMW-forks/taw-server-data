@@ -1,0 +1,6 @@
+
+
+902-4.gat,57,49,0	script	Gold	127, {
+  mes "You are to far away to pick some gold...";
+  close;
+}

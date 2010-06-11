@@ -1,3 +1,4 @@
 map: 905-3.gat
 npc: npc/905-3/_mobs.txt
 npc: npc/905-3/_warps.txt
+npc: npc/905-3/jail.txt

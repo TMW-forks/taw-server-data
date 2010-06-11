@@ -1,0 +1,70 @@
+
+905-2.gat,96,24,0	script	Prisoner	941,0,0 {
+if (Q_necronom == 2) goto L_q2;
+if (Q_necronom == 1) goto L_q1;
+  mes "[Prisoner]";
+  mes "hrrrgh... iskaarna ge muta";
+  menu
+      "What??", -;
+
+  mes "[Prisoner]";
+  mes "ju spik inglish?";
+  menu
+      "I don't understand you...", -,
+      "Yes.", L_yes,
+      "No.", L_no;
+close;
+
+L_yes:
+  mes "[Prisoner]";
+  mes "gut! aj kan't spik very vell.";
+  mes "If you bring me botl of wotr, aj wil tych ju hau tu spik nekromantissh.";
+  menu
+      "I don't understand you...", L_no,
+      "I'll get it for you", -,
+      "I have my own business.", L_no;
+  
+  set Q_necronom, 1;
+  mes "[Prisoner]";
+  mes "Betr hary, Ajm thirsty.";
+
+  close;
+
+L_no:
+  mes "[Prisoner]";
+  mes "ou.. dets bed..";
+  close;
+
+L_q2:
+  mes "[Prisoner]";
+  mes "Thank you for your help!";
+  close;
+
+L_q1:
+  mes "[Prisoner]";
+  mes "du ju hev wotr for mi?";
+  menu
+    "Yes", -,
+    "No", L_no;
+
+  if (countitem(541)<1) goto L_none;
+  delitem 541, 1;
+  mes "[Prisoner]";
+  mes "thenks... nau, ajl tych ju.";
+  next;
+  getexp 1000, 0;
+  mes "[Prisoner]";
+  mes "Now we can talk necromantish. Thank you for your help!";
+  set Q_necronom, 2;
+  close;
+  
+
+
+L_none:
+  mes "[Prisoner]";
+  mes "nou, ju didn't bring mi botl of wotr!";
+  close;
+
+}
+ 
+ 
