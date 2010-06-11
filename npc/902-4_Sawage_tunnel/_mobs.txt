@@ -1,0 +1,14 @@
+// 902-4 Sawage tunnel mobs
+
+902-4.gat,43,47,6,7	monster	SawageSnake	1959,4,0,30000,Mob902-4::On1959
+902-4.gat,59,52,4,4	monster	SawageSnake	1959,1,0,30000,Mob902-4::On1959
+
+
+902-4.gat,0,0,0	script	Mob902-4	-1,{
+On1959:
+	set @mobID, 1959;
+	callfunc "MobPoints";
+	break;
+
+	end;
+}

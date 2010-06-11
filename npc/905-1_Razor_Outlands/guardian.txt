@@ -1,10 +1,12 @@
+
+
 905-1.gat,67,46,0	script	#Tower2	0,1,1 {
 	// max Razor Carvers
 	set @MAX, 4;
 
 	set @sum, @MAX - $Tower2;
-	
-	areamonster "905-1.gat",56,54,59,55,"RazorCarver",@sum,"#Tower2::L_kill";
+
+	areamonster "905-1.gat",56,54,59,55,"RazorCarver",1998,@sum,"#Tower2::L_kill";
 	set $Tower2, @MAX;
 	close;
 
@@ -20,7 +22,7 @@ L_kill:
 
 	set @sum, @MAX - $Tower2;
 	
-	areamonster "905-1.gat",56,54,59,55,"RazorCarver",@sum,"#Tower2::L_kill";
+	areamonster "905-1.gat",56,54,59,55,"RazorCarver", 1998,@sum,"#Tower2::L_kill";
 	set $Tower2, @MAX;
 	close;
 }
@@ -28,4 +30,13 @@ L_kill:
 905-1.gat,34,47,0	script	Tower2cl	0,0,2 {
 	if ( getareausers("905-1.gat",48,38,66,47) > 0 ) close;
 	killmonster "905-1.gat","#Tower2::L_kill";
+	set $Tower2, 0;
+	close;
+}
+
+905-1.gat,69,45,0	script	Tower2cl2	0,0,3 {
+	if ( getareausers("905-1.gat",48,38,66,47) > 0 ) close;
+	killmonster "905-1.gat","#Tower2::L_kill";
+	set $Tower2, 0;
+	close;
 }

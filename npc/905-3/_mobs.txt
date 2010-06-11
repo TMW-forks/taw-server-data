@@ -1,7 +1,17 @@
 // 905-3 mobs
 
+905-3.gat,24,23,1,1	monster	RazorCarver	1998,1,0,50000,Mob905-3::On1998
+905-3.gat,31,23,2,1	monster	RazorCarver	1998,1,0,50000,Mob905-3::On1998
+905-3.gat,35,33,1,1	monster	RazorCarver	1998,1,0,50000,Mob905-3::On1998
+905-3.gat,63,36,1,1	monster	RazorCarver	1998,1,0,50000,Mob905-3::On1998
+905-3.gat,104,28,16,1	monster	RazorCarver	1998,1,0,50000,Mob905-3::On1998
 
 
 905-3.gat,0,0,0	script	Mob905-3	-1,{
+On1998:
+	set @mobID, 1998;
+	callfunc "MobPoints";
+	break;
+
 	end;
 }

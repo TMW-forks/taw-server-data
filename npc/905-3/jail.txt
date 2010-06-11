@@ -1,0 +1,9 @@
+
+
+905-3.gat,102,23,0	script	#Jail	0,4,2 {
+	savepoint "905-3.gat", 104, 23;
+	mes "[Razor Carver]";
+	mes "Welcome to our Jail! You'll never get out! [laugh]";
+	close;
+
+}

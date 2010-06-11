@@ -1,68 +1,180 @@
 
-905-2.gat,96,24,0	script	Prisoner	941,0,0 {
-if (Q_necronom == 2) goto L_q2;
-if (Q_necronom == 1) goto L_q1;
-  mes "[Prisoner]";
-  mes "hrrrgh... iskaarna ge muta";
+905-2.gat,98,24,0	script	Necromant	941,0,0 {
+if (Q_nekromancer == 3) goto L_hungry;
+if (Q_nekromancer == 2) goto L_q2;
+if (Q_nekromancer == 1) goto L_q1;
+  mes "[Necromant]";
+  mes "What now?";
   menu
       "What??", -;
 
-  mes "[Prisoner]";
-  mes "ju spik inglish?";
+  mes "[Necromant]";
+  mes "You can torture me or kill me but I won't tell you Necromant's secret.";
   menu
-      "I don't understand you...", -,
-      "Yes.", L_yes,
-      "No.", L_no;
+      "Necromant's secret?", -,
+      "I'm not here to torture you.", -,
+      "...", L_end;
+
+  mes "[Necromant]";
+  mes "Who are you than? You're not one of that Razors?";
+  menu
+      "No. Razors are my enemy.", -,
+      "Are you so naive to think that?", L_end2;
+
+  mes "[Necromant]";
+  mes "Can you prove it? Cur yourself to show me your blood!";
+  menu
+      "My blood? Never!", L_end3,
+      "[cut yoursefl]", -;
+
+  heal -(hp/2), 0;
+
+  mes "[Necromant]";
+  mes "Your blood seems to be brave. I'm necromant. If you help ME, I could help YOU.";
+  menu
+      "How could YOU help ME?", -,
+      "How can I help you?", L_help,
+      "Sorry, no help today from me.", L_end4;
+
+  mes "[Necromant]";
+  mes "I could make dead army for you... are you interested?";
+  menu
+      "No, that sounds too evil!", L_end4,
+      "Okay, how can I help?", L_help;
+
+L_help:
+  mes "[Necromant]";
+  mes "Find another necromancer in Eastwood and tell him to prepare help  for me.";
+  menu
+      "Okay, I will!", -,
+      "Nope, that's too hard.", L_end4;
+
+  set Q_nekromancer, 1;
+  close;
+
+
+L_end:
+  mes "[Necromant]";
+  mes "Even your silence will not made me to tell you! [laugh]";
 close;
 
-L_yes:
-  mes "[Prisoner]";
-  mes "gut! aj kan't spik very vell.";
-  mes "If you bring me botl of wotr, aj wil tych ju hau tu spik nekromantissh.";
-  menu
-      "I don't understand you...", L_no,
-      "I'll get it for you", -,
-      "I have my own business.", L_no;
-  
-  set Q_necronom, 1;
-  mes "[Prisoner]";
-  mes "Betr hary, Ajm thirsty.";
+L_end2:
+  mes "[Necromant]";
+  mes "No, I don't care if I die here. Death is only part of life.";
+close;
 
-  close;
+L_end3:
+  mes "[Necromant]";
+  mes "As you wish. But I can't believe you than.";
+close;
 
-L_no:
-  mes "[Prisoner]";
-  mes "ou.. dets bed..";
-  close;
+L_end4:
+  mes "[Necromant]";
+  mes "As you wish.";
+close;
+
+L_end5:
+    close;
+
 
 L_q2:
-  mes "[Prisoner]";
-  mes "Thank you for your help!";
-  close;
+  mes "[Necromant]";
+  mes "Did you tell my friend that I'm in trouble?";
+  menu
+    "Yeah, he will try to help.", -;
+
+  mes "[Necromant]";
+  mes "Good... thank you. I made this for you in between.";
+  next;
+  getitem 5089, 3;
+  getexp 30000, 0;
+  set Q_nekromancer, 3;
+
+L_hungry:
+  mes "[Necromant]";
+  mes "I'm hungry and I need water. Could you give me a bottle of water and a ginger bread man?";
+  menu
+    "Yeah, take it!", -,
+    "I don't have one", L_end5;
+  
+  if(countitem(541)<1) goto L_none;
+  if(countitem(512)<1) goto L_none;
+  delitem 541, 1;
+  delitem 512, 1;
+
+L_want:
+  mes "[Necromant]";
+  mes "Do you want me to make you a Pattern?";
+  menu
+    "What Pattern?", L_explain,
+    "Yes, a Skull Pattern", L_skull,
+    "Yes, a Skeleton Pattern", L_skell,
+    "No", L_end5;
+
+L_skull:
+  if (countitem(776) < 1) goto L_no;
+  if (countitem(631) < 1) goto L_no;
+  mes "[Necromant]";
+  mes "How many do you need?";
+	input @num;
+	if (countitem(776) < @num) goto L_no;
+	if (countitem(631) < @num) goto L_no;		
+	delitem 776, @num;
+	delitem 631, @num;
+	getitem 5089, @num;
+	  mes "[Nekromant]";
+	mes "Here you are.";
+	close;
+
+L_skell:
+  if (countitem(776) < 1) goto L_no;
+  if (countitem(631) < 1) goto L_no;
+  if (countitem(775) < 2) goto L_no;
+  mes "[Necromant]";
+  mes "How many do you need?";
+	input @num;
+	if (countitem(776) < @num) goto L_no;
+	if (countitem(775) < 2*@num) goto L_no;
+	if (countitem(631) < @num) goto L_no;		
+	delitem 776, @num;
+	delitem 775, 2*@num;
+	delitem 631, @num;
+	getitem 5044, @num;
+	  mes "[Nekromant]";
+	mes "Here you are.";
+	close;
+
+
+L_explain:
+  mes "[Necromant]";
+  mes "It's prepared spell to summon a dead warior. I can give life to dead things with Dark Crystal.";
+  next;
+  mes "[Necromant]";
+  mes "If you bring me a Skull and Darkcrystal, I can make you a Skull Pattern";
+  next;
+  mes "[Necromant]";
+  mes "If you bring me a Skull and 2 bones, I can make you a Skeleton Pattern";
+  next;
+  goto L_want;
+  
+
 
 L_q1:
-  mes "[Prisoner]";
-  mes "du ju hev wotr for mi?";
+  mes "[Necromant]";
+  mes "Did you tell my friend that I'm in trouble?";
   menu
-    "Yes", -,
-    "No", L_no;
-
-  if (countitem(541)<1) goto L_none;
-  delitem 541, 1;
-  mes "[Prisoner]";
-  mes "thenks... nau, ajl tych ju.";
-  next;
-  getexp 1000, 0;
-  mes "[Prisoner]";
-  mes "Now we can talk necromantish. Thank you for your help!";
-  set Q_necronom, 2;
+    "Not yet, just wanted to see you", -;
   close;
-  
 
 
 L_none:
-  mes "[Prisoner]";
-  mes "nou, ju didn't bring mi botl of wotr!";
+  mes "[Necromancer]";
+  mes "No.. you probably forgot...";
+  close;
+
+L_no:
+  mes "[Necromancer]";
+  mes "You don't have what I need...";
   close;
 
 }

@@ -1,0 +1,4 @@
+map: 902-4.gat
+npc: npc/902-4_Sawage_tunnel/_mobs.txt
+npc: npc/902-4_Sawage_tunnel/_warps.txt
+npc: npc/902-4_Sawage_tunnel/gold.txt

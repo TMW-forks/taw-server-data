@@ -1,0 +1,4 @@
+// 902-4 Sawage tunnel warps
+
+902-4.gat,43,30	warp	ToRazorOutlands	-1,-1,905-1.gat,43,30
+902-4.gat,53,74	warp	ToHitomb	0,-1,902-1.gat,43,2

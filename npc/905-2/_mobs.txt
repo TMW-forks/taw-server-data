@@ -1,7 +1,14 @@
 // 905-2 mobs
 
+905-2.gat,104,28,14,1	monster	Razor	1998,1,0,120000,Mob905-2::On1998
+905-2.gat,69,25,2,2	monster	Razor	1998,1,0,120000,Mob905-2::On1998
 
 
 905-2.gat,0,0,0	script	Mob905-2	-1,{
+On1998:
+	set @mobID, 1998;
+	callfunc "MobPoints";
+	break;
+
 	end;
 }
