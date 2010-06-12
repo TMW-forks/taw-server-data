@@ -4,6 +4,14 @@
 
 ##3
 
+##3 Ice Knife part 3
+##3 06-12-2010
+
+#0 Last part od Ice knife quest has
+#0 been released. Also gold scorpion
+#0 bug should be now repaired. New
+#0 rare items now have dark background.
+
 ##3 Minor updates
 ##3 06-11-2010
 

@@ -1,6 +1,8 @@
 //
 
 020-1.gat,92,43,0	script	Darren	168, {
+	if ( Q_iceknife == 16 ) goto L_die;
+  	if(Q_iceknife == 14) goto L_enchant51;
 	if(Q_iceknife == 13) goto L_enchant50;
 	if(Q_iceknife == 12 && Q_iceknife_hour == gettime(3)) goto L_enchant40;
 	if(Q_iceknife == 12) goto L_enchant5;
@@ -163,6 +165,40 @@ L_enchant5:
 
 L_enchant50:
 	mes "[Darren]";
-	mes "I haven't localized the Source of Ice Power. I've been busy with your Enchancement. Come back after few days, please.";
+	mes "It's good you're back. I've found the source of Ice Power!";
+	next;
+	mes "[Darren]";
+	mes "It's imprisoned in Obelisk of Ice. You will have to smash it with your Enchanted Knife. Then the power will be released.";
+	next;
+	
+L_enchant51:
+	mes "[Darren]";
+	mes "Are you ready to be warped there? I'll warp you back as soon as I'll feel the power of Ice.";
+	menu
+	   "Yes, warp me!", -,
+	   "No, I'll come back later.", L_later;
+
+	if(countitem(5080)<1) goto L_nore;
+	set Q_iceknife, 14;
+	warp "906-6",48,44;
 	close;
+	
+L_later:
+	mes "[Darren]";
+	mes "Come back soon or I'll have to find someone else to help me!";
+	close;
+
+L_nore:
+	mes "[Darren]";
+	mes "Where is your Enchanted Razor Knife?? Hurry, get it!";
+	close;
+	
+L_die:
+	mes "[Darren]";
+	mes "You... you got out??? Taste my lighting which will send you to the hell!";
+	next;
+	heal -Hp, 0;
+	close;
+
+
 }

@@ -1,0 +1,7 @@
+// 906-6 Ice Arena mobs
+
+
+
+906-6.gat,0,0,0	script	Mob906-6	-1,{
+	end;
+}

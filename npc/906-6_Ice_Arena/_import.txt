@@ -1,0 +1,4 @@
+map: 906-6.gat
+npc: npc/906-6_Ice_Arena/_mobs.txt
+npc: npc/906-6_Ice_Arena/_warps.txt
+npc: npc/906-6_Ice_Arena/obelisk.txt

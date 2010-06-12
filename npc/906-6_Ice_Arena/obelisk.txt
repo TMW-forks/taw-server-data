@@ -1,0 +1,69 @@
+
+906-6.gat,48,29,0	script	Obelisk of Ice	924, {
+  if(Q_iceknife == 15) goto L_saveme;
+  mes "[Obelisk of Ice]";
+  menu
+    "Stab Enchanted Razor Knife into Obelisk", -,
+    "Leave Obelisk alone", L_end;
+
+  if(countitem(5080)<1) goto L_noknife;
+  if($Q_obelisk_A == 1) goto L_engaged;
+  close2;
+  npctalk "Ice Power activated Obelisk. Look Out!";
+  set $Q_obelisk_A, 1;
+  fakenpcname "Obelisk of Ice","Activated Obelisk of Ice",923;
+  monster "906-6.gat",48,44,"Icceron",1958,1,"Viima::OnKo";
+  close;
+
+L_noknife:
+  mes "You don't have Enchanted Razor Knife!";
+  close;
+
+L_engaged:
+  close2;
+  npctalk "Looks like somebody has already done it!";
+  close;
+L_end:
+  close;
+
+L_saveme:
+  mes "[Nerir]";
+  mes "Hey, friend? Do you hear me? It's Nerir from Hitomb!";
+  menu
+    "Yes, I'm stuck here..", -;
+  mes "[Nerir]";
+  mes "I see. It seems that Darren tricked you. He is more powerful than anyone of us and I'm afraid his plans are evil.";
+  next;
+  mes "[Nerir]";
+  mes "But you can't blame yourself. I'll warp you here. You should have some Ice Power in you too, so you're maybe our last chance to stop him!";
+  next;
+  warp "902-1",35,23;
+  getexp 350000, 0;
+  savepoint "901-1.gat", 36, 48;
+  set Q_iceknife, 16;
+  mes "[Nerir]";
+  mes "I'll try to study Ice Power now. I'll tell you when I need your help. Go and train your skills, it seems that dark times will come soon!";
+  close;
+
+}
+
+906-6.gat,48,236,0	script	Viima	0, {
+	close;
+
+OnKo:
+  fakenpcname "Obelisk of Ice","Obelisk of Ice",924;
+  set $Q_obelisk_A, 0;
+  if(countitem(5080)<1) close;
+  savepoint "906-6.gat", 48, 31;
+  set Q_iceknife, 15;
+  mes "You feel Ice Power releasing from Icceron ...";
+	delitem 5080, 1;
+	getitem 5061, 1;
+  mes "... streaming through your Enchanted Razor Knife ...";
+  mes "... you feel it's stronger now! Then released power comes up and leaves Ice Arena.";
+  mes "[Darren]";
+  mes "Hahaha... did you think I will let you escape alive with such a powerful knowledge, you fool? Die here imprisoned!";
+  mes "[You]";
+  mes "Damn! I should try to find my own way out if I want to survive!";
+  close;
+}

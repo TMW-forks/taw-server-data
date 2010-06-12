@@ -1,4 +1,5 @@
 902-1.gat,34,22,0	script	Nerir	910, {
+if ( Q_iceknife == 16 ) goto L_iceknife;
 if ( ancients_quest == 7 ) goto A_again;
 if ( ancients_quest == 6 ) goto A_again;
 if ( ancients_quest == 5 ) goto A_again;
@@ -11,6 +12,11 @@ if ( ancients_quest == 3 ) goto A_warpme2;
 		"I would like to merge Cactus Potions", L_potions,
 		"Nothing", -;
 close;
+
+L_iceknife:
+  mes "[Nerir]";
+  mes "I'll try to study Ice Power now. I'll tell you when I need your help. Go and train your skills, it seems that dark times will come soon!";
+  close;
 
 L_drinks:
 	if (countitem(501) < 3) goto L_nopots;
