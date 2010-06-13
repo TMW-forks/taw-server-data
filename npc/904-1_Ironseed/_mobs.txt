@@ -1,9 +1,9 @@
 // 904-1 Ironseed mobs
 
-904-1.gat,30,15,13,10	monster	GoldenScorpion	1993,3,0,30000,Mob904-1::On1993
+//904-1.gat,30,15,13,10	monster	GoldenScorpion	1993,3,0,30000,Mob904-1::On1993
 904-1.gat,26,44,23,14	monster	Ant	1992,7,0,35000,Mob904-1::On1992
 904-1.gat,43,9,18,16	monster	Ant	1992,6,0,60000,Mob904-1::On1992
-904-1.gat,46,52,12,20	monster	GoldenScorpion	1993,2,0,45000,Mob904-1::On1993
+//904-1.gat,46,52,12,20	monster	GoldenScorpion	1993,2,0,45000,Mob904-1::On1993
 904-1.gat,30,27,5,4	monster	DarkGolem	1974,1,0,60000,Mob904-1::On1974
 904-1.gat,19,55,3,3	monster	DarkGolem	1974,1,0,40000,Mob904-1::On1974
 904-1.gat,44,54,20,17	monster	IronFlower	1991,1,0,30000,Mob904-1::On1991
