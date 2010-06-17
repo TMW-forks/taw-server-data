@@ -1,4 +1,6 @@
-//
+// With new hairstyles and colors
+// Version 2.0
+// Authour: Ridd
 
 function	script	Barber	{
 	menu
@@ -31,17 +33,17 @@ L_Style:
 		"Braided ponytail", -,
 		"Long ponytail", -,
 		"Long and tied", -,
-		"Very long and lick", -,
-		"Curly", -,
+		"Long and frizzy", -,
+		"Very long and slick", -, 
+		"Curly", -, 
 		"High Ponytail", -,
-		"Frizzy", -,
+		"Frizzy", -, 
 		"Surprise me", -,
 		"Nah, I'm fine", L_Done;
 
 L_Process_Style:
 	set @style, @menu - 1;
-	if (@style == 25) set @style, rand(24);
-	if (@style == 23) set @style, 24;
+	if (@style == 30) set @style, rand(30);
 	setlook 1, @style;
 	return;
 
@@ -59,14 +61,14 @@ L_Color:
 		"Dark purple", -,
 		"Black", -,
 		"Pink", -,
-		"Brown", -,
+		"Brown", -, 
 		"White", -,
-		"Darkbrown", -,
+		"Dark brown", -, 
 		"Royal blue", -,
 		"Surprise me", -,
 		"Nah, I'm fine", L_Done;
 	set @color, @menu - 1;
-	if (@color == 16) set @color, rand(16);
+	if (@color == 20) set @color, rand(20);
 	setlook 6, @color;
 	return;
 

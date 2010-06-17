@@ -22,7 +22,7 @@ if (Q_nekromancer == 1) goto L_q1;
       "Are you so naive to think that?", L_end2;
 
   mes "[Necromant]";
-  mes "Can you prove it? Cur yourself to show me your blood!";
+  mes "Can you prove it? Cut yourself to show me your blood!";
   menu
       "My blood? Never!", L_end3,
       "[cut yoursefl]", -;
