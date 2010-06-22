@@ -1,0 +1,81 @@
+//AFK cap quest
+
+009-2.gat,149,43,0	script	Jason	176,{
+
+	if (afk == 0) goto L_Quest;
+	if (afk == 1) goto L_Quest_Cap_4;
+	if (afk == 2) goto L_Done;
+
+L_Quest:
+	if (BaseLevel >= 30) goto L_Quest_2;
+	if (BaseLevel < 30) goto L_Too_Low;
+
+L_Quest_2:
+	mes "[Jason]";
+	mes "\"I'm sorry but I have absolutely no time right now...\"";
+	next;
+		menu
+			"Good luck, see you!", -,
+			"Come on, just one minute", L_Quest_3;
+	close;
+
+L_Quest_3:
+	mes "[Jason]";
+	mes "\"Well, go ahead.\"";
+	next;
+		menu
+			"I guess I was wrong...", -,
+			"I heard about your legendary AFK cap.", L_Quest_Cap;
+	close;
+
+L_Quest_Cap:
+	mes "[Jason]";
+	mes "\"Ah, you heard that old story, actually, I'm not creating AFK caps anymore, I'm sorry.\"";
+	next;
+		menu
+			"A pity, bye", -,
+			"Is there seriously no way?", L_Quest_Cap_2;
+	close;
+
+L_Quest_Cap_2:
+	mes "[Jason]";
+	mes "\"Seems like you are really interested in such a cap, hmm, there's one thing I need but I'm out of time, I need 2 terranite ore and 3 iron ore to repair my house, if you bring me these items, you will get your afk cap.\"";
+	next;
+		menu
+			"I'm on my way!", L_Quest_Cap_3,
+			"No, thanks", -;
+	close;
+	
+L_Quest_Cap_3:
+	mes "[Jason]";
+	mes "\"Go ahead my friend\"";
+	set afk, 1;
+	close;
+	
+L_Quest_Cap_4:
+	if (countitem(640) < 3) goto L_Not_Enough;
+	if (countitem(5068) < 2) goto L_Not_Enough;
+	mes "[Jason]";
+	mes "\"Thanks my friend, here is your reward!\"";
+	delitem 640, 3;
+	delitem 5068, 2;
+	getitem 5082, 1;	//AFK Cap
+	set afk, 2;
+	close;
+	
+L_Too_Low:
+	mes "[Jason]";
+	mes "This area is definitely too dangerous for such a young and unskilled warrior, you shouldn't be here.";
+	close;
+	
+L_Not_Enough:
+	mes "[Jason]";
+	mes "Seems like you haven't got the items...";
+	close;
+
+L_Done:
+	mes "[Jason]";
+	mes "The players of TAW are going to know if you are afk in the future!";
+	close;
+
+}
