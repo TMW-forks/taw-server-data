@@ -538,6 +538,9 @@
 5080,	EnchantedRazorKnife,			Enchanted Razor Knife,			4,	10000,	6000,	115,	110,	,	1,	,	0,	2,	2,	1,	1,	1,	{},		{ bonus bAspdAddRate, 15; }	
 5081,	SilveredBlade,			Silvered Blade,			3,	1500,	0,	6,	,	,	,	,	,	,	,	,	,	,	{},					{}		
 5082,	AFKCap,			AFK Cap,		5,	3000,	800,	10,	,	5,	,	5,	0,	2,	256,	,	0,	0,	{},					{}			
+5083,	GreenFairy,				Green Fairy Pet,			5,	1000,	2500,	1,	50,	0,	,	0,	0,	2,	128,	,	0,	0,	{},					{bonus bMaxHP,			50;}
+5084,	RedFairy,				Red Fairy Pet,			5,	1000,	2500,	1,	50,	0,	,	0,	0,	2,	128,	,	0,	0,	{},					{bonus bMaxHP,			50;}
+5085,	BlueFairy,				Blue Fairy Pet,			5,	1000,	2500,	1,	50,	0,	,	0,	0,	2,	128,	,	0,	0,	{},					{bonus bMaxHP,			50;}
 5088,  	FallenPattern,  		Fallen Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1045"; },	{}
 5089,  	SkullPattern,  		Skull Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1024"; },	{}
 5090,  	SkulllordPattern,  		Skulllord Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1087"; },	{}
