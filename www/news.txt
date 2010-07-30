@@ -4,13 +4,22 @@
 
 ##3
 
+##3 Den of Scorpions
+##3 07-30-2010
+
+##0 Where have all the scorpions
+##0 gone? They probably moved to
+##0 safety of a den. Try to find
+##0 them, their stinger is very
+##0 rare!
+
 ##3 Ice Knife part 3
 ##3 06-12-2010
 
-#0 Last part od Ice knife quest has
-#0 been released. Also gold scorpion
-#0 bug should be now repaired. New
-#0 rare items now have dark background.
+##0 Last part od Ice knife quest has
+##0 been released. Also gold scorpion
+##0 bug should be now repaired. New
+##0 rare items now have dark background.
 
 ##3 Minor updates
 ##3 06-11-2010

@@ -139,7 +139,7 @@
 637,	KnightsHelmet,			Knight's Helmet,		5,	20000,	2000,	90,	,	15,	,	-30,	0,	2,	256,	,	0,	0,	{},					{}										
 638,	InfantryHelmet,			Infantry Helmet,		5,	15000,	1500,	90,	,	15,	,	-30,	0,	2,	256,	,	0,	0,	{},					{}										
 639,	CrusadeHelmet,			Crusade Helmet,			5,	25000,	2500,	140,	,	18,	,	-36,	0,	2,	256,	,	0,	0,	{},					{}										
-640,	IronOre,			Iron Ore,			3,	250,	100,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}										
+640, 	IronOre, 			Iron Ore, 			3, 	10000, 	250, 	40, 	, 	, 	, 	, 	, 	, 	, 	, 	, 	, 	{}, 					{}										
 641,	SnakeSkin,			Snake Skin,			3,	250,	100,	20,	,	,	,	,	,	,	,	,	,	,	{},					{}										
 642,	JeansChaps,			Jeans Chaps,			5,	2000,	1000,	40,	,	6,	,	-12,	0,	2,	1,	,	0,	0,	{},					{}										
 643,	WhiteCowboyHat,			White Cowboy Hat,		5,	1800,	900,	30,	,	6,	,	-12,	0,	2,	256,	,	0,	0,	{},					{}										
@@ -500,9 +500,9 @@
 5037,	Sinew,				Sinew,				5,	0,	0,	0,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}
 5038,	Silkthread,			Silkthread,			5,	0,	0,	0,,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}
 5039,	PeaceHerb,			PeaceHerb,			5,	0,	0,	0,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}
-5040, 	GoldOre, 			Gold Ore, 			3, 	2000, 	1000, 	1, 	, 	, 	, 	, 	, 	2, 	, 	, 	0, 	, 	{}, 					{}
-5041, 	SilverOre, 			Silver Ore, 			3, 	1000, 	500, 	1, 	, 	, 	, 	, 	, 	2, 	, 	, 	0, 	, 	{}, 					{}
-5042, 	CopperOre, 			Copper Ore, 			3, 	500, 	250, 	1, 	, 	, 	, 	, 	, 	2, 	, 	, 	0, 	, 	{}, 					{}
+5040,  	GoldOre,  			Gold Ore,  			3,  	500000,  	15000,  	1,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{},  					{}
+5041,  	SilverOre,  			Silver Ore,  			3,  	300000,  	5000,  	1,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{},  					{}
+5042,  	CopperOre,  			Copper Ore,  			3,  	100000,  	2500,  	1,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{},  					{}
 5043,	LightCrystal,			Light Crystal,			3,	100,	50,	10,	,	,	,	,	,	,	,	,	,	,	{},					{}
 5044,  	SkeletonPattern,  		Skeleton Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1043"; },	{}
 5045, 	EnchantedMiningPick, 			Enchanted Mining Pick, 			4, 	8000, 	4000, 	100, 	100, 	, 	1, 	, 	0, 	2, 	2, 	1, 	1, 	1, 	{}, 					{}							
@@ -550,4 +550,13 @@
 5097,	AraxamusBlood,			Araxamus's Blood,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
 5098,	SeedOfTheDemon,			Seed of the Demon,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
 5099,	TorturedSoul,			Tortured Soul,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
-5100,	Heartglasses,			Heartglasses,			5,	7500,	5000,	10,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}
+5100,	Heartglasses,			Heartglasses,			5,	7500,	5000,	10,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}										
+5101,  	Thundersword,  		Thundersword,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1996"; },	{}
+5102,	Crossbow,			Crossbow,			4,	10000,	3000,	150,	110,	,	5,	,	0,	2,	34,	1,	0,	11,	{},					{}
+5103,	MoldyLeaf,			Stardust,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
+5104,	PellonpekkoWood,			Stardust,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
+5105,	BearsPoo,			Stardust,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
+5106,	HellSnowflake,			Stardust,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
+5107,	HeartOfSteel,			Stardust,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
+5108, 	GoldenScorpionStinger2, 			Golden Scorpion Stinger, 			3, 	25000, 	10000, 	40, 	, 	, 	, 	, 	, 	, 	, 	, 	, 	, 	{}, 					{}		
+

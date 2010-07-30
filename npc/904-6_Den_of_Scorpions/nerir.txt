@@ -1,0 +1,57 @@
+904-6.gat,42,32,0	script	Nerir	910, {
+
+	mes "[Nerir]";
+	mes "Hello";
+	menu
+		"What are you doing here?", L_what,
+		"How can I get back up?", L_how,
+		"Can you take me home?", L_take,
+		"...", -;
+	close;
+
+L_what:
+	mes "[Nerir]";
+	mes "I'm on a walk. Picking mushrooms. But it seems that they are not growing yet.";
+	menu
+		"Are you crazy? Mushrooms in here?", -,
+		"Don't you have anything better to do?", -,
+		"Sounds good...", -;
+
+	mes "[Nerir]";
+	mes "Of course I'm not picking mushrooms. Those Golden Scorpions emits unusual power.";
+	menu
+		"How can I get back up?", L_how,
+		"Can you take me home?", L_take,
+		"Okay, I don't have time to chat now.", -;
+
+	mes "[Nerir]";
+	mes "Same with me...";
+	close;
+
+L_how:
+	mes "[Nerir]";
+	mes "There is no way out.";
+	menu
+		"Does it mean we are stuck here?", -;
+
+	mes "[Nerir]";
+	mes "You are lucky that you met me here. I can take you with me, when I'll come home.";
+	menu
+		"Can you take me home now?", L_take,
+		"Okay, I have to work now.", -;
+
+	mes "[Nerir]";
+	mes "Same with me...";
+	close;
+
+L_take:
+	mes "[Nerir]";
+	mes "Well, I just finished my work here so we can go. Take my hand.";
+	next;
+	
+	warp "902-1",33,23;
+
+	mes "[Nerir]";
+	mes "Okay, we are home. I'll come there soon again, so if you will get stuck there, you can just wait for me.";
+	close;
+}

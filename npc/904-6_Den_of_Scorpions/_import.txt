@@ -1,0 +1,4 @@
+map: 904-6.gat
+npc: npc/904-6_Den_of_Scorpions/_mobs.txt
+npc: npc/904-6_Den_of_Scorpions/_warps.txt
+npc: npc/904-6_Den_of_Scorpions/nerir.txt

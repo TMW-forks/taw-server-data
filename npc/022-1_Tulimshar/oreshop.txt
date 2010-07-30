@@ -1,0 +1,2 @@
+// NPC OreMaster
+022-1.gat,54,54,0	shop	Drinn	112,IronOre :-1,CopperOre :-1,SilverOre :-1,GoldOre :-1
