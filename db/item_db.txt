@@ -541,6 +541,8 @@
 5083,	GreenFairy,				Green Fairy Pet,			5,	1000,	2500,	1,	50,	0,	,	0,	0,	2,	128,	,	0,	0,	{},					{bonus bMaxHP,			50;}
 5084,	RedFairy,				Red Fairy Pet,			5,	1000,	2500,	1,	50,	0,	,	0,	0,	2,	128,	,	0,	0,	{},					{bonus bMaxHP,			50;}
 5085,	BlueFairy,				Blue Fairy Pet,			5,	1000,	2500,	1,	50,	0,	,	0,	0,	2,	128,	,	0,	0,	{},					{bonus bMaxHP,			50;}
+5086,	ElfHat,		Elf Hat,		5,	2500,	2300,	10,	,	8,	,	2,	0,	2,	256,	,	0,	0,	{},					{}										
+//
 5088,  	FallenPattern,  		Fallen Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1045"; },	{}
 5089,  	SkullPattern,  		Skull Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1024"; },	{}
 5090,  	SkulllordPattern,  		Skulllord Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1087"; },	{}
