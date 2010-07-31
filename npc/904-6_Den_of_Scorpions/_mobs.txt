@@ -1,14 +1,14 @@
 // 904-6 Den of Scorpions mobs
 
-904-6.gat,36,45,4,2	monster	Scorpion1	1973,1,0,40000,Mob904-6::On1973
-904-6.gat,49,35,4,3	monster	Scorpion4	1973,1,0,40000,Mob904-6::On1973
-904-6.gat,38,33,4,5	monster	Scorpion3	1973,1,0,40000,Mob904-6::On1973
-904-6.gat,43,42,4,5	monster	Scorpion2	1973,1,0,40000,Mob904-6::On1973
+904-6.gat,36,45,4,2	monster	Scorpion1	1993,1,0,40000,Mob904-6::On1993
+904-6.gat,49,35,4,3	monster	Scorpion4	1993,1,0,40000,Mob904-6::On1993
+904-6.gat,38,33,4,5	monster	Scorpion3	1993,1,0,40000,Mob904-6::On1993
+904-6.gat,43,42,4,5	monster	Scorpion2	1993,1,0,40000,Mob904-6::On1993
 
 
 904-6.gat,0,0,0	script	Mob904-6	-1,{
-On1973:
-	set @mobID, 1973;
+On1993:
+	set @mobID, 1993;
 	callfunc "MobPoints";
 	break;
 
