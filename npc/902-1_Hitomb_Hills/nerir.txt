@@ -101,8 +101,10 @@ L_end:
 
 902-1.gat,32,21,0	script	Magic Portal	946, {
 if(BaseLevel < 80) goto L_young;
+	set victim_slope, 0;
 	warp "902-5", 39, 55;
+	close;
 L_young:
-	npcsay strcharinfo(0)+", you are too young to enter the portal.";
+	npctalk strcharinfo(0)+", you are too young to enter the portal.";
 	close;
 }

@@ -8,7 +8,7 @@
 	set $VC1, 1;
 	set victim_slope, 1;
 	npctalk "Aaaargh! You will pay for thisss!";
-	itemheal -Rand(100), 0;
+	itemheal -(Rand(100)), 0;
 	close;
 
 L_summon:
@@ -20,12 +20,12 @@ L_summon:
 
 L_engaged:
 	npctalk "This victim has been already sacrificed.";
-	itemheal -Rand(100), 0;
+	itemheal -(Rand(100)), 0;
 	close;
 
 L_sacrificed:
 	npctalk "You already sacrificed a victim.";
-	itemheal -Rand(200), -Rand(10);
+	itemheal -(Rand(200)), -(Rand(10));
 	close;
 
 }
@@ -39,7 +39,7 @@ L_sacrificed:
 	set $VC2, 1;
 	set victim_slope, 1;
 	npctalk "Aaaargh! You will pay for thisss!";
-	itemheal -Rand(100), 0;
+	itemheal -(Rand(100)), 0;
 	close;
 
 L_summon:
@@ -51,12 +51,12 @@ L_summon:
 
 L_engaged:
 	npctalk "This victim has been already sacrificed.";
-	itemheal -Rand(100), 0;
+	itemheal -(Rand(100)), 0;
 	close;
 
 L_sacrificed:
 	npctalk "You already sacrificed a victim.";
-	itemheal -Rand(200), -Rand(10);
+	itemheal -(Rand(200)), -(Rand(10));
 	close;
 
 }
@@ -71,7 +71,7 @@ L_sacrificed:
 	set $VC3, 1;
 	set victim_slope, 1;
 	npctalk "Aaaargh! You will pay for thisss!";
-	itemheal -Rand(100), 0;
+	itemheal -(Rand(100)), 0;
 	close;
 
 L_summon:
@@ -83,12 +83,12 @@ L_summon:
 
 L_engaged:
 	npctalk "This victim has been already sacrificed.";
-	itemheal -Rand(100), 0;
+	itemheal -(Rand(100)), 0;
 	close;
 
 L_sacrificed:
 	npctalk "You already sacrificed a victim.";
-	itemheal -Rand(200), -Rand(10);
+	itemheal -(Rand(200)), -(Rand(10));
 	close;
 
 }
@@ -96,7 +96,7 @@ L_sacrificed:
 902-7.gat,50,43,0	script	#Aracheck	0,0,0 {
 
 L_dead:
-	npctalk "very well!";
-	mapwarp "902-7.gat","902-1.gat",70,65;
+	announce "Araxamus has been sent back to hell",1;
+	mapwarp "902-7.gat","902-3.gat",70,65;
 	close;
 }
