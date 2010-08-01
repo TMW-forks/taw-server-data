@@ -1,13 +1,14 @@
 
 902-7.gat,30,43,0	script	Victim Slope	127,0,0 {
 	if($VC1 > 0) goto L_engaged;
-	if(victim_slope > 0) goto L_sacrificed;
+	if(victim_slope > 0 || getgmlevel(0) > 80) goto L_sacrificed;
 
 	if($VC2 > 0 && $VC3 > 0) goto L_summon;
 
 	set $VC1, 1;
 	set victim_slope, 1;
 	npctalk "Aaaargh! You will pay for thisss!";
+	itemheal -Rand(100), 0;
 	close;
 
 L_summon:
@@ -19,25 +20,26 @@ L_summon:
 
 L_engaged:
 	npctalk "This victim has been already sacrificed.";
-	//itemheal
+	itemheal -Rand(100), 0;
 	close;
 
 L_sacrificed:
 	npctalk "You already sacrificed a victim.";
-	//itemheal
+	itemheal -Rand(200), -Rand(10);
 	close;
 
 }
 
 902-7.gat,70,43,0	script	Victim Slope	127,0,0 {
 	if($VC2 > 0) goto L_engaged;
-	if(victim_slope > 0) goto L_sacrificed;
+	if(victim_slope > 0 || getgmlevel(0) > 80) goto L_sacrificed;
 
 	if($VC1 > 0 && $VC3 > 0) goto L_summon;
 
 	set $VC2, 1;
 	set victim_slope, 1;
 	npctalk "Aaaargh! You will pay for thisss!";
+	itemheal -Rand(100), 0;
 	close;
 
 L_summon:
@@ -49,12 +51,12 @@ L_summon:
 
 L_engaged:
 	npctalk "This victim has been already sacrificed.";
-	//itemheal
+	itemheal -Rand(100), 0;
 	close;
 
 L_sacrificed:
 	npctalk "You already sacrificed a victim.";
-	//itemheal
+	itemheal -Rand(200), -Rand(10);
 	close;
 
 }
@@ -62,13 +64,14 @@ L_sacrificed:
 
 902-7.gat,50,22,0	script	Victim Slope	127,0,0 {
 	if($VC3 > 0) goto L_engaged;
-	if(victim_slope > 0) goto L_sacrificed;
+	if(victim_slope > 0 || getgmlevel(0) > 80) goto L_sacrificed;
 
 	if($VC1 > 0 && $VC2 > 0) goto L_summon;
 
 	set $VC3, 1;
 	set victim_slope, 1;
 	npctalk "Aaaargh! You will pay for thisss!";
+	itemheal -Rand(100), 0;
 	close;
 
 L_summon:
@@ -80,17 +83,19 @@ L_summon:
 
 L_engaged:
 	npctalk "This victim has been already sacrificed.";
-	//itemheal
+	itemheal -Rand(100), 0;
 	close;
 
 L_sacrificed:
 	npctalk "You already sacrificed a victim.";
-	//itemheal
+	itemheal -Rand(200), -Rand(10);
 	close;
 
 }
 
-902-7.gat,0,0,0	script	#Aracheck	0,0,0 {
+902-7.gat,50,43,0	script	#Aracheck	0,0,0 {
+
 L_dead:
 	npcsay "very well!";
+	mapwarp "902-7.gat","902-1.gat",70,65;
 }
