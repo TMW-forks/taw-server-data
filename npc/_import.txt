@@ -59,6 +59,7 @@ import: npc/901-4_Hitomb_Mine/_import.txt
 import: npc/902-1_Hitomb_Hills/_import.txt
 import: npc/902-3_Hitomb_Cave2/_import.txt
 import: npc/902-4_Sawage_tunnel/_import.txt
+import: npc/902-5_Forgotten_caves/_import.txt
 import: npc/902-7_Abandoned_Lair/_import.txt
 import: npc/902-8_Menhirs_of_Gods/_import.txt
 import: npc/903-1_Thunderhill/_import.txt

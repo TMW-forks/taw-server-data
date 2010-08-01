@@ -1,0 +1,3 @@
+map: 902-5.gat
+npc: npc/902-5_Forgotten_caves/_mobs.txt
+npc: npc/902-5_Forgotten_caves/_warps.txt

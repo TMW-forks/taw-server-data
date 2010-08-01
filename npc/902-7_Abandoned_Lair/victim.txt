@@ -1,0 +1,96 @@
+
+902-7.gat,30,43,0	script	Victim Slope	127,0,0 {
+	if($VC1 > 0) goto L_engaged;
+	if(victim_slope > 0) goto L_sacrificed;
+
+	if($VC2 > 0 && $VC3 > 0) goto L_summon;
+
+	set $VC1, 1;
+	set victim_slope, 1;
+	npctalk "Aaaargh! You will pay for thisss!";
+	close;
+
+L_summon:
+	set $VC1, 0;
+	set $VC2, 0;
+	set $VC3, 0;
+	monster "902-7.gat",50,43,"Araxamus",1968,1,"#Aracheck::L_dead";
+	close;
+
+L_engaged:
+	npctalk "This victim has been already sacrificed.";
+	//itemheal
+	close;
+
+L_sacrificed:
+	npctalk "You already sacrificed a victim.";
+	//itemheal
+	close;
+
+}
+
+902-7.gat,70,43,0	script	Victim Slope	127,0,0 {
+	if($VC2 > 0) goto L_engaged;
+	if(victim_slope > 0) goto L_sacrificed;
+
+	if($VC1 > 0 && $VC3 > 0) goto L_summon;
+
+	set $VC2, 1;
+	set victim_slope, 1;
+	npctalk "Aaaargh! You will pay for thisss!";
+	close;
+
+L_summon:
+	set $VC1, 0;
+	set $VC2, 0;
+	set $VC3, 0;
+	monster "902-7.gat",50,43,"Araxamus",1968,1,"#Aracheck::L_dead";
+	close;
+
+L_engaged:
+	npctalk "This victim has been already sacrificed.";
+	//itemheal
+	close;
+
+L_sacrificed:
+	npctalk "You already sacrificed a victim.";
+	//itemheal
+	close;
+
+}
+
+
+902-7.gat,50,22,0	script	Victim Slope	127,0,0 {
+	if($VC3 > 0) goto L_engaged;
+	if(victim_slope > 0) goto L_sacrificed;
+
+	if($VC1 > 0 && $VC2 > 0) goto L_summon;
+
+	set $VC3, 1;
+	set victim_slope, 1;
+	npctalk "Aaaargh! You will pay for thisss!";
+	close;
+
+L_summon:
+	set $VC1, 0;
+	set $VC2, 0;
+	set $VC3, 0;
+	monster "902-7.gat",50,43,"Araxamus",1968,1,"#Aracheck::L_dead";
+	close;
+
+L_engaged:
+	npctalk "This victim has been already sacrificed.";
+	//itemheal
+	close;
+
+L_sacrificed:
+	npctalk "You already sacrificed a victim.";
+	//itemheal
+	close;
+
+}
+
+902-7.gat,0,0,0	script	#Aracheck	0,0,0 {
+L_dead:
+	npcsay "very well!";
+}

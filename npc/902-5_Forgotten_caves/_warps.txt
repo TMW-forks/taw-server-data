@@ -1,0 +1,3 @@
+// 902-5 Forgotten caves warps
+
+902-5.gat,41,65	warp	toLair	-1,-1,902-7.gat,50,79

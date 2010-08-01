@@ -1,3 +1,4 @@
 map: 902-7.gat
 npc: npc/902-7_Abandoned_Lair/_mobs.txt
 npc: npc/902-7_Abandoned_Lair/_warps.txt
+npc: npc/902-7_Abandoned_Lair/victim.txt
