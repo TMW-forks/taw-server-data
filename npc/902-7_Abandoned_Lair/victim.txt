@@ -16,6 +16,7 @@ L_summon:
 	set $VC2, 0;
 	set $VC3, 0;
 	monster "902-7.gat",50,43,"Araxamus",1968,1,"#Aracheck::L_dead";
+	announce "Araxamus has come from hell to bring evil to the world.",1;
 	close;
 
 L_engaged:
@@ -47,6 +48,7 @@ L_summon:
 	set $VC2, 0;
 	set $VC3, 0;
 	monster "902-7.gat",50,43,"Araxamus",1968,1,"#Aracheck::L_dead";
+	announce "Araxamus has come from hell to bring evil to the world.",1;
 	close;
 
 L_engaged:
@@ -79,6 +81,7 @@ L_summon:
 	set $VC2, 0;
 	set $VC3, 0;
 	monster "902-7.gat",50,43,"Araxamus",1968,1,"#Aracheck::L_dead";
+	announce "Araxamus has come from hell to bring evil to the world.",1;
 	close;
 
 L_engaged:
@@ -94,8 +97,11 @@ L_sacrificed:
 }
 
 902-7.gat,50,43,0	script	#Aracheck	0,0,0 {
-
+	close;
 L_dead:
+	set $VC1, 0;
+	set $VC2, 0;
+	set $VC3, 0;
 	announce "Araxamus has been sent back to hell",1;
 	mapwarp "902-7.gat","902-3.gat",70,65;
 	close;
