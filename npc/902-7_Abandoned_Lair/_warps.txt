@@ -1,2 +1,3 @@
 // 902-7 Abandoned Lair warps
 
+//902-7.gat,50,80	warp	toCaves	1,-1,902-5.gat,41,66

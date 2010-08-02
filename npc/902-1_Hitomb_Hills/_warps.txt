@@ -8,3 +8,4 @@
 902-1.gat,80,22	warp	Hitomb	0,-1,901-1.gat,80,31
 902-1.gat,55,0	warp	Thunderhill	1,-1,903-1.gat,55,54
 902-1.gat,43,1	warp	ToRazors	-1,-1,902-4.gat,52,73
+902-1.gat,35,22	warp	Hut	-1,-1,902-2.gat,24,29

@@ -1,10 +1,13 @@
 902-1.gat,34,22,0	script	Nerir	910, {
-if ( Q_iceknife == 16 ) goto L_iceknife;
 if ( ancients_quest == 7 ) goto A_again;
 if ( ancients_quest == 6 ) goto A_again;
 if ( ancients_quest == 5 ) goto A_again;
 if ( ancients_quest == 4 ) goto A_warpme;
 if ( ancients_quest == 3 ) goto A_warpme2;
+if ( knows_about_portal == 1 ) goto P_supply;
+if ( Q_iceknife == 16 ) goto L_iceknife;
+if ( BaseLevel > 75 ) goto L_portal;
+
 	  mes "[Nerir]"; 
 	mes "Sssh, I'm trying to concentrate! Do you need anything?";
 	menu
@@ -13,7 +16,103 @@ if ( ancients_quest == 3 ) goto A_warpme2;
 		"Nothing", -;
 close;
 
+P_supply:
+  mes "[Nerir]";
+  mes "Did you bring me anything for energy?";
+  menu
+	"Light Crystal", P_LC,
+	"Dark Crystal", P_DC,
+	"Gold Ore", P_GO,
+	"Silver Ingot", P_SI,
+	"No. Sorry", -;
+
+	close;
+
+P_LC:
+	set @item, 5043;
+	set @score, 2;
+	goto P_give;
+
+P_DC:
+	set @item, 631;
+	set @score, 3;
+	goto P_give;
+
+P_GO:
+	set @item, 5040;
+	set @score, 5;
+	goto P_give;
+
+P_SI:
+	set @item, 5076;
+	set @score, 6;
+	goto P_give;
+
+
+P_give:
+	menu
+		"Give one", P_LC1,
+		"Give ten", P_LC10,
+		"Give all", P_LCA,
+		"Give nothing", -;
+	close;
+
+P_LC1:
+	if(countitem(@item)<1) close;
+	delitem @item, 1;
+	set $portal_score, $portal_score + @score;
+	goto P_state;
+
+P_LC10:
+	if(countitem(@item)<10) close;
+	delitem @item, 10;
+	set $portal_score, $portal_score + (10*@score);
+	goto P_state;
+
+P_LCA:
+	if(countitem(@item)<1) close;
+	set $portal_score, $portal_score + (countitem(@item)*@score);
+	delitem @item, countitem(@item);
+	goto P_state;
+
+P_state:
+	if(@item==5043) goto P_state2;
+	if($portal_score==250) goto P_open;
+	goto P_statech;
+
+P_state2:
+	if($portal_score>249) goto P_open;
+	goto P_statech;
+
+P_statech:
+	if($portal_score>260) npctalk "I need only one Light Crystal to open the portal!";
+	if($portal_score>200 && $portal_score<261) npctalk "I have almoast enough energy.";
+	if($portal_score>150 && $portal_score<201) npctalk "I have already most of needed enery, but still need a bit more.";
+	if($portal_score>100 && $portal_score<151) npctalk "I have already some energy, maybe I could blow all mobs from this location out with it. I need a lot more.";
+	if($portal_score>50 && $portal_score<101) npctalk "I some energy, but I could barely cook a coffe with it.";
+	if($portal_score<51) npctalk "I have only little energy. Keep bringing more!";
+	close;
+
+P_open:
+	announce "Magic portal to Forgotten caves has been opened!",4;
+	fakenpcname "Magic Portal","Magic Portal",946;
+	close;
+
+L_portal:
+if ( Q_iceknife == 16 ) goto L_portal2;
+  mes "[Nerir]";
+  mes "Hey, could you help me? I found forgotten caves deep under the ground here. It seems that there are burried rare items from ancients time. But I need lot of energy to open the portal. I make energy of Light Crystals, Dark Crystals, Gold Ores and Silver Ingots. Please, bring me tons of them";
+	set knows_about_portal, 1;
+	close;
+
+L_portal2:
+  mes "[Nerir]";
+  mes "It's good to see you. I found forgotten caves deep under the ground here. It seems that there are burried rare items from ancients time. It could help us to prepare for dark times. You know that Darren now rules to dead army? We must be fast. But I need lot of energy to open the portal. I make energy of Light Crystals, Dark Crystals, Gold Ores and Silver Ingots. Please, bring me tons of them";
+	set knows_about_portal, 1;
+	close;
+
 L_iceknife:
+if ( BaseLevel > 75 ) goto L_portal2;
   mes "[Nerir]";
   mes "I'll try to study Ice Power now. I'll tell you when I need your help. Go and train your skills, it seems that dark times will come soon!";
   close;
@@ -97,4 +196,14 @@ A_noroses:
 L_end:
 	close;
 
+}
+
+902-1.gat,32,21,0	script	Magic Portal	0, {
+if(BaseLevel < 80) goto L_young;
+	set victim_slope, 0;
+	warp "902-5", 39, 55;
+	close;
+L_young:
+	npctalk strcharinfo(0)+", you are too young to enter the portal.";
+	close;
 }

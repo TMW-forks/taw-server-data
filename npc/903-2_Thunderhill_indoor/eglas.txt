@@ -1,8 +1,20 @@
 
 903-2.gat,47,42,0	script	Eglas	940,0,0 {
+	if (hitomb_army > 6) goto L_corporal;
 	mes "[Eglas]";
 	mes "Hey. What would you like to have?";
 	menu
+		"Golden Warlord Plate", M_Golden,
+		"Savior Armor", M_Savior,
+		"Omen Robe", M_Omen,
+		"Nothing", L_end;
+
+L_corporal:
+	mes "[Eglas]";
+	mes "Hey. What would you like to have?";
+	menu
+		"Corporal's helmet", M_Corp,
+		"Golden Warlord Plate", M_Golden,
 		"Savior Armor", M_Savior,
 		"Omen Robe", M_Omen,
 		"Nothing", L_end;
@@ -13,6 +25,49 @@ L_end:
 M_wenig:
 	mes "[Eglas]";
 	mes "You don't have what I need.";
+	close;
+
+M_Corp:
+	mes "[Eglas]";
+	mes "I will need:";
+	mes "1 Copper Ingot";
+	mes "3 Iron Ingots";
+	mes "1 Alizarin Dust";
+	menu
+		"Uh... I have changed my mind", L_end,
+		"I have what you need, do your work", -;
+
+	if(countitem(5075)<1) goto M_wenig;
+	if(countitem(5074)<3) goto M_wenig;
+	if(countitem(658)<1) goto M_wenig;
+	delitem 5075, 1;
+	delitem 5074, 3;
+	delitem 5027, 1;
+	mes "[Eglas]";
+	mes "Corporal's helmet is yours";
+	getitem 5113, 1;
+	if (m_corporalshelm == 0) getexp 10000, 0;
+	set m_corporalshelm, 1;
+	close;
+
+M_Golden:
+	mes "[Eglas]";
+	mes "I will need:";
+	mes "3 Gold Ingots";
+	mes "Warlord Plate";
+	menu
+		"Uh... I have changed my mind", L_end,
+		"I have what you need, do your work", -;
+
+	if(countitem(5077)<3) goto M_wenig;
+	if(countitem(658)<1) goto M_wenig;
+	delitem 5077, 3;
+	delitem 658, 1;
+	mes "[Eglas]";
+	mes "Golden Warlord Plate is yours";
+	getitem 659, 1;
+	if (m_goldenwarlord == 0) getexp 50000, 0;
+	set m_goldenwarlord, 1;
 	close;
 
 M_Savior:

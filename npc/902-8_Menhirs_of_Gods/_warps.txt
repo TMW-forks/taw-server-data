@@ -1,2 +1,3 @@
 // 902-8 Menhirs of Gods warps
 
+902-8.gat,30,19	warp	toCaves	-1,-1,902-6.gat,65,63

@@ -1,0 +1,7 @@
+//
+
+function	script	eqMiningPick	{
+
+	bonus bDef,0;
+
+}
