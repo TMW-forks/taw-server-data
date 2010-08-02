@@ -1,0 +1,4 @@
+map: 902-2.gat
+npc: npc/902-2_Nerirs_hut/_mobs.txt
+npc: npc/902-2_Nerirs_hut/_warps.txt
+npc: npc/902-2_Nerirs_hut/soul-menhir.txt
