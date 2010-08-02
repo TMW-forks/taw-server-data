@@ -1,0 +1,75 @@
+
+902-8.gat,27,33,0	script	Menhir of Hell	127,0,0 {
+	mes "There are four slots in shape of some rare items. Do you want to insert anything?";
+	menu
+		"Thunder from the Sky", L1,
+		"Tooth of Time", L2,
+		"Stardust", L3,
+		"Heart of Steel", L4,
+		"Nothing", -;
+	close;
+L1:
+	set @item, 5094;
+	goto L_sel;
+L2:
+	set @item, 5095;
+	goto L_sel;
+L3:
+	set @item, 5096;
+	goto L_sel;
+L4:
+	set @item, 5107;
+	goto L_sel;
+
+L_sel:
+	menu
+		"Insert One", Lo,
+		"Insert Ten", Lt,
+		"Insert All", La,
+		"Insert none", -;
+	close;
+
+Lo:
+	set @am, 1;
+	goto L_put;
+Lt:
+	set @am, 10;
+	goto L_put;
+La:
+	set @am, countitem(@item);
+	goto L_put;
+L_put:
+	if(countitem(@item)<@am) close;
+	if(@item==5094) set $menhir_5094, $menhir_5094 + @am;
+	if(@item==5095) set $menhir_5094, $menhir_5095 + @am;
+	if(@item==5096) set $menhir_5094, $menhir_5096 + @am;
+	if(@item==5107) set $menhir_5094, $menhir_5107 + @am;
+	delitem @item, @am;
+	goto Lcheck;
+
+L_check:
+	set @get, 0;
+	if($menhir_5097 > 1000 && $menhir_5098 > 400 && $menhir_5104 > 600 && $menhir_5106 > 500) set @get, 5092;
+	if($menhir_5096 > 500 && $menhir_5094 > 800 && $menhir_5107 > 900 && $menhir_5108 > 300) set @get, 5109;
+	if($menhir_5095 > 300 && $menhir_5099 > 600 && $menhir_5103 > 900 && $menhir_5108 > 700) set @get, 5110;
+	if($menhir_5099 > 800 && $menhir_5098 > 600 && $menhir_5106 > 600 && $menhir_5105 > 500) set @get, 5111;
+	if($menhir_5097 > 400 && $menhir_5094 > 400 && $menhir_5107 > 1000 && $menhir_5103 > 700) set @get, 5112;
+	if(@get > 0) goto L_get;
+	npctalk "If you want to prove your strenght, bring me more!";
+	close;
+
+L_get:
+	getitem @get, 1;
+	announce Strcharinfo(0)+" got a reward from Gods!";
+	npctalk "It seems, that you are strong indeed. Here is your reward!";
+	fakenpcname "Magic Portal","Magic Portal",0;
+	close;
+}
+
+902-8.gat,30,36,0	script	Menhir of Nature	127,0,0 {
+
+}
+
+902-8.gat,34,34,0	script	Menhir of Courage	127,0,0 {
+
+}

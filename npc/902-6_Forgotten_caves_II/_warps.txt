@@ -1,0 +1,4 @@
+// 902-6 Forgotten caves II warps
+
+902-6.gat,65,45	warp	ToLevel1	-1,-1,902-5.gat,52,69
+902-6.gat,65,63	warp	ToHall	-1,-1,902-8.gat,30,20

@@ -1,0 +1,18 @@
+// 902-6 Forgotten caves II mobs
+
+902-6.gat,34,44,18,12	monster	GhostFlower	1955,1,0,40000,Mob902-6::On1955
+902-6.gat,37,71,9,8	monster	GhostFlower	1955,1,0,40000,Mob902-6::On1955
+902-6.gat,49,76,9,8	monster	GhostFlower	1955,1,0,40000,Mob902-6::On1955
+902-6.gat,80,49,9,8	monster	GhostFlower	1955,1,0,40000,Mob902-6::On1955
+902-6.gat,64,47,9,8	monster	GhostFlower	1955,1,0,40000,Mob902-6::On1955
+902-6.gat,82,68,9,8	monster	GhostFlower	1955,1,0,40000,Mob902-6::On1955
+
+
+902-6.gat,0,0,0	script	Mob902-6	-1,{
+On1955:
+	set @mobID, 1955;
+	callfunc "MobPoints";
+	break;
+
+	end;
+}
