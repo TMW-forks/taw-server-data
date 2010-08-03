@@ -73,20 +73,20 @@ L_mana:
 
 L_recovery:
 	  mes "[Viur]";
-	mes "I can make Master's Juvenility if you bring me 3 tiny healing potions, 3 tiny mana potions and 1 Light Crystal.";
-	if (countitem(5010) < 3) goto L_nopots;
-	if (countitem(5016) < 3) goto L_nopots;
+	mes "I can make 10 Master's Juvenility if you bring me 15 tiny healing potions, 15 tiny mana potions and 1 Light Crystal.";
+	if (countitem(5010) < 15) goto L_nopots;
+	if (countitem(5016) < 15) goto L_nopots;
 	if (countitem(5043) < 1) goto L_nopots;
 	  mes "[Viur]";
 	mes "Tell me how many potions do you want.";
 	input @num;
-	if (countitem(5010) < 3*@num) goto L_nopots;
-	if (countitem(5016) < 3*@num) goto L_nopots;
+	if (countitem(5010) < 15*@num) goto L_nopots;
+	if (countitem(5016) < 15*@num) goto L_nopots;
 	if (countitem(5043) < @num) goto L_nopots;
-	delitem 5010, 3*@num;
-	delitem 5016, 3*@num;
+	delitem 5010, 15*@num;
+	delitem 5016, 15*@num;
 	delitem 5043, @num;
-	getitem 5022, @num;
+	getitem 5022, 10*@num;
 	  mes "[Viur]";
 	mes "Here you are.";
 	close;

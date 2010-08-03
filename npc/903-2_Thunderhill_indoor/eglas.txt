@@ -39,7 +39,7 @@ M_Corp:
 
 	if(countitem(5075)<1) goto M_wenig;
 	if(countitem(5074)<3) goto M_wenig;
-	if(countitem(658)<1) goto M_wenig;
+	if(countitem(5027)<1) goto M_wenig;
 	delitem 5075, 1;
 	delitem 5074, 3;
 	delitem 5027, 1;

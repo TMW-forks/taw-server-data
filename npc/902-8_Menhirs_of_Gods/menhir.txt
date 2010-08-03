@@ -40,10 +40,14 @@ L_a:
 	goto L_put;
 L_put:
 	if(countitem(@item)<@am) close;
-	if(@item==5098) set $menhir_5098, $menhir_5098 + @am;
-	if(@item==5106) set $menhir_5106, $menhir_5106 + @am;
-	if(@item==5097) set $menhir_5097, $menhir_5097 + @am;
-	if(@item==5099) set $menhir_5099, $menhir_5099 + @am;
+	if(@item==5098) set $menhir_5098, $menhir_5098 + @am + (menhir_5098/100);
+	if(@item==5106) set $menhir_5106, $menhir_5106 + @am + (menhir_5106/100);
+	if(@item==5097) set $menhir_5097, $menhir_5097 + @am + (menhir_5097/100);
+	if(@item==5099) set $menhir_5099, $menhir_5099 + @am + (menhir_5099/100);
+	if(@item==5098) set menhir_5098, menhir_5098 + @am;
+	if(@item==5106) set menhir_5106, menhir_5106 + @am;
+	if(@item==5097) set menhir_5097, menhir_5097 + @am;
+	if(@item==5099) set menhir_5099, menhir_5099 + @am;
 	delitem @item, @am;
 	goto L_check;
 
@@ -150,10 +154,14 @@ L_a:
 	goto L_put;
 L_put:
 	if(countitem(@item)<@am) close;
-	if(@item==5104) set $menhir_5104, $menhir_5104 + @am;
-	if(@item==5103) set $menhir_5103, $menhir_5103 + @am;
-	if(@item==5105) set $menhir_5105, $menhir_5105 + @am;
-	if(@item==5108) set $menhir_5108, $menhir_5108 + @am;
+	if(@item==5104) set $menhir_5104, $menhir_5104 + @am + (menhir_5104/100);
+	if(@item==5103) set $menhir_5103, $menhir_5103 + @am + (menhir_5103/100);
+	if(@item==5105) set $menhir_5105, $menhir_5105 + @am + (menhir_5105/100);
+	if(@item==5108) set $menhir_5108, $menhir_5108 + @am + (menhir_5108/100);
+	if(@item==5104) set menhir_5104, menhir_5104 + @am;
+	if(@item==5103) set menhir_5103, menhir_5103 + @am;
+	if(@item==5105) set menhir_5105, menhir_5105 + @am;
+	if(@item==5108) set menhir_5108, menhir_5108 + @am;
 	delitem @item, @am;
 	goto L_check;
 
@@ -260,10 +268,14 @@ L_a:
 	goto L_put;
 L_put:
 	if(countitem(@item)<@am) close;
-	if(@item==5094) set $menhir_5094, $menhir_5094 + @am;
-	if(@item==5095) set $menhir_5095, $menhir_5095 + @am;
-	if(@item==5096) set $menhir_5096, $menhir_5096 + @am;
-	if(@item==5107) set $menhir_5107, $menhir_5107 + @am;
+	if(@item==5094) set $menhir_5094, $menhir_5094 + @am + (menhir_5094/100);
+	if(@item==5095) set $menhir_5095, $menhir_5095 + @am + (menhir_5095/100);
+	if(@item==5096) set $menhir_5096, $menhir_5096 + @am + (menhir_5096/100);
+	if(@item==5107) set $menhir_5107, $menhir_5107 + @am + (menhir_5107/100);
+	if(@item==5094) set menhir_5094, menhir_5094 + @am;
+	if(@item==5095) set menhir_5095, menhir_5095 + @am;
+	if(@item==5096) set menhir_5096, menhir_5096 + @am;
+	if(@item==5107) set menhir_5107, menhir_5107 + @am;
 	delitem @item, @am;
 	goto L_check;
 
