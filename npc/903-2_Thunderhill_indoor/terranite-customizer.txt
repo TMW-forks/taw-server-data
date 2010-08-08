@@ -1,0 +1,13 @@
+// Terranite customizer
+
+903-2.gat,45,61,0	script	Terranite Customizer	925, {
+	mes "[Terranite Customizer]";
+	mes "I can customize your terranite chest armor. Do you want something I offer?";
+	menu
+		"Goldterranite plate", M_GT,
+		"Silverterranite plate", M_ST,
+		"Copperterranite plate", M_CT,
+		"Rubyterranite plate", M_RT,
+		"Tyrkysterranite plate", MTT, ...
+		
+}

@@ -1,0 +1,7 @@
+// 907-1 Starting island mobs
+
+
+
+907-1.gat,0,0,0	script	Mob907-1	-1,{
+	end;
+}

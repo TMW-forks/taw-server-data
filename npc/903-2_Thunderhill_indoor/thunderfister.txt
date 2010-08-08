@@ -1,0 +1,155 @@
+// Terranite buster
+
+903-2.gat,48,60,0	script	Terranite Buster	925, {
+	if( army_quest2 == 1 ) goto L_crystals;
+	if( terranite_ores == 0) set terranite_ores, 1;
+	mes "[Terranite Buster]";
+	mes "Terranite is very special material, it's comfortable and durable. Tell me if you want something from Terranite.";
+	menu
+		"250 Terranite Arrows", M_arrows,
+		"Terranite Helm", M_helm,
+		"Terranite Leggins", M_leggins,
+		"Terranite Armor", M_armor,
+		"Where can I get Terranite Ores?", L_ores,
+		"Nothing.", L_end;
+
+L_crystals:
+	mes "[Terranite Buster]";
+	mes "Terranite is very special material, it's comfortable and durable. Tell me if you want something from Terranite.";
+	menu
+		"250 Terranite Arrows", M_arrows,
+		"Terranite Helm", M_helm,
+		"Terranite Leggins", M_leggins,
+		"Terranite Armor", M_armor,
+		"I have 10 Light Crystals for you!", L_cryst,
+		"Nothing.", L_end;
+L_cryst:
+	if(countitem(5043) < 10) goto L_nocrystal;
+	mes "[Terranite Buster]";
+	mes "Thank you a lot, here are your Terranite Ores.";	
+	delitem 5043, 10;
+	getitem 5068, 10;
+	close;
+
+L_else:
+	mes "[Terranite Buster]";
+	mes "Anything else?";
+	menu
+		"250 Terranite Arrows", M_arrows,
+		"Terranite Helm", M_helm,
+		"Terranite Leggins", M_leggins,
+		"Terranite Armor", M_armor,
+		"Nothing.", L_end;
+
+M_arrows:
+	  mes "[Terranite Buster]";
+	mes "I can make 250 terranite arrows from 1 Terranite Ore, if you pay me 5 000 gp.";
+	menu
+		"Here you are", M_arrow2,
+		"Maybe later", L_else;
+M_helm:
+	  mes "[Terranite Buster]";
+	mes "I can make a Terranite helm from 10 Terranite Ores, if you pay me 100 000 gp.";
+	menu
+		"Here you are", M_helm2,
+		"Maybe later", L_else;	
+M_leggins:
+	  mes "[Terranite Buster]";
+	mes "I can make Terranite leggins from 20 Terranite Ores, if you pay me 200 000 gp.";
+	menu
+		"Here you are", M_leggins2,
+		"Maybe later", L_else;
+M_armor:
+	  mes "[Terranite Buster]";
+	mes "I can make a Terranite Armor from 40 Terranite Ores, if you pay me 400 000 gp.";
+	menu
+		"Here you are", M_armor2,
+		"Maybe later", L_else;
+M_arrow2:
+	if(countitem(5068) < 1) goto M_noores;
+	if(Zeny < 5000) goto M_nomoney;
+	delitem 5068, 1;
+	set Zeny, Zeny - 5000;
+	getitem 5063, 250;
+	  mes "[Terranite Buster]";
+	mes "Use these arrows with care. They are deadly.";
+	close;
+	
+M_helm2:
+	if(countitem(5068) < 10) goto M_noores;
+	if(Zeny < 100000) goto M_nomoney;
+	delitem 5068, 10;
+	set Zeny, Zeny - 100000;
+	getitem 5071, 1;
+	  mes "[Terranite Buster]";
+	mes "Nice work, here is your new Helmet!";
+	close;
+
+M_leggins2:
+	if(countitem(5068) < 20) goto M_noores;
+	if(Zeny < 200000) goto M_nomoney;
+	delitem 5068, 20;
+	set Zeny, Zeny - 200000;
+	getitem 5073, 1;
+	  mes "[Terranite Buster]";
+	mes "Nice work, here is your new Legs Armor!";
+	close;
+
+M_armor2:
+	if(countitem(5068) < 40) goto M_noores;
+	if(Zeny < 400000) goto M_nomoney;
+	delitem 5068, 40;
+	set Zeny, Zeny - 400000;
+	getitem 5072, 1;
+	  mes "[Terranite Buster]";
+	mes "Nice work, here is your new Chest Armor!";
+	close;
+
+M_noores:
+	  mes "[Terranite Buster]";
+	mes "Sorry, you don't have enough Terranite Ores.";
+	close;
+
+M_nomoney:
+	  mes "[Terranite Buster]";
+	mes "Sorry, you're  out of money.";
+	close;
+
+
+L_ores:
+	if (terranite_crystals > 0) goto L_ores2;
+	mes "[Terranite Buster]";
+	mes "Terranite Ores are dropped by Terranite Masks. They had been seen in Hitomb mines. If you're out of luck, I could help you...";
+	menu
+		"Okay, I'll go and get them", L_end,
+		"How could you help me?", L_help;
+
+L_ores2:
+	mes "[Terranite Buster]";
+	mes "Terranite Ores are dropped by Terranite Masks. They had been seen in Hitomb mines.";
+	menu
+		"Okay, I'll go and get them", L_end;
+
+L_help:
+	mes "[Terranite Buster]";
+	mes "Currently, I'm in need of Light Crystals. I need 10 light crystal. If you brought me them, I would give you 10 Terranite Ores. That's a fair deal, isn't it?";
+	menu
+		"Yes it is, I'll bring you some.", L_help2,
+		"Hm... I can't give you any Light Crystals", L_nocrystal;
+
+L_help2:
+	set terranite_crystals, 1;
+	mes "[Terranite Buster]";
+	mes "I'll wait for your return.";
+	close;
+
+L_nocrystal:
+	mes "[Terranite Buster]";
+	mes "Hmm... return if you get Light Crystals you could give me.";
+	close;
+		
+		
+
+L_end:
+	close;
+}

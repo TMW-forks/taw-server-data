@@ -1,4 +1,29 @@
 903-2.gat,47,55,0	script	Captain Morqell	905, {
 	mes "[Captain Morqell]";
 	mes "Corporal, the war is near. There is an enemy castle west of Thunderhill. ";
+	next;
+	mes "[Captain Morqell]";
+	mes "Would you like to help us push those Razors back?";
+	menu
+		"Sure, Captain!", -,
+		"I'm sorry, I don't feel strong enough yet.", L_not;
+
+	if( BaseLevel < 75 ) goto L_young;
+	mes "[Captain Morquell]";
+	mes "Great! First of all I think little sabotage could help us.";
+	next;
+	mes "[Captain Morquell]";
+	mes "Friend from Sergeants quarter could make you 10 Thunderswords. Bring me x ...";
+	close;
+
+L_not:
+	mes "[Captain Morquell]";
+	mes "Okay, keep training. I hope you it won't be to late when you are ready.";
+	close;
+
+L_young:
+	mes "[Captain Moorquell]";
+	mes "Oh, I think you should train more first. This is very dangerous mission and you must be strong enough!";
+	close;
+
 }

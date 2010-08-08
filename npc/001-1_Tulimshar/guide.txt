@@ -1,6 +1,6 @@
 //
 
-001-1.gat,32,27,0	script	Ian	102,4,4,{
+001-1.gat,32,31,0	script	Ian	102,4,4,{
 	if (TUT_var & 1 == 1 && TUT_var & 2 == 0 && BaseLevel >= 10) callsub S_Grad;
 	mes "[Ian the Guide]";
 	mes "\"Would you like to know about something?\"";

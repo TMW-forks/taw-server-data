@@ -1,0 +1,9 @@
+//
+
+008-1.gat,35,26,0	script	#STATS	127,{
+        mes "[Stats teller]";
+	input @num;
+
+	mes Strcharinfo(@num);
+	close;
+}
