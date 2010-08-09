@@ -1,0 +1,88 @@
+907-1.gat,47,38,0	script	Ligonn	929, {
+  
+	if (Ligonn_know == 1) goto L_know;
+
+	mes "[Ligonn]";
+	mes "Hello! Do you need anything?";
+	menu
+		"Who are you?", L_who,
+		"Do you know, how I could get out of this island?", -,
+		"Nothing", L_No;
+
+	mes "[Ligonn]";
+	mes "As I remember when I was young, I have left a boat there, but you should repair it at first, I think it's too old.";
+	next;
+	mes "Please, don't ask me how. I didn't see it, so do it yourself.";
+	next;
+	close;
+
+L_who:
+	mes "[Ligonn]";
+	mes "I'm Ligonn, the woodworker. I can make some wooden stuff for you, if you will need a help.";
+	next;
+	mes "Come back when you know what you need.";
+	next;
+	set Ligonn_know, 1;
+	close;
+
+L_know:
+
+	mes "[Ligonn]";
+	mes "Hello! Do you need anything?";
+	menu
+		"I need wooden plank", L_plank,
+		"I would need a paddle", L_paddle,
+		"Do you know, how I could get out of this island?", -,
+		"Nothing", L_No;
+
+	mes "[Ligonn]";
+	mes "As I remember when I was young, I have left a boat there, but you should repair it at first, I think it's too old.";
+	next;
+	mes "Please, don't ask me how. I didn't see it, so do it yourself.";
+	next;
+	close;
+
+L_plank:
+	if (countitem("log") > 0) goto L_plank_G;
+	mes "[Ligonn]";
+	mes "Okay, I can make 2 planks from 1 log. Bring me a log and I'll saw it for you.";
+	next;
+	close;
+
+L_plank_G:
+	mes "[Ligonn]";
+	mes "Okay, do you want me to saw your log to two planks?";
+	menu
+		"Yes", -,
+		"Nope", L_No;
+
+	mes "Here you are.";
+	delitem "log", 1;
+	getitem "plank", 2;
+	next;
+	close;
+
+L_No:
+	close;
+	
+L_paddle:
+	if (countitem("branch") > 0 && countitem("birchskin") > 0 && countitem("rope") > 0) goto L_paddle_G;
+	mes "[Ligonn]";
+	mes "Ah, I guess you are in hurry. I could make you simple paddle from branch, birch skin and rope. Bring me those three items.";
+	close;
+	
+L_paddle_G:
+	mes "[Ligonn]";
+	mes "You have branch, birch skin and rope. I could make you a paddle, do you like it?";
+	menu
+		"Yes", -,
+		"Nope", L_No;
+
+	mes "It was honour for me to help you.";
+	delitem "branch", 1;
+	delitem "birchskin", 1;
+	delitem "rope", 1;
+	getitem "paddle", 1;
+	next;
+	close;
+}

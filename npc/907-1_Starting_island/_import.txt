@@ -1,3 +1,6 @@
 map: 907-1.gat
 npc: npc/907-1_Starting_island/_mobs.txt
 npc: npc/907-1_Starting_island/_warps.txt
+npc: npc/907-1_Starting_island/broken-boat.txt
+npc: npc/907-1_Starting_island/old-stump.txt
+npc: npc/907-1_Starting_island/ligonn.txt

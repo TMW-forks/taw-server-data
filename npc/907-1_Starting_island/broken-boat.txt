@@ -1,0 +1,94 @@
+//
+
+907-1.gat,98,27,0	script	Broken Boat	127, {
+
+	if(Start_leaving == 3) goto L_Leaving;
+	if(Start_leaving == 2) goto L_Paddle;
+	if(Start_leaving == 1) goto L_Planks;
+
+	mes "-Broken Boat-";
+	mes "You have found a boat, standing on the ground near water. You got an idea, that this boat can help you with driving away.";
+	next;
+	mes "What would you like to do?";
+	menu
+		"Look what is inside", -,
+		"Nothing", L_no;
+
+	mes "-Broken Boat-";
+	mes "You are looking inside and you see, that it needs to be repaired.";
+	next;
+	mes "You found out, that to repair it, you need to get 3 planks.";
+	set QUEST_BB_state, 1;
+	set Start_leaving,1;
+	next;
+	close;
+
+L_no:
+	close;
+
+L_Planks:
+	if (countitem("plank") < 3) goto L_NotEnough;
+	mes "-Broken Boat-";
+	mes "You have brought 3 planks and tryed to repair it.";
+	next;
+	mes "You will need also a Paddle, if you want to leave. Get it!";
+	set QUEST_BB_state, 2;
+	set Start_leaving,2;
+	delitem "plank", 3;
+	next;
+	close;
+	
+
+L_NotEnough:
+	mes "-Broken Boat-";
+	mes "Sorry, but it looks like you need some more planks. Three should be enough.";
+	next;
+	close;
+
+L_Paddle:
+	if (countitem("paddle") < 1) goto L_NotEnough2;
+	mes "-Broken Boat-";
+	mes "You understood that your idea is becoming really aviable.";
+	next;
+	mes "But to realise it, you need to get some meal: 10 bottles of water, 5 dryed meat and a knife.";
+	set Start_leaving,3;
+	delitem "paddle", 1;
+	next;
+	close;
+
+L_NotEnough2:
+	mes "-Broken Boat-";
+	mes "Read this more carefully: PADDLE. Get it!";
+	next;
+	close;
+
+L_Leaving:
+	if (countitem("bottleofwater") < 10) goto L_NotEnough3;
+	if (countitem("dryedmeat") < 5) goto L_NotEnough3;
+	if (countitem("knife") < 1) goto L_NotEnough3;
+	mes "-Broken Boat-";
+	mes "You have brought everything you need to leave this island.";
+	next;
+	mes "When you got into this boat you found letter from Ligonn.";
+	next;
+	mes "Letter:";
+	mes "\"Hello, I wish you succesfull journey from the island. I will miss you. You will need some luck to survive on wild sea. This ring has worn my father every day he sailed to catch some fish. It brough him luck. I hope it will bring luck to you as well. Farewell!\"";
+	next;
+	delitem "BottleOfWater", 10;
+	delitem "DryedMeat", 5;
+	getitem "SailorsRing", 1;
+	getexp 50, 10;
+	next;
+	mes "You were sailing and sailing as you finally saw a land.";
+	next;
+	warp "004-1.gat", 40, 44;
+	mes "This is your new home.";
+	savepoint "004-1.gat", 40, 44;	
+	close;
+
+L_NotEnough3:
+	mes "-Broken Boat-";
+	mes "You can be starwing while sailing, so get some supplies to survive: 10 bottles of water, 5 dryed meat and a knife.";
+	next;
+	close;
+}

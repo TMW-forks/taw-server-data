@@ -1,0 +1,29 @@
+//
+
+907-1.gat,68,35,0	script	Old Stump	127, {
+
+	if (getting_knife == 1) goto L_Q;
+
+	mes "-Old Stump-";
+	mes "You have noticed an old stump. It somehow attracks your attention.";
+	menu
+		"Come closer to inspect it", -,
+		"Nothing", L_No;
+
+	mes "-Old Stump-";
+	mes "There is a knife stabbed in the stump. Old, but still usable!";
+	getitem "knife", 1;
+	set getting_knife,1;
+	close;
+
+L_Q:
+	mes "-Old Stump-";
+	mes "You have noticed an old Stump.";
+	menu
+		"Look inside it", -,
+		"Nothing", L_No;
+
+	mes "-Old Stump-";
+	mes "There is nothing more.";
+	close;
+}
