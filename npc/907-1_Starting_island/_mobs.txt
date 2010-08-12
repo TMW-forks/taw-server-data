@@ -1,7 +1,41 @@
 // 907-1 Starting island mobs
 
+907-1.gat,76,34,4,3	monster	Nettles	1954,3,0,20000,Mob907-1::On1954
+907-1.gat,85,28,5,6	monster	Nettles	1954,4,0,20000,Mob907-1::On1954
+907-1.gat,77,29,8,6	monster	Nettles	1954,5,0,20000,Mob907-1::On1954
+907-1.gat,67,24,5,6	monster	Birches	1953,2,0,40000,Mob907-1::On1953
+907-1.gat,61,34,9,13	monster	Birches	1953,1,0,40000,Mob907-1::On1953
+907-1.gat,77,13,9,8	monster	Birches	1953,2,0,40000,Mob907-1::On1953
+907-1.gat,91,21,7,5	monster	Birches	1953,2,0,40000,Mob907-1::On1953
+907-1.gat,36,29,5,2	monster	Birches	1953,1,0,40000,Mob907-1::On1953
+907-1.gat,81,33,4,1	monster	Birches	1953,1,0,40000,Mob907-1::On1953
+907-1.gat,84,28,5,3	monster	PineTree	1952,2,0,30000,Mob907-1::On1952
+907-1.gat,74,28,5,3	monster	PineTree	1952,2,0,30000,Mob907-1::On1952
+907-1.gat,80,32,5,3	monster	PineTree	1952,2,0,30000,Mob907-1::On1952
+907-1.gat,72,38,8,4	monster	PineTree	1952,3,0,35000,Mob907-1::On1952
+907-1.gat,80,15,18,11	monster	Boars	1951,4,0,40000,Mob907-1::On1951
 
 
 907-1.gat,0,0,0	script	Mob907-1	-1,{
+On1951:
+	set @mobID, 1951;
+	callfunc "MobPoints";
+	break;
+
+On1952:
+	set @mobID, 1952;
+	callfunc "MobPoints";
+	break;
+
+On1953:
+	set @mobID, 1953;
+	callfunc "MobPoints";
+	break;
+
+On1954:
+	set @mobID, 1954;
+	callfunc "MobPoints";
+	break;
+
 	end;
 }

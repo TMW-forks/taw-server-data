@@ -1,0 +1,4 @@
+map: 907-3.gat
+npc: npc/907-3_Cave_of_Thiefs/_mobs.txt
+npc: npc/907-3_Cave_of_Thiefs/_warps.txt
+npc: npc/907-3_Cave_of_Thiefs/drunk.txt

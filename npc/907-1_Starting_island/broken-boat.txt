@@ -1,7 +1,8 @@
 //
 
 907-1.gat,98,27,0	script	Broken Boat	127, {
-
+	if(starting_tar == 1) goto L_Tar2;
+	if(Start_leaving == 4) goto L_Tar;
 	if(Start_leaving == 3) goto L_Leaving;
 	if(Start_leaving == 2) goto L_Paddle;
 	if(Start_leaving == 1) goto L_Planks;
@@ -50,7 +51,7 @@ L_Paddle:
 	mes "-Broken Boat-";
 	mes "You understood that your idea is becoming really aviable.";
 	next;
-	mes "But to realise it, you need to get some meal: 10 bottles of water, 5 dryed meat and a knife.";
+	mes "But to realise it, you need to get some food: 5 bottles of water and 3 dryed meat. You should also have a knife.";
 	set Start_leaving,3;
 	delitem "paddle", 1;
 	next;
@@ -63,8 +64,8 @@ L_NotEnough2:
 	close;
 
 L_Leaving:
-	if (countitem("bottleofwater") < 10) goto L_NotEnough3;
-	if (countitem("dryedmeat") < 5) goto L_NotEnough3;
+	if (countitem("bottleofwater") < 5) goto L_NotEnough3;
+	if (countitem("dryedmeat") < 3) goto L_NotEnough3;
 	if (countitem("knife") < 1) goto L_NotEnough3;
 	mes "-Broken Boat-";
 	mes "You have brought everything you need to leave this island.";
@@ -72,15 +73,27 @@ L_Leaving:
 	mes "When you got into this boat you found letter from Ligonn.";
 	next;
 	mes "Letter:";
-	mes "\"Hello, I wish you succesfull journey from the island. I will miss you. You will need some luck to survive on wild sea. This ring has worn my father every day he sailed to catch some fish. It brough him luck. I hope it will bring luck to you as well. Farewell!\"";
+	mes "\"Hello, I wish you succesfull journey from the island. You should not forget to tar the boat as well - it will protect it from water. I will miss you. You will need some luck to survive on wild sea. This ring has worn my father every day he sailed to catch some fish. It brough him luck. I hope it will bring luck to you as well. Farewell!\"";
 	next;
-	delitem "BottleOfWater", 10;
-	delitem "DryedMeat", 5;
+	delitem "BottleOfWater", 5;
+	delitem "DryedMeat", 3;
 	getitem "SailorsRing", 1;
 	getexp 50, 10;
-	next;
+	set Start_leaving, 4;
+	menu
+		"Tar the boat before leaving", L_no,
+		"Leave island without painting the boat", -;
+	goto L_llleave;
+
+L_llleave:
+	mes "Are you sure you want to leave? Remember that you will never be able to return!";
+	menu
+		"Yes", -,
+		"No", L_no;
 	mes "You were sailing and sailing as you finally saw a land.";
 	next;
+	if(countitem("nettleshirt")>0 && countitem("birchpants")>0 && countitem("forestaxe")>0 && starting_tar == 1) getitem "BeginnersGuardian", 1;
+	if(countitem("nettleshirt")>0 && countitem("nettlechaps")>0 && countitem("forestaxe")>0 && countitem("BeginnersGuardian")==0) getitem "BeginnersProtector", 1;
 	warp "004-1.gat", 40, 44;
 	mes "This is your new home.";
 	savepoint "004-1.gat", 40, 44;	
@@ -88,7 +101,31 @@ L_Leaving:
 
 L_NotEnough3:
 	mes "-Broken Boat-";
-	mes "You can be starwing while sailing, so get some supplies to survive: 10 bottles of water, 5 dryed meat and a knife.";
-	next;
+	mes "You can be starwing while sailing, so get some supplies to survive: 5 bottles of water, 3 dryed meat and a knife.";
 	close;
+
+L_NotEnough4:
+	mes "-Broken Boat-";
+	mes "You don't have any tar!";
+	close;
+
+L_Tar:
+	mes "-Broken Boat-";
+	mes "Tar the boat before leaving?";
+	menu
+		"Yes", -,
+		"Leave island without painting the boat", L_llleave;
+
+	if (countitem("tar") < 1) goto L_NotEnough4;
+	mes "After an hour of hard work the boat is finally protected.";
+	next;
+	getexp 40, 10;
+	delitem "tar", 1;
+	set starting_tar, 1;
+	goto L_Tar2;
+
+L_Tar2:
+	mes "It's time to sail away!";
+	next;
+	goto L_llleave;
 }

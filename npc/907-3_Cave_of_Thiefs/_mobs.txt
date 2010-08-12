@@ -1,0 +1,15 @@
+// 907-3 Cave of Thiefs mobs
+
+907-3.gat,38,71,7,4	monster	BlackSlimes	1994,4,0,32000,Mob907-3::On1994
+907-3.gat,27,62,9,6	monster	BlackSlimes	1994,5,0,32000,Mob907-3::On1994
+907-3.gat,57,62,9,6	monster	BlackSlimes	1994,4,0,32000,Mob907-3::On1994
+
+
+907-3.gat,0,0,0	script	Mob907-3	-1,{
+On1994:
+	set @mobID, 1994;
+	callfunc "MobPoints";
+	break;
+
+	end;
+}

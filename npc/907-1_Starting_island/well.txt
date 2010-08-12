@@ -1,0 +1,31 @@
+//
+
+907-1.gat,46,30,0	script	Well	127, {
+
+	mes "-Well-";
+	mes "A small well full of pure, fresh water is seducing you to taste.";
+	menu
+		"Taste the water", -,
+		"Take some water", L_take,
+		"Leave it alone", L_No;
+
+	mes "-Well-";
+	mes "You feel refreshed and stronger than before.";
+	itemheal 1000, 100;
+	close;
+
+L_take:
+	if(countitem("EmptyBottle")<1) goto L_nobottle;
+	delitem "EmptyBottle", 1;
+	getitem "BottleOfWater", 1;	
+	close;
+
+L_nobottle:
+	mes "-Well-";
+	mes "You have no bottle to fill it with water.";
+	close;
+
+L_No:
+	close;
+
+}

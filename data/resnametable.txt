@@ -85,4 +85,6 @@
 906-5.gat#906-5.wlk#
 906-6.gat#906-6.wlk#
 907-1.gat#907-1.wlk#
+907-2.gat#907-2.wlk#
+907-3.gat#907-3.wlk#
 botcheck.gat#botcheck.wlk#

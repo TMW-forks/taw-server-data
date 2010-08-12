@@ -1,6 +1,7 @@
 
 902-7.gat,30,43,0	script	Victim Slope	127,0,0 {
-	if($VC1 > 0) goto L_engaged;
+	if(mobcount("902-7.gat","#arax_check::OnDead")>0) close;
+	if($VC1 > 0 && ($VC2 == 0 || $VC3 == 0) ) goto L_engaged;
 	if(victim_slope > 0 && getgmlevel(0) < 80) goto L_sacrificed;
 
 	set $VC1, 1;
@@ -29,7 +30,8 @@ L_sacrificed:
 }
 
 902-7.gat,70,43,0	script	Victim Slope	127,0,0 {
-	if($VC2 > 0) goto L_engaged;
+	if(mobcount("902-7.gat","#arax_check::OnDead")>0) close;
+	if($VC2 > 0 && ($VC1 == 0 || $VC3 == 0) ) goto L_engaged;
 	if(victim_slope > 0 && getgmlevel(0) < 80) goto L_sacrificed;
 
 	set $VC2, 1;
@@ -59,7 +61,8 @@ L_sacrificed:
 
 
 902-7.gat,50,22,0	script	Victim Slope	127,0,0 {
-	if($VC3 > 0) goto L_engaged;
+	if(mobcount("902-7.gat","#arax_check::OnDead")>0) close;
+	if($VC3 > 0 && ($VC2 == 0 || $VC1 == 0) ) goto L_engaged;
 	if(victim_slope > 0 && getgmlevel(0) < 80) goto L_sacrificed;
 
 	set $VC3, 1;

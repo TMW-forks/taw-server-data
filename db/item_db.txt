@@ -40,7 +40,7 @@
 538,	GreenPresentBox,		Green Present Box,		3,	20,	10,	10,	,	,	,	,	,	2,	,	,	0,	,	{},					{}										
 539,	Beer,				Beer,				0,	175,	87,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 200,				5; },					{}					
 540,	EmptyBottle,			Empty Bottle,			3,	20,	10,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}										
-541,	BottleOfWater,			Bottle of Water,		0,	200,	100,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 250,				0; getitem 540,				1; },			{}		
+541,	BottleOfWater,			Bottle of Water,		0,	70,	35,	10,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 50,				0; getitem 540,				1; },			{}		
 542,	BottleOfSand,			Bottle of Sand,			3,	70,	35,	10,	,	,	,	,	,	,	,	,	,	,	{},					{}										
 543,	StandardHeadband,		Standard Headband,		5,	800,	400,	10,	,	3,	,	-3,	0,	2,	256,	,	0,	0,	{},					{}										
 544,	SilkHeadband,			Silk Headband,			5,	5000,	2000,	10,	,	10,	,	-10,	0,	2,	256,	,	0,	0,	{},					{}										
@@ -575,22 +575,22 @@
 5116,	PineLog,			Pine Log,			3,	50,	25,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
 5117,	Branch,				Branch,				3,	5,	2,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
 5118,	Nettles,			Nettles,			3,	20,	10,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
-5119,	Tar,				Tar,				3,	100,	50,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
+5119,	Tar,				Tar,				3,	700,	350,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
 5120,	Paddle,				Paddle,				3,	70,	35,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
 5121,	NettleString,			Nettle String,			3,	80,	40,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
 5122,	NettleCloth,			Nettle Cloth,			3,	320,	160,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
 5123,	Rope,				Rope,				3,	150,	75,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
 5124,	TreeLeaf,			Tree Leaf,			3,	2,	1,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
 5125,	BirchSkin,			Birch Skin,			3,	4,	2,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
-5126,	DryedMeat,			Dryed Meat,			3,	6,	3,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
+5126,	DryedMeat,			Dryed Meat,			3,	120,	75,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
 5127,	RawPorkMeat,			Raw Pork Meat,			3,	80,	40,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
 5128,	BoarSkin,			BoarSkin,			3,	120,	60,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
 5129,  	RaggedShirt,  			Ragged Shirt,  			5,  	20,  	10,  	7,  	,  	1,  	,  	-3,  	0,  	2,  	512,  	,  	0,  	0,  	{},  					{}										
 5130,  	NettleShirt,  			Nettle Shirt,  			5,  	600,  	300,  	14,  	,  	4,  	,  	-3,  	0,  	2,  	512,  	,  	0,  	0,  	{},  					{}										
 5131, 	NettleChaps, 			Nettle Chaps, 			5, 	500, 	250, 	21, 	, 	5, 	, 	-8, 	0, 	2, 	1, 	, 	0, 	0, 	{}, 					{}										
-5132,  	BirchShorts,  			Birch Chaps,  			5,  	750,  	400,  	15,  	,  	7,  	,  	-12,  	0,  	2,  	1,  	,  	0,  	0,  	{},  					{}										
-5133, 	SailorsRing, 			Sailor's Ring, 			5, 	200, 	100, 	12, 	, 	0, 	, 	0, 	0, 	2, 	128, 	, 	0, 	0, 	{}, { bonus bLUK, 2; }
+5132,  	BirchPants,  			Birch Pants,  			5,  	750,  	400,  	15,  	,  	7,  	,  	-12,  	0,  	2,  	1,  	,  	0,  	0,  	{},  					{}										
+5133, 	SailorsRing, 			Sailor's Ring, 			5, 	200, 	100, 	12, 	, 	0, 	, 	0, 	0, 	2, 	8, 	, 	0, 	0, 	{}, { bonus bLUK, 2; }
 5134,	BeginnersProtector,		Beginner's Protector,		5,	300,	150,	1,	,	,	,	5,	0,	2,	128,	,	0,	0,	{},	{ bonus bVit, 3; }																			
 5135,	BeginnersGuardian,		Beginner's Guardian,		5,	500,	250,	1,	,	,	,	5,	0,	2,	128,	,	0,	0,	{},	{ bonus bVit, 5; }																			
-5136,	Plank,				Wooden Plank,				20,	10,	75,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
+5136,	Plank,				Plank,				3,	20,	10,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
 

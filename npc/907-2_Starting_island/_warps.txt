@@ -1,0 +1,3 @@
+// 907-2 Starting island warps
+
+907-2.gat,32,36	warp	in	-1,-1,907-1.gat,46,38

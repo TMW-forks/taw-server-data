@@ -1,0 +1,38 @@
+//
+
+907-3.gat,24,59,0	script	Boozer	176, {
+
+	set @TEMP, rand(4);
+	if(@TEMP == 0) goto L_Opening0;
+	if(@TEMP == 1) goto L_Opening1;
+	if(@TEMP == 2) goto L_Opening2;
+	if(@TEMP == 3) goto L_Opening3;
+
+L_Opening0:
+	mes "[Drunk]";
+	mes "Yip, what are you looking at me?! Go away... yip... I'm busy!!!";
+	close;
+
+L_Opening1:
+	mes "[Drunk]";
+	mes "Don't look... yip... at me so!";
+	close;
+
+L_Opening2:
+	mes "[Drunk]";
+	mes "Mama... yip... hello!";
+	menu
+		"I'm not mum!", -;
+	mes "[Drunk]";
+	mes "Yip, I know!";
+	close;
+
+L_Opening3:
+	mes "[Drunk]";
+	mes "Oops... yip... I need more bear!";
+	menu
+		"I'm afraid of you, man!", -;
+	mes "[Drunk]";
+	mes "Yip! A coward dies thousand times ... yip... before his death!";
+	close;
+}

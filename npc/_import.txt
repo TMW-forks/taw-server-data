@@ -82,4 +82,6 @@ import: npc/906-4_Eastwood_forest/_import.txt
 import: npc/906-5_Eastwood_seaside/_import.txt
 import: npc/906-6_Ice_Arena/_import.txt
 import: npc/907-1_Starting_island/_import.txt
+import: npc/907-2_Starting_island/_import.txt
+import: npc/907-3_Cave_of_Thiefs/_import.txt
 import: npc/botcheck/_import.txt

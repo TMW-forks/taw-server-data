@@ -1,0 +1,82 @@
+//
+
+907-2.gat,37,33,0	script	Miriwia	922, {
+	if (Miriwia_know > 0) goto L_know;
+
+	mes "[Miriwia]";
+	mes "Welcome stranger! I am nettle processor Mirwia. Nettle is my life.";
+	set Miriwia_know, 1;
+	next;
+L_know:
+	mes "Can I help you?";
+	menu
+		"Could you give me a nettle string?", L_St,
+		"Could you make me a nettle cloth?", L_Net,
+		"Could you make me a rope?", -,
+		"Nothing now.", L_No;
+
+	mes "[Miriwia]";
+	mes "Sure! Just bring me 2 nettle strings. Do you have them?";
+	menu
+		"Indeed", -,
+		"No", L_Nostrings;
+
+	if (countitem("nettlestring") < 2) goto L_NotEnought;
+	mes "[Miriwia]";
+	mes "Here you are.";
+	delitem "nettlestring", 2;
+	getitem "rope", 1;
+	next;
+	close;
+
+L_Nostrings:
+	mes "[Miriwia]";
+	mes "That's no problem. I can make you string of 3 nettles. Okay?";
+	menu
+		"Yes, please.", L_stmake,
+		"I think I need to get some nettles first", -;
+	close;
+
+L_St:
+	mes "[Miriwia]";
+	mes "Nettle string is made of 3 nettles and bottle of water. Bring me it and I will make it for you.";
+	menu
+		"Take them. Here.", -,
+		"Thanks. I will ask you later if I need.", L_No;
+
+L_stmake:
+	if (countitem("nettles") < 3) goto L_NotEnought;
+	if (countitem("bottleofwater") < 1) goto L_NotEnought;
+	mes "[Miriwia]";
+	mes "Here you are.";
+	delitem "nettles", 3;
+	delitem "bottleofwater", 1;
+	getitem "nettlestring", 1;
+	getitem "emptybottle", 1;
+	next;
+	close;
+
+L_Net:
+	mes "[Miriwia]";
+	mes "I need 4 nettle strings to make a nettle cloth.";
+	menu
+		"Okay, here.", -,
+		"Hmmh... maybe later.", L_No;
+
+	if (countitem("nettlestring") < 4) goto L_NotEnought;
+	mes "[Miriwia]";
+	mes "Here you are.";
+	delitem "nettlestring", 4;
+	getitem "nettlecloth", 1;
+	next;
+	close;
+
+L_No:
+	close;
+
+L_NotEnought:
+	mes "[Miriwia]";
+	mes "You still miss some supplies, young boy!";
+	close;
+
+}

@@ -1,5 +1,5 @@
 907-1.gat,47,38,0	script	Ligonn	929, {
-  
+	if (Forest_axe == 1 && countitem("Rope")>0 && countitem("Branch")>0) goto L_axe1;  
 	if (Ligonn_know == 1) goto L_know;
 
 	mes "[Ligonn]";
@@ -25,6 +25,18 @@ L_who:
 	set Ligonn_know, 1;
 	close;
 
+L_axe1:
+	mes "[Ligonn]";
+	mes "I see you have everything you need for the axe. Wait a minute.";
+	next;
+	delitem "Rope", 1;
+	delitem "Branch", 1;
+	getitem "ForestAxe", 1;
+	set Forest_axe, 5;
+	mes "[Ligonn]";
+	mes "Cutting trees should be simplier with this axe. Good luck.";
+	close;
+
 L_know:
 
 	mes "[Ligonn]";
@@ -33,6 +45,8 @@ L_know:
 		"I need wooden plank", L_plank,
 		"I would need a paddle", L_paddle,
 		"Do you know, how I could get out of this island?", -,
+		"Cutting trees is very hard...", L_trees,
+		"Do you need a help?", L_help,
 		"Nothing", L_No;
 
 	mes "[Ligonn]";
@@ -42,11 +56,65 @@ L_know:
 	next;
 	close;
 
+L_help:
+	if(countitem("nettlechaps")<1) goto L_nohelp;
+	if(ligonn_help == 1) goto L_nohelp;
+	mes "[Ligonn]";
+	mes "Actually, If you helped me to collect supplies, I could improve your pants.";
+	next;
+	mes "[Ligonn]";
+	mes "Give me your pants and 2 birch skins, 2 boar skins, 2 nettle string and a rope.";
+	menu
+		"I have what you need. Here.", -,
+		"Okay, I will come later.", L_No;
+
+	if(countitem("birchskin")<2) goto L_nohelp2;
+	if(countitem("boarskin")<2) goto L_nohelp2;
+	if(countitem("nettlestring")<2) goto L_nohelp2;
+	if(countitem("rope")<1) goto L_nohelp2;
+	if(countitem("nettlechaps")<1) goto L_nohelp2;
+	mes "[Ligonn]";
+	mes "This pants should be more durable.";
+	next;
+	delitem "birchskin", 2;
+	delitem "boarskin", 2;
+	delitem "nettlestring", 2;
+	delitem "rope", 1;
+	delitem "nettlechaps", 1;
+	getitem "birchpants", 1;
+	getexp 40, 10;
+	close;
+	
+L_nohelp:
+	mes "[Ligonn]";
+	mes "Thanks, but I don't see anything you could help me with.";
+	close;
+
+L_nohelp2:
+	mes "[Ligonn]";
+	mes "Nonono... you still miss something. See you later.";
+	close;
+
+
+L_trees:
+	if(Forest_axe==5) goto L_axe;
+	mes "[Ligonn]";
+	mes "Ah yes... cutting trees with knife must be hard.";
+	next;
+	mes "[Ligonn]";
+	mes "I could make you an axe, if you bring me a branch and a rope. I will give you the rest.";
+	set Forest_axe, 1;
+	close;
+
+L_axe:
+	mes "[Ligonn]";
+	mes "I already gave you an axe. You can try to improve your strenght.";
+	close;
+
 L_plank:
 	if (countitem("log") > 0) goto L_plank_G;
 	mes "[Ligonn]";
 	mes "Okay, I can make 2 planks from 1 log. Bring me a log and I'll saw it for you.";
-	next;
 	close;
 
 L_plank_G:

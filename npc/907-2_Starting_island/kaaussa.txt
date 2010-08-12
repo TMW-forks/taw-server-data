@@ -1,0 +1,62 @@
+//
+
+907-2.gat,27,28,0	script	Kaaussa	164, {
+
+
+
+	mes "[Kaaussa]";
+	mes "Hello, traveller. Would you like me to tailor something for you?";
+	menu
+		"Could you make me a shirt?", -,
+		"I would need something for my legs...", L_Pr,
+		"Nothing", L_No;
+
+	mes "[Kaaussa]";
+	mes "Well... yes, I think I could make it. I could make you shirt from nettle strings and nettle clothes.";
+	next;
+	mes "If you don't have any - as I guess, you can ask my mother Miriwia, she is best nettle processor.";
+	next;
+	mes "I will need 2 nettle clothes and a nettle string.";
+	menu
+		"Actually, I already have them.", -,
+		"Okay, I'll get them.", L_No;
+
+	if (countitem("nettlecloth") < 2) goto L_NotEnought;
+	if (countitem("nettlestring") < 1) goto L_NotEnought;
+	mes "[Kaaussa]";
+	mes "I hope you like your new shirt.";
+	delitem "nettlestring", 1;
+	delitem "nettlecloth", 2;
+	getitem "nettleshirt", 1;
+	close;
+
+L_Pr:
+	mes "[Kaaussa]";
+	mes "No problem, I could make you nettle pants. They are durable and nettles are easy to get on this island.";
+	next;
+	mes "I would need 1 boar skin - you could ask hutner for one, 2 nettle clothes and 2 nettle strings.";
+	next;
+	mes "You can ask my mother, if you are short of nettle clothes or strings. She works with nettles for whole her life!";
+	menu
+		"I already have what you need.", -,
+		"Sounds good, I'll be back soon.", L_No;
+
+	if (countitem("boarskin") < 1) goto L_NotEnought;
+	if (countitem("nettlecloth") < 2) goto L_NotEnought;
+	if (countitem("nettlestring") < 2) goto L_NotEnought;
+	mes "[Kaaussa]";
+	mes "I'm sure it will suit you.";
+	delitem "boarskin", 1;
+	delitem "nettlecloth", 2;
+	delitem "nettlestring", 2;
+	getitem "nettlechaps", 1;
+	close;
+
+L_No:
+	close;
+
+L_NotEnought:
+	mes "[Kaaussa]";
+	mes "Are you sure you have everything? I don't think so, honey.";
+	close;
+}

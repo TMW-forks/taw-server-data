@@ -4,3 +4,6 @@ npc: npc/907-1_Starting_island/_warps.txt
 npc: npc/907-1_Starting_island/broken-boat.txt
 npc: npc/907-1_Starting_island/old-stump.txt
 npc: npc/907-1_Starting_island/ligonn.txt
+npc: npc/907-1_Starting_island/merchant.txt
+npc: npc/907-1_Starting_island/well.txt
+npc: npc/907-1_Starting_island/tar-master.txt

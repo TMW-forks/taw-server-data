@@ -26,4 +26,8 @@ L_Q:
 	mes "-Old Stump-";
 	mes "There is nothing more.";
 	close;
+
+L_No:
+	close;
+
 }

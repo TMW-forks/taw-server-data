@@ -1,0 +1,3 @@
+// 907-3 Cave of Thiefs warps
+
+907-3.gat,26,78	warp	Out	-1,-1,907-1.gat,73,43

@@ -1,0 +1,73 @@
+//
+
+907-1.gat,93,28,0	script	Tar Master	142, {
+  
+	set @TEMP, rand(3);
+	if(@TEMP == 0) goto L_Opening0;
+	if(@TEMP == 1) goto L_Opening1;
+	if(@TEMP == 2) goto L_Opening2;
+	
+L_Opening0:
+	mes "[Tar Master]";
+	mes "Hey guy, what do you want?";
+	menu
+		"Can you make tar for me?", L_Ask,
+		"Nothing", L_no;
+		
+L_Opening1:
+	mes "[Tar Master]";
+	mes "Hi, hi! Did you want something?";
+	menu
+		"How can I make tar?", L_Ask,
+		"Nothing", L_no;
+		
+L_Opening2:
+	mes "[Tar Master]";
+	mes "Hello, need something?";
+	menu
+		"Where can I get tar?", L_Ask,
+		"Nothing", L_no;
+		
+L_Ask:
+	mes "[Tar Master]";
+	mes "I can make it for you, I will need 15 pine logs.";
+	next;
+	mes "And I will also need 10 planks and 2 branches to make a barrel.";
+	menu
+		"Sure, here you are!", L_Check,
+		"Why do I need a barrel?", L_Why,
+		"What!!! Are you crazy?", L_n;
+		
+L_Check:
+	if (countitem("plank") < 10) goto L_NotEnough;
+	if (countitem("pinelog") < 15) goto L_NotEnough;
+	if (countitem("branch") < 2) goto L_NotEnough;
+	mes "[Tar Master]";
+	mes "Oh, oh. Take your tar and take this barrel, but don't loose it. As my friend says: \"If you buy cheaply, you pay dearly.\"";
+	next;
+	mes "Ok, if you'll need some more barrel, come to me.";
+	delitem "plank", 10;
+	delitem "pinelog", 15;
+	delitem "branch", 2;
+	getitem "tar", 1;
+	next;
+	close;
+	
+L_Why:
+	mes "[Tar Master]";
+	mes "Because you can't carry tar without barrel.";
+	close;
+	
+L_no:
+	close;
+	
+L_n:
+	mes "[Tar Master]";
+	mes "Nope...";
+	close;
+	
+L_NotEnough:
+	mes "[Tar Master]";
+	mes "Sorry, you don't have it.";
+	close;
+}

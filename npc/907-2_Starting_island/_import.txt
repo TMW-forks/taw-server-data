@@ -1,0 +1,5 @@
+map: 907-2.gat
+npc: npc/907-2_Starting_island/_mobs.txt
+npc: npc/907-2_Starting_island/_warps.txt
+npc: npc/907-2_Starting_island/kaaussa.txt
+npc: npc/907-2_Starting_island/miriwia.txt

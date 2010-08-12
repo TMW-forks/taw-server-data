@@ -1,2 +1,4 @@
 // 907-1 Starting island warps
 
+907-1.gat,46,37	warp	in	-1,-1,907-2.gat,32,35
+907-1.gat,73,42	warp	cave	-1,-1,907-3.gat,26,77
