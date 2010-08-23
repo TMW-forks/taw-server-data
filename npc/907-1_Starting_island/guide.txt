@@ -141,13 +141,13 @@ L_Key:
 
 L_Level:
 	mes "[Ian the Guide]";
-        mes "\"If you already have a character on another server, your hard work shouldn't be wasted. Type @wgm "Please transfer my level" to contact an online Game Master. Make sure to take a screenshot of you stats on the other server.\"";
+        mes "\"If you already have a character on another server, your hard work shouldn't be wasted. Type @wgm \"Please transfer my level\" to contact an online Game Master. Make sure to take a screenshot of you stats on the other server.\"";
         next;
 	mes "[Ian the Guide]";
 	mes "\"Please be patient and try it again after a while if you don't get an answer soon. We try to have a GM online every time, but there are times when we can't manage that. Just start playing.\"";
         next;
 	mes "[Ian the Guide]";
-	mes "/"Another possibility is to create a new topic at our forums and upload your screenshot there! Visit http://thealternateworld.org./"";
+	mes "\"Another possibility is to create a new topic at our forums and upload your screenshot there! Visit http://thealternateworld.org.\"";
         next;
 	goto L_Menu_A;
         

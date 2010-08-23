@@ -1,10 +1,11 @@
 
 907-1.gat,41,47,0	script	Marisa	947,{
 
-if(@Marisa == 0) goto L_Marisa_0;
-if(@Marisa == 1) goto L_Marisa_1;
-if(@Marisa == 2) goto L_Heal;
+if(Marisa == 0) goto L_Marisa_0;
+if(Marisa == 1) goto L_Marisa_1;
+if(Marisa == 2 && Hp < MaxHp) goto L_Heal;
 if (baselevel > 6) goto L_NoHeal;
+	close;
 
 L_Marisa_0:
 	mes "[Marisa]";
@@ -16,19 +17,21 @@ L_Marisa_0:
 
 L_Marisa_1:
 	mes "[Marisa]";
-	mes "/"If you need anything, feel free to talk to anyone. Ian the guide can give you all basic informations. Ask him - It's very helpful!/"";
+	mes "\"If you need anything, feel free to talk to anyone. Ian the guide can give you all basic informations. Ask him - It's very helpful!\"";
 	set Marisa,2;
 	close;
 
 L_Heal:
 	mes "[Marisa]";
-	mes "/"It's always painful in the beginning./"";
+	mes "\"Oh, let me cure your wounds.\"";
+	next; 
+	mes "\"It's always painful in the beginning.\"";
 	heal 10000,10000;
 	close;
 
 L_NoHeal:
 	mes "[Marisa]";
-	mes "/"You've done very good! You don't need my help anymore./"";
+	mes "\"You've done very good! You don't need my help anymore.\"";
 	close;
 
 }
