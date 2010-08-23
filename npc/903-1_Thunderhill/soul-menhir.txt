@@ -1,0 +1,12 @@
+//
+
+903-1.gat,25,39,0	script	Soul Menhir	144, {
+	callfunc "ClearVariables";
+	set @map$, "903-1.gat";
+	setarray @Xs, 24, 24, 25, 25, 26, 26;
+	setarray @Ys, 39, 38, 38, 37, 38, 39;
+	set @x, 0;
+	set @y, 0;
+	callfunc "SoulMenhir";
+	close;
+}

@@ -1,0 +1,10 @@
+// use @mob to specify mob to summon
+
+function	script	Summon	{
+	if(!@amount) set @amount, 1;
+	if(!@lifetime) set @lifetime, 60000;
+	if(!@map) set @map,;
+		
+	gmcommand strcharinfo(0)+":@summon2 "+@map+" "+@amount+" "+@lifetime;
+
+}
