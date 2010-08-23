@@ -3,3 +3,4 @@ npc: npc/903-1_Thunderhill/_warps.txt
 npc: npc/903-1_Thunderhill/_mobs.txt
 npc: npc/903-1_Thunderhill/ancients-ring.txt
 npc: npc/903-1_Thunderhill/guardian.txt
+npc: npc/903-1_Thunderhill/soul-menhir.txt
