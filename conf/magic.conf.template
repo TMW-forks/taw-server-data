@@ -974,6 +974,18 @@ SPELL hide (target : PC) : "#A13" =
                 IF (caster <> target) THEN message(caster, "You hid someone!");
           ATEND message(target, "You are no longer hidden.");
 
+SPELL summon-skeleton : "#D01" =
+      LET level = 0
+          school = NATURE
+      IN (MANA 39, CASTTIME 20000,
+          REQUIRE skill(caster, MAGIC) > level,
+          REQUIRE skill(caster, school) > level,
+          COMPONENTS ["Bone", "Skull"])
+          => EFFECT CALL adjust_spellpower(school);
+                    CALL default_effect();
+                    CALL gain_xp(1);
+                    CALL summon_spell(1035, 1 + spellpower / 170 + spellpower / 430, 5000 - (spellpower * 8), spellpower * 350, 3);
+
 #--------------------------------------------------------------------------------
 # Level 2 spells
 #--------------------------------------------------------------------------------

@@ -546,7 +546,7 @@
 //
 5088,  	FallenPattern,  		Fallen Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1045"; },	{}
 5089,  	SkullPattern,  		Skull Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1024"; },	{}
-5090,  	SkulllordPattern,  		Skulllord Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1087"; },	{}
+5090, SkulllordPattern, Skulllord Pattern, 0, 1500, 750, 10, , , , 0, , 2, , , 0, , { gmcommand strcharinfo(0)+":@summon 1987"; }, {}
 5091, 	ForestAxe, 			Forest Axe, 			4, 	1200, 	400, 	15, 	7, 	, 	2, 	, 	0, 	2, 	2, 	1, 	1, 	1, 	{}, 					{}										
 5092, 	BloodRedShamansCrossbow, 			Blood Red Shaman's Crossbow, 			4, 	5000, 	2500, 	80, 	210, 	30, 	7, 	, 	0, 	2, 	34, 	1, 	0, 	11, 	{}, 					{ bonus bDex,50; bonus bMaxHP,-(Hp/2); bonus bLuk,20; }										
 5093, 	BloodyArrow, 			Bloody Arrow, 		10, 	40, 	20, 	2, 	300, 	, 	, 	, 	, 	2, 	32768, 	, 	, 	, 	{}, 	{}	
