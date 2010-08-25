@@ -2,10 +2,20 @@
 
 027-5.gat,13,35,9,3	monster	Fireskull	1023,2,28000,25000,Mob027-5::On1023
 027-5.gat,40,35,9,3	monster	Poisonskull	1024,2,60000,20000,Mob027-5::On1024
-027-5.gat,27,37,14,10	monster	Skelton	1043,4,900000,10000,Mob027-5::On1043
-027-5.gat,27,43,14,12	monster	ladyskelton	1044,5,900000,0,Mob027-5::On1044
+027-5.gat,27,37,14,10	monster	Skelton	1043,3,900000,10000,Mob027-5::On1043
+027-5.gat,27,43,14,12	monster	ladyskelton	1044,4,900000,0,Mob027-5::On1044
 027-5.gat,84,34,13,13	monster	Skeleton	1043,3,900000,0,Mob027-5::On1043
 027-5.gat,85,35,14,13	monster	LadySkel	1044,4,900000,20000,Mob027-5::On1044
+027-5.gat,34,32,1,1	monster	TorturedSoul	1962,1,60000,20000,Mob027-5::On1962
+027-5.gat,28,40,1,1	monster	TorturedSoul	1962,1,60000,20000,Mob027-5::On1962
+027-5.gat,34,40,1,1	monster	TorturedSoul	1962,1,60000,20000,Mob027-5::On1962
+027-5.gat,31,25,1,1	monster	TorturedSoul	1962,1,60000,20000,Mob027-5::On1962
+027-5.gat,26,25,2,1	monster	TorturedSoul	1962,1,60000,20000,Mob027-5::On1962
+027-5.gat,12,26,1,1	monster	TorturedSoul	1962,1,60000,20000,Mob027-5::On1962
+027-5.gat,12,34,1,1	monster	TorturedSoul	1962,1,60000,20000,Mob027-5::On1962
+027-5.gat,40,33,1,1	monster	TorturedSoul	1962,1,60000,20000,Mob027-5::On1962
+027-5.gat,27,20,8,1	monster	Skulllord	1987,1,28000,25000,Mob027-5::On1987
+027-5.gat,27,38,8,12	monster	helllord	1950,3,110000,0,Mob027-5::On1950
 
 
 027-5.gat,0,0,0	script	Mob027-5	-1,{
@@ -26,6 +36,21 @@ On1043:
 
 On1044:
 	set @mobID, 1044;
+	callfunc "MobPoints";
+	break;
+
+On1950:
+	set @mobID, 1950;
+	callfunc "MobPoints";
+	break;
+
+On1962:
+	set @mobID, 1962;
+	callfunc "MobPoints";
+	break;
+
+On1987:
+	set @mobID, 1987;
 	callfunc "MobPoints";
 	break;
 
