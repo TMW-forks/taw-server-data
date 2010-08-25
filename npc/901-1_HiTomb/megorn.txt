@@ -94,7 +94,6 @@ A_nothing:
 	close;
 
 L_end:
-//	monster "901-1.gat", 86, 46, "Mob291", 1045, 2; 
 	close;
 
 L_known:
@@ -107,7 +106,7 @@ L_known:
 
 News:
 	mes "[Megorn]";
-	mes "Currently, few houses were opened to public. Try them all, NPC you haven't seen yet are waiting. Captain is recruiting to Hitomb army, you can try to pass his exams.";
+	mes "As you can see, hitomb has been rebuilt a bit. I hope you like it more here now.";
 	close;
 
 Learnme:

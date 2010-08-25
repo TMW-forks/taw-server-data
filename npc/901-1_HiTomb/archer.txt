@@ -1,0 +1,78 @@
+901-1.gat,35,49,0	script	Archer Apprentice	944, {
+	  mes "[Archer Apprentice]";
+	mes "Hello. I'm just training my bow skills. You can join if you want.";
+	close;
+
+	  mes "[Archer Trainer]";
+	mes "Hello. Would you like to practice bow mastery?";
+	menu
+		"Yes, sure!", L_pract,
+		"No, not now.", -;
+	close;
+
+L_pract:
+	if( getskilllv(SKILL_BOW) == 0 ) goto L_fir;
+	if( getskilllv(SKILL_BOW) == 1 ) goto L_sec;
+	if( getskilllv(SKILL_BOW) == 2 ) goto L_thi;
+	if( getskilllv(SKILL_BOW) > 2 ) goto L_fou;
+
+	close;
+
+//LVL 40+ - teaches bow mastery lvl 1, +1 dex - costs 10 000 GP  
+
+L_fir:
+	if (BaseLevel < 40) goto L_young;
+	mes "[Archer Trainer]";
+	mes "Try to kill that scorpion down there.";
+	next;
+	mes "Nice try. One more time.";
+	next;
+	mes "Good, lets see how you advanced.";
+	// some comaparation of players archery-based stats with some random factor
+	// if success - teaches
+	// if fail - tells player to practise more
+
+
+//LVL 60+ - teaches bow mastery lvl 2, +1 agi +1 dex - costs 50 000 GP
+
+L_sec:
+	if (BaseLevel < 60) goto L_young;
+	mes "[Archer Trainer]";
+	mes "Do you see that snake down there? Try to kill it.";
+	next;
+	mes "Great shot! Try that one also.";
+	next;
+	mes "Not bad... lets see how you advanced.";
+	// some comaparation of players archery-based stats with some random factor
+	// if success - teaches
+	// if fail - tells player to practise more
+
+
+//LVL 70+ - teaches bow mastery lvl 3, +1 agi +1 dex +1 luk - costs 250 000 GP
+
+L_thi:
+	if (BaseLevel < 70) goto L_young;
+	mes "[Archer Trainer]";
+	mes "Do you see that small creature far away? Kill it with your bow.";
+	next;
+	mes "You missed it, but that happens.";
+	next;
+	mes "Maybe it's too far away, but lets see if you advanced.";
+	// some comaparation of players archery-based stats with some random factor
+	// if success - teaches
+	// if fail - tells player to practise more
+
+L_fou:
+	mes "[Archer Trainer]";
+	mes "I am sorry, but I can't teach you anymore.";
+	next;
+	mes "[Archer Trainer]";
+	mes "You should try to find more experienced trainer now.";
+	close;
+
+L_young:
+	mes "[Archer Trainer]";
+	mes "Aah... sorry, you are too young.";
+	close;	
+
+}

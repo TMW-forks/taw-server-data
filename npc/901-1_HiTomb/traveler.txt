@@ -1,0 +1,95 @@
+901-1.gat,54,53,0	script	Traveler	945, {
+	if (hitomb_traveler_know == 1) goto L_know;
+	  mes "[Traveler]";
+	mes "Hello, I'm traveler from Tulimshar. I have brought some supplies from Market Square.";
+	next;
+	set hitomb_traveler_know, 1;
+
+L_know:
+	mes "[Traveler]";
+	mes "Do you want to exchange some items?";
+	menu
+		"100 light healing potions", L_hpots,
+		"10 bones", L_bones,
+		"5 skulls", L_skulls,
+		"5 dark crystals", L_dcrystals,
+		"Nevermind", L_close;
+
+L_close:
+	close;
+
+L_hpots:
+	set @item, 1;
+	goto L_offer;
+
+L_bones:
+	set @item, 2;
+	goto L_offer;
+
+L_skulls:
+	set @item, 3;
+	goto L_offer;
+
+L_dcrystals:
+	set @item, 4;
+	goto L_offer;
+
+
+L_offer:
+	mes "[Traveler]";
+	mes "Okay, what do you offer?";
+	menu
+		"2 Gold Ores", L_goldores,
+		"5 Silver Ores", L_silverores,
+		"6 Light Crystals", L_lcrystals,
+		"8 Terranite Ores", L_tores,
+		"10 Copper Ores", L_copperores,
+		"Nevermind", L_close;
+L_goldores:
+	set @offer, 1;
+	goto L_shop;
+
+L_silverores:
+	set @offer, 2;
+	goto L_shop;
+
+L_lcrystals:
+	set @offer, 3;
+	goto L_shop;
+
+L_tores:
+	set @offer, 4;
+	goto L_shop;
+
+L_copperores:
+	set @offer, 5;
+	goto L_shop;
+
+L_shop:
+	if(@offer==1 && countitem("GoldOre")<2) goto L_nodeal;
+	if(@offer==2 && countitem("SilverOre")<5) goto L_nodeal;
+	if(@offer==3 && countitem("LightCrystal")<6) goto L_nodeal;
+	if(@offer==4 && countitem("TerraniteOre")<8) goto L_nodeal;
+	if(@offer==5 && countitem("CopperOre")<10) goto L_nodeal;	
+
+	if(@offer==1) delitem "GoldOre", 2;
+	if(@offer==2) delitem "SilverOre", 5;
+	if(@offer==3) delitem "LightCrystal", 6;
+	if(@offer==4) delitem "TerraniteOre", 8;
+	if(@offer==5) delitem "CopperOre", 10;	
+	
+	if(@item==1) getitem "LightHealingPotion", 100;
+	if(@item==2) getitem "Bone", 10;
+	if(@item==3) getitem "Skull", 5;
+	if(@item==4) getitem "DarkCrystal", 5;
+
+	mes "[Traveler]";
+	mes "Nice deal, come again!";
+	close;
+
+L_nodeal:
+	mes "[Traveler]";
+	mes "Unfortunately you don't have what you offer.";
+	close;
+
+}

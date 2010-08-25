@@ -46,7 +46,7 @@
 	next;
 	mes "No offensive chat.";
 	mes "This is a nice establishment.";
-	mes "Crude and offensive behavior will be reported to TAW GM's.";
+	mes "Crude and offensive behavior will be reported to TMW GM's.";
 	next;
 	mes "Please be respectful of others.";
 	mes "Not everyone has the same experience and should all be treated";
