@@ -74,9 +74,9 @@
 572,	Scimitar,			Scimitar,			4,	8000,	4000,	100,	100,	,	1,	,	0,	2,	2,	1,	1,	1,	{},					{}										
 573, 	Falchion, 			Falchion, 			4, 	8000, 	4000, 	100, 	102, 	, 	1, 	, 	0, 	2, 	2, 	1, 	1, 	1, 	{}, 					{}										
 574,	Scorpion,			Scorpion,			4,	8000,	4000,	100,	100,	,	1,	,	0,	2,	2,	1,	1,	1,	{},					{}										
-575,	DesertBow,			Desert Bow,			4,	8000,	4000,	100,	100,	,	1,	,	0,	2,	34,	1,	1,	11,	{},					{}										
+575,	DesertBow,			Desert Bow,			4,	8000,	4000,	100,	85,	,	4,	,	0,	2,	34,	1,	1,	11,	{},					{}										
 576,	Beheader,			Beheader,			4,	8000,	4000,	100,	100,	,	1,	,	0,	2,	2,	1,	1,	1,	{},					{}										
-577,	BoneDarts,			Bone Darts,			4,	8000,	4000,	100,	100,	,	1,	,	0,	2,	2,	1,	1,	1,	{},					{}										
+577,	BoneDarts,			Bone Darts,			4,	8000,	4000,	100,	90,	,	2,	,	0,	2,	2,	1,	1,	1,	{},					{}										
 578,	SandCutter,			Sand Cutter,			4,	8000,	4000,	100,	100,	,	1,	,	0,	2,	2,	1,	1,	1,	{},					{}										
 579,	RockKnife,			Rock Knife,			4,	15000,	7500,	100,	300,	,	1,	,	0,	2,	34,	1,	1,	1,	{},					{}										
 580,	StaffOfLife,			Staff of Life,			4,	8000,	4000,	100,	100,	,	1,	,	0,	2,	2,	1,	1,	1,	{},					{}										
@@ -505,14 +505,16 @@
 5041,  	SilverOre,  			Silver Ore,  			3,  	300000,  	5000,  	1,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{},  					{}
 5042,  	CopperOre,  			Copper Ore,  			3,  	100000,  	2500,  	1,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{},  					{}
 5043,	LightCrystal,			Light Crystal,			3,	100,	50,	10,	,	,	,	,	,	,	,	,	,	,	{},					{}
-5044,  	SkeletonPattern,  		Skeleton Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1043"; },	{}
+5044,  	SkeletonPattern,  		Skeleton Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ srvcommand "@mapsummon 1043"; },	{}
 5045, 	EnchantedMiningPick, 			Enchanted Mining Pick, 			4, 	8000, 	4000, 	100, 	100, 	, 	1, 	, 	0, 	2, 	2, 	1, 	1, 	1, 	{}, 					{}							
 5046,	ForestArmor,			Forest Armor,			5,	100000,	3000,	275,	,	27,	,	-170,	0,	2,	512,	,	0,	0,	{}, 					{}							
 5047,	WitchDoctorsMask,		Witch Doctor's Mask,			5,	10000,	5000,	15,	,	3,	,	5,	0,	2,	256,	,	0,	0,	{},					{}
 5048, 	SaviorArmor, 			Savior Armor, 			5, 	100000, 	3000, 	275, 	, 	28, 	, 	-170, 	0, 	2, 	512, 	, 	0, 	0, 	{}, 					{}
 5049,	WhiteLightStaff,			White Light Staff,			4,	1000,	200,	180,	25,	,	1,	0,	0,	2,	2,	1,	1,	1,	{},	{}
-5050,	RedLightStaff,			Red Light Staff,			4,	1000,	200,	180,	25,	,	1,	0,	0,	2,	2,	1,	1,	1,	{},					{}	5051,	GreenLightStaff,			Green Light Staff,			4,	1000,	200,	180,	25,	,	1,	0,	0,	2,	2,	1,	1,	1,	{},					{}										
-5052,	BlueLightStaff,			Blue Light Staff,			4,	1000,	200,	180,	25,	,	1,	0,	0,	2,	2,	1,	1,	1,	{},					{}	5053,	YellowLightStaff,			Yellow Light Staff,			4,	1000,	200,	180,	25,	,	1,	0,	0,	2,	2,	1,	1,	1,	{},					{}
+5050,	RedLightStaff,			Red Light Staff,			4,	1000,	200,	180,	25,	,	1,	0,	0,	2,	2,	1,	1,	1,	{},					{}
+5051,	GreenLightStaff,			Green Light Staff,			4,	1000,	200,	180,	25,	,	1,	0,	0,	2,	2,	1,	1,	1,	{},					{}										
+5052,	BlueLightStaff,			Blue Light Staff,			4,	1000,	200,	180,	25,	,	1,	0,	0,	2,	2,	1,	1,	1,	{},					{}
+5053,	YellowLightStaff,			Yellow Light Staff,			4,	1000,	200,	180,	25,	,	1,	0,	0,	2,	2,	1,	1,	1,	{},					{}
 5054,	PurpleLightStaff,			Purple Light Staff,			4,	1000,	200,	180,	25,	,	1,	0,	0,	2,	2,	1,	1,	1,	{},	{}
 5055,	OmenRobe,			Omen Robe,		5,	100000,	3000,	275,	,	27,	,	-170,	0,	2,	512,	,	0,	0,	{},					{}
 5056,	WoodStaff,			Wood Staff,			4,	10000,	2000,	180,	80,	,	1,	5,	0,	2,	2,	1,	1,	1,	{},					{}	
@@ -523,7 +525,10 @@
 5061,	IceKnife,			Ice Knife,			4,	10000,	6000,	100,	115,	,	1,	,	0,	2,	2,	1,	1,	1,	{ bonus bAspdAddRate, 30; },					{}	
 5062,	IceScorpionStinger,		Ice Scorpion Stinger,		3,	250,	120,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}
 5063, 	TerraniteArrow, 			Terranite Arrow, 		10, 	40, 	20, 	2, 	120, 	, 	, 	, 	, 	2, 	32768, 	, 	, 	, 	{}, 	{}	
-5064,	PaladinsHelmet,			Paladin's Helmet,			5,	30000,	3000,	10,	,	18,	,	-36,	0,	2,	256,	,	0,	0,	{},					{}	5065,	OverlordsHelmet,		Overlord's Helmet,			5,	30000,	3000,	10,	,	18,	,	-36,	0,	2,	256,	,	0,	0,	{},					{}	5067,	DesertHelmet,			Desert Helmet,			5,	30000,	3000,	10,	,	18,	,	-36,	0,	2,	256,	,	0,	0,	{},					{}		
+5064,	PaladinsHelmet,			Paladin's Helmet,			5,	30000,	3000,	10,	,	18,	,	-36,	0,	2,	256,	,	0,	0,	{},					{}	
+5065,	OverlordsHelmet,		Overlord's Helmet,			5,	30000,	3000,	10,	,	18,	,	-36,	0,	2,	256,	,	0,	0,	{},					{}
+
+5067,	DesertHelmet,			Desert Helmet,			5,	30000,	3000,	10,	,	18,	,	-36,	0,	2,	256,	,	0,	0,	{},					{}		
 5068,	TerraniteOre,			Terranite Ore,			3,	250,	100,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
 5069,	SailorHat,			Sailor Hat,			5,	500,	100,	20,	,	2,	,	0,	0,	2,	256,	,	0,	0,	{},					{}								
 5070,	CaptainsHat,			Captain's Hat,			5,	500,	100,	20,	,	2,	,	0,	0,	2,	256,	,	0,	0,	{},					{}		
@@ -544,9 +549,9 @@
 5085,	GreenFairy,				Green Fairy Pet,			5,	1000,	2500,	1,	50,	0,	,	0,	0,	2,	128,	,	0,	0,	{},					{bonus bMaxHP,			50;}
 5086,	ElfHat,		Elf Hat,		5,	2500,	2300,	10,	,	8,	,	2,	0,	2,	256,	,	0,	0,	{},					{}										
 //
-5088,  	FallenPattern,  		Fallen Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1045"; },	{}
-5089,  	SkullPattern,  		Skull Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1024"; },	{}
-5090, SkulllordPattern, Skulllord Pattern, 0, 1500, 750, 10, , , , 0, , 2, , , 0, , { gmcommand strcharinfo(0)+":@summon 1987"; }, {}
+5088,  	FallenPattern,  		Fallen Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ srvcommand "@mapsummon 1045"; },	{}
+5089,  	SkullPattern,  		Skull Pattern,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ srvcommand "@mapsummon 1024"; },	{}
+5090, SkulllordPattern, Skulllord Pattern, 0, 1500, 750, 10, , , , 0, , 2, , , 0, , { srvcommand "@mapsummon 1987"; }, {}
 5091, 	ForestAxe, 			Forest Axe, 			4, 	1200, 	400, 	15, 	7, 	, 	2, 	, 	0, 	2, 	2, 	1, 	1, 	1, 	{}, 					{}										
 5092, 	BloodRedShamansCrossbow, 			Blood Red Shaman's Crossbow, 			4, 	5000, 	2500, 	80, 	210, 	30, 	7, 	, 	0, 	2, 	34, 	1, 	0, 	11, 	{}, 					{ bonus bDex,50; bonus bMaxHP,-(Hp/2); bonus bLuk,20; }										
 5093, 	BloodyArrow, 			Bloody Arrow, 		10, 	40, 	20, 	2, 	300, 	, 	, 	, 	, 	2, 	32768, 	, 	, 	, 	{}, 	{}	
@@ -557,7 +562,7 @@
 5098,	SeedOfTheDemon,			Seed of the Demon,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
 5099,	TorturedSoul,			Tortured Soul,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
 5100,	Heartglasses,			Heartglasses,			5,	7500,	5000,	10,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}										
-5101,  	Thundersword,  		Thundersword,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ gmcommand strcharinfo(0)+":@summon 1996"; },	{}
+5101,  	Thundersword,  		Thundersword,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ srvcommand "@mapsummon 1996"; },	{}
 5102,	Crossbow,			Crossbow,			4,	10000,	3000,	150,	110,	,	5,	,	0,	2,	34,	1,	0,	11,	{},					{}
 5103,	MoldyLeaf,			Stardust,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
 5104,	PellonpekkoWood,			Pellonpekko Wood,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
