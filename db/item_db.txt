@@ -557,18 +557,18 @@
 5093, 	BloodyArrow, 			Bloody Arrow, 		10, 	40, 	20, 	2, 	300, 	, 	, 	, 	, 	2, 	32768, 	, 	, 	, 	{}, 	{}	
 5094,	ThunderFromTheSky,			Thunder from the Sky,			3,	2000,	1000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
 5095,	ToothOfTime,			The Tooth of Time,			3,	2000,	1000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
-5096,	Stardust,			Stardust,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
-5097,	AraxamusBlood,			Araxamus's Blood,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
-5098,	SeedOfTheDemon,			Seed of the Demon,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
-5099,	TorturedSoul,			Tortured Soul,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
+5096,	Stardust,			Stardust,			3,	2000,	1000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
+5097,	AraxamusBlood,			Araxamus's Blood,			3,	2000,	1000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
+5098,	SeedOfTheDemon,			Seed of the Demon,			3,	2000,	1000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
+5099,	TorturedSoul,			Tortured Soul,			3,	2000,	1000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
 5100,	Heartglasses,			Heartglasses,			5,	7500,	5000,	10,	,	5,	,	-2,	0,	2,	256,	,	0,	0,	{},					{}										
 5101,  	Thundersword,  		Thundersword,  			0,  	1500,  	750,  	10,  	,  	,  	,  	,  	,  	2,  	,  	,  	0,  	,  	{ srvcommand "@mapsummon 1996"; },	{}
 5102,	Crossbow,			Crossbow,			4,	10000,	3000,	150,	110,	,	5,	,	0,	2,	34,	1,	0,	11,	{},					{}
-5103,	MoldyLeaf,			Stardust,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
-5104,	PellonpekkoWood,			Pellonpekko Wood,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
-5105,	BearsPoo,			Bear's Poo,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
-5106,	HellSnowflake,			Hell Snowflake,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
-5107,	HeartOfSteel,			Heart of Steel,			3,	25000,	10000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
+5103,	MoldyLeaf,			Stardust,			3,	2000,	1000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
+5104,	PellonpekkoWood,			Pellonpekko Wood,			3,	2000,	1000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
+5105,	BearsPoo,			Bear's Poo,			3,	2000,	1000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
+5106,	HellSnowflake,			Hell Snowflake,			3,	2000,	1000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
+5107,	HeartOfSteel,			Heart of Steel,			3,	2000,	1000,	40,	,	,	,	,	,	,	,	,	,	,	{},					{}		
 5108, 	GoldenScorpionStinger2, 			Golden Scorpion Stinger, 			3, 	25000, 	10000, 	40, 	, 	, 	, 	, 	, 	, 	, 	, 	, 	, 	{}, 					{}		
 5109,  	Aurisghard,  			Aurisghard,  			4,  	25000000,  	50000,  	160,  	170,  	,  	1,  	,  	0,  	2,  	2,  	1,  	1,  	1,  	{},  					{bonus bLuk,10; }										
 5110,  	Seneria,  			Seneria,  			4,  	25000000,  	50000,  	40,  	100,  	,  	10,  	,  	0,  	2,  	2,  	1,  	1,  	1,  	{},  					{ bonus bLuk,20; bonus bAgi,20; bonus bDex,20; bonus bStr,20; }										
@@ -598,4 +598,6 @@
 5134,	BeginnersProtector,		Beginner's Protector,		5,	300,	150,	1,	,	,	,	5,	0,	2,	128,	,	0,	0,	{},	{ bonus bVit, 3; }																			
 5135,	BeginnersGuardian,		Beginner's Guardian,		5,	500,	250,	1,	,	,	,	5,	0,	2,	128,	,	0,	0,	{},	{ bonus bVit, 5; }																			
 5136,	Plank,				Plank,				3,	20,	10,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
+5137,	WeddingDress,			Wedding Dress,			5,	12000,	8000,	16,	,	5,	,	0,	0,	2,	512,	,	0,	0,	{},					{}										
+5138,	WeddingCirclet,			Wedding Circlet,			5,	3000,	2000,	4,	,	6,	,	-9,	0,	2,	256,	,	0,	0,	{},					{}										
 
