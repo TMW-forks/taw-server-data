@@ -5,3 +5,7 @@
 002-1.gat,12,66	warp	ToWesternDesert	-1,3,003-1.gat,168,76
 002-1.gat,28,13	warp	ToBeach	1,-1,004-1.gat,84,111
 002-1.gat,20,94	warp	ToCave	-1,-1,002-3.gat,37,32
+002-1.gat,99,94	warp	ToEasternDesert	-1,-1,002-1.gat,100,96
+002-1.gat,99,96	warp	ToEasternDesert	-1,-1,002-1.gat,99,94
+002-1.gat,47,93	warp	ToEasternDesert	-1,-1,002-1.gat,47,95
+002-1.gat,47,95	warp	ToEasternDesert	-1,-1,002-1.gat,47,93
