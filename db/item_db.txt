@@ -574,7 +574,7 @@
 5110,  	Seneria,  			Seneria,  			4,  	25000000,  	50000,  	40,  	100,  	,  	10,  	,  	0,  	2,  	2,  	1,  	1,  	1,  	{},  					{ bonus bLuk,20; bonus bAgi,20; bonus bDex,20; bonus bStr,20; }										
 5111, 	Thanandras, 			Thanandras, 			4, 	25000000, 	50000, 	200, 	15, 	, 	2, 	, 	0, 	2, 	2, 	1, 	1, 	1, 	{}, 					{ bonus bAspdAddRate, 200; }										
 5112,   	Gragdish,   			Gragdish,   			4,   	25000000,   	50000,   	90,   	60,   	10,   	1,   	,   	0,   	2,   	2,   	1,   	1,   	1,   	{},   					{ bonus bMatk,25; bonus bMdef,15; bonus bInt,30; bonus bLuk,20; }										
-5113,	CorporalsHelmet,			Corporals Helmet,			5,	35000,	3000,	140,	,	18,	,	-30,	0,	2,	256,	,	0,	0,	{},					{}										
+5113,	CorporalsHelmet,			Corporals Helmet,			5,	35000,	15000,	140,	,	18,	,	-30,	0,	2,	256,	,	0,	0,	{},					{}										
 5114,	HitombHeadband,			Hitomb Headband,			5,	25000,	2000,	140,	,	6,	,	-9,	0,	2,	256,	,	0,	0,	{},					{}										
 5115,	Log,				Log,				3,	30,	15,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
 5116,	PineLog,			Pine Log,			3,	50,	25,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}												
