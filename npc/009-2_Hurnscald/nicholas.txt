@@ -192,6 +192,7 @@ L_NoMoney:
 
 L_YesKnight:
 	if (zeny < 10000) goto L_NoMoney;
+	if (countitem("IronOre") < 5) goto L_NoItem;
 	getinventorylist;
 	if (@inventorylist_count == 100) goto L_TooMany;
 	set zeny, zeny - 10000;
@@ -201,6 +202,7 @@ L_YesKnight:
 
 L_YesCrusade:
 	if (zeny < 10000) goto L_NoMoney;
+	if (countitem("IronOre") < 10) goto L_NoItem;
 	getinventorylist;
 	if (@inventorylist_count == 100) goto L_TooMany;
 	set zeny, zeny-10000;
@@ -210,6 +212,7 @@ L_YesCrusade:
 
 L_YesWarlord:
 	if (zeny < 10000) goto L_NoMoney;
+	if (countitem("IronOre") < 15) goto L_NoItem;
 	getinventorylist;
 	if (@inventorylist_count == 100) goto L_TooMany;
 	set zeny, zeny-10000;
