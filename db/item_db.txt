@@ -609,4 +609,5 @@
 5145,	SilverTerraniteChest,		Silver Terranite Chest Armor,			5,	120000,	60000,	275,	,	30,	,	-140,	0,	2,	512,	,	0,	0,	{},			{}				
 5146,	TyrkysTerraniteChest,		Tyrkys Terranite Chest Armor,			5,	120000,	60000,	275,	,	30,	,	-140,	0,	2,	512,	,	0,	0,	{},			{}				
 5147,	HitombLordHelmet,			Hitomb Lord Helmet,			5,	70000,	35000,	140,	,	20,	,	-27,	0,	2,	256,	,	0,	0,	{},					{}										
+5148,	UndeadMoubootaurHead,			Undead Moubootaur Head,		5,	2500,	1500,	25,	,	3,	,	0,	0,	2,	256,	,	0,	0,	{},					{}										
 
