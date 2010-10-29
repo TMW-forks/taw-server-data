@@ -1,0 +1,96 @@
+// Main NPC of the halloween event 2010
+
+009-2.gat,109,71,0	script	Orthon	103,{
+
+
+		if (halloween2010 == 0) goto L_Quest_check;
+		if (halloween2010 == 1) goto L_Quest_E;
+		if (halloween2010 == 2) goto L_Quest_Done;
+		
+L_Quest_check:
+		
+		if (BaseLevel >= 15) goto L_Quest;
+		if (BaseLevel < 15) goto L_Level_Too_Low;
+		
+L_Quest:
+
+	mes "[Orthon]";
+	mes "\"Yummy, these skull lollipops are awesome! At last. It was about time that you arrive.\"";
+	next;
+		menu
+			"Halloween is calling, see you...", -;
+			"You were looking for me?", L_Quest_B;
+	close;
+	
+L_Quest_B:
+
+	mes "[Orthon]";
+	mes "\"My friend, the oracle told me about your arrival\"";
+	next;
+		menu
+			"So what?", -;
+			"What are your concerns?", L_Quest_C;
+	close;
+	
+L_Quest_C:
+	
+	mes "[Orthon]";
+	mes "\"I heard that you are searching for the creepiest mask in these hours of darkness, I guess I can help you a liitle bit, assumed you help, too.\"";
+	next;
+		menu
+			"I will think 'bout your offer", -;
+			"What do I have to do?", L_Quest_D;
+	close;
+	
+L_Quest_D:
+	
+	mes "[Orthon]";
+	mes "\"Find the witch somewhere around the graveyard and the skeleton man is upstairs, they will give you further instructions.\"";
+	set halloween2010, 1;
+	close;
+	
+L_Quest_E:
+
+	mes "[Orthon]";
+	mes "\"Have you got my items?\"";
+	next;
+		menu
+			"Not yet...", -;
+			"Yes, Sir", L_Quest_F;
+	close;
+	
+L_Quest_F:
+
+	if (countitem(5150) < 15) goto L_Not_Enough;
+	if (countitem(5151) < 1) goto L_Not_Enough;
+	if (countitem(5152) < 1) goto L_Not_Enough;
+	mes "[Orthon]";
+	mes "\"Here you go, Happy Halloween!\"";
+	delitem 5151, 1;
+	delitem 5152, 1;
+	delitem 5150, 15;
+	get 5148, 1;	//Undead Moubootaur Head
+	set halloween2010, 2;
+	close;
+	
+L_Not_Enough:
+
+	mes "[Orthon]";
+	mes "\"Liar! Don't cheat on me again!\"";
+	gmcommand strcharinfo(0)+":@spawn 2002 3 ";
+	gmcommand strcharinfo(0)+":@kami "+strcharinfo(0)+" whishes Happy Halloween!";
+	close;
+
+L_Level_Too_Low:
+
+	mes "[Orthon]";
+	mes "You should get some more experience...";
+	close;
+
+L_Quest_Done:
+
+	mes "[Orthon]";
+	mes "Spooktacular Halloween!";
+	close;
+
+}

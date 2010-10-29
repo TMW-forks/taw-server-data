@@ -610,4 +610,8 @@
 5146,	TyrkysTerraniteChest,		Tyrkys Terranite Chest Armor,			5,	120000,	60000,	275,	,	30,	,	-140,	0,	2,	512,	,	0,	0,	{},			{}				
 5147,	HitombLordHelmet,			Hitomb Lord Helmet,			5,	70000,	35000,	140,	,	20,	,	-27,	0,	2,	256,	,	0,	0,	{},					{}										
 5148,	UndeadMoubootaurHead,			Undead Moubootaur Head,		5,	2500,	1500,	25,	,	3,	,	0,	0,	2,	256,	,	0,	0,	{},					{}										
+5149,	SkullLollipop,			Skull Lollipop,		0,	20,	50,	1,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 200,				0; },					{}
+5150,	PumpkinLollipop,			Pumpkin Lollipop,		0,	20,	50,	1,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 250,				0; },					{}
+5151,	Blood,			Blood,			3,	100000,	5,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}										
+5152,	MoubooSoul,			Mouboo Soul,			3,	100000,	5,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}										
 

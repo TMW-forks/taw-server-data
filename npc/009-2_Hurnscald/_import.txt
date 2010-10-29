@@ -12,8 +12,10 @@ npc: npc/009-2_Hurnscald/kfahr.txt
 npc: npc/009-2_Hurnscald/misc.txt
 npc: npc/009-2_Hurnscald/nicholas.txt
 npc: npc/009-2_Hurnscald/nurse.txt
+npc: npc/009-2_Hurnscald/orthon.txt
 npc: npc/009-2_Hurnscald/richard.txt
 npc: npc/009-2_Hurnscald/selim.txt
 npc: npc/009-2_Hurnscald/shops.txt
+npc: npc/009-2_Hurnscald/skeleton_man.txt
 npc: npc/009-2_Hurnscald/waitress.txt
 npc: npc/009-2_Hurnscald/wyara.txt
