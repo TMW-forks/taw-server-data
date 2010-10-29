@@ -34,7 +34,7 @@ L_Quest_C:
 	if (countitem(505) < 40) goto L_Not_Enough;
 	if (countitem(5150) < 20) goto L_Not_Enough;
 	mes "[Witch]";
-	mes "\"Don't sell it!\"";
+	mes "\"Don't sell it! Oh and could you bring Orthon 15 pumpkin lollipops, that would be great...\"";
 	delitem 505, 40;
 	delitem 5150, 20;
 	get 5152, 1;	//Mouboo Soul
