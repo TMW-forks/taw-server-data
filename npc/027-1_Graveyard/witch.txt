@@ -4,7 +4,7 @@
 027-1.gat,74,79,0	script	Witch	955,{
 
 		if (halloween2010witch == 0) goto L_Quest_check;
-		if (halloween2010witch == 1) goto L_Quest_E;
+		if (halloween2010witch == 1) goto L_Quest_B;
 		if (halloween2010witch == 2) goto L_Quest_Done;
 		
 L_Quest_check:
