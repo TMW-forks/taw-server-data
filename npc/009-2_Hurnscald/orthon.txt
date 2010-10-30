@@ -18,7 +18,7 @@ L_Quest:
 	mes "\"Yummy, these skull lollipops are awesome! At last. It was about time that you arrive.\"";
 	next;
 		menu
-			"Halloween is calling, see you...", -;
+			"Halloween is calling, see you...", -,
 			"You were looking for me?", L_Quest_B;
 	close;
 	
@@ -28,7 +28,7 @@ L_Quest_B:
 	mes "\"My friend, the oracle told me about your arrival\"";
 	next;
 		menu
-			"So what?", -;
+			"So what?", -,
 			"What are your concerns?", L_Quest_C;
 	close;
 	
@@ -38,7 +38,7 @@ L_Quest_C:
 	mes "\"I heard that you are searching for the creepiest mask in these hours of darkness, I guess I can help you a liitle bit, assumed you help, too.\"";
 	next;
 		menu
-			"I will think 'bout your offer", -;
+			"I will think 'bout your offer", -,
 			"What do I have to do?", L_Quest_D;
 	close;
 	
@@ -55,7 +55,7 @@ L_Quest_E:
 	mes "\"Have you got my items?\"";
 	next;
 		menu
-			"Not yet...", -;
+			"Not yet...", -,
 			"Yes, Sir", L_Quest_F;
 	close;
 	

@@ -25,7 +25,7 @@ L_Quest_B:
 	mes "\"Have you got the things?\"";
 	next;
 		menu
-			"Nope", -;
+			"Nope", -,
 			"Yup", L_Quest_C;
 	close;
 	

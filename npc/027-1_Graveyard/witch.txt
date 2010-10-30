@@ -25,7 +25,7 @@ L_Quest_B:
 	mes "\"Have you got the ingredients yet?\"";
 	next;
 		menu
-			"Nah", -;
+			"Nah", -,
 			"Sure", L_Quest_C;
 	close;
 	
