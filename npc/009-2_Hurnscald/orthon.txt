@@ -69,7 +69,7 @@ L_Quest_F:
 	delitem 5151, 1;
 	delitem 5152, 1;
 	delitem 5150, 15;
-	get 5148, 1;	//Undead Moubootaur Head
+	getitem 5148, 1;	//Undead Moubootaur Head
 	set halloween2010, 2;
 	close;
 	

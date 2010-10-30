@@ -37,7 +37,7 @@ L_Quest_C:
 	mes "\"Don't sell it! Oh and could you bring Orthon 15 pumpkin lollipops, that would be great...\"";
 	delitem 505, 40;
 	delitem 5150, 20;
-	get 5152, 1;	//Mouboo Soul
+	getitem 5152, 1;	//Mouboo Soul
 	set halloween2010witch, 2;
 	close;
 		

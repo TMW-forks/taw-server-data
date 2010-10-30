@@ -37,7 +37,7 @@ L_Quest_C:
 	mes "\"Bring this to Orthon!\"";
 	delitem 615, 1;
 	delitem 5149, 1;
-	get 5151, 1;	//Blood
+	getitem 5151, 1;	//Blood
 	set halloween2010skel, 2;
 	close;
 		
