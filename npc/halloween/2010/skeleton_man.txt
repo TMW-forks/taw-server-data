@@ -1,0 +1,64 @@
+// Halloween event 2010
+// Skeleton Man
+
+009-2.gat,119,47,0	script	Skeleton Man	183,{
+
+	if (halloween2010skel == 0) goto L_Quest_check;
+	if (halloween2010skel == 1) goto L_Quest_B;
+	if (halloween2010skel == 2) goto L_Quest_Done;
+		
+L_Quest_check:
+		
+	if (BaseLevel >= 15) goto L_Quest;
+	if (BaseLevel < 15) goto L_Level_Too_Low;
+		
+L_Quest:
+
+	mes "[Skeleton Man]";
+	mes "\"Orthon announced you, my part of the quest is really easy, bring me a pumpkin hat and 25 skull lollipops, so yummy!\"";
+	set halloween2010skel, 1;
+	close;
+		
+L_Quest_B:
+
+	mes "[Skeleton Man]";
+	mes "\"Have you got the things?\"";
+	next;
+		menu
+			"Nope", -,
+			"Yup", L_Quest_C;
+	close;
+	
+L_Quest_C:
+
+	if (countitem(615) < 1) goto L_Not_Enough;
+	if (countitem(5149) < 1) goto L_Not_Enough;
+	mes "[Skeleton Man]";
+	mes "\"Bring this to Orthon!\"";
+	delitem 615, 1;
+	delitem 5149, 1;
+	getitem 5151, 1;	//Blood
+	set halloween2010skel, 2;
+	close;
+		
+L_Not_Enough:
+
+	mes "[Skeleton Man]";
+	mes "Stop telling lies!";
+	gmcommand strcharinfo(0)+":@spawn 2002 1 ";
+	gmcommand strcharinfo(0)+":@kami "+strcharinfo(0)+" whishes Happy Halloween!";
+	close;
+		
+L_Level_Too_Low:
+
+	mes "[Skeleton Man]";
+	mes "Go and get some more experience...";
+	close;
+	
+L_Quest_Done:
+
+	mes "[Skeleton Man]";
+	mes "Spooktacular Halloween!";
+	close;
+	
+}

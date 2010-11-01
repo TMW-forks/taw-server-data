@@ -1,0 +1,64 @@
+// Halloween event 2010
+// Witch
+
+027-1.gat,74,79,0	script	Witch	955,{
+
+		if (halloween2010witch == 0) goto L_Quest_check;
+		if (halloween2010witch == 1) goto L_Quest_B;
+		if (halloween2010witch == 2) goto L_Quest_Done;
+		
+L_Quest_check:
+		
+		if (BaseLevel >= 15) goto L_Quest;
+		if (BaseLevel < 15) goto L_Level_Too_Low;
+		
+L_Quest:
+
+	mes "[Witch]";
+	mes "\"Orthon said that you will come, I need 40 maggot slimes and 20 pumpkin lollipops to brew my legendary halloween potion!\"";
+	set halloween2010witch, 1;
+	close;
+		
+L_Quest_B:
+
+	mes "[Witch]";
+	mes "\"Have you got the ingredients yet?\"";
+	next;
+		menu
+			"Nah", -,
+			"Sure", L_Quest_C;
+	close;
+	
+L_Quest_C:
+
+	if (countitem(505) < 40) goto L_Not_Enough;
+	if (countitem(5150) < 20) goto L_Not_Enough;
+	mes "[Witch]";
+	mes "\"Don't sell it! Oh and could you bring Orthon 15 pumpkin lollipops, that would be great...\"";
+	delitem 505, 40;
+	delitem 5150, 20;
+	getitem 5152, 1;	//Mouboo Soul
+	set halloween2010witch, 2;
+	close;
+		
+L_Not_Enough:
+
+	mes "[Witch]";
+	mes "I don't think so!";
+	gmcommand strcharinfo(0)+":@spawn 2002 1 ";
+	gmcommand strcharinfo(0)+":@kami "+strcharinfo(0)+" whishes Happy Halloween!";
+	close;
+		
+L_Level_Too_Low:
+
+	mes "[Witch]";
+	mes "You should get some more experience...";
+	close;
+	
+L_Quest_Done:
+
+	mes "[Witch]";
+	mes "Happy Halloween!";
+	close;
+	
+}
