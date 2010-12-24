@@ -4,6 +4,15 @@
 
 ##3
 
+##3 Santa Claus spotted
+##3 12-24-2010
+##0 Santa Claus has arrived on The
+##0 Alternate World!
+##0 Help him to find his Reinboos
+##0 and he may have something
+##0 special for you, it's your turn
+##0 to save christmas!
+
 ##3 Halloween is here!
 ##3 10-30-2010
 ##0 Halloween has finally
