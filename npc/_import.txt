@@ -85,3 +85,4 @@ import: npc/907-1_Starting_island/_import.txt
 import: npc/907-2_Starting_island/_import.txt
 import: npc/907-3_Cave_of_Thiefs/_import.txt
 import: npc/botcheck/_import.txt
+import: npc/xmas/2010/_import.txt
