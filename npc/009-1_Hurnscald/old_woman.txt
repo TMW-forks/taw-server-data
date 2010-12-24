@@ -1,6 +1,6 @@
 // Old woman
 
-009-1.gat,29,43,0	script	Old Woman	154,{
+009-1.gat,30,51,0	script	Old Woman	154,{
 	if (BaseLevel < 40) goto L_Lower;
 
 	mes "[Old Woman]";

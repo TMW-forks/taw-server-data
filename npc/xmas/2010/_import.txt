@@ -1,0 +1,1 @@
+npc: npc/xmas/2010/quest.txt
