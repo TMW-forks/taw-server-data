@@ -522,7 +522,7 @@
 5058,	FairyHat,			Fairy Hat,			5,	500,	100,	20,	,	2,	,	0,	0,	2,	256,	,	0,	0,	{},					{}
 5059,	IceSnakeTongue,		Ice Snake Tongue,		3,	160,	80,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}										
 5060,	IceSnakeEgg,			Ice Snake Egg,		0,	100,	50,	4,	,	,	,	,	,	2,	,	,	0,	,	{ itemheal 60,				0; },					{}					
-5061,	IceKnife,			Ice Knife,			4,	10000,	6000,	100,	115,	,	1,	,	0,	2,	2,	1,	1,	1,	{ bonus bAspdAddRate, 30; },					{}	
+5061,	IceKnife,			Ice Knife,			4,	10000,	6000,	100,	115,	,	1,	,	0,	2,	2,	1,	1,	1,	{},					{ bonus bAspdAddRate, 30; }	
 5062,	IceScorpionStinger,		Ice Scorpion Stinger,		3,	250,	120,	1,	,	,	,	,	,	,	,	,	,	,	{},					{}
 5063, 	TerraniteArrow, 			Terranite Arrow, 		10, 	40, 	20, 	2, 	120, 	, 	, 	, 	, 	2, 	32768, 	, 	, 	, 	{}, 	{}	
 5064,	PaladinsHelmet,			Paladin's Helmet,			5,	30000,	3000,	10,	,	18,	,	-36,	0,	2,	256,	,	0,	0,	{},					{}	
