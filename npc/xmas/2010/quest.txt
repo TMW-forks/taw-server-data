@@ -35,9 +35,7 @@ L_SantaComplete:
 	mes "\"Now, let me see what I have here for you.\"";
 	next;
 	mes "Santa fumbles around in a large sack and pulls out a special present!";
-	setarray @hatgear$, 633, 1206, 1205;
-    getitem @headgear$[rand(getarraysize(@headgear$))], 1;
-	getexp 7000, 0;
+	getitem 1205, 1;
 	set QUEST_xmas08_state, QUEST_xmas08_state | (1 << 10);
 	next;
 	mes "[Santa Claus]";
