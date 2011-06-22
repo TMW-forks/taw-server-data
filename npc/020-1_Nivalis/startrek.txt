@@ -16,5 +16,15 @@
 	mes "\"trr...Spock to Scotty...";
 	mes "Beam me to the elves village...";
 	mes "I will hide there.\"";
+	next;
+	
+		menu
+			"Yeah, you really do look like an elve!", L_Beam,
+			"Wait a second, can you guys beam me up, too?", -;
+	
+	mes "[Spock]";
+	mes "\"Why not...\"";
+	next;
+	warp "911-1.gat", 97, 58;
 	close;
 }
