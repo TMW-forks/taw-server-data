@@ -27,4 +27,10 @@
 	next;
 	warp "911-1.gat", 97, 58;
 	close;
+	
+L_Beam:
+
+	mes "[Spock]";
+	mes "Goodbye";
+	close;
 }
