@@ -1,0 +1,22 @@
+911-1.gat,95,57,0	script	Spocky	134,{
+
+	mes "[Spocky]";
+	mes "\"So you want to get back to Nivalis?\"";
+	next;
+	
+		menu
+			"Not, yet, no.", L_No,
+			"Yes, please", -;
+	
+	mes "[Spocky]";
+	mes "\"Back to Nivalis, Scotty!\"";
+	next;
+	warp "020-1.gat", 80,78;
+	close;
+	
+L_No:
+
+	mes "[Spocky]";
+	mes "I guess I will stay here, too.";
+	close;
+}

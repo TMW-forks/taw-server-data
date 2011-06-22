@@ -1,3 +1,4 @@
 // 911-1_Elves Village imports
 
 map: 911-1.gat
+npc: npc/911-1_Elves_Village/startrek.txt
